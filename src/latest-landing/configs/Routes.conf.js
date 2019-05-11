@@ -1,28 +1,42 @@
 import React from "react";
 
-const Home = React.lazy(() => require("../home/Home"));
-const DefaultBody = React.lazy(() => import("../layout/Default")); // The defaul home page the web app will land on
-const OurStory = React.lazy(() => import("../home/aboutUs/AboutUs"));
+const Home = React.lazy(() => require("../Home"));
+const DefaultBody = React.lazy(() => require("../layout/Default/Default")); // The default content page the web app will land on
+const OurStory = React.lazy(() => require("../components/OurStory/OurStory"));
+const OurTeam = React.lazy(() => require("../components/OurTeam/OurTeam"));
+const News = React.lazy(() => require("../components/News/News"));
 
 export default [
     {
-        path: '',
+        path: "",
         component: Home,
         exact: true,
-        name: 'Home Page',
+        name: "Tunga Home",
         childRoutes: [
             {
-                path: '/',
-                component: HomeBody,
+                path: "/",
+                component: DefaultBody,
                 exact: true,
-                name: 'Home Landing',
+                name: "Home Landing"
             },
             {
-                path: '/about-us',
-                name: 'About Us',
+                path: "/our-story",
+                name: "Our Story",
                 exact: false,
-                component: AboutUs
+                component: OurStory
+            },
+            {
+                path: "/our-team",
+                name: "Our Team",
+                exact: false,
+                component: OurTeam
+            },
+            {
+                path: "/news",
+                name: "News",
+                exact: false,
+                component: News
             }
         ]
-    },
+    }
 ];

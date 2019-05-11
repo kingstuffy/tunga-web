@@ -16,13 +16,15 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import store from './store';
+import App from "./latest-landing/App";
 
-import App from './components/App';
+// import App from './components/App';
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <App/>
+            {/*<App/>*/}
+            <App />
         </BrowserRouter>
     </Provider>,
     document.getElementById('app-root'),

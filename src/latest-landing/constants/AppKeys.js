@@ -6,4 +6,4 @@ export default {
     authUser: 'userAuthToken',
     closeAlertMessage: 'closeAlertMessage',
     AlertMessage: 'AlertMessage',
-}
+};

@@ -4,5 +4,8 @@
  */
 
 export default {
-    home: '/',
-}
+    home: "/",
+    ourTeam: "/our-team",
+    ourStory: "/our-story",
+    news: "/news",
+};
