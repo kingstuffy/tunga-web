@@ -1,14 +1,14 @@
 import React from "react";
-import OurStory from "../components/OurStory/OurStory"
-import OurTeam from "../components/OurTeam/OurTeam";
-import Home from "../Home";
-import DefaultBody from "../layout/Default/Default";
-import News from "../components/News/News";
-// const Home = React.lazy(() => import("../Home"));
-// const DefaultBody = React.lazy(() => import("../layout/Default/Default")); // The default content page the web app will land on
-// const OurStory = React.lazy(() => import("../components/OurStory/OurStory"));
-// const OurTeam = React.lazy(() => import("../components/OurTeam/OurTeam"));
-// const News = React.lazy(() => import("../components/News/News"));
+// import OurStory from "../home/OurStory/OurStory"
+// import OurTeam from "../home/OurTeam/OurTeam";
+// import Home from "../home/Home";
+// import DefaultBody from "../layout/Default/Default";
+// import News from "../home/News/News";
+const Home = React.lazy(() => import("../home/Home"));
+const DefaultBody = React.lazy(() => import("../layout/Default/Default")); // The default content page the web app will land on
+const OurStory = React.lazy(() => import("../home/OurStory/OurStory"));
+const OurTeam = React.lazy(() => import("../home/OurTeam/OurTeam"));
+const News = React.lazy(() => import("../home/News/News"));
 
 export default [
     {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Home.scss";
-import Nav from "./layout/Nav/Nav";
-import Footer from "./layout/Footer/Footer";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
 import { Route } from "react-router-dom";
 
 class Home extends Component {
@@ -13,7 +13,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <Nav />
+                <Header />
                 <div>
                     {this.props.childRoutes.map((route, i) => {
                         return <Route exact={route.exact} key={i}

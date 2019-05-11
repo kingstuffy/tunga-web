@@ -10,7 +10,7 @@ class OurStory extends Component {
     render() {
         return (
             <div className="OurStory">
-
+                Our Story
             </div>
         );
     }
