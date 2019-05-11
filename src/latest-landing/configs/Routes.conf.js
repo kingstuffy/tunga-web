@@ -1,10 +1,14 @@
 import React from "react";
-
-const Home = React.lazy(() => require("../Home"));
-const DefaultBody = React.lazy(() => require("../layout/Default/Default")); // The default content page the web app will land on
-const OurStory = React.lazy(() => require("../components/OurStory/OurStory"));
-const OurTeam = React.lazy(() => require("../components/OurTeam/OurTeam"));
-const News = React.lazy(() => require("../components/News/News"));
+import OurStory from "../components/OurStory/OurStory"
+import OurTeam from "../components/OurTeam/OurTeam";
+import Home from "../Home";
+import DefaultBody from "../layout/Default/Default";
+import News from "../components/News/News";
+// const Home = React.lazy(() => import("../Home"));
+// const DefaultBody = React.lazy(() => import("../layout/Default/Default")); // The default content page the web app will land on
+// const OurStory = React.lazy(() => import("../components/OurStory/OurStory"));
+// const OurTeam = React.lazy(() => import("../components/OurTeam/OurTeam"));
+// const News = React.lazy(() => import("../components/News/News"));
 
 export default [
     {

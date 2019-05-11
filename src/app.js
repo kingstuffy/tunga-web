@@ -23,7 +23,6 @@ import App from "./latest-landing/App";
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            {/*<App/>*/}
             <App />
         </BrowserRouter>
     </Provider>,
