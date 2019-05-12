@@ -12,7 +12,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="Header text-white">
+            <div className="Header text-white position-relative">
                 <Nav/>
                 <Row>
                     <Col lg="12" sm="12" md="12">

@@ -4,6 +4,7 @@ import "./Home.scss";
 import Footer from "../layout/Footer/Footer";
 import { Route } from "react-router-dom";
 import Header from "../layout/Header/Header";
+import IconButton from "../shared/core/IconButton";
 
 class Home extends Component {
     constructor(props) {
@@ -23,6 +24,9 @@ class Home extends Component {
                     }
                 </div>
                 <Footer/>
+                <div className="position-fixed icon-chat-bottom bg-primary">
+                    <IconButton name="chat" size="lg" className="text-white" />
+                </div>
             </div>
         );
     }

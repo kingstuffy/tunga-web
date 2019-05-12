@@ -16,7 +16,7 @@ class ServiceCard extends Component {
               <CardImg top width="100%" height="195px" src={service.imgUrl} alt="Card image cap" />
               <CardBody>
                   <CardTitle className="text-blue">{service.title}</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
+                  {/*<CardSubtitle>Card subtitle</CardSubtitle>*/}
                   <CardText> {service.description}</CardText>
                   <CardTitle className="text-blue text-uppercase mt-3">Lead Time</CardTitle>
                   <CardText>{service.leadTime}</CardText>

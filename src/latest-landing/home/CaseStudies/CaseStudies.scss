@@ -1,0 +1,19 @@
+@import "../../assets/scss/util";
+.CaseStudies {
+    padding-top: 8% !important;
+    padding-bottom: 8% !important;
+
+    .card-center {
+        @extend %vertical-align;
+    }
+    .case-title {
+        line-height: 17px;
+    }
+    .case-subtitle {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .case-summary {
+        line-height: 24px;
+    }
+}
