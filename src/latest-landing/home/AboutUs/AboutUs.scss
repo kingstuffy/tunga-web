@@ -1,0 +1,17 @@
+.AboutMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .abt-title {
+        font-size: 24px !important;
+        line-height: 36px;
+    }
+    .abt-summary {
+        font-size: 24px !important;
+        line-height: 36px;
+    }
+    .abt-content {
+        font-size: 16px !important;
+        line-height: 28px;
+    }
+}

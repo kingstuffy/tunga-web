@@ -25,7 +25,7 @@ class Nav extends Component {
             <div className="Nav">
                 <div className="">
                     <Navbar color="transparent" light expand='lg' className="p-3 pl-5 pr-5">
-                        <NavbarBrand className='font-weight-bold text-uppercase'  href="/">Tunga</NavbarBrand>
+                        <NavbarBrand className='font-weight-bold text-white text-uppercase'  href="/">Tunga</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} className="text-white"/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <RNav className="ml-auto text-right" navbar>
@@ -39,10 +39,10 @@ class Nav extends Component {
                                     <NavLink to={Routing.news.path}>{Routing.news.name}</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to={Routing.login.path}>{Routing.login.name}</NavLink>
+                                    <a className="">Log In</a>
                                 </NavItem>
                                 <NavItem>
-                                    <RNavLink className="text-white btn btn-lg btn-primary p-4 border-radius-0">Schedule a Call </RNavLink>
+                                    <RNavLink className="ml-3 text-white btn btn-lg btn-primary p-4 border-radius-0">Schedule a Call </RNavLink>
                                 </NavItem>
                             </RNav>
                         </Collapse>

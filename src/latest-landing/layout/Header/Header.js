@@ -26,8 +26,8 @@ class Header extends Component {
                     </Col>
                     <Col lg="12" sm="12" md="12">
                         <div className="" align="center">
-                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0"> Schedule a Call </Button>
-                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0 bg-transparent border-color-white"> Search for
+                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0 Header-button"> Schedule a Call </Button>
+                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0 bg-transparent border-color-white Header-button"> Search for
                                 Developer </Button>
                         </div>
                     </Col>

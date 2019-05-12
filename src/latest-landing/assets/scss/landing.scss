@@ -1,15 +1,43 @@
 @import "variable";
+
 .bg-primary {
     background: get-color('t-blue') !important;
     color: get-color('white')
 }
+
 .bg-light {
     background: get-color('t-light-blue') !important;
     color: get-color('white')
 }
-.border-radius-0 {
-    border-radius: 0!important;
+
+.text-blue {
+    color: get-color('t-blue') !important;
 }
+
+.border-radius-0 {
+    border-radius: 0 !important;
+}
+
 .border-color-white {
     border-color: get-color('white') !important;
+}
+
+a {
+    cursor: pointer !important;
+}
+
+.object-fit {
+    object-fit: cover;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.w-85 {
+    width: 85% !important;
+}
+
+.w-90 {
+    width: 90% !important;
 }

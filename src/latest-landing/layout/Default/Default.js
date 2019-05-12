@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './Default.scss';
+import AboutUs from "../../home/AboutUs/AboutUs";
 
 class Default extends Component {
   constructor(props){
@@ -9,9 +10,9 @@ class Default extends Component {
   render(){
     return (
       <div className="Default">
-            Default Body
+          <AboutUs />
       </div>
-    )
+    );
   }
 }
 Default.propTypes = {
