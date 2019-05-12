@@ -16,12 +16,13 @@ class CaseStudyCard extends Component {
                 <Row>
                     <Col sm="12" lg="5" md="5" xs="12" xl="5"
                          className="p-0"
-                         style={{background: 'url(' + caseStudy.imgUrl + ') no-repeat center', backgroundSize: 'cover'}} />
-                    <Col sm="12" lg="7" md="7" xs="12" xl="7" className="p-0">
-                        <Card>
+                         style={{background: 'url(' + caseStudy.imgUrl + ') no-repeat center', backgroundSize: 'cover', minHeight: '375px'}} />
+                    <Col sm="12" lg="7" md="7" xs="12" xl="7" className="p-0 border-0">
+                        <Card className="border-0 pt-0">
                             {/*<CardImg top width="100%" height="195px" src={caseStudy.imgUrl} alt="Card image cap" />*/}
-                            <CardBody>
-                                <img src={caseStudy.icon} alt={caseStudy.title} width="30%" height="30%"/>
+                            <CardBody className="pt-0">
+                                {/*width="15%" height="15%"*/}
+                                <img src={caseStudy.icon} alt={caseStudy.title}/>
                                 <CardTitle className="text-blue size-12 mt-3">{caseStudy.title}</CardTitle>
                                 <CardTitle className="text-blue text-uppercase size-12 mt-3">Technology</CardTitle>
                                 <CardText className="size-10">{caseStudy.tech}</CardText>
@@ -35,8 +36,8 @@ class CaseStudyCard extends Component {
                                     <Media left href="#">
                                         <Media object src={caseStudy.user.pic} className="img-fluid rounded-circle" alt="Generic placeholder image" />
                                     </Media>
-                                    <Media body className="pl-1 size-9">
-                                        <Media heading className="size-9">
+                                    <Media body className="pl-2 size-9">
+                                        <Media heading className="size-9 text-blue">
                                             {caseStudy.user.name}
                                         </Media>
                                         {caseStudy.user.position + ', ' + caseStudy.user.company}

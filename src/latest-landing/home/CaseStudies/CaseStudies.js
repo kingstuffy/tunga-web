@@ -146,10 +146,10 @@ class CaseStudies extends Component {
                 <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and require a
                     variety of technologies, but usually have one thing in common: they want to go live ASAP!</p>
                 <p className="float-right">
-                    <Icon onClick={() => this.paging(this.state.paginate.current + 1)} name="next" size="md"/>&nbsp;
-                    <Icon onClick={() => this.paging(this.state.paginate.current - 1)} name="previous" size="md"/>
-                    <button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>
-                    <button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>
+                    <Icon onClick={() => this.paging(this.state.paginate.current - 1)} name="previous"  className="text-primary" size="md"/>&nbsp;
+                    <Icon onClick={() => this.paging(this.state.paginate.current + 1)} name="next" className="text-primary" size="md"/>
+                    {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
+                    {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
                 </p>
                 <p className="clearfix"/>
                 <Row className="m-auto">

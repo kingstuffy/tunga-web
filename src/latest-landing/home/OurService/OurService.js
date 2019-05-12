@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./OurService.scss";
-import { Col, ListGroup, ListGroupItem, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import ServiceCard from "./ServiceCard/ServiceCard";
 import Service1 from "../../assets/img/service/service1.png";
 import Service2 from "../../assets/img/service/service2.png";
@@ -79,16 +79,15 @@ class OurService extends Component {
     }
 
     render() {
-        // this.servicesPerPage = this.state.services.slice(this.state.paginate.spliceStart, this.state.paginate.spliceEnd);
         return (
             <section className="OurService p-lg-5">
                 <h4 className="text-primary text-uppercase">
                     Our Services
                     <p className="float-right">
-                        <Icon onClick={() => this.paging(this.state.paginate.current + 1)} name="next" size="md"/>&nbsp;
-                        <Icon onClick={() => this.paging(this.state.paginate.current - 1)} name="previous" size="md"/>
-                        <button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>
-                        <button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>
+                        <Icon onClick={() => this.paging(this.state.paginate.current - 1)}  className="text-primary" name="previous" size="md"/>
+                        &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)} className="text-primary" name="next" size="md"/>
+                        {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
+                        {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
                     </p>
                     <p className="clearfix"/>
                 </h4>

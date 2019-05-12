@@ -31,7 +31,7 @@ class ScheduleCall extends Component {
                     </Col>
                     <Col lg="12" sm="12" md="12" className="position-absolute notSure">
                         <div className="" align="center">
-                            Not sure? See Case Studies
+                            <p>Not sure? See Case Studies</p>
                            <Icon name="arrow-down" size="md"/>
                         </div>
                     </Col>

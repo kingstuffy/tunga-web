@@ -22,7 +22,7 @@ class ServiceCard extends Component {
                   <CardText>{service.leadTime}</CardText>
                   <CardTitle className="text-blue text-uppercase mt-3">Price Indication</CardTitle>
                   <CardText>{service.price}</CardText>
-                  <a className="text-primary p-0">Learn More <Icon name="arrow-right" size="md"/></a>
+                  <a className="text-primary p-0">Learn More <Icon name="arrow-right" size="xs"/></a>
               </CardBody>
           </Card>
       </div>
