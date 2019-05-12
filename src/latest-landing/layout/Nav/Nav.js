@@ -25,7 +25,7 @@ class Nav extends Component {
             <div className="Nav">
                 <div className="">
                     <Navbar color="transparent" light expand='lg' className="p-3 pl-5 pr-5">
-                        <NavbarBrand className='font-weight-bold text-white text-uppercase'  href="/">Tunga</NavbarBrand>
+                        <NavLink className='font-weight-bold text-white text-uppercase navbar-brand'  to="/">Tunga</NavLink>
                         <NavbarToggler onClick={this.toggle} className="text-white"/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <RNav className="ml-auto text-right" navbar>
