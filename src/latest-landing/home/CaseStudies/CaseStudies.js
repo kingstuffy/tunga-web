@@ -151,8 +151,8 @@ class CaseStudies extends Component {
                               className="text-primary" size="md"/>&nbsp;
                         <Icon onClick={() => this.paging(this.state.paginate.current + 1)} name="next"
                               className="text-primary" size="md"/>
-                        <button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>
-                        <button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>
+                        {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
+                        {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
                     </p>
                     <p className="clearfix"/>
 
