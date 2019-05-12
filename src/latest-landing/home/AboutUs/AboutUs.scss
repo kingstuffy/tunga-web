@@ -1,16 +1,23 @@
 @import "../../assets/scss/util";
-.AboutMsg {
-    @extend %vertical-align;
-    .abt-title {
-        font-size: 24px !important;
-        line-height: 36px;
-    }
-    .abt-summary {
-        font-size: 24px !important;
-        line-height: 36px;
-    }
-    .abt-content {
-        font-size: 16px !important;
-        line-height: 28px;
+
+.AboutUs {
+    min-height: 100vh;
+    .AboutMsg {
+        @extend %vertical-align;
+
+        .abt-title {
+            font-size: 24px !important;
+            line-height: 36px;
+        }
+
+        .abt-summary {
+            font-size: 24px !important;
+            line-height: 36px;
+        }
+
+        .abt-content {
+            font-size: 16px !important;
+            line-height: 28px;
+        }
     }
 }

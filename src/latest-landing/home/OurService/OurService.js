@@ -67,7 +67,8 @@ class OurService extends Component {
             dataPerPage: [],
             paginate: {
                 perPage: 4,
-                current: 1
+                current: 1,
+                transition: false
             }
         };
     }
@@ -82,22 +83,26 @@ class OurService extends Component {
         return (
             <section className="OurService p-lg-5">
                 <div className="ml-3 mr-3">
-                <h4 className="text-primary text-uppercase">
-                    Our Services
-                    <p className="float-right">
-                        <Icon onClick={() => this.paging(this.state.paginate.current - 1)}  className="text-primary" name="previous" size="md"/>
-                        &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)} className="text-primary" name="next" size="md"/>
-                        {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
-                        {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
-                    </p>
-                    <p className="clearfix"/>
-                </h4>
-                <Row className="m-auto">
-                    {this.state.dataPerPage.map((service, i) =>
-                        <Col key={i} sm="12" lg="3" md="3" xs="12" xl="3" className="p-2 mt-2">
-                            <ServiceCard service={service}/>
-                        </Col>)}
-                </Row>
+                    <h4 className="text-primary text-uppercase">
+                        Our Services
+                        <p className="float-right">
+                            <Icon onClick={() => this.paging(this.state.paginate.current - 1)} className="text-primary"
+                                  name="previous" size="md"/>
+                            &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)}
+                                        className="text-primary" name="next" size="md"/>
+                            <button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>
+                            <button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>
+                        </p>
+                        <p className="clearfix"/>
+                    </h4>
+                    <div className="card-min-height">
+                        {this.state.paginate.transition && <Row className="animated fadeInRight">
+                            {this.state.dataPerPage.map((service, i) =>
+                                <Col key={i} sm="12" lg="3" md="3" xs="12" xl="3" className="p-2 mt-2">
+                                    <ServiceCard service={service}/>
+                                </Col>)}
+                        </Row>}
+                    </div>
                 </div>
             </section>
         );

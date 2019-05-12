@@ -46,7 +46,7 @@ class AboutUs extends Component {
                   </div>
               </Col>
               <Col sm="12" lg="6" md="6" className="object-fit">
-                 <img src={About} className="w-100" alt="About Us"/>
+                 <img src={About} className="w-100 vh-100" alt="About Us"/>
               </Col>
           </Row>
       </section>

@@ -151,16 +151,19 @@ class CaseStudies extends Component {
                               className="text-primary" size="md"/>&nbsp;
                         <Icon onClick={() => this.paging(this.state.paginate.current + 1)} name="next"
                               className="text-primary" size="md"/>
-                        {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
-                        {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
+                        <button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>
+                        <button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>
                     </p>
                     <p className="clearfix"/>
-                    <Row className="m-auto">
+
+                    <div className="card-min-height">
+                        {this.state.paginate.transition && <Row className="animated fadeInRight">
                         {this.state.dataPerPage.map((data, i) =>
                             <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
                                 <CaseStudyCard caseStudy={data}/>
                             </Col>)}
-                    </Row>
+                    </Row>}
+                    </div>
                 </div>
             </section>
         );
