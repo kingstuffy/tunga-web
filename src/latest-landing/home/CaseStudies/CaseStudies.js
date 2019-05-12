@@ -10,7 +10,7 @@ import User2 from "../../assets/img/user/user2.png";
 import { paging } from "../../Utils/Utils";
 import { Col, Row } from "reactstrap";
 import CaseStudyCard from "./CaseStudyCard/CaseStudyCard";
-import Icon from "../../shared/core/Icon";
+import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 
 class CaseStudies extends Component {
     constructor(props) {
@@ -146,23 +146,16 @@ class CaseStudies extends Component {
                         clients in 12 countries</p>
                     <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and require a
                         variety of technologies, but usually have one thing in common: they want to go live ASAP!</p>
-                    <p className="float-right">
-                        <Icon onClick={() => this.paging(this.state.paginate.current - 1)} className={this.state.paginate.current  === 1 ? 'text-gray' : 'text-primary'}
-                              name="previous" size="md"/>
-                        &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)}
-                                    className={this.state.paginate.current  >= Math.ceil(this.state.data.length / this.state.paginate.perPage) ? 'text-gray' : 'text-primary'} name="next" size="md"/>
-                        {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
-                        {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
-                    </p>
-                    <p className="clearfix"/>
+                    <PaginateArrow float="float-right" paginate={this.state.paginate} color='text-primary'
+                                   data={this.state.data}/>
 
                     <div className="card-min-height">
                         {this.state.paginate.transition && <Row className="animated fadeInRight">
-                        {this.state.dataPerPage.map((data, i) =>
-                            <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
-                                <CaseStudyCard caseStudy={data}/>
-                            </Col>)}
-                    </Row>}
+                            {this.state.dataPerPage.map((data, i) =>
+                                <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
+                                    <CaseStudyCard caseStudy={data}/>
+                                </Col>)}
+                        </Row>}
                     </div>
                 </div>
             </section>

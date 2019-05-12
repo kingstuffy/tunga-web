@@ -8,6 +8,7 @@ import Service3 from "../../assets/img/service/service3.png";
 import Service4 from "../../assets/img/service/service4.png";
 import Icon from "../../shared/core/Icon";
 import { paging } from "../../Utils/Utils";
+import PaginateArrow from "../CaseStudies/CaseStudies";
 
 class OurService extends Component {
     constructor(props) {
@@ -85,15 +86,8 @@ class OurService extends Component {
                 <div className="ml-3 mr-3">
                     <h4 className="text-primary text-uppercase">
                         Our Services
-                        <p className="float-right">
-                            <Icon onClick={() => this.paging(this.state.paginate.current - 1)} className={this.state.paginate.current  === 1 ? 'text-gray' : 'text-primary'}
-                                  name="previous" size="md"/>
-                            &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)}
-                                        className={this.state.paginate.current  >= Math.ceil(this.state.data.length / this.state.paginate.perPage) ? 'text-gray' : 'text-primary'} name="next" size="md"/>
-                            {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
-                            {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
-                        </p>
-                        <p className="clearfix"/>
+                        <PaginateArrow float="float-right" paginate={this.state.paginate} color='text-primary'
+                                       data={this.state.data}/>
                     </h4>
                     <div className="card-min-height">
                         {this.state.paginate.transition && <Row className="animated fadeInRight">
