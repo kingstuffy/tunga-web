@@ -86,10 +86,10 @@ class OurService extends Component {
                     <h4 className="text-primary text-uppercase">
                         Our Services
                         <p className="float-right">
-                            <Icon onClick={() => this.paging(this.state.paginate.current - 1)} className="text-primary"
+                            <Icon onClick={() => this.paging(this.state.paginate.current - 1)} className={this.state.paginate.current  === 1 ? 'text-gray' : 'text-primary'}
                                   name="previous" size="md"/>
                             &nbsp;<Icon onClick={() => this.paging(this.state.paginate.current + 1)}
-                                        className="text-primary" name="next" size="md"/>
+                                        className={this.state.paginate.current  >= Math.ceil(this.state.data.length / this.state.paginate.perPage) ? 'text-gray' : 'text-primary'} name="next" size="md"/>
                             {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
                             {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
                         </p>

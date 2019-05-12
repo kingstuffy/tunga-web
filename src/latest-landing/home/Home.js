@@ -25,7 +25,7 @@ class Home extends Component {
                 </div>
                 <Footer/>
                 <div className="position-fixed icon-chat-bottom bg-primary">
-                    <IconButton name="chat" size="xs" className="text-white" />
+                    <IconButton name="chat-alt" size="md" className="text-white" />
                 </div>
             </div>
         );

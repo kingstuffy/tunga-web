@@ -1,6 +1,7 @@
 export const paging = (current, This) => {
     const { data, paginate, dataPerPage } = This.state;
     const { perPage } = paginate;
+    if (current === 0) return This.state.dataPerPage;
     console.log({ current, data, perPage, count: Math.ceil(data.length / perPage) });
     if (isNaN(current)) {
         This.setState({ paginate: {...paginate, transition: true } });
