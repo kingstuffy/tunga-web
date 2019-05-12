@@ -1,7 +1,6 @@
+@import "../../assets/scss/util";
 .AboutMsg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @extend %vertical-align;
     .abt-title {
         font-size: 24px !important;
         line-height: 36px;
