@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './AboutUs.scss';
-import { Col, Media, Row } from "reactstrap";
+import { Col, ListGroup, ListGroupItem, Media, Row } from "reactstrap";
 import About from '../../assets/img/about/about.png';
+import Icon from "../../shared/core/Icon";
 class AboutUs extends Component {
   constructor(props){
     super(props);
@@ -18,6 +19,28 @@ class AboutUs extends Component {
                   </h5>
                   <div className="abt-content w-85 text-justify">
                       We have first-hand experience in what it takes to both develop rapid innovations and to untap the potential of Africa’s undiscovered tech talents. With our low rates and short lead times, we can have your product up and running super fast!
+                      <ListGroup className="p-0">
+                          <ListGroupItem className="border-0 pl-0">
+                              <Icon name='check-circle-o' size='xs' className="text-blue"/>
+                              &nbsp; Fixed prices, no surprises
+                          </ListGroupItem>
+                          <ListGroupItem className="border-0 pl-0">
+                              <Icon name='check-circle-o' size='xs' className="text-blue"/>
+                              &nbsp; On-demand access to software developers
+                          </ListGroupItem>
+                          <ListGroupItem className="border-0 pl-0">
+                              <Icon name='check-circle-o' size='xs' className="text-blue"/>
+                              &nbsp; Reachable 7 days per week during projects
+                          </ListGroupItem>
+                          <ListGroupItem className="border-0 pl-0">
+                              <Icon name='check-circle-o' size='xs' className="text-blue"/>
+                              &nbsp; All popular software languages and frameworks
+                          </ListGroupItem>
+                          <ListGroupItem className="border-0 pl-0">
+                              <Icon name='check-circle-o' size='xs' className="text-blue"/>
+                              &nbsp; Contact person in your country and/or language
+                          </ListGroupItem>
+                      </ListGroup>
                   </div>
               </Col>
               <Col sm="12" lg="6" md="6" className="object-fit">
