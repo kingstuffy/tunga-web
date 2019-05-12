@@ -12,7 +12,8 @@ class AboutUs extends Component {
     return (
       <section className="AboutUs">
           <Row>
-              <Col sm="12" lg="6" md="6" className="AboutMsg p-5">
+              <Col sm="12" lg="6" md="6" className="AboutMsg p-lg-5 mt-5">
+                  <div className="ml-4 mr-4">
                   <h4 className="text-primary text-uppercase abt-title">About Us</h4>
                   <h5 className="text-blue w-85 abt-summary">
                       Tunga helps companies every step of the way in building new software products
@@ -41,6 +42,7 @@ class AboutUs extends Component {
                               &nbsp; Contact person in your country and/or language
                           </ListGroupItem>
                       </ListGroup>
+                  </div>
                   </div>
               </Col>
               <Col sm="12" lg="6" md="6" className="object-fit">

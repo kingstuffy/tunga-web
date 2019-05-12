@@ -97,3 +97,11 @@ a {
 .size-20 {
     font-size: px-to-rem(20) !important;
 }
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+i.tg-ic-previous, i.tg-ic-next  {
+    cursor: pointer !important;
+}

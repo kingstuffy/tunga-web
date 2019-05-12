@@ -81,6 +81,7 @@ class OurService extends Component {
     render() {
         return (
             <section className="OurService p-lg-5">
+                <div className="ml-3 mr-3">
                 <h4 className="text-primary text-uppercase">
                     Our Services
                     <p className="float-right">
@@ -97,6 +98,7 @@ class OurService extends Component {
                             <ServiceCard service={service}/>
                         </Col>)}
                 </Row>
+                </div>
             </section>
         );
     }

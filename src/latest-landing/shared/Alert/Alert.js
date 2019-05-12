@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './Alert.css';
+import './Alert.scss';
 
 class Alert extends Component {
   constructor(props){
