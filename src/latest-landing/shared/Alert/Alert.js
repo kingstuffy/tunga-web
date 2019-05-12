@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './Login.scss';
+import './Alert.css';
 
-class Login extends Component {
+class Alert extends Component {
   constructor(props){
     super(props);
   }
   render(){
     return (
-      <div className="Login">
-          Login
+      <div className="Alert">
+    
       </div>
-    );
+    )
   }
 }
-Login.propTypes = {
+Alert.propTypes = {
 }
 
-export default Login;
+export default Alert;

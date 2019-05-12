@@ -1,68 +1,37 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Header.scss";
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from "reactstrap";
+import Nav from "../Nav/Nav";
+import Button from "../../shared/core/Button";
+import { Col, Row } from "reactstrap";
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isOpen: false
-        };
     }
-
-    toggle = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    };
 
     render() {
         return (
-            <div className="Nav">
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                            </NavItem>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Options
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider/>
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
+            <div className="Header text-white">
+                <Nav/>
+                <Row>
+                    <Col lg="12" sm="12" md="12">
+                        <div className="text-center Header-Text  font-weight-bold">
+                            The Quickest Road to Innovation Leads Through Africa
+                        </div>
+                        <div className="Header-Text-P font-weight-normal">
+                            Companies worldwide use Tunga’s workforce of exclusively African software engineers to build
+                            new tech products quickly, affordably and smoothly
+                        </div>
+                    </Col>
+                    <Col lg="12" sm="12" md="12">
+                        <div className="" align="center">
+                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0"> Schedule a Call </Button>
+                            <Button size="lg" className="ml-2 p-4 mt-2 border-radius-0 bg-transparent border-color-white"> Search for
+                                Developer </Button>
+                        </div>
+                    </Col>
+                </Row>
             </div>
         );
     }

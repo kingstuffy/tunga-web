@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Home.scss";
-import Header from "../layout/Header/Header";
 import Footer from "../layout/Footer/Footer";
 import { Route } from "react-router-dom";
+import Header from "../layout/Header/Header";
 
 class Home extends Component {
     constructor(props) {

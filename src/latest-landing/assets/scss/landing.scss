@@ -1,0 +1,15 @@
+@import "variable";
+.bg-primary {
+    background: get-color('t-blue') !important;
+    color: get-color('white')
+}
+.bg-light {
+    background: get-color('t-light-blue') !important;
+    color: get-color('white')
+}
+.border-radius-0 {
+    border-radius: 0!important;
+}
+.border-color-white {
+    border-color: get-color('white') !important;
+}

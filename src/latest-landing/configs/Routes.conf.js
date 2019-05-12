@@ -1,45 +1,53 @@
 import React from "react";
-// import OurStory from "../home/OurStory/OurStory"
-// import OurTeam from "../home/OurTeam/OurTeam";
-// import Home from "../home/Home";
-// import DefaultBody from "../layout/Default/Default";
-// import News from "../home/News/News";
-const Home = React.lazy(() => import("../home/Home"));
-const DefaultBody = React.lazy(() => import("../layout/Default/Default")); // The default content page the web app will land on
-const OurStory = React.lazy(() => import("../home/OurStory/OurStory"));
-const OurTeam = React.lazy(() => import("../home/OurTeam/OurTeam"));
-const News = React.lazy(() => import("../home/News/News"));
+import OurStory from "../home/OurStory/OurStory";
+import OurTeam from "../home/OurTeam/OurTeam";
+import Home from "../home/Home";
+import DefaultBody from "../layout/Default/Default";
+import News from "../home/News/News";
+import Login from "../home/Login/Login";
+import Routing from "../constants/Routing";
+// const Home = React.lazy(() => require("../home/Home"));
+// const DefaultBody = React.lazy(() => require("../layout/Default/Default")); // The default content page the web app will land on
+// const OurStory = React.lazy(() => require("../home/OurStory/OurStory"));
+// const OurTeam = React.lazy(() => require("../home/OurTeam/OurTeam"));
+// const News = React.lazy(() => require("../home/News/News"));
 
 export default [
     {
         path: "",
         component: Home,
         exact: true,
-        name: "Tunga Home",
+        name: Routing.home.name,
         childRoutes: [
             {
-                path: "/",
+                path:  Routing.home.path,
                 component: DefaultBody,
                 exact: true,
-                name: "Home Landing"
+                name:  Routing.home.name
             },
             {
-                path: "/our-story",
-                name: "Our Story",
+                path:  Routing.ourStory.path,
+                name: Routing.ourStory.name,
                 exact: false,
                 component: OurStory
             },
             {
-                path: "/our-team",
-                name: "Our Team",
+                path:  Routing.ourTeam.path,
+                name: Routing.ourTeam.name,
                 exact: false,
                 component: OurTeam
             },
             {
-                path: "/news",
-                name: "News",
+                path: Routing.news.path,
+                name: Routing.news.name,
                 exact: false,
                 component: News
+            },
+            {
+                path: Routing.login.path,
+                name: Routing.login.name,
+                exact: false,
+                component: Login
             }
         ]
     }
