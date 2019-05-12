@@ -3,7 +3,7 @@
     background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../assets/img/maintenance.jpg") no-repeat center;
     background-size: cover;
     min-width: 100%;
-    min-height: px-to-rem(760);
+    min-height: 100vh;
     position: relative;
 
     .ScheduleCall-Text {
