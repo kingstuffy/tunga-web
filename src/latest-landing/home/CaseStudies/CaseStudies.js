@@ -10,6 +10,7 @@ import User2 from "../../assets/img/user/user2.png";
 import { paging } from "../../Utils/Utils";
 import { Col, Row } from "reactstrap";
 import CaseStudyCard from "./CaseStudyCard/CaseStudyCard";
+import Icon from "../../shared/core/Icon";
 import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 
 class CaseStudies extends Component {
@@ -146,16 +147,15 @@ class CaseStudies extends Component {
                         clients in 12 countries</p>
                     <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and require a
                         variety of technologies, but usually have one thing in common: they want to go live ASAP!</p>
-                    <PaginateArrow float="float-right" paginate={this.state.paginate} color='text-primary'
-                                   data={this.state.data}/>
+                    <PaginateArrow This={this}  float="float-right" color="text-primary" />
 
                     <div className="card-min-height">
                         {this.state.paginate.transition && <Row className="animated fadeInRight">
-                            {this.state.dataPerPage.map((data, i) =>
-                                <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
-                                    <CaseStudyCard caseStudy={data}/>
-                                </Col>)}
-                        </Row>}
+                        {this.state.dataPerPage.map((data, i) =>
+                            <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
+                                <CaseStudyCard caseStudy={data}/>
+                            </Col>)}
+                    </Row>}
                     </div>
                 </div>
             </section>

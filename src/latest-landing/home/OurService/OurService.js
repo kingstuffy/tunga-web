@@ -8,7 +8,7 @@ import Service3 from "../../assets/img/service/service3.png";
 import Service4 from "../../assets/img/service/service4.png";
 import Icon from "../../shared/core/Icon";
 import { paging } from "../../Utils/Utils";
-import PaginateArrow from "../CaseStudies/CaseStudies";
+import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 
 class OurService extends Component {
     constructor(props) {
@@ -86,8 +86,7 @@ class OurService extends Component {
                 <div className="ml-3 mr-3">
                     <h4 className="text-primary text-uppercase">
                         Our Services
-                        <PaginateArrow float="float-right" paginate={this.state.paginate} color='text-primary'
-                                       data={this.state.data}/>
+                        <PaginateArrow This={this}  float="float-right" color="text-primary" />
                     </h4>
                     <div className="card-min-height">
                         {this.state.paginate.transition && <Row className="animated fadeInRight">
