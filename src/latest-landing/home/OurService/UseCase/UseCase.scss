@@ -1,0 +1,18 @@
+@import "../../../assets/scss/variable";
+
+.UseCase {
+    position: relative;
+    width: 100%;
+
+    .case-board {
+        background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../../assets/img/service/service_1.png") no-repeat center;
+        background-size: cover;
+        width: 100%;
+        position: relative;
+    }
+
+    .case-content {
+        position: absolute;
+        bottom: 20px;
+    }
+}

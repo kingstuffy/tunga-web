@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./OurService.scss";
-import { Col, Row } from "reactstrap";
+import { CardBody, Col, Media, Row } from "reactstrap";
 import ServiceCard from "./ServiceCard/ServiceCard";
 import Service1 from "../../assets/img/service/service1.png";
 import Service2 from "../../assets/img/service/service2.png";
@@ -9,6 +9,7 @@ import Service4 from "../../assets/img/service/service4.png";
 import Icon from "../../shared/core/Icon";
 import { paging } from "../../Utils/Utils";
 import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
+import UseCase from "./UseCase/UseCase";
 
 class OurService extends Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class OurService extends Component {
             ],
             dataPerPage: [],
             paginate: {
-                perPage: 4,
+                perPage: 1,
                 current: 1,
                 transition: false
             }
@@ -84,18 +85,65 @@ class OurService extends Component {
         return (
             <section className="OurService p-lg-5">
                 <div className="ml-3 mr-3">
-                    <h4 className="text-primary text-uppercase">
-                        Our Services
-                        <PaginateArrow This={this}  float="float-right" color="text-primary" />
-                    </h4>
-                    <div className="card-min-height">
-                        {this.state.paginate.transition && <Row className="animated fadeInRight">
-                            {this.state.dataPerPage.map((service, i) =>
-                                <Col key={i} sm="12" lg="3" md="3" xs="12" xl="3" className="p-2 mt-2">
-                                    <ServiceCard service={service}/>
-                                </Col>)}
-                        </Row>}
-                    </div>
+                    <Row>
+                        <Col sm="12" lg="7" md="7" xl="7" xs="12" className="service-bg position-relative">
+                            <div className="service-lead-time">
+                                <Row>
+                                    <Col>
+                                        <Media>
+                                            <Media left href="#">
+                                                <Icon name="speed-up" size="md"/>
+                                            </Media>
+                                            <Media body className="pl-2 size-9 text-white">
+                                                <Media heading className="size-9 text-white text-uppercase">
+                                                    Lead Time
+                                                </Media>
+                                                1-2 weeks
+                                            </Media>
+                                        </Media>
+                                    </Col>
+                                    <Col>
+                                        <Media>
+                                            <Media left href="#">
+                                                <Icon name="tag" size="md"/>
+                                            </Media>
+                                            <Media body className="pl-2 size-9 text-white">
+                                                <Media heading className="size-9 text-white text-uppercase">
+                                                    Price Indication
+                                                </Media>
+                                                23 - 26 EUR per hour
+                                                23 - 26 EUR per hour
+                                                23 - 26 EUR per hour
+                                                23 - 26 EUR per hour
+                                            </Media>
+                                        </Media>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                        <Col sm="12" lg="5" md="5" xl="5" xs="12">
+                            <section>
+                                <p className="text-primary size-16 text-uppercase">
+                                    Our Services
+                                    <PaginateArrow This={this} float="float-right" color="text-primary"/>
+                                </p>
+                                <div className="card-min-height">
+                                    {this.state.paginate.transition && <Row className="animated fadeInRight">
+                                        {this.state.dataPerPage.map((service, i) =>
+                                            <Col key={i} sm="12" lg="12" md="12" xs="12" xl="12" className="p-2 mt-2">
+                                                <ServiceCard service={service}/>
+                                            </Col>)}
+                                    </Row>}
+                                </div>
+                            </section>
+                            <section>
+                                <p className="text-primary size-16 text-uppercase">
+                                    Use Case
+                                </p>
+                                <UseCase />
+                            </section>
+                        </Col>
+                    </Row>
                 </div>
             </section>
         );

@@ -80,7 +80,7 @@ a {
 }
 
 .size-16 {
-    font-size: px-to-rem(16)!important;
+    font-size: px-to-rem(16) !important;
 }
 
 .size-17 {
@@ -90,6 +90,7 @@ a {
 .size-18 {
     font-size: 18px !important;
 }
+
 .size-19 {
     font-size: px-to-rem(19) !important;
 }
@@ -102,9 +103,18 @@ a {
     cursor: pointer !important;
 }
 
-i.tg-ic-previous, i.tg-ic-next  {
+i.tg-ic-previous, i.tg-ic-next {
     cursor: pointer !important;
 }
+
 .text-gray {
     color: #ddd !important;
+}
+
+.t-light-blue {
+    color: get-color('t-light-blue') !important;
+}
+
+.bg-t-light-blue {
+    background: get-color('t-light-blue') !important;
 }
