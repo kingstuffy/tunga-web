@@ -91,8 +91,8 @@ class OurService extends Component {
                                 <Row>
                                     <Col>
                                         <Media>
-                                            <Media left href="#">
-                                                <Icon name="speed-up" size="md"/>
+                                            <Media left href="#" className="mr-1">
+                                                <Icon name="speed-up" size="md"  className="text-white"/>
                                             </Media>
                                             <Media body className="pl-2 size-9 text-white">
                                                 <Media heading className="size-9 text-white text-uppercase">
@@ -104,17 +104,17 @@ class OurService extends Component {
                                     </Col>
                                     <Col>
                                         <Media>
-                                            <Media left href="#">
-                                                <Icon name="tag" size="md"/>
+                                            <Media left href="#"  className="mr-1">
+                                                <Icon name="tag" size="md" className="text-white"/>
                                             </Media>
                                             <Media body className="pl-2 size-9 text-white">
                                                 <Media heading className="size-9 text-white text-uppercase">
                                                     Price Indication
                                                 </Media>
-                                                23 - 26 EUR per hour
-                                                23 - 26 EUR per hour
-                                                23 - 26 EUR per hour
-                                                23 - 26 EUR per hour
+                                                23 - 26 EUR per hour <br/>
+                                                23 - 26 EUR per hour <br/>
+                                                23 - 26 EUR per hour <br/>
+                                                23 - 26 EUR per hour <br/>
                                             </Media>
                                         </Media>
                                     </Col>
@@ -123,10 +123,10 @@ class OurService extends Component {
                         </Col>
                         <Col sm="12" lg="5" md="5" xl="5" xs="12">
                             <section>
-                                <p className="text-primary size-16 text-uppercase">
+                                <div className="text-primary size-16 text-uppercase">
                                     Our Services
                                     <PaginateArrow This={this} float="float-right" color="text-primary"/>
-                                </p>
+                                </div>
                                 <div className="card-min-height">
                                     {this.state.paginate.transition && <Row className="animated fadeInRight">
                                         {this.state.dataPerPage.map((service, i) =>

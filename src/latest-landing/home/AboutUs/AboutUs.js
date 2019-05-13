@@ -27,7 +27,7 @@ class AboutUs extends Component {
                   </div>
                   </div>
               </Col>
-              <Col sm="12" lg="6" md="6" >
+              <Col sm="12" lg="6" md="6"  className="AboutMsg p-lg-5 mt-5">
                   <ListGroup className="p-0">
                       <ListGroupItem className="border-0 pl-0">
                           <Icon name='check-circle-o' size='xs' className="text-primary"/>

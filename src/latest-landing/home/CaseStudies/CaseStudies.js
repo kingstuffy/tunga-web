@@ -140,32 +140,32 @@ class CaseStudies extends Component {
 
     render() {
         return (
-            <section className="CaseStudies p-lg-5">
-                <div className="ml-4 mr-4">
-                    <div className="case-content">
-                        <Row>
-                            <Col sm="12" md="5" lg="5" xl="6" xs="12">
-                                <p className="case-title text-primary size-16 mb-3">Case Studies</p>
-                                <p className="case-subtitle text-blue w-75 font-weight-bold">Tunga has completed work for over
-                                    100
-                                    clients in 12 countries</p>
-                                <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and
-                                    require a
-                                    variety of technologies, but usually have one thing in common: they want to go live
-                                    ASAP!</p>
-                                <PaginateArrow This={this} float="float-right" color="text-primary"/>
+            <section className="CaseStudies">
+                <div style={{position: "absolute", bottom: 0}}>
+                <div className="col-11 col-sm-11 col-lg-12 col-md-12 bg-white h-100">
+                    <div className="" style={{padding: '30px'}}>
+                        <p className="case-title text-primary size-16 mb-3">Case Studies</p>
+                        <p className="case-subtitle text-blue font-weight-bold">
+                            Tunga has completed work for over 100 clients in 12 countries
+                        </p>
+                        <p className="case-summary size-16 w-75 mb-5">
+                            Our clients come from all kinds of industries and
+                            require a
+                            variety of technologies, but usually have one thing in common: they want to go live
+                            ASAP!
+                        </p>
+                        <PaginateArrow This={this} float="float-right" color="text-primary"/>
 
-                                <div className="card-min-height">
-                                    {this.state.paginate.transition && <Row className="animated fadeInRight">
-                                        {this.state.dataPerPage.map((data, i) =>
-                                            <Col key={i} sm="12" lg="12" md="12" className="p-4 mt-2">
-                                                <CaseStudyCard caseStudy={data}/>
-                                            </Col>)}
-                                    </Row>}
-                                </div>
-                            </Col>
-                        </Row>
+                        <div className="card-min-height">
+                            {this.state.paginate.transition && <Row className="animated fadeInLeft">
+                                {this.state.dataPerPage.map((data, i) =>
+                                    <Col key={i} sm="12" lg="12" md="12" className="p-4 mt-2">
+                                        <CaseStudyCard caseStudy={data}/>
+                                    </Col>)}
+                            </Row>}
+                        </div>
                     </div>
+                </div>
                 </div>
             </section>
         );
