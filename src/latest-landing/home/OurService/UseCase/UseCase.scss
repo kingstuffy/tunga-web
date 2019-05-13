@@ -8,11 +8,11 @@
         background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../../assets/img/service/service_1.png") no-repeat center;
         background-size: cover;
         width: 100%;
-        position: relative;
+        height: 250px;
     }
-
     .case-content {
         position: absolute;
-        bottom: 20px;
+        bottom: 2px;
+        left: 10px;
     }
 }

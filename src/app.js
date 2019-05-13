@@ -17,9 +17,18 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import store from './store';
+
+/****
+ * Latest landing is created as a new front with all needed files inclusive. currently leverage on root app files in
+ * 1. Templates folder
+ * 2. Scss Folder
+ * After design has been approved, Merging the old app.js commented to the new app.js will be done but for the sake of backward compatibility
+ * to enable easy development. this is used.
+ * File folder have underscore as prefix are screens for template_1
+ */
 import App from "./latest-landing/App";
 
-// import App from './components/App';
+// import App from './components/App'; // commented to test new app design
 
 ReactDOM.render(
     <Provider store={store}>

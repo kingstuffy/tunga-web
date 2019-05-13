@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./PaginateArrow.scss";
 import Icon from "../core/Icon";
 
@@ -13,7 +12,7 @@ class PaginateArrow extends Component {
         const {paginate, data} = This.state;
         return (
             <span className="PaginateArrow">
-                <p className={float}>
+                <span className={float}>
                     <Icon onClick={() => This.paging(paginate.current - 1)}
                           className={paginate.current === 1 ? "text-gray" : color}
                           name="previous" size="md"/>
@@ -23,8 +22,8 @@ class PaginateArrow extends Component {
                           name="next" size="md"/>
                     {/*<button onClick={() => this.paging(this.state.paginate.current - 1)}>Previous</button>*/}
                     {/*<button onClick={() => this.paging(this.state.paginate.current + 1)}>Next</button>*/}
-                </p>
-                <p className="clearfix"/>
+                </span>
+                <span className="clearfix"/>
             </span>
         );
     }

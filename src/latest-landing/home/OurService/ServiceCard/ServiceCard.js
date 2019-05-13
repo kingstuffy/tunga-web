@@ -11,8 +11,8 @@ class ServiceCard extends Component {
      const { service } = this.props;
     return (
       <div className="ServiceCard">
-          <Card>
-              <CardBody>
+          <Card className="border-0">
+              <CardBody className="p-2">
                   <CardTitle className="text-blue">{service.title}</CardTitle>
                   <CardText> {service.description}</CardText>
               </CardBody>

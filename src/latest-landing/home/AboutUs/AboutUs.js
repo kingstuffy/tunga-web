@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import './AboutUs.scss';
 import { Col, ListGroup, ListGroupItem, Media, Row } from "reactstrap";
 import About from '../../assets/img/about/about_.png';
@@ -28,6 +27,7 @@ class AboutUs extends Component {
                   </div>
               </Col>
               <Col sm="12" lg="6" md="6"  className="AboutMsg p-lg-5 mt-5">
+                  <div className="ml-4 mr-4">
                   <ListGroup className="p-0">
                       <ListGroupItem className="border-0 pl-0">
                           <Icon name='check-circle-o' size='xs' className="text-primary"/>
@@ -50,6 +50,7 @@ class AboutUs extends Component {
                           &nbsp; Contact person in your country and/or language
                       </ListGroupItem>
                   </ListGroup>
+                  </div>
               </Col>
           </Row>
       </section>

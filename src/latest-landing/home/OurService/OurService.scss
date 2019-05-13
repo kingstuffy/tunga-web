@@ -2,8 +2,6 @@
 @import "../../assets/scss/variable";
 .OurService {
     //background: rgba(251, 234, 237, 0.2);
-    padding-top: 8% !important;
-    padding-bottom: 8% !important;
     min-height: 100vh;
     .card-center {
         @extend %vertical-align;
@@ -13,9 +11,10 @@
         min-height: 300px;
     }
     .service-bg {
-        background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../assets/img/service/service_1.png") no-repeat center;
+        background: linear-gradient(-180deg, rgba(51, 51, 51, 0.2), get-color('t-light-blue')), url("../../assets/img/service/service_1.png") no-repeat center;
         background-size: cover;
         width: 100%;
+        height: 100vh;
         position: relative;
     }
     .service-lead-time {

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./CaseStudies.scss";
 import Case1 from "../../assets/img/case-study/case1.png";
 import Case2 from "../../assets/img/case-study/case2.png";
@@ -10,7 +9,6 @@ import User2 from "../../assets/img/user/user2.png";
 import { paging } from "../../Utils/Utils";
 import { Col, Row } from "reactstrap";
 import CaseStudyCard from "./CaseStudyCard/CaseStudyCard";
-import Icon from "../../shared/core/Icon";
 import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 
 class CaseStudies extends Component {
@@ -20,7 +18,7 @@ class CaseStudies extends Component {
             data: [
                 {
                     title: "Dedicated developers",
-                    description: "Reinforce your team with remote developers - full time or part time; temporary or permanent",
+                    description: "As a startup with a technical proposition but not being developers ourselves, we needed a reliable partner to develop our product with. Tunga has consulted us to figure out the best technical approach and developed our product in clear sprints ever since ",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
                     price: "23 - 26 EUR per hour",
@@ -140,33 +138,33 @@ class CaseStudies extends Component {
 
     render() {
         return (
-            <section className="CaseStudies">
-                <div style={{position: "absolute", bottom: 0}}>
-                <div className="col-11 col-sm-11 col-lg-12 col-md-12 bg-white h-100">
-                    <div className="" style={{padding: '30px'}}>
-                        <p className="case-title text-primary size-16 mb-3">Case Studies</p>
-                        <p className="case-subtitle text-blue font-weight-bold">
-                            Tunga has completed work for over 100 clients in 12 countries
-                        </p>
-                        <p className="case-summary size-16 w-75 mb-5">
-                            Our clients come from all kinds of industries and
-                            require a
-                            variety of technologies, but usually have one thing in common: they want to go live
-                            ASAP!
-                        </p>
-                        <PaginateArrow This={this} float="float-right" color="text-primary"/>
+            <section className="CaseStudies vh-100">
+                {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
+                    <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top">
+                        <div className="case-content bg-white">
+                            <h4 className="case-title text-primary size-16 mb-3">Case Studies</h4>
+                            <p className="case-subtitle text-blue font-weight-bold">
+                                Tunga has completed work for over 100 clients in 12 countries
+                            </p>
+                            <p className="case-summary size-16 w-75 mb-5">
+                                Our clients come from all kinds of industries and
+                                require a
+                                variety of technologies, but usually have one thing in common: they want to go live
+                                ASAP!
+                            </p>
+                            <PaginateArrow This={this} float="float-right" color="text-primary"/>
 
-                        <div className="card-min-height">
-                            {this.state.paginate.transition && <Row className="animated fadeInLeft">
-                                {this.state.dataPerPage.map((data, i) =>
-                                    <Col key={i} sm="12" lg="12" md="12" className="p-4 mt-2">
-                                        <CaseStudyCard caseStudy={data}/>
-                                    </Col>)}
-                            </Row>}
+                            <div className="card-min-height">
+                                {this.state.paginate.transition && <Row className="animated fadeInLeft">
+                                    {this.state.dataPerPage.map((data, i) =>
+                                        <Col key={i} sm="12" lg="12" md="12" className="p-4 mt-2">
+                                            <CaseStudyCard caseStudy={data}/>
+                                        </Col>)}
+                                </Row>}
+                            </div>
                         </div>
                     </div>
-                </div>
-                </div>
+                {/*</div>*/}
             </section>
         );
     }

@@ -29,16 +29,15 @@ class UseCase extends Component {
         return (
             <div className="UseCase">
                 {this.state.data.map((info, i) =>
-                    <div className="case-board mt-1"
-                         key={i}
+                    <div className="case-board mt-1 position-relative" key={i}
                          style={{ background: `linear-gradient(0deg, rgba(6, 46, 100, 0.8), rgba(6, 46, 100, 0.8)), url(${info.imgUrl}) no-repeat center` }}>
                         <div className="case-content">
-                            <Card className='border-0'>
+                            <Card className='border-0 bg-transparent'>
                                 <CardBody>
-                                    <CardTitle className="size-16 text-uppercase text-blue">{info.title}</CardTitle>
+                                    <CardTitle className="size-16 text-uppercase text-white">{info.title}</CardTitle>
                                     <CardText>
                                         <Button size="md"
-                                                className="p-4 mt-1 border-radius-0 bg-transparent text-blue border-color-white">
+                                                className="p-4 mt-1 border-radius-0 bg-transparent text-white border-color-white">
                                             Read Now
                                         </Button>
                                     </CardText>
