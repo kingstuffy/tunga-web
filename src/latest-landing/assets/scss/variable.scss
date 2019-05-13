@@ -1,9 +1,8 @@
-
 @import "../../../scss/variables";
 // Colors
 $colors: (
-    't-light-blue': rgba(6, 46, 100, 0.8),
-    't-blue': #062E64
+    "t-light-blue": rgba(6, 46, 100, 0.8),
+    "t-blue": #062e64
 );
 @function get-color($key) {
     @return map-get($colors, $key) or map-get($color-palette, $key);

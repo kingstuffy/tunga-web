@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Tooltip } from 'reactstrap';
-import randomstring from 'randomstring';
+import React from "react";
+import PropTypes from "prop-types";
+import { Tooltip } from "reactstrap";
+import randomstring from "randomstring";
 
 export default class OverlayTooltip extends React.Component {
-
     static defaultProps = {
-        placement: 'auto'
+        placement: "auto"
     };
 
     static propTypes = {
@@ -32,16 +31,24 @@ export default class OverlayTooltip extends React.Component {
     }
 
     render() {
-        const {overlay, children, className, placement} = this.props,
+        const { overlay, children, className, placement } = this.props,
             elementId = `tooltip-${this.state.id}`;
 
         return (
             <React.Fragment>
-                <div id={elementId} className={`d-inline-block ${className || ''}`}>
+                <div
+                    id={elementId}
+                    className={`d-inline-block ${className || ""}`}
+                >
                     {children}
                 </div>
 
-                <Tooltip isOpen={this.state.open} target={elementId} toggle={this.toggle} placement={placement}>
+                <Tooltip
+                    isOpen={this.state.open}
+                    target={elementId}
+                    toggle={this.toggle}
+                    placement={placement}
+                >
                     {overlay}
                 </Tooltip>
             </React.Fragment>

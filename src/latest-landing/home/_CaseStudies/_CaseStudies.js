@@ -20,7 +20,8 @@ class _CaseStudies extends Component {
             data: [
                 {
                     title: "Dedicated developers",
-                    description: "Reinforce your team with remote developers - full time or part time; temporary or permanent",
+                    description:
+                        "Reinforce your team with remote developers - full time or part time; temporary or permanent",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
                     price: "23 - 26 EUR per hour",
@@ -35,7 +36,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Project outsourcing",
-                    description: "We run the show for you from idea to launch - x.0 versions, beta’s, alpha’s, MVP’s, prototypes ",
+                    description:
+                        "We run the show for you from idea to launch - x.0 versions, beta’s, alpha’s, MVP’s, prototypes ",
                     imgUrl: Case2,
                     leadTime: "3 weeks",
                     price: "5,000 EUR (prototype) - 18,000 EUR (v1.0) ",
@@ -50,7 +52,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Scoping & design",
-                    description: "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
+                    description:
+                        "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
                     price: "1,000 - 3,000 EUR",
@@ -65,7 +68,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Developers on-demand",
-                    description: "Quick access to a developer for incidental needs - Product improvements, additional func",
+                    description:
+                        "Quick access to a developer for incidental needs - Product improvements, additional func",
                     imgUrl: Case2,
                     leadTime: "1 week",
                     price: "23 - 26 EUR per hour",
@@ -80,7 +84,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Developers on-demand",
-                    description: "Quick access to a developer for incidental needs - Product improvements, additional func",
+                    description:
+                        "Quick access to a developer for incidental needs - Product improvements, additional func",
                     imgUrl: Case2,
                     leadTime: "1 week",
                     price: "23 - 26 EUR per hour",
@@ -95,7 +100,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Scoping & design",
-                    description: "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
+                    description:
+                        "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
                     price: "1,000 - 3,000 EUR",
@@ -110,7 +116,8 @@ class _CaseStudies extends Component {
                 },
                 {
                     title: "Dedicated developers",
-                    description: "Reinforce your team with remote developers - full time or part time; temporary or permanent",
+                    description:
+                        "Reinforce your team with remote developers - full time or part time; temporary or permanent",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
                     price: "23 - 26 EUR per hour",
@@ -132,30 +139,52 @@ class _CaseStudies extends Component {
         };
     }
 
-    paging = (current) => this.setState({ dataPerPage: paging(current, this) });
+    paging = current => this.setState({ dataPerPage: paging(current, this) });
 
     componentDidMount() {
-        this.setState({ dataPerPage: paging(this.state.paginate.current, this) });
+        this.setState({
+            dataPerPage: paging(this.state.paginate.current, this)
+        });
     }
 
     render() {
         return (
             <section className="CaseStudies p-lg-5">
                 <div className="ml-4 mr-4">
-                    <h4 className="case-title text-primary mb-3">Case Studies</h4>
-                    <p className="case-subtitle text-blue w-75 font-weight-bold">Tunga has completed work for over 100
-                        clients in 12 countries</p>
-                    <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and require a
-                        variety of technologies, but usually have one thing in common: they want to go live ASAP!</p>
-                    <PaginateArrow This={this}  float="float-right" color="text-primary" />
+                    <h4 className="case-title text-primary mb-3">
+                        Case Studies
+                    </h4>
+                    <p className="case-subtitle text-blue w-75 font-weight-bold">
+                        Tunga has completed work for over 100 clients in 12
+                        countries
+                    </p>
+                    <p className="case-summary size-16 w-50">
+                        Our clients come from all kinds of industries and
+                        require a variety of technologies, but usually have one
+                        thing in common: they want to go live ASAP!
+                    </p>
+                    <PaginateArrow
+                        This={this}
+                        float="float-right"
+                        color="text-primary"
+                    />
 
                     <div className="card-min-height">
-                        {this.state.paginate.transition && <Row className="animated fadeInRight">
-                        {this.state.dataPerPage.map((data, i) =>
-                            <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
-                                <_CaseStudyCard caseStudy={data}/>
-                            </Col>)}
-                    </Row>}
+                        {this.state.paginate.transition && (
+                            <Row className="animated fadeInRight">
+                                {this.state.dataPerPage.map((data, i) => (
+                                    <Col
+                                        key={i}
+                                        sm="12"
+                                        lg="6"
+                                        md="6"
+                                        className="p-4 mt-2"
+                                    >
+                                        <_CaseStudyCard caseStudy={data} />
+                                    </Col>
+                                ))}
+                            </Row>
+                        )}
                     </div>
                 </div>
             </section>

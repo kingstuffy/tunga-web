@@ -4,8 +4,8 @@
  */
 
 export default {
-    home: { path: "/", name: "Tunga" },
-    ourTeam: { path: "/our-team", name: "Our Team" },
-    ourStory: { path: "/our-story", name: "Our Story" },
-    news: { path: "/news", name: "News" },
+  home: { path: "/", name: "Tunga" },
+  ourTeam: { path: "/our-team", name: "Our Team" },
+  ourStory: { path: "/our-story", name: "Our Story" },
+  news: { path: "/news", name: "News" }
 };

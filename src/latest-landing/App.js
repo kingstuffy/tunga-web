@@ -4,7 +4,6 @@ import Routes from "./configs/Routes.conf";
 
 // console.log = () => null; // silent all consoles
 class App extends Component {
-
     loading = () => <div>Loading...</div>;
 
     render() {
@@ -12,11 +11,21 @@ class App extends Component {
             <Suspense fallback={this.loading()}>
                 <Switch>
                     {Routes.map((route, i) => {
-                        return <Route exact={route.exact} key={i} render={(props) => (
-                            <route.component name={route.name} childRoutes={route.childRoutes} {...props} />)}
-                                      path={route.path}/>;
-                    })
-                    }
+                        return (
+                            <Route
+                                exact={route.exact}
+                                key={i}
+                                render={props => (
+                                    <route.component
+                                        name={route.name}
+                                        childRoutes={route.childRoutes}
+                                        {...props}
+                                    />
+                                )}
+                                path={route.path}
+                            />
+                        );
+                    })}
                 </Switch>
             </Suspense>
         );

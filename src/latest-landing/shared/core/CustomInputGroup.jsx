@@ -1,58 +1,57 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from "prop-types";
+import React from "react";
 
-import InputGroup from './InputGroup';
-import {filterEventProps} from "./utils/events";
-import {filterInputProps} from "./utils/forms";
+import InputGroup from "./InputGroup";
+import { filterEventProps } from "./utils/events";
+import { filterInputProps } from "./utils/forms";
 import Icon from "./Icon";
 
 const CUSTOM_INPUTS = {
     search: {
-        className: 'input-search input-search-branded',
-        placeholder: 'Search',
+        className: "input-search input-search-branded",
+        placeholder: "Search",
         prepend: <Icon name="search" />
     },
-    'search-plain': {
-        className: 'input-search ',
-        placeholder: 'Search',
+    "search-plain": {
+        className: "input-search ",
+        placeholder: "Search",
         prepend: <Icon name="search" />
     },
     message: {
-        placeholder: 'Type message here',
+        placeholder: "Type message here",
         isAppendText: false,
         append: (
-            <button className="btn"
-                    type="button">
+            <button className="btn" type="button">
                 <Icon name="paper-plane" />
             </button>
         )
     },
     url: {
-        placeholder: 'Paste URL here',
+        placeholder: "Paste URL here",
         prepend: <Icon name="link" />
     },
     personal: {
-        placeholder: 'Name',
+        placeholder: "Name",
         prepend: <Icon name="avatar" />
     },
     address: {
-        placeholder: 'Address',
+        placeholder: "Address",
         prepend: <Icon name="map-marker" />
     },
     tel: {
-        placeholder: 'Phone number',
+        placeholder: "Phone number",
         prepend: <Icon name="phone" />
     },
     email: {
-        type: 'email',
-        placeholder: 'Email address',
+        type: "email",
+        placeholder: "Email address",
         prepend: <Icon name="envelope" />
     },
     password: {
-        type: 'password',
-        placeholder: 'Password',
+        type: "password",
+        placeholder: "Password",
         prepend: <Icon name="lock" />
-    },
+    }
 };
 
 export default class CustomInputGroup extends React.Component {
@@ -63,7 +62,7 @@ export default class CustomInputGroup extends React.Component {
     static propTypes = {
         variant: PropTypes.string,
         className: PropTypes.string,
-        placeholder: PropTypes.string,
+        placeholder: PropTypes.string
     };
 
     getProperties() {
@@ -74,16 +73,17 @@ export default class CustomInputGroup extends React.Component {
             ...variantProps,
             ...overrideProps,
             ...{
-                className: `${variantProps.className || ''} ${overrideProps.className || ''}`
+                className: `${variantProps.className ||
+                    ""} ${overrideProps.className || ""}`
             }
-        }
+        };
     }
 
     cleanProps() {
-        const allowedProps = ['className', 'placeholder', 'prepend', 'type'],
+        const allowedProps = ["className", "placeholder", "prepend", "type"],
             cleanedProps = {};
         allowedProps.forEach(key => {
-            if(this.props[key]) {
+            if (this.props[key]) {
                 cleanedProps[key] = this.props[key];
             }
         });
@@ -92,9 +92,11 @@ export default class CustomInputGroup extends React.Component {
 
     render() {
         return (
-            <InputGroup {...this.getProperties()}
-                        {...filterInputProps(this.props)}
-                        {...filterEventProps(this.props)}/>
+            <InputGroup
+                {...this.getProperties()}
+                {...filterInputProps(this.props)}
+                {...filterEventProps(this.props)}
+            />
         );
     }
 }

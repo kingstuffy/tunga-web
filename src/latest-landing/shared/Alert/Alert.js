@@ -1,20 +1,15 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import './Alert.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./Alert.scss";
 
 class Alert extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-  render(){
-    return (
-      <div className="Alert">
-    
-      </div>
-    )
+  render() {
+    return <div className="Alert" />;
   }
 }
-Alert.propTypes = {
-}
+Alert.propTypes = {};
 
 export default Alert;

@@ -1,17 +1,17 @@
 @import "variable";
 
 .bg-primary {
-    background: get-color('t-blue') !important;
-    color: get-color('white')
+    background: get-color("t-blue") !important;
+    color: get-color("white");
 }
 
 .bg-light {
-    background: get-color('t-light-blue') !important;
-    color: get-color('white')
+    background: get-color("t-light-blue") !important;
+    color: get-color("white");
 }
 
 .text-blue {
-    color: get-color('t-blue') !important;
+    color: get-color("t-blue") !important;
 }
 
 .border-radius-0 {
@@ -19,7 +19,7 @@
 }
 
 .border-color-white {
-    border-color: get-color('white') !important;
+    border-color: get-color("white") !important;
 }
 
 a {
@@ -41,7 +41,6 @@ a {
 .w-90 {
     width: 90% !important;
 }
-
 
 .size-5 {
     font-size: 5px !important;
@@ -103,7 +102,8 @@ a {
     cursor: pointer !important;
 }
 
-i.tg-ic-previous, i.tg-ic-next {
+i.tg-ic-previous,
+i.tg-ic-next {
     cursor: pointer !important;
 }
 
@@ -112,11 +112,11 @@ i.tg-ic-previous, i.tg-ic-next {
 }
 
 .t-light-blue {
-    color: get-color('t-light-blue') !important;
+    color: get-color("t-light-blue") !important;
 }
 
 .bg-t-light-blue {
-    background: get-color('t-light-blue') !important;
+    background: get-color("t-light-blue") !important;
 }
 
 .border-right-2 {

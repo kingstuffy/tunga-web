@@ -1,9 +1,10 @@
 @import "../../assets/scss/variable";
-NavLink, RNavLink{
+NavLink,
+RNavLink {
     font-size: 16px;
     line-height: 19px;
     font-weight: bold !important;
-    color: get-color('white')
+    color: get-color("white");
 }
 .Nav .navbar {
     box-shadow: none !important;

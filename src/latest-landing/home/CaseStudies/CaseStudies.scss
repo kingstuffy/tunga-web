@@ -2,7 +2,12 @@
 @import "../../assets/scss/variable";
 .CaseStudies {
     height: 100vh;
-    background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../assets/img/case-study/case_1.png") no-repeat center;
+    background: linear-gradient(
+            0deg,
+            get-color("t-light-blue"),
+            get-color("t-light-blue")
+        ),
+        url("../../assets/img/case-study/case_1.png") no-repeat center;
     background-size: cover;
     position: relative;
     //padding-top: 20px;

@@ -7,29 +7,42 @@ import Header from "../layout/Header/Header";
 import IconButton from "../shared/core/IconButton";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
+  render() {
+    return (
             <div className="Home">
                 <Header />
                 <div>
                     {this.props.childRoutes.map((route, i) => {
-                        return <Route exact={route.exact} key={i}
-                                      render={props => (<route.component name={route.name} {...props} />)}
-                                      path={route.path}/>;
-                    })
-                    }
+                      return (
+                            <Route
+                                exact={route.exact}
+                                key={i}
+                                render={props => (
+                                    <route.component
+                                        name={route.name}
+                                        {...props}
+                                    />
+                                )}
+                                path={route.path}
+                            />
+                      );
+                    })}
                 </div>
-                <Footer/>
+                <Footer />
                 <div className="position-fixed icon-chat-bottom bg-primary">
-                    <IconButton name="chat-alt" size="md" className="text-white" />
+                    <IconButton
+                        name="chat-alt"
+                        size="md"
+                        className="text-white"
+                    />
                 </div>
             </div>
-        );
-    }
+    );
+  }
 }
 
 Home.propTypes = {};

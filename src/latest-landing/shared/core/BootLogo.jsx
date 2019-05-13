@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import Progress from "./Progress";
 
 const BootLogo = ({}) => {
-    return (
+  return (
         <div className="boot-logo">
             <div>
-                <img src={require('../../../assets/images/logo.png')} />
+                <img src={require("../../../assets/images/logo.png")} />
             </div>
-            <Progress/>
+            <Progress />
         </div>
-    );
+  );
 };
 
 export default BootLogo;

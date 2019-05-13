@@ -1,20 +1,15 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import './Footer.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./Footer.scss";
 
 class Footer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-  render(){
-    return (
-      <div className="Footer">
-        Footer
-      </div>
-    )
+  render() {
+    return <div className="Footer">Footer</div>;
   }
 }
-Footer.propTypes = {
-}
+Footer.propTypes = {};
 
 export default Footer;

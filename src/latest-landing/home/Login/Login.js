@@ -1,20 +1,15 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import './Login.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./Login.scss";
 
 class Login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-  render(){
-    return (
-      <div className="Login">
-          Login
-      </div>
-    );
+  render() {
+    return <div className="Login">Login</div>;
   }
 }
-Login.propTypes = {
-}
+Login.propTypes = {};
 
 export default Login;
