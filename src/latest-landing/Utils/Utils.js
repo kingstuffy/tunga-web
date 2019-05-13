@@ -2,12 +2,7 @@ export const paging = (current, This) => {
   const { data, paginate, dataPerPage } = This.state;
   const { perPage } = paginate;
   if (current === 0) return This.state.dataPerPage;
-  console.log({
-    current,
-    data,
-    perPage,
-    count: Math.ceil(data.length / perPage)
-  });
+
   if (isNaN(current)) {
     This.setState({ paginate: { ...paginate, transition: true } });
     return This.state.dataPerPage;
@@ -24,19 +19,18 @@ export const paging = (current, This) => {
   if (current <= 1 || isNaN(current)) {
     current = 1;
     setTimeout(
-            () =>
-                This.setState({
-                  paginate: { current: 1, perPage, transition: true }
-                }),
-            300
-        );
+      () =>
+        This.setState({
+          paginate: { current: 1, perPage, transition: true }
+        }),
+      300
+    );
     return data.slice((current - 1) * perPage, current * perPage);
   }
   setTimeout(
-        () =>
-            This.setState({ paginate: { current, perPage, transition: true } }),
-        300
-    );
-  console.log((current - 1) * perPage, current * perPage);
+    () =>
+      This.setState({ paginate: { current, perPage, transition: true } }),
+    300
+  );
   return data.slice((current - 1) * perPage, current * perPage);
 };
