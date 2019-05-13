@@ -151,7 +151,7 @@ class CaseStudies extends Component {
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
                 <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top">
                     <div className="case-content bg-white">
-                        <h4 className="case-title text-primary size-16 mb-3">
+                        <h4 className="case-title text-primary text-uppercase size-16 mb-3">
                             Case Studies
                         </h4>
                         <p className="case-subtitle text-blue font-weight-bold">
