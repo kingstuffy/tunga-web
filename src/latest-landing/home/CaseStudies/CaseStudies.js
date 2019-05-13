@@ -126,7 +126,7 @@ class CaseStudies extends Component {
             ],
             dataPerPage: [],
             paginate: {
-                perPage: 2,
+                perPage: 1,
                 current: 1
             }
         };
@@ -142,20 +142,29 @@ class CaseStudies extends Component {
         return (
             <section className="CaseStudies p-lg-5">
                 <div className="ml-4 mr-4">
-                    <h4 className="case-title text-primary mb-3">Case Studies</h4>
-                    <p className="case-subtitle text-blue w-75 font-weight-bold">Tunga has completed work for over 100
-                        clients in 12 countries</p>
-                    <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and require a
-                        variety of technologies, but usually have one thing in common: they want to go live ASAP!</p>
-                    <PaginateArrow This={this}  float="float-right" color="text-primary" />
+                    <div className="case-content">
+                        <Row>
+                            <Col sm="12" md="5" lg="5" xl="6" xs="12">
+                                <p className="case-title text-primary size-16 mb-3">Case Studies</p>
+                                <p className="case-subtitle text-blue w-75 font-weight-bold">Tunga has completed work for over
+                                    100
+                                    clients in 12 countries</p>
+                                <p className="case-summary size-16 w-50">Our clients come from all kinds of industries and
+                                    require a
+                                    variety of technologies, but usually have one thing in common: they want to go live
+                                    ASAP!</p>
+                                <PaginateArrow This={this} float="float-right" color="text-primary"/>
 
-                    <div className="card-min-height">
-                        {this.state.paginate.transition && <Row className="animated fadeInRight">
-                        {this.state.dataPerPage.map((data, i) =>
-                            <Col key={i} sm="12" lg="6" md="6" className="p-4 mt-2">
-                                <CaseStudyCard caseStudy={data}/>
-                            </Col>)}
-                    </Row>}
+                                <div className="card-min-height">
+                                    {this.state.paginate.transition && <Row className="animated fadeInRight">
+                                        {this.state.dataPerPage.map((data, i) =>
+                                            <Col key={i} sm="12" lg="12" md="12" className="p-4 mt-2">
+                                                <CaseStudyCard caseStudy={data}/>
+                                            </Col>)}
+                                    </Row>}
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </div>
             </section>

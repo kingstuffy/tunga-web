@@ -1,8 +1,13 @@
 @import "../../assets/scss/util";
+@import "../../assets/scss/variable";
 .CaseStudies {
     padding-top: 8% !important;
     padding-bottom: 8% !important;
     min-height: 100vh;
+    background: linear-gradient(0deg, get-color('t-light-blue'), get-color('t-light-blue')), url("../../assets/img/case-study/case_1.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    position: relative;
     .card-center {
         @extend %vertical-align;
     }
@@ -18,5 +23,11 @@
     }
     .card-min-height {
         min-height: 450px;
+    }
+    .case-content {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        background: #fff;
     }
 }

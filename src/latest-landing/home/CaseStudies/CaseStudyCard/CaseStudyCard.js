@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./CaseStudyCard.scss";
-import { Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle, Col, Media, Row } from "reactstrap";
-import Icon from "../../../shared/core/Icon";
+import { Card, CardBody, CardText, CardTitle, Col, Media, Row } from "reactstrap";
 
 class CaseStudyCard extends Component {
     constructor(props) {
@@ -14,24 +13,27 @@ class CaseStudyCard extends Component {
         return (
             <div className="CaseStudyCard">
                 <Row>
-                    <Col sm="12" lg="5" md="5" xs="12" xl="5"
-                         className="p-0"
-                         style={{background: 'url(' + caseStudy.imgUrl + ') no-repeat center', backgroundSize: 'cover', minHeight: '375px'}} />
                     <Col sm="12" lg="7" md="7" xs="12" xl="7" className="p-0 border-0">
                         <Card className="border-0 pt-0">
-                            {/*<CardImg top width="100%" height="195px" src={caseStudy.imgUrl} alt="Card image cap" />*/}
                             <CardBody className="pt-0">
                                 {/*width="15%" height="15%"*/}
                                 <img src={caseStudy.icon} alt={caseStudy.title}/>
                                 <CardTitle className="text-blue size-12 mt-3">{caseStudy.title}</CardTitle>
-                                <CardTitle className="text-blue text-uppercase size-12 mt-3">Technology</CardTitle>
-                                <CardText className="size-10">{caseStudy.tech}</CardText>
-                                <CardTitle className="text-blue text-uppercase size-12 mt-3">Lead Time</CardTitle>
-                                <CardText className="size-10">{caseStudy.leadTime}</CardText>
-                                <CardTitle className="text-blue text-uppercase size-12 mt-3">Production Time</CardTitle>
-                                <CardText className="size-10">{caseStudy.price}</CardText>
+                                <Row>
+                                    <Col className="border-right-2">
+                                        <CardTitle className="text-blue text-uppercase size-12 mt-3">Technology</CardTitle>
+                                        <CardText className="size-10">{caseStudy.tech}</CardText>
+                                    </Col>
+                                    <Col className="border-right-2">
+                                        <CardTitle className="text-blue text-uppercase size-12 mt-3">Lead Time</CardTitle>
+                                        <CardText className="size-10">{caseStudy.leadTime}</CardText>
+                                    </Col>
+                                    <Col>
+                                        <CardTitle className="text-blue text-uppercase size-12 mt-3">Production Time</CardTitle>
+                                        <CardText className="size-10">{caseStudy.price}</CardText>
+                                    </Col>
+                                </Row>
                                 <CardText className="size-10"> {caseStudy.description}</CardText>
-                                {/*<img src={caseStudy.user.pic} alt="User"/>*/}
                                 <Media>
                                     <Media left href="#">
                                         <Media object src={caseStudy.user.pic} className="img-fluid rounded-circle" alt="Generic placeholder image" />
