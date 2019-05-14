@@ -5,6 +5,7 @@ import Home from "../home/Home";
 import DefaultBody from "../layout/Default/Default";
 import News from "../home/News/News";
 import Routing from "../constants/Routing";
+import BlogPage from "../home/BlogPage/BlogPage";
 
 export default [
   {
@@ -36,7 +37,13 @@ export default [
         name: Routing.news.name,
         exact: false,
         component: News
-      }
+      },
+      {
+        path: Routing.blog.path,
+        name: Routing.blog.name,
+        exact: false,
+        component: BlogPage
+      },
     ]
   }
 ];

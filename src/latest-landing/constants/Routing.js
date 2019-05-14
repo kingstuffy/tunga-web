@@ -7,5 +7,6 @@ export default {
   home: { path: "/", name: "Tunga" },
   ourTeam: { path: "/our-team", name: "Our Team" },
   ourStory: { path: "/our-story", name: "Our Story" },
-  news: { path: "/news", name: "News" }
+  news: { path: "/news", name: "News" },
+  blog: { path: "/blog", name: "Blog", loc: 'blog' },
 };
