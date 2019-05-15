@@ -11,41 +11,24 @@ class BlogHeader extends Component {
   }
 
   render() {
-    console.log('sss');
     return (
-            <div className="BlogHeader text-white position-relative">
-                <Nav />
-                <Row>
-                    <Col lg="12" sm="12" md="12">
-                        <div className="text-center BlogHeader-Text  font-weight-bold">
-                            The Quickest Road to Innovation Leads Through Africa
-                        </div>
-                        <div className="BlogHeader-Text-P font-weight-normal mt-3">
-                            Companies worldwide use Tunga’s workforce of
-                            exclusively African software engineers to build new
-                            tech products quickly, affordably and smoothly
-                        </div>
-                    </Col>
-                    <Col lg="12" sm="12" md="12">
-                      <Media  className="w-100">
-                        <Media left href="#">
-                          <Media
-                            object
-                            src={User1}
-                            className="img-fluid rounded-circle"
-                            alt="Generic placeholder image"
-                          />
-                        </Media>
-                        <Media body className="pl-2 size-12 text-white">
-                          <Media heading className="size-12 text-white">
-                            Author name goes here
-                          </Media>
-                          12 Mar 2019
-                        </Media>
-                      </Media>
-                    </Col>
-                </Row>
+      <div className="BlogHeader text-white position-relative">
+        <Nav/>
+        <div className="text-center BlogHeader-Text  font-weight-bold">
+          The Quickest Road to Innovation Leads Through Africa
+          Innovation Leads Through Africa
+        </div>
+        <div className="mt-3 text-center">
+          <img src={User1}
+               className="header-profile-picture-icon padding-img mt-3" alt="db" />
+            <div className='headTag font-weight-normal'>
+              <b className="text-white pl-3">Author Name goes here</b>
+              <div className="headTime">
+                21 April, 2019
+              </div>
             </div>
+      </div>
+      </div>
     );
   }
 }
