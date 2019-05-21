@@ -13,6 +13,7 @@ import _CaseStudyCard from "./_CaseStudyCard/_CaseStudyCard";
 import Icon from "../../shared/core/Icon";
 import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 
+
 class _CaseStudies extends Component {
     constructor(props) {
         super(props);
