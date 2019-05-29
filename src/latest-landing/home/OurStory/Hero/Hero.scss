@@ -1,57 +1,53 @@
-@import "../../../../assets/scss/variable";
+@import "../../../../scss/variables";
 
-.CoreMember {
+.Hero {
     $root: &;
-    height: 270px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 20px;
-    white-space: nowrap;
+    text-align: center;
+    color: #fff;
+    padding: 35% 8% 1%;
 
-    &__info {
-        color: #fff;
-        position: relative;
-        height: 100%;
-        z-index: 10;
+    @media (min-width: 992px) {
+        padding: 14% 2% 1%;
     }
 
-    &__name {
-        font-size: 16px;
-        line-height: 19px;
-        position: absolute;
-        bottom: 27px;
+    &__title {
+        max-width: 500px;
+        font-size: 24px;
+        line-height: 36px;
+        margin: 0 auto 25px;
         font-weight: 400;
-    }
 
-    &__designation {
-        position: absolute;
-        bottom: 0;
-    }
-
-    &__cta {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(6, 46, 100, 0.95);
-        text-align: center;
-        padding-top: 40%;
-    }
-
-    &:hover {
-        #{$root}__cta {
-            opacity: 1;
-            z-index: 1000;
+        @media (min-width: 992px) {
+            font-size: 32px;
+            line-height: 42px;
         }
     }
 
-    &__social-link {
+    &__subtitle {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 27px;
+    }
+
+    &__cta-btn {
+        font-size: 16px;
+        line-height: 19px;
         color: #fff;
-        display: inline-block;
-        padding: 10px;
-        cursor: pointer;
+        border: 0.7px solid #fff;
+        border-radius: 0;
+        padding: 15px 22px;
+        margin-bottom: 30px;
+
+        &:hover {
+            color: #fff;
+        }
+
+        @media (min-width: 992px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__icon-holder {
+        display: block;
     }
 }

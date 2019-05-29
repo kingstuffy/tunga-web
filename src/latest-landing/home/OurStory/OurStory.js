@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./OurStory.scss";
 import Nav from "../../layout/Nav/Nav";
-import TeamImg from "../../assets/img/our-team/user.png";
+import Hero from "./Hero/Hero";
+import HeroBg from "../../assets/img/our-story/hero-bg.png";
 
-class OursStory extends Component {
+class OurStory extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -11,22 +12,26 @@ class OursStory extends Component {
 
     render() {
         return (
-            <section className="OursStory">
-                <Nav/>
-                <div className="OursStory__body p-3 pl-5 pr-5">
-                    <div className="OursStory__core-team">
-                        <CoreTeam team={this.state.team}/>
+            <section className="OurStory">
+                <div className="OurStory__header"
+                     style={{ backgroundImage: `url(${HeroBg})` }}>
+                    <div className="OurStory__nav">
+                        <Nav/>
                     </div>
-                    <div className="OursStory__talent-pool">
-                        <TalentPool talents={this.state.talents}/>
+                    <div className="OurStory__hero">
+                        <Hero/>
+                    </div>
+                    <div className="OurStory__hero-mask">
+                        &nsbp;
                     </div>
                 </div>
-                <ScheduleCall/>
+                <div className="OurStory__body p-3 pl-5 pr-5">
+                </div>
             </section>
         );
     }
 }
 
-OursStory.propTypes = {};
+OurStory.propTypes = {};
 
-export default OursStory;
+export default OurStory;
