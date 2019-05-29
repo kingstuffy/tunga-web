@@ -22,7 +22,7 @@ class Hero extends Component {
                 <a className="Hero__cta-link">
                     <Button
                         size="md"
-                        className="btn Hero__cta-btn"
+                        className="btn Hero__cta-btn btn-inverted"
                         variant=""
                     >
                         Learn more

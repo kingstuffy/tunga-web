@@ -1,0 +1,11 @@
+@import "../../../../scss/variables";
+
+.OurSolution {
+    &__content {
+        padding: 10% 8%;
+
+        @media (min-width: 992px) {
+            padding: 8% 5%;
+        }
+    }
+}

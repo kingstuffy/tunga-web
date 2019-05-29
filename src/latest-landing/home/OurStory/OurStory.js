@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import "./OurStory.scss";
+
 import Nav from "../../layout/Nav/Nav";
 import Hero from "./Hero/Hero";
 import OurDream from "./OurDream/OurDream";
 import TheProblem from "./TheProblem/TheProblem";
+import OurMission from "./OurMission/OurMission";
+import OurSolution from "./OurSolution/OurSolution";
+import ImpactSourcing from "./ImpactSourcing/ImpactSourcing";
+
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 
 class OurStory extends Component {
@@ -32,6 +37,15 @@ class OurStory extends Component {
                 </div>
                 <div className="OurStory__the-problem">
                     <TheProblem/>
+                </div>
+                <div className="OurStory__our-mission">
+                    <OurMission/>
+                </div>
+                <div className="OurStory__our-solution">
+                    <OurSolution/>
+                </div>
+                <div>
+                    <ImpactSourcing/>
                 </div>
             </section>
         );

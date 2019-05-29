@@ -30,17 +30,7 @@
     }
 
     &__cta-btn {
-        font-size: 16px;
-        line-height: 19px;
-        color: #fff;
-        border: 0.7px solid #fff;
-        border-radius: 0;
-        padding: 15px 22px;
         margin-bottom: 30px;
-
-        &:hover {
-            color: #fff;
-        }
 
         @media (min-width: 992px) {
             margin-bottom: 40px;
