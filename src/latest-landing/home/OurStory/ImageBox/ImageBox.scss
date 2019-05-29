@@ -1,0 +1,42 @@
+@import "../../../../scss/variables";
+
+.ImageBox {
+    $root: &;
+    position: relative;
+
+    @media (min-width: 992px) {
+        padding-top: 40%;
+        min-height: 80vh;
+    }
+
+    &__img {
+        width: 100%;
+        top: 0;
+        position: relative;
+        height: 211px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media (min-width: 992px) {
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    &__content {
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        background-color: #fff;
+        padding: 7%;
+        width: 100%;
+        position: relative;
+
+        @media (min-width: 992px) {
+            position: absolute;
+            padding: 3.5%;
+            width: 50%;
+        }
+    }
+}

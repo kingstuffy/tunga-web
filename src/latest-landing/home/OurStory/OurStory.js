@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./OurStory.scss";
 import Nav from "../../layout/Nav/Nav";
 import Hero from "./Hero/Hero";
+import OurDream from "./OurDream/OurDream";
+import TheProblem from "./TheProblem/TheProblem";
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 
 class OurStory extends Component {
@@ -25,7 +27,11 @@ class OurStory extends Component {
                         &nsbp;
                     </div>
                 </div>
-                <div className="OurStory__body p-3 pl-5 pr-5">
+                <div className="OurStory__our-dream">
+                    <OurDream/>
+                </div>
+                <div className="OurStory__the-problem">
+                    <TheProblem/>
                 </div>
             </section>
         );
