@@ -1,0 +1,55 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.OurService {
+    //background: rgba(251, 234, 237, 0.2);
+    padding: 2em;
+    background: #fefbfb;
+    scroll-behavior: smooth;
+
+    @media (min-width: 992px) {
+        padding: 2em 4em 0;
+    }
+
+    .card-center {
+        @extend %vertical-align;
+    }
+
+    &__container {
+        padding: 3.2% 0;
+        overflow: hidden;
+    }
+
+    &__list {
+        position: relative;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        transition: left ease 0.4s, right ease 0.4s;
+    }
+
+    &__item {
+        width: 100%;
+        display: inline-block;
+        white-space: normal;
+
+        @media (min-width: 768px) {
+            padding-right: 23px;
+            width: 46%;
+        }
+
+        @media (min-width: 992px) {
+            padding-right: 23px;
+            width: 31%;
+        }
+    }
+
+    &__detail {
+        margin: 0 -2em;
+
+        @media (min-width: 992px) {
+            margin: 0 -4em;
+        }
+    }
+}

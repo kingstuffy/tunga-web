@@ -1,0 +1,36 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+.CaseStudies {
+    height: 100vh;
+    background: linear-gradient(
+            0deg,
+            get-color("t-light-blue"),
+            get-color("t-light-blue")
+        ),
+        url("../../assets/img/case-study/case_1.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+    //padding-top: 20px;
+    .card-center {
+        @extend %vertical-align;
+    }
+    .case-title {
+        line-height: 17px;
+    }
+    .case-subtitle {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .case-summary {
+        line-height: 24px;
+    }
+    .card-min-height {
+        min-height: 450px;
+    }
+    .case-top {
+        padding-top: 30px;
+    }
+    .case-content {
+        padding: 30px;
+    }
+}

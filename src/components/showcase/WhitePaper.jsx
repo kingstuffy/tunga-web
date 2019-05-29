@@ -20,7 +20,6 @@ class WhitePaper extends React.Component {
             company: '',
             country: '',
             email: '',
-            paper: 'best_african_countries_for_outsourcing',
             phone_number: '',
             error: false
         }

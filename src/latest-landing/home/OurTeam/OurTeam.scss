@@ -1,0 +1,16 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.OurTeam {
+    .navbar-nav > li > a {
+        color: #222;
+    }
+
+    &__core-team {
+        padding: 2% 0;
+    }
+
+    &__talent-pool {
+        padding: 7% 0 2%;
+    }
+}

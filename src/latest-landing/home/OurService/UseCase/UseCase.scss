@@ -1,0 +1,29 @@
+@import "../../../assets/scss/variable";
+
+.UseCase {
+    position: relative;
+    width: 100%;
+
+    &__img {
+        height: 175px;
+    }
+
+    &__item {
+        float: left;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            float: left;
+            width: 48%;
+
+            &--1 {
+                float: right;
+            }
+        }
+    }
+
+    &__btn {
+        border: 1px solid #444;
+        padding: 4px 20px;
+    }
+}

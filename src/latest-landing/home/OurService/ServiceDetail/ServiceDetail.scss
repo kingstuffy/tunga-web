@@ -1,0 +1,43 @@
+@import "../../../assets/scss/util";
+@import "../../../assets/scss/variable";
+
+.ServiceDetail {
+    min-height: 100%;
+    background-color: #fff;
+    position: relative;
+
+    &__left-bg {
+        height: 175px;
+        min-height: 100%;
+        width: 100%;
+        background-size: cover;
+        float: left;
+
+        @media (min-width: 768px) {
+            height: 100vh;
+            width: 35%;
+            display: block;
+        }
+    }
+
+    &__card {
+        float: left;
+        padding: 5%;
+
+        @media (min-width: 768px) {
+            width: 65%;
+            padding: 2%;
+        }
+    }
+
+    &__dismiss {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff !important;
+
+        @media (min-width: 768px) {
+            color: #222 !important;
+        }
+    }
+}

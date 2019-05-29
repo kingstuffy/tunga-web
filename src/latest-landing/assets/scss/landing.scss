@@ -1,0 +1,124 @@
+@import "variable";
+
+.bg-primary {
+    background: get-color("t-blue") !important;
+    color: get-color("white");
+}
+
+.bg-light {
+    background: get-color("t-light-blue") !important;
+    color: get-color("white");
+}
+
+.text-blue {
+    color: get-color("t-blue") !important;
+}
+
+.border-radius-0 {
+    border-radius: 0 !important;
+}
+
+.border-color-white {
+    border-color: get-color("white") !important;
+}
+
+a {
+    cursor: pointer !important;
+}
+
+.object-fit {
+    object-fit: cover;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.w-85 {
+    width: 85% !important;
+}
+
+.w-90 {
+    width: 90% !important;
+}
+
+.size-5 {
+    font-size: 5px !important;
+}
+
+.size-6 {
+    font-size: 6px !important;
+}
+
+.size-7 {
+    font-size: 7px !important;
+}
+
+.size-8 {
+    font-size: 8px !important;
+}
+
+.size-9 {
+    font-size: 9px !important;
+}
+
+.size-10 {
+    font-size: 10px !important;
+}
+
+.size-12 {
+    font-size: 12px !important;
+}
+
+.size-13 {
+    font-size: 13px !important;
+}
+
+.size-14 {
+    font-size: 14px !important;
+}
+
+.size-16 {
+    font-size: px-to-rem(16) !important;
+}
+
+.size-17 {
+    font-size: 17px !important;
+}
+
+.size-18 {
+    font-size: 18px !important;
+}
+
+.size-19 {
+    font-size: px-to-rem(19) !important;
+}
+
+.size-20 {
+    font-size: px-to-rem(20) !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+i.tg-ic-previous,
+i.tg-ic-next {
+    cursor: pointer !important;
+}
+
+.text-gray {
+    color: #ddd !important;
+}
+
+.t-light-blue {
+    color: get-color("t-light-blue") !important;
+}
+
+.bg-t-light-blue {
+    background: get-color("t-light-blue") !important;
+}
+
+.border-right-2 {
+    border-right: 2px #ddd;
+}

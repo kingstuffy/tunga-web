@@ -1,0 +1,46 @@
+@import "../../assets/scss/variable";
+
+.Header {
+    background: linear-gradient(
+            0deg,
+            get-color("t-light-blue"),
+            get-color("t-light-blue")
+    ),
+    url("../../assets/img/maintenance.jpg") no-repeat center;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    .Header-Text {
+        font-size: 22px;
+        line-height: 35px;
+        width: 90%;
+        margin: 27% auto auto;
+        font-weight: 500 !important;
+
+        @media (min-width: 768px) {
+            width: 45%;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 42px;
+            margin: 15.21% auto auto;
+        }
+    }
+
+    .Header-Text-P {
+        font-size: 16px;
+        width: 87%;
+        line-height: 27px;
+        margin: 15px auto auto;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            width: 40%;
+        }
+    }
+
+    .Header-button {
+        min-width: 180px !important;
+    }
+}

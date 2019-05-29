@@ -1,0 +1,10 @@
+.Carousel {
+    &__pagination {
+        margin-bottom: 20px;
+    }
+
+    &__container {
+        position: relative;
+        transition: left ease 0.4s, right ease 0.4s;
+    }
+}
