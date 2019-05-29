@@ -8,6 +8,8 @@ import TheProblem from "./TheProblem/TheProblem";
 import OurMission from "./OurMission/OurMission";
 import OurSolution from "./OurSolution/OurSolution";
 import ImpactSourcing from "./ImpactSourcing/ImpactSourcing";
+import Africa from "./Africa/Africa";
+import Approach from "./Approach/Approach";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 
@@ -46,6 +48,12 @@ class OurStory extends Component {
                 </div>
                 <div>
                     <ImpactSourcing/>
+                </div>
+                <div>
+                    <Africa/>
+                </div>
+                <div>
+                    <Approach/>
                 </div>
             </section>
         );
