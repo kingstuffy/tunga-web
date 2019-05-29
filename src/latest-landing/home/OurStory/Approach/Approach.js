@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Approach.scss";
 import Button from "../../../shared/core/Button";
-import ApproacLeft from "../../../assets/img/our-story/approach-left.png";
+import ApproachLeft from "../../../assets/img/our-story/approach-left.png";
 import ApproachRight from "../../../assets/img/our-story/approach-right.png";
 
 
@@ -15,15 +15,15 @@ class Approach extends Component {
         return (
             <div className="Approach">
                 <div className="row">
-                    <div className="col-md-6 col-sm-12 p-0 float-right">
+                    <div className="col-md-6 col-sm-12 p-0 order-md-2">
                         <div className="Approach__bg"
-                             style={{ backgroundImage: `url(${ApproacLeft})` }}/>
+                             style={{ backgroundImage: `url(${ApproachRight})` }}/>
                     </div>
-                    <div className="col-md-6 col-sm-12 Approach__section">
-                        <div className="text-primary size-14 font-weight-normal mb-2 mt-3">
+                    <div className="col-md-6 col-sm-12 Approach__section order-md-1">
+                        <div className="text-primary size-14 font-weight-normal mb-2">
                             WHY AFRICA
                         </div>
-                        <div className="text-blue size-18 font-weight-normal mb-2">
+                        <div className="text-blue size-18 font-weight-normal mb-3">
                             Tackling huge youth unemployment
                         </div>
                         <div>
@@ -38,9 +38,9 @@ class Approach extends Component {
                 <div className="row">
                     <div className="col-md-6 col-sm-12 p-0">
                         <div className="Approach__bg"
-                             style={{ backgroundImage: `url(${ApproachRight})` }}/>
+                             style={{ backgroundImage: `url(${ApproachLeft})` }}/>
                     </div>
-                    <div className="col-md-6 col-sm-12 Approach__section">
+                    <div className="col-md-6 col-sm-12 Approach__section m-b-3">
                         <div>
                             Our platform is set-up to help the developers be successful by matching only verified
                             skills, by using best practice templates in project planning and specifying requirements,
