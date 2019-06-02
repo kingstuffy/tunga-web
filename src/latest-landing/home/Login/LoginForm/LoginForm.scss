@@ -87,5 +87,10 @@
         min-width: 160px;
         padding: 15px;
         box-shadow: none;
+
+        &:focus {
+          outline: 0;
+            box-shadow: none;
+        }
     }
 }
