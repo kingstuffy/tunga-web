@@ -50,6 +50,10 @@
         top: 17px;
         left: 17px;
         width: 16px;
+        z-index: 10;
+        color: #8D8E90;
+        font-size: 20px;
+        line-height: 16px;
     }
 
     a#{$root}__cta {

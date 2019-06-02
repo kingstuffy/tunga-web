@@ -40,7 +40,7 @@ class LoginForm extends Component {
                                     Email address or username
                                 </Label>
                                 <IconGroup className="Form__input-icon-group">
-                                    <Icon className="Form__input-icon" name='envelope' size='card'/>
+                                    <Icon className="Form__input-icon" name='envelope-o' size='card'/>
                                     <Input className="Form__input--has-icon" type="text"
                                            name="username" value={this.state.username} onChange={this.handleChange}
                                            placeholder="Enter email address or username"/>
@@ -52,7 +52,7 @@ class LoginForm extends Component {
                                 </Label>
                                 <Cta className="float-right">Forgot password?</Cta>
                                 <IconGroup>
-                                    <Icon className="Form__input-icon" name='envelope' size='card'/>
+                                    <Icon className="Form__input-icon" name='lock-alt' size='card'/>
                                     <Input className="Form__input--has-icon" type="password"
                                            name="password" value={this.state.password} onChange={this.handleChange}
                                            placeholder="Enter password"/>
