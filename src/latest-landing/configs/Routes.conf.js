@@ -6,6 +6,7 @@ import DefaultBody from "../layout/Default/Default";
 import News from "../home/News/News";
 import Routing from "../constants/Routing";
 import BlogPage from "../home/BlogPage/BlogPage";
+import DevProfile from "../home/DevProfile/DevProfile";
 
 export default [
   {
@@ -43,6 +44,12 @@ export default [
         name: Routing.blog.name,
         exact: false,
         component: BlogPage
+      },
+      {
+        path: Routing.devProfile.path,
+        name: Routing.devProfile.name,
+        exact: false,
+        component: DevProfile
       },
     ]
   }

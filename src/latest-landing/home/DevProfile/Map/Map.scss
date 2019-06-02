@@ -1,0 +1,8 @@
+@import "../../../../scss/variables";
+
+.Map {
+    $root: &;
+    width: 100%;
+    height: 340px;
+    background-color: #ddd;
+}

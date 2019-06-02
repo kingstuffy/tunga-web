@@ -9,4 +9,5 @@ export default {
   ourStory: { path: "/our-story", name: "Our Story" },
   news: { path: "/news", name: "News" },
   blog: { path: "/blog", name: "Blog", loc: 'blog' },
+  devProfile: { path: "/dev-profile", name: "Developer Profile" },
 };
