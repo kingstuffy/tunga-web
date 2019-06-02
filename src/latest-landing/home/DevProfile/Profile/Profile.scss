@@ -1,0 +1,15 @@
+@import "../../../../scss/variables";
+
+.Profile {
+    $root: &;
+    padding: 0 70px;
+
+    &__badges-ratings {
+        padding-top: 21px;
+        margin-bottom: 40px;
+    }
+
+    &__experience {
+        margin-bottom: 50px;
+    }
+}
