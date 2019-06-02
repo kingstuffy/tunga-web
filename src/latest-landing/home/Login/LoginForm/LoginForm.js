@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./LoginForm.scss";
-import Button from "../../../shared/core/Button";
 import Icon from "../../../shared/core/Icon";
+import { Form, Title, Button, Input, Group, Label, IconGroup, Cta } from "../../../shared/Form/Form";
 
 
 class LoginForm extends Component {
@@ -14,11 +14,12 @@ class LoginForm extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onFormSubmit(e) {
         e.preventDefault();
-        alert('checjc');
+        alert(JSON.stringify(this.state));
     }
 
     handleChange(event) {
@@ -29,43 +30,41 @@ class LoginForm extends Component {
         return (
             <div className="LoginForm">
                 <div className="LoginForm__card">
-                    <form className="Form" onSubmit={this.onFormSubmit}>
-                        <div className="Form__title">
-                            Welcome back
-                        </div>
-                        <div className="Form__group">
-                            <label className="Form__label">
-                                Email address or username
-                            </label>
-                            <div className="Form__input-icon-group">
-                                <Icon className="Form__input-icon" name='envelope' size='card'/>
-                                <input className="Form__input Form__input--has-icon" type="text"
-                                       name="username" value={this.state.username} onChange={this.handleChange}
-                                       placeholder="Enter email address or username"/>
+                    <Form onSubmit={this.onFormSubmit}>
+                        <React.Fragment>
+                            <Title>
+                                Welcome back
+                            </Title>
+                            <Group>
+                                <Label>
+                                    Email address or username
+                                </Label>
+                                <IconGroup className="Form__input-icon-group">
+                                    <Icon className="Form__input-icon" name='envelope' size='card'/>
+                                    <Input className="Form__input--has-icon" type="text"
+                                           name="username" value={this.state.username} onChange={this.handleChange}
+                                           placeholder="Enter email address or username"/>
+                                </IconGroup>
+                            </Group>
+                            <Group>
+                                <Label>
+                                    Password
+                                </Label>
+                                <Cta className="float-right">Forgot password?</Cta>
+                                <IconGroup>
+                                    <Icon className="Form__input-icon" name='envelope' size='card'/>
+                                    <Input className="Form__input--has-icon" type="password"
+                                           name="password" value={this.state.password} onChange={this.handleChange}
+                                           placeholder="Enter password"/>
+                                </IconGroup>
+                            </Group>
+                            <div className="text-center">
+                                <Button type="submit">
+                                    Login
+                                </Button>
                             </div>
-                        </div>
-                        <div className="Form__group">
-                            <label className="Form__label">
-                                Password
-                            </label>
-                            <a className="float-right Form__cta">Forgot password?</a>
-                            <div className="Form__input-icon-group">
-                                <Icon className="Form__input-icon" name='envelope' size='card'/>
-                                <input className="Form__input Form__input--has-icon" type="password"
-                                       name="password" value={this.state.password} onChange={this.handleChange}
-                                       placeholder="Enter password"/>
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <Button
-                                size="md"s
-                                className="btn Form__btn btn-primary"
-                                variant=""
-                            >
-                                Login
-                            </Button>
-                        </div>
-                    </form>
+                        </React.Fragment>
+                    </Form>
                 </div>
             </div>
         );
