@@ -66,7 +66,9 @@ class Nav extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <a className="">Log In</a>
+                                    <NavLink to={Routing.login.path}>
+                                        {Routing.login.name}
+                                    </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <RNavLink className="ml-3 text-white btn btn-lg btn-primary p-4 border-radius-0">

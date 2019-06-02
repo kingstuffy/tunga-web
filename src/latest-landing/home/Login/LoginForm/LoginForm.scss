@@ -1,0 +1,91 @@
+@import "../../../../scss/variables";
+
+.LoginForm {
+    $root: &;
+    text-align: center;
+    color: #fff;
+    padding: 24% 6% 1%;
+
+    @media (min-width: 992px) {
+        padding: 7% 2% 1%;
+    }
+
+    &__card {
+        max-width: 470px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px 18px;
+
+        @media (min-width: 992px) {
+            padding: 30px;
+        }
+    }
+}
+
+.Form {
+    $root: &;
+    text-align: left;
+
+    &__title {
+        font-size: 20px;
+        line-height: 42px;
+        text-align: center;
+        color: #062E64;
+        margin-bottom: 32px;
+    }
+
+    &__group {
+        margin-bottom: 30px;
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 19px;
+        color: #222829;
+        margin-bottom: 10px;
+    }
+
+    &__input-icon-group {
+      position: relative;
+    }
+
+    &__input {
+        position: relative;
+        height: 52px;
+        width: 100%;
+        border: 1px solid #C2C6C8;
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 17px;
+        font-size: 14px;
+        line-height: 17px;
+
+        &--has-icon {
+            padding-left: 44px;
+
+            @media (min-width: 992px) {
+                padding-left: 50px;
+            }
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        width: 16px;
+    }
+
+    a#{$root}__cta {
+        font-size: 14px;
+        line-height: 17px;
+        color: #DA3451;
+    }
+
+    &__btn {
+        border-radius: 0;
+        min-width: 160px;
+        padding: 15px;
+        box-shadow: none;
+    }
+}

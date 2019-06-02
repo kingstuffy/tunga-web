@@ -4,6 +4,7 @@ import OurTeam from "../home/OurTeam/OurTeam";
 import Home from "../home/Home";
 import DefaultBody from "../layout/Default/Default";
 import News from "../home/News/News";
+import Login from "../home/Login/Login";
 import Routing from "../constants/Routing";
 import BlogPage from "../home/BlogPage/BlogPage";
 
@@ -37,6 +38,12 @@ export default [
         name: Routing.news.name,
         exact: false,
         component: News
+      },
+      {
+        path: Routing.login.path,
+        name: Routing.login.name,
+        exact: false,
+        component: Login
       },
       {
         path: Routing.blog.path,
