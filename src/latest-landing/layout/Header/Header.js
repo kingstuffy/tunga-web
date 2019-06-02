@@ -4,6 +4,7 @@ import "./Header.scss";
 import Nav from "../Nav/Nav";
 import Button from "../../shared/core/Button";
 import { Col, Row } from "reactstrap";
+import BgVideo from "../../assets/videos/home-section-1.mp4";
 
 class Header extends Component {
   constructor(props) {
@@ -24,6 +25,9 @@ class Header extends Component {
                             exclusively African software engineers to build new
                             tech products quickly, affordably and smoothly
                         </div>
+                        <video width="320" height="240" playsinline autoplay muted loop>
+                            <source src={BgVideo} type="video/mp4"/>
+                        </video>
                     </Col>
                     <Col lg="12" sm="12" md="12">
                         <div className="mt-3 mb-5" align="center">
