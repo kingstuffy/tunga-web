@@ -9,29 +9,47 @@
         font-size: 16px;
         line-height: 19px;
         color: #DA3451;
+        margin-bottom: 20px;
+        font-weight: 400;
+        text-align: center;
+
+        @media (min-width: 992px) {
+            text-align: left;
+        }
     }
 
     &__list {
         list-style: none;
         padding: 0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
     }
 
     &__item {
-        width: 33.3%;
-        float: left;
-        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(217, 233, 255, 0.5);
     }
 
-    &__rating {
-        font-size: 20px;
-        line-height: 24px;
-        color: #DA3451;
-        margin-bottom: 11px;
+    &__project {
+        font-size: 14px;
+        line-height: 17px;
+        color: #062E64;
+        margin-bottom: 10px;
     }
 
-    &__title {
+    &__price {
         font-size: 14px;
         line-height: 17px;
         color: #3D4851;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 21px;
+        color: #222829;
     }
 }

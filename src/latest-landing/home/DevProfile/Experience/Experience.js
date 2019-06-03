@@ -12,19 +12,19 @@ class Experience extends Component {
                     project: "Company/Project",
                     price: "20XX - 20XX",
                     position: "Position",
-                    description: "/* Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. */"
+                    description: "Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. "
                 },
                 {
                     project: "Company/Project",
                     price: "20XX - 20XX",
                     position: "Position",
-                    description: "/* Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. */"
+                    description: "Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. "
                 },
                 {
                     project: "Company/Project",
                     price: "20XX - 20XX",
                     position: "Position",
-                    description: "/* Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. */"
+                    description: "Job description goes here. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. Checkmate... Yeah, but John, if The Pirates of the Caribbean. "
                 },
             ]
         };

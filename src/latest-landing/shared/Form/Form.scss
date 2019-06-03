@@ -36,6 +36,28 @@
         font-size: 14px;
         line-height: 17px;
 
+        &--light {
+            color: #D9E9FF;
+
+            &::placeholder {
+                color: #D9E9FF;
+            }
+
+            &:-ms-input-placeholder {
+                color: #D9E9FF;
+            }
+
+            &::-ms-input-placeholder {
+                color: #D9E9FF;
+            }
+        }
+
+        &--b-b {
+            border: 0;
+            border-bottom: 2px solid #FAFAFA;
+            background-color: transparent;
+        }
+
         &--has-icon {
             padding-left: 44px;
 
@@ -54,6 +76,10 @@
         color: #8D8E90;
         font-size: 20px;
         line-height: 16px;
+
+        &--light {
+            color: #D9E9FF;
+        }
     }
 
     a#{$root}__cta {

@@ -9,6 +9,7 @@ import Ratings from "../Ratings/Ratings";
 import Map from "../Map/Map";
 import SkillSet from "../SkillSet/SkillSet";
 import Experience from "../Experience/Experience";
+import Interest from "../Interest/Interest";
 
 
 class Profile extends Component {
@@ -47,6 +48,7 @@ class Profile extends Component {
                         <Experience/>
                     </Col>
                     <Col md="6" sm="12">
+                        <Interest/>
                     </Col>
                 </Row>
             </div>

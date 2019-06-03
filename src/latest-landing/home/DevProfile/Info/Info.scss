@@ -3,12 +3,22 @@
 .Info {
     $root: &;
     position: relative;
-    top: -90px;
+    top: -67px;
     z-index: 10;
     padding-right: 20px;
+    text-align: center;
+
+    @media (min-width: 992px) {
+        top: -90px;
+        text-align: left;
+    }
 
     &__img {
-        height: 180px;
+        height: 134px;
+
+        @media (min-width: 992px) {
+            height: 180px;
+        }
     }
 
     &__skills {

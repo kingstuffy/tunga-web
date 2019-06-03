@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Info.scss";
 import Icon from "../../../shared/core/Icon";
 import ProfileImg from "../../../assets/img/our-story/hero-bg.png";
-import Button from "../../../shared/core/Button";
+import { Button } from "../../../shared/Form/Form";
 
 
 class Info extends Component {
@@ -50,12 +50,8 @@ class Info extends Component {
                     <li className="clearfix"></li>
                 </ul>
                 <div className="Info__cta">
-                    <Button
-                        size="md"
-                        className="btn btn-primary btn-inverted"
-                        variant=""
-                    >
-                        Learn more
+                    <Button type="submit">
+                        Hire John
                     </Button>
                 </div>
             </div>

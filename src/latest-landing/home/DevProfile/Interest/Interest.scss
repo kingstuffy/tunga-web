@@ -1,0 +1,25 @@
+@import "../../../../scss/variables";
+
+.Interest {
+    $root: &;
+    position: relative;
+    padding: 30px;
+
+    &__title {
+        font-size: 16px;
+        line-height: 19px;
+        color: #DA3451;
+        margin-bottom: 20px;
+        font-weight: 400;
+        text-align: center;
+
+        @media (min-width: 992px) {
+            text-align: left;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+    }
+}

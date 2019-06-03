@@ -12,14 +12,22 @@
     &__item {
         width: 33.3%;
         float: left;
-        text-align: left;
+        text-align: center;
+
+        @media (min-width: 992px) {
+            text-align: left;
+        }
 
         &--1 {
-            text-align: center;
+            @media (min-width: 992px) {
+                text-align: center;
+            }
         }
 
         &--2 {
-            text-align: right;
+            @media (min-width: 992px) {
+                text-align: right;
+            }
         }
     }
 }
