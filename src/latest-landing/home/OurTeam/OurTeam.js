@@ -5,6 +5,7 @@ import TalentPool from "./TalentPool/TalentPool";
 import ScheduleCall from "../ScheduleCall/ScheduleCall";
 import Nav from "../../layout/Nav/Nav";
 import TeamImg from "../../assets/img/our-team/user.png";
+import Routing from "../../constants/Routing";
 
 class OurTeam extends Component {
     constructor(props) {
@@ -221,73 +222,85 @@ class OurTeam extends Component {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
                 {
                     name: "Name Middle Surname",
                     location: "Kampala, Nigeria",
                     imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS']
+                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
+                    url: Routing.devProfile.path,
                 },
             ]
         };

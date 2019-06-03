@@ -32,7 +32,7 @@ class Talent extends Component {
                     </div>
                 </div>
                 <div className="Talent__cta">
-                    <a className="Talent__cta-link" href="#">
+                    <a className="Talent__cta-link" href={talent.url}>
                         View full profile <Icon className="text-white" name="arrow-right"/>
                     </a>
                 </div>

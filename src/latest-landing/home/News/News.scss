@@ -1,0 +1,10 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.News {
+    &__nav {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+    }
+}
