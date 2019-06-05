@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./TalentPool.scss";
 import Carousel from "../../../shared/Carousel/Carousel";
 import Talent from "./Talent/Talent";
+import TalentSearch from "./TalentSearch/TalentSearch";
 
 class TalentPool extends Component {
     constructor(props) {
@@ -46,9 +47,12 @@ class TalentPool extends Component {
 
         return (
             <section className="TalentPool">
-                <h4 className="text-primary size-16 text-uppercase font-weight-light">
+                <h4 className="text-primary size-16 text-uppercase font-weight-medium">
                     TALENT POOL
                 </h4>
+                <div className="TalentPool__seatch-form">
+                    <TalentSearch/>
+                </div>
                 <div className="TalentPool__container">
                     <Carousel
                         pagination={pagination}
