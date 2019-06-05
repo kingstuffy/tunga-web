@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Vlog.scss";
 import Carousel from "../../../shared/Carousel/Carousel";
 import Icon from "../../../shared/core/Icon";
+import VlogVideo from './VlogVideo/VlogVideo';
 
 class Vlog extends Component {
     constructor(props) {
@@ -10,7 +11,21 @@ class Vlog extends Component {
             windowWidth: 0,
             windowHeight: 0,
             leftPosition: 0,
+            selectedVlog: null
         };
+
+        this.onVlogClick = this.onVlogClick.bind(this);
+        this.onVideoClose = this.onVideoClose.bind(this);
+    }
+
+
+    onVlogClick(vlog) {
+        this.setState({ selectedVlog: vlog });
+    }
+
+
+    onVideoClose() {
+        this.setState({ selectedVlog: false });
     }
 
 
@@ -39,9 +54,10 @@ class Vlog extends Component {
             total: vlogsPerRow,
             perPage: this.getDataPerPage()
         };
+        const classModifier = this.state.selectedVlog ? 'has-selection' : '';
 
         return (
-            <section className="Vlog">
+            <section className={`Vlog Vlog--${classModifier}`}>
                 <div className="Vlog__heading">
                     VLOGS
                 </div>
@@ -64,6 +80,7 @@ class Vlog extends Component {
                                                     <div
                                                         className="Vlog__item"
                                                         key={j}
+                                                        onClick={() => this.onVlogClick(vlog)}
                                                         style={{ backgroundImage: `url(${vlog.imgUrl})` }}>
                                                         <div className="Vlog__item-container">
                                                             <div className="Vlog__title">
@@ -87,6 +104,13 @@ class Vlog extends Component {
                         </ul>
                     </Carousel>
                 </div>
+                {
+                    this.state.selectedVlog
+                    &&
+                    <div className="Vlog__video">
+                        <VlogVideo vlog={this.state.selectedVlog} onVideoClose={this.onVideoClose}/>
+                    </div>
+                }
             </section>
         );
     }

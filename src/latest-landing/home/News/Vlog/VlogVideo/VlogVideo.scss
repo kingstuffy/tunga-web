@@ -1,0 +1,52 @@
+@import "../../../../assets/scss/util";
+@import "../../../../assets/scss/variable";
+
+.VlogVideo {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+
+        &--is-playing {
+            background: none !important;
+        }
+    }
+
+    &__dismiss {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: blue;
+        position: absolute;
+        top: 23px;
+        right: 23px;
+    }
+
+    &__play {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        background-color: orange;
+    }
+
+    &__height-mask {
+        height: 100%;
+        vertical-align: middle;
+        opacity: 0;
+        width: 0.01px;
+        display: inline-block;
+    }
+
+    &__video {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

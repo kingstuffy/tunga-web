@@ -3,6 +3,7 @@ import "./News.scss";
 import Nav from "../../layout/Nav/Nav";
 import TeamImg from "../../assets/img/our-team/user.png";
 import VlogImg from "../../assets/img/blog/vlog.png";
+import VlogVideo from "../../assets/videos/home-section-1.mp4";
 import NewsArticle from "./NewsArticle/NewsArticle";
 import Vlog from "./Vlog/Vlog";
 import WhitePaper from "./WhitePaper/WhitePaper";
@@ -43,34 +44,52 @@ class News extends Component {
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
                 {
                     title: 'Video title goes here',
                     imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
+                },
+                {
+                    title: 'Video title goes here',
+                    imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
+                },
+                {
+                    title: 'Video title goes here',
+                    imgUrl: VlogImg,
+                    videoUrl: VlogVideo,
                 },
             ],
             blogArticles: [

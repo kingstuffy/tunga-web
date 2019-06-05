@@ -9,6 +9,15 @@
         padding-bottom: 25px;
     }
 
+    &--has-selection {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+    }
+
     &__heading {
         font-size: 16px;
         line-height: 19px;
@@ -38,6 +47,7 @@
         color: #fff;
         position: relative;
         background-position: center;
+        cursor: pointer;
 
         @media (min-width: 992px) {
             width: 45%;
@@ -80,5 +90,19 @@
 
     &__icon {
         font-size: 50px;
+    }
+
+    &__video {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(6, 46, 100, 0.5);
+
+        @media (min-width: 992px) {
+            padding: 47px 25px;
+        }
     }
 }
