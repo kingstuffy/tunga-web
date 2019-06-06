@@ -4,6 +4,7 @@ import "./Header.scss";
 import Nav from "../Nav/Nav";
 import Button from "../../shared/core/Button";
 import { Col, Row } from "reactstrap";
+import BgVideo from "../../assets/videos/home-section-1.mp4";
 
 class Header extends Component {
     constructor(props) {
