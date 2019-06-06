@@ -23,6 +23,12 @@ export const Cta = ({ children, ...props }) => (
     </a>
 );
 
+export const Select = ({ children, ...props }) => (
+    <select {...props} className={`${props.className || ''} Form__input Form__select`}>
+        {children}
+    </select>
+);
+
 export const Label = ({ children, ...props }) => (
     <label {...props} className={`${props.className || ''} Form__Label`}>
         {children}

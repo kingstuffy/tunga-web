@@ -1,0 +1,46 @@
+@import "../../../../assets/scss/util";
+@import "../../../../assets/scss/variable";
+
+.WpDownload {
+    background: linear-gradient(0deg, #062E64, #062E64);
+    position: relative;
+
+    &__title {
+        font-size: 16px;
+        line-height: 28px;
+        color: #fff;
+        margin-bottom: 18px;
+    }
+
+    &__bg-container {
+        padding-top: 103px;
+        padding-left: 98px;
+    }
+
+    &__bg {
+        height: 542px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: covers;
+    }
+
+    &__form-container {
+        padding: 54px 108px;
+    }
+
+    &__form {
+        margin-bottom: 20px;
+    }
+
+    &__disclaimer {
+        font-size: 12px;
+        line-height: 24px;
+        color: #fff;
+    }
+
+    &__dismiss {
+        position: absolute;
+        top: 52.5px;
+        right: 52.5px;
+    }
+}

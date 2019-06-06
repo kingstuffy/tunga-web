@@ -3,6 +3,7 @@ import "./WhitePaper.scss";
 import { Col, Row } from "reactstrap";
 import BgImg from "../../../assets/img/blog/white-paper.png";
 import { Button } from "../../../shared/Form/Form";
+import WpDownload from "./WpDownload/WpDownload";
 
 class WhitePaper extends Component {
     constructor(props) {
@@ -73,6 +74,7 @@ class WhitePaper extends Component {
                         </Col>
                     </Row>
                 </div>
+                <WpDownload/>
             </div>
         );
     }
