@@ -1,0 +1,8 @@
+@import "../../../../../scss/variables";
+
+.TalentSearch {
+    $root: &;
+    text-align: left;
+    width: 290px;
+    display: inline-block;
+}

@@ -6,14 +6,26 @@ import Button from "../../shared/core/Button";
 import { Col, Row } from "reactstrap";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
+    render() {
+        return (
             <div className="Header text-white position-relative">
-                <Nav />
+                <div className="Header__video-bg">
+                    <video
+                        className="Header__video"
+                        autoPlay
+                        loop
+                        muted>
+                        <source
+                            src={BgVideo}
+                            type="video/mp4"
+                        />
+                    </video>
+                </div>
+                <Nav/>
                 <Row>
                     <Col lg="12" sm="12" md="12">
                         <div className="text-center Header-Text  font-weight-bold">
@@ -24,9 +36,6 @@ class Header extends Component {
                             exclusively African software engineers to build new
                             tech products quickly, affordably and smoothly
                         </div>
-                        <video width="320" height="240" playsinline autoplay muted loop>
-                            <source src={BgVideo} type="video/mp4"/>
-                        </video>
                     </Col>
                     <Col lg="12" sm="12" md="12">
                         <div className="mt-3 mb-5" align="center">
@@ -46,8 +55,8 @@ class Header extends Component {
                     </Col>
                 </Row>
             </div>
-    );
-  }
+        );
+    }
 }
 
 Header.propTypes = {};
