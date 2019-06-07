@@ -4,6 +4,7 @@ import "./ScheduleCall.scss";
 import { Col, Row } from "reactstrap";
 import Button from "../../shared/core/Button";
 import Icon from "../../shared/core/Icon";
+import BgVideo from "../../assets/videos/home/section-4.mp4";
 
 class ScheduleCall extends Component {
   constructor(props) {
@@ -13,6 +14,18 @@ class ScheduleCall extends Component {
   render() {
     return (
             <div className="ScheduleCall text-white position-relative">
+                <div className="ScheduleCall__video-bg">
+                    <video
+                        className="ScheduleCall__video"
+                        autoPlay
+                        loop
+                        muted>
+                        <source
+                            src={BgVideo}
+                            type="video/mp4"
+                        />
+                    </video>
+                </div>
                 <Row>
                     <Col lg="12" sm="12" md="12">
                         <div className="text-center ScheduleCall-Text  font-weight-bold">

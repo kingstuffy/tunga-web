@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./CaseStudies.scss";
-import Case1 from "../../assets/img/case-study/case1.png";
-import Case2 from "../../assets/img/case-study/case2.png";
+import Case1Img from "../../assets/img/case-study/Casestudy1.jpg";
+import Case2Img from "../../assets/img/case-study/Casestudy2.jpg";
+import Case3Img from "../../assets/img/case-study/Casestudy3.jpg";
+import Case4Img from "../../assets/img/case-study/Casestudy4.jpg";
 import Icon1 from "../../assets/img/case-study/impulse.png";
 import Icon2 from "../../assets/img/case-study/maker.png";
 import User1 from "../../assets/img/user/user1.png";
@@ -20,7 +22,7 @@ class CaseStudies extends Component {
                     title: "Dedicated developers",
                     description:
                         "As a startup with a technical proposition but not being developers ourselves, we needed a reliable partner to develop our product with. Tunga has consulted us to figure out the best technical approach and developed our product in clear sprints ever since ",
-                    imgUrl: Case1,
+                    imgUrl: Case1Img,
                     leadTime: "2 weeks",
                     price: "23 - 26 EUR per hour",
                     icon: Icon1,
@@ -36,7 +38,7 @@ class CaseStudies extends Component {
                     title: "Project outsourcing",
                     description:
                         "We run the show for you from idea to launch - x.0 versions, beta’s, alpha’s, MVP’s, prototypes ",
-                    imgUrl: Case2,
+                    imgUrl: Case2Img,
                     leadTime: "3 weeks",
                     price: "5,000 EUR (prototype) - 18,000 EUR (v1.0) ",
                     icon: Icon2,
@@ -52,7 +54,7 @@ class CaseStudies extends Component {
                     title: "Scoping & design",
                     description:
                         "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
-                    imgUrl: Case1,
+                    imgUrl: Case3Img,
                     leadTime: "2 weeks",
                     price: "1,000 - 3,000 EUR",
                     icon: Icon2,
@@ -68,7 +70,7 @@ class CaseStudies extends Component {
                     title: "Developers on-demand",
                     description:
                         "Quick access to a developer for incidental needs - Product improvements, additional func",
-                    imgUrl: Case2,
+                    imgUrl: Case4Img,
                     leadTime: "1 week",
                     price: "23 - 26 EUR per hour",
                     icon: Icon1,
@@ -80,54 +82,6 @@ class CaseStudies extends Component {
                         company: "Impusle"
                     }
                 },
-                {
-                    title: "Developers on-demand",
-                    description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
-                    imgUrl: Case2,
-                    leadTime: "1 week",
-                    price: "23 - 26 EUR per hour",
-                    icon: Icon1,
-                    tech: "Nodejs, Angular",
-                    user: {
-                        name: "Kazeem Olanipekun",
-                        pic: User2,
-                        position: "Project Manager",
-                        company: "Impusle"
-                    }
-                },
-                {
-                    title: "Scoping & design",
-                    description:
-                        "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
-                    imgUrl: Case1,
-                    leadTime: "2 weeks",
-                    price: "1,000 - 3,000 EUR",
-                    icon: Icon2,
-                    tech: "Nodejs, Angular",
-                    user: {
-                        name: "Kazeem Olanipekun",
-                        pic: User1,
-                        position: "Project Manager",
-                        company: "Impusle"
-                    }
-                },
-                {
-                    title: "Dedicated developers",
-                    description:
-                        "Reinforce your team with remote developers - full time or part time; temporary or permanent",
-                    imgUrl: Case1,
-                    leadTime: "2 weeks",
-                    price: "23 - 26 EUR per hour",
-                    icon: Icon1,
-                    tech: "Nodejs, Angular",
-                    user: {
-                        name: "Kazeem Olanipekun",
-                        pic: User2,
-                        position: "Project Manager",
-                        company: "Impusle"
-                    }
-                }
             ],
             dataPerPage: [],
             paginate: {

@@ -34,7 +34,7 @@ class CoreTeam extends Component {
 
     render() {
         const { team } = this.props;
-        const teamPerRow = parseInt(team.length / 2, 10);
+        const teamPerRow = Math.ceil(team.length / 2, 10);
         const splitTeam = [
             team.slice(0, teamPerRow),
             team.slice(teamPerRow),
