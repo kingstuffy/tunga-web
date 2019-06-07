@@ -33,6 +33,10 @@ class Carousel extends Component {
 
     updatePage(current) {
         this.setState({ current });
+
+        if (typeof this.props.onPageChange === 'function') {
+            this.props.onPageChange(current);
+        }
     }
 
 

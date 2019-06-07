@@ -18,7 +18,7 @@ class CaseStudyCard extends Component {
   render() {
     const { caseStudy } = this.props;
     return (
-            <div className="CaseStudyCard w-100 p-4">
+            <div className="CaseStudyCard w-100">
                 <Card className="border-0 pt-0 w-100">
                     <CardBody className="pt-0">
                         <img src={caseStudy.icon} alt={caseStudy.title} />

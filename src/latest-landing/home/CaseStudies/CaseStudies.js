@@ -83,13 +83,12 @@ class CaseStudies extends Component {
                     }
                 },
             ],
-            dataPerPage: [],
-            paginate: {
-                perPage: 1,
-                current: 1
-            }
         };
+
+        this.state.currentStudy = this.state.data[0];
+        this.onPageChange = this.onPageChange.bind(this);
     }
+
 
     getDataPerPage() {
         return [
@@ -100,6 +99,13 @@ class CaseStudies extends Component {
         ];
     }
 
+
+    onPageChange(current) {
+        const currentStudy = this.state.data[current - 1];
+        this.setState({ currentStudy });
+    }
+
+
     render() {
         const pagination = {
             total: this.state.data.length,
@@ -107,40 +113,44 @@ class CaseStudies extends Component {
         };
 
         return (
-            <section className="CaseStudies vh-100">
+            <section className="CaseStudies"
+                     style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl})` }}>
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
                 <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top">
                     <div className="case-content bg-white">
-                        <h4 className="case-title text-primary text-uppercase size-16 mb-3">
-                            Case Studies
-                        </h4>
-                        <p className="case-subtitle text-blue font-weight-bold">
-                            Tunga has completed work for over 100 clients in 12
-                            countries
-                        </p>
-                        <p className="case-summary size-16 w-75 mb-5">
-                            Our clients come from all kinds of industries and
-                            require a variety of technologies, but usually have
-                            one thing in common: they want to go live ASAP!
-                        </p>
-                        <Carousel
-                            pagination={pagination}
-                            float="float-right"
-                            color="text-primary"
-                        >
-                            <div className="card-min-height">
-                                <ul className="CaseStudies__list mt-2">
-                                    {this.state.data.map((data, i) => (
-                                        <li
-                                            key={i}
-                                            className="CaseStudies__item"
-                                        >
-                                            <CaseStudyCard caseStudy={data}/>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </Carousel>
+                        <div className="CaseStudies__body">
+                            <h4 className="case-title text-primary text-uppercase size-16 mb-3">
+                                Case Studies
+                            </h4>
+                            <p className="case-subtitle text-blue font-weight-bold">
+                                Tunga has completed work for over 100 clients in 12
+                                countries
+                            </p>
+                            <p className="case-summary size-16 w-75 mb-5">
+                                Our clients come from all kinds of industries and
+                                require a variety of technologies, but usually have
+                                one thing in common: they want to go live ASAP!
+                            </p>
+                            <Carousel
+                                pagination={pagination}
+                                onPageChange={this.onPageChange}
+                                float="float-right"
+                                color="text-primary"
+                            >
+                                <div className="card-min-height">
+                                    <ul className="CaseStudies__list mt-2">
+                                        {this.state.data.map((data, i) => (
+                                            <li
+                                                key={i}
+                                                className="CaseStudies__item"
+                                            >
+                                                <CaseStudyCard caseStudy={data}/>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </Carousel>
+                        </div>
                     </div>
                 </div>
                 {/*</div>*/}

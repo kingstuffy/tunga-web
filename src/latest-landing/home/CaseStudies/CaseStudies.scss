@@ -2,16 +2,15 @@
 @import "../../assets/scss/variable";
 
 .CaseStudies {
-    height: 100vh;
     background: linear-gradient(
             0deg,
             get-color("t-light-blue"),
             get-color("t-light-blue")
-    ),
-    url("../../assets/img/case-study/case_1.png") no-repeat center;
+    ), no-repeat center;
     background-size: cover;
     position: relative;
-    //padding-top: 20px;
+    -webkit-transition: background-image 0.3s ease-in-out;
+    transition: background-image 0.3s ease-in-out;
 
     .card-center {
         @extend %vertical-align;
@@ -27,13 +26,16 @@
         line-height: 24px;
     }
     .card-min-height {
-        min-height: 450px;
+        // min-height: 450px;
     }
     .case-top {
-        padding-top: 30px;
+        padding-top: 97px;
     }
     .case-content {
         padding: 30px;
+    }
+
+    &__body {
         overflow-x: hidden;
     }
 
