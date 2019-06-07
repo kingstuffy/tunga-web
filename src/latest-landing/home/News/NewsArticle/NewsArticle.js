@@ -6,11 +6,7 @@ import Button from "../../../shared/core/Button";
 class NewsArticle extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            windowWidth: 0,
-            windowHeight: 0,
-            leftPosition: 0,
-        };
+        this.state = {};
     }
 
 
@@ -46,7 +42,7 @@ class NewsArticle extends Component {
                         float="float-right"
                         color="text-primary"
                     >
-                        <ul className="NewsArticle__list" style={{ left: this.state.leftPosition }}>
+                        <ul className="NewsArticle__list">
                             {
                                 articles.map((article, key) => (
                                     <li className="NewsArticle__item" key={key}

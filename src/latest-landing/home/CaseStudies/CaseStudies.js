@@ -11,7 +11,7 @@ import User2 from "../../assets/img/user/user2.png";
 import { paging } from "../../Utils/Utils";
 import { Col, Row } from "reactstrap";
 import CaseStudyCard from "./CaseStudyCard/CaseStudyCard";
-import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
+import Carousel from "../../shared/Carousel/Carousel";
 
 class CaseStudies extends Component {
     constructor(props) {
@@ -91,15 +91,21 @@ class CaseStudies extends Component {
         };
     }
 
-    paging = current => this.setState({ dataPerPage: paging(current, this) });
-
-    componentDidMount() {
-        this.setState({
-            dataPerPage: paging(this.state.paginate.current, this)
-        });
+    getDataPerPage() {
+        return [
+            {
+                breakpoint: 768000,
+                perPage: 1,
+            },
+        ];
     }
 
     render() {
+        const pagination = {
+            total: this.state.data.length,
+            perPage: this.getDataPerPage()
+        };
+
         return (
             <section className="CaseStudies vh-100">
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
@@ -117,29 +123,24 @@ class CaseStudies extends Component {
                             require a variety of technologies, but usually have
                             one thing in common: they want to go live ASAP!
                         </p>
-                        <PaginateArrow
-                            This={this}
+                        <Carousel
+                            pagination={pagination}
                             float="float-right"
                             color="text-primary"
-                        />
-
-                        <div className="card-min-height">
-                            {this.state.paginate.transition && (
-                                <Row className="animated fadeInLeft">
-                                    {this.state.dataPerPage.map((data, i) => (
-                                        <Col
+                        >
+                            <div className="card-min-height">
+                                <ul className="CaseStudies__list mt-2">
+                                    {this.state.data.map((data, i) => (
+                                        <li
                                             key={i}
-                                            sm="12"
-                                            lg="12"
-                                            md="12"
-                                            className="p-4 mt-2"
+                                            className="CaseStudies__item"
                                         >
-                                            <CaseStudyCard caseStudy={data} />
-                                        </Col>
+                                            <CaseStudyCard caseStudy={data}/>
+                                        </li>
                                     ))}
-                                </Row>
-                            )}
-                        </div>
+                                </ul>
+                            </div>
+                        </Carousel>
                     </div>
                 </div>
                 {/*</div>*/}

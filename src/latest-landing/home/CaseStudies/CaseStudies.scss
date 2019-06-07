@@ -1,16 +1,18 @@
 @import "../../assets/scss/util";
 @import "../../assets/scss/variable";
+
 .CaseStudies {
     height: 100vh;
     background: linear-gradient(
             0deg,
             get-color("t-light-blue"),
             get-color("t-light-blue")
-        ),
-        url("../../assets/img/case-study/case_1.png") no-repeat center;
+    ),
+    url("../../assets/img/case-study/case_1.png") no-repeat center;
     background-size: cover;
     position: relative;
     //padding-top: 20px;
+
     .card-center {
         @extend %vertical-align;
     }
@@ -32,5 +34,21 @@
     }
     .case-content {
         padding: 30px;
+        overflow-x: hidden;
+    }
+
+    &__list {
+        position: relative;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    &__item {
+        width: 100%;
+        display: inline-block;
+        white-space: normal;
+        position: relative;
     }
 }
