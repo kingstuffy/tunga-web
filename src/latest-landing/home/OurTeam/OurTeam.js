@@ -5,6 +5,17 @@ import TalentPool from "./TalentPool/TalentPool";
 import ScheduleCall from "../ScheduleCall/ScheduleCall";
 import Nav from "../../layout/Nav/Nav";
 import TeamImg from "../../assets/img/our-team/user.png";
+import Bart from "../../assets/img/our-team/team/Bart.jpg";
+import David from "../../assets/img/our-team/team/David.jpg";
+import Elijah from "../../assets/img/our-team/team/Elijah.jpg";
+import Enock from "../../assets/img/our-team/team/Enock.jpg";
+import Ernesto from "../../assets/img/our-team/team/Ernesto.jpg";
+import Gerald from "../../assets/img/our-team/team/Gerald.jpg";
+import Lawrence from "../../assets/img/our-team/team/Lawrence.jpg";
+import Reinier from "../../assets/img/our-team/team/Reinier.jpg";
+import Remo from "../../assets/img/our-team/team/Remo.jpg";
+import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
+import Simon from "../../assets/img/our-team/team/Simon.jpg";
 import Routing from "../../constants/Routing";
 
 class OurTeam extends Component {
@@ -13,207 +24,180 @@ class OurTeam extends Component {
         this.state = {
             team: [
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Ernesto Spruyt",
+                    designation: "CEO",
+                    imgUrl: Ernesto,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/ernestospruyt",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:ernesto@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Bart Leijssenaar",
+                    designation: "CGO",
+                    imgUrl: Bart,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/bart-leijssenaar-6b468375",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:bart@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Remo Samuel Paul",
+                    designation: "Backend specialist",
+                    imgUrl: Remo,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/remo-samuel-paul-58219a4a",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:remo@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Simon Capanna",
+                    designation: "Business developer Africa",
+                    imgUrl: Simon,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/simon-walter-capanna-19b56994",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:simon@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "David Semakula",
+                    designation: "CTO",
+                    imgUrl: David,
                     social: [
                         {
-                            url: "#",
-                            network: "linkedIn",
-                            icon: "linkedin"
-                        },
-                        {
-                            url: "#",
+                            url: "mailto:david@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Elijah Atuhaire",
+                    designation: "Project manager",
+                    imgUrl: Elijah,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/atuhairelijah",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:elijah@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Ronald Nyakahuma",
+                    designation: "Project manager",
+                    imgUrl: Ronald,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/rnyakahuma",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:ronald@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Reinier van Scherpenzeel",
+                    designation: "COO",
+                    imgUrl: Reinier,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/reiniervanscherpenzeel",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:reinier@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Enock Mudde",
+                    designation: "Architect specialist",
+                    imgUrl: Enock,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/enock-mudde-b38a086b",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:enock@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Lawrence Onen",
+                    designation: "Project manager",
+                    imgUrl: Lawrence,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/lawrenceonenlakuma",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
                         {
-                            url: "#",
+                            url: "mailto:lawrence@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
                     ]
                 },
                 {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
+                    name: "Gerald Odur",
+                    designation: "Project manager",
+                    imgUrl: Gerald,
                     social: [
                         {
-                            url: "#",
+                            url: "https://www.linkedin.com/in/gerald-odur-10b95116",
                             network: "linkedIn",
                             icon: "linkedin"
                         },
-                        {
-                            url: "#",
-                            network: "email",
-                            icon: "envelope"
-                        }
-                    ]
-                },
-                {
-                    name: "Name Middle Surname",
-                    designation: "Designation",
-                    imgUrl: TeamImg,
-                    social: [
-                        {
-                            url: "#",
-                            network: "linkedIn",
-                            icon: "linkedin"
-                        },
-                        {
-                            url: "#",
-                            network: "email",
-                            icon: "envelope"
-                        }
                     ]
                 },
             ],

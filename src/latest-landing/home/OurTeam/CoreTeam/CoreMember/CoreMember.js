@@ -26,7 +26,7 @@ class CoreMember extends Component {
                 <div className="CoreMember__cta">
                     {
                         member.social.map((social, i) => (
-                            <a className="CoreMember__social-link" href={social.link} key={i}>
+                            <a className="CoreMember__social-link" href={social.url} key={i}>
                                 <Icon className="text-white" name={social.icon} size='md'/>
                             </a>
                         ))
