@@ -12,6 +12,7 @@ import Africa from "./Africa/Africa";
 import Approach from "./Approach/Approach";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
+import BgVideo from "../../assets/videos/our-story/bg-video.mp4";
 
 class OurStory extends Component {
     constructor(props) {
@@ -31,6 +32,18 @@ class OurStory extends Component {
                         <Hero/>
                     </div>
                     <div className="OurStory__hero-mask">
+                    </div>
+                    <div className="OurStory__video-bg">
+                        <video
+                            className="OurStory__video"
+                            autoPlay
+                            loop
+                            muted>
+                            <source
+                                src={BgVideo}
+                                type="video/mp4"
+                            />
+                        </video>
                     </div>
                 </div>
                 <div className="OurStory__our-dream">
