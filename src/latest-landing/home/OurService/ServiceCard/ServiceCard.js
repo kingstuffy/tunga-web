@@ -37,7 +37,7 @@ class ServiceCard extends Component {
                                onServiceSelection(service);
                            }}
                         >
-                            Learn more <Icon name='arrow-down' size='card'/>
+                            Learn more <Icon name='arrow-right' size='card'/>
                         </a>
                     </CardBody>
                 </Card>
