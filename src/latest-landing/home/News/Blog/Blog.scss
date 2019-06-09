@@ -10,12 +10,12 @@
         position: absolute;
         font-size: 16px;
         line-height: 19px;
-        top: 94px;
         left: 18px;
         z-index: 100;
         color: #fff;
         text-transform: uppercase;
         font-weight: 300;
+        top: 30px;
 
         @media (min-width: 992px) {
             top: 98px;
@@ -30,8 +30,13 @@
     .Carousel__pagination {
         position: absolute;
         z-index: 100;
-        right: 50px;
-        top: 98px;
+        right: 30px;
+        top: 30px;
+
+        @media (min-width: 992px) {
+            top: 98px;
+            right: 50px;
+        }
     }
 
     &__list {
@@ -69,6 +74,8 @@
 
     &__row--0 {
         #{$root}__item-container {
+            padding-top: 100px;
+
             @media (min-width: 992px) {
                 padding-top: 191px;
             }
