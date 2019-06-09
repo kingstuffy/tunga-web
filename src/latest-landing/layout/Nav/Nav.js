@@ -12,7 +12,10 @@ import {
     NavItem,
     NavLink as RNavLink
 } from "reactstrap";
+
 import Button from "../Header/Header";
+import Logo from "../../assets/img/common/logo.png";
+
 
 class Nav extends Component {
     constructor(props) {
@@ -36,13 +39,13 @@ class Nav extends Component {
                         color="transparent"
                         light
                         expand="lg"
-                        className="p-3 pl-5 pr-5"
+                        className="Nav__bar"
                     >
                         <NavLink
                             className="font-weight-bold text-white text-uppercase navbar-brand"
                             to="/"
                         >
-                            Tunga
+                            <img className="Nav__logo" src={Logo} alt="Tunga logo"/>
                         </NavLink>
                         <NavbarToggler
                             onClick={this.toggle}

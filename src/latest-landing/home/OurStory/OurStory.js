@@ -31,7 +31,6 @@ class OurStory extends Component {
                         <Hero/>
                     </div>
                     <div className="OurStory__hero-mask">
-                        &nsbp;
                     </div>
                 </div>
                 <div className="OurStory__our-dream">
