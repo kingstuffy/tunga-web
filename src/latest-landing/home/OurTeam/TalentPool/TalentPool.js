@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { fetchTalentsRequest } from '../../../../services/talents/actions';
 import "./TalentPool.scss";
 import Carousel from "../../../shared/Carousel/Carousel";
 import Talent from "./Talent/Talent";
@@ -12,6 +14,19 @@ class TalentPool extends Component {
             windowHeight: 0,
             leftPosition: 0,
         };
+
+        this.loadData = this.loadData.bind(this);
+    }
+
+
+    componentWillMount() {
+        this.loadData(this.props);
+        console.log(this.props.talentList);
+    }
+
+
+    loadData(search) {
+        this.props.fetchTalentsRequest({ search, limit: 12 });
     }
 
 
@@ -89,4 +104,10 @@ class TalentPool extends Component {
 
 TalentPool.propTypes = {};
 
-export default TalentPool;
+
+const mapStateToProps = state => ({
+    is: state.app.talents.talents.is,
+    talentsList: state.app.talents.talents.talentList,
+});
+
+export default connect(mapStateToProps, { fetchTalentsRequest })(TalentPool);

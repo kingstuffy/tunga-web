@@ -16,7 +16,7 @@ class AboutUs extends Component {
                 <Row>
                     <Col sm="12" lg="12" md="12" className="object-fit">
                         <picture>
-                            <source media="(max-width: 768px)" srcset={AboutMobile}/>
+                            <source media="(max-width: 768px)" srcSet={AboutMobile}/>
                             <img src={About} className="w-100" alt="About Us"/>
                         </picture>
                     </Col>
