@@ -32,6 +32,7 @@ class CoreMember extends Component {
                         ))
                     }
                 </div>
+                <div className="CoreMember__bg-mask"></div>
             </div>
         );
     }
