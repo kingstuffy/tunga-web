@@ -46,7 +46,9 @@ class AboutUs extends Component {
                                         size="xs"
                                         className="text-primary"
                                     />
-                                    &nbsp; Fixed prices, no surprises
+                                    <span className="AboutUs__feature">
+                                        &nbsp; Fixed prices, no surprises
+                                    </span>
                                 </ListGroupItem>
                                 <ListGroupItem className="border-0 pl-0">
                                     <Icon
@@ -54,8 +56,10 @@ class AboutUs extends Component {
                                         size="xs"
                                         className="text-primary"
                                     />
-                                    &nbsp; On-demand access to software
-                                    developers
+                                    <span className="AboutUs__feature">
+                                        &nbsp; On-demand access to software
+                                        developers
+                                    </span>
                                 </ListGroupItem>
                                 <ListGroupItem className="border-0 pl-0">
                                     <Icon
@@ -63,8 +67,10 @@ class AboutUs extends Component {
                                         size="xs"
                                         className="text-primary"
                                     />
-                                    &nbsp; Reachable 7 days per week during
-                                    projects
+                                    <span className="AboutUs__feature">
+                                        &nbsp; Reachable 7 days per week during
+                                        projects
+                                    </span>
                                 </ListGroupItem>
                                 <ListGroupItem className="border-0 pl-0">
                                     <Icon
@@ -72,8 +78,10 @@ class AboutUs extends Component {
                                         size="xs"
                                         className="text-primary"
                                     />
-                                    &nbsp; All popular software languages and
-                                    frameworks
+                                    <span className="AboutUs__feature">
+                                        &nbsp; All popular software languages and
+                                        frameworks
+                                    </span>
                                 </ListGroupItem>
                                 <ListGroupItem className="border-0 pl-0">
                                     <Icon
@@ -81,8 +89,10 @@ class AboutUs extends Component {
                                         size="xs"
                                         className="text-primary"
                                     />
-                                    &nbsp; Contact person in your country and/or
-                                    language
+                                    <span className="AboutUs__feature">
+                                        &nbsp; Contact person in your country and/or
+                                        language
+                                    </span>
                                 </ListGroupItem>
                             </ListGroup>
                         </div>

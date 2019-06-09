@@ -6,8 +6,8 @@
         @extend %vertical-align;
 
         .abt-title {
-            font-size: 24px !important;
-            line-height: 36px;
+            font-size: 17px !important;
+            line-height: 29px;
         }
 
         .abt-summary {
@@ -19,5 +19,10 @@
             font-size: 16px !important;
             line-height: 28px;
         }
+    }
+
+    &__feature {
+        font-size: 16px;
+        line-height: 24px;
     }
 }
