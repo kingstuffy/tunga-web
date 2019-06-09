@@ -37,9 +37,8 @@ class Vlog extends Component {
                     <a className="VlogVideo__dismiss"
                        onClick={this.closeVideo}>
                         <Icon
-                            name="youtube-play"
-                            size="card"
-                            className="Vlog__icon"
+                            name="times-circle-o"
+                            size="topbar"
                         />
                     </a>
                     {

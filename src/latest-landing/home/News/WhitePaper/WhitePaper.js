@@ -8,8 +8,24 @@ import WpDownload from "./WpDownload/WpDownload";
 class WhitePaper extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isDownloadOpen: false,
+        };
+
+        this.onDownloadOpen = this.onDownloadOpen.bind(this);
+        this.onDownloadClose = this.onDownloadClose.bind(this);
     }
+
+
+    onDownloadOpen() {
+        this.setState({ isDownloadOpen: true });
+    }
+
+
+    onDownloadClose() {
+        this.setState({ isDownloadOpen: false });
+    }
+
 
     render() {
         return (
@@ -66,7 +82,7 @@ class WhitePaper extends Component {
                                     </li>
                                 </ul>
                                 <div className="text-center mt-2">
-                                    <Button>
+                                    <Button onClick={this.onDownloadOpen}>
                                         Download
                                     </Button>
                                 </div>
@@ -74,7 +90,11 @@ class WhitePaper extends Component {
                         </Col>
                     </Row>
                 </div>
-                <WpDownload/>
+                {
+                    this.state.isDownloadOpen
+                    &&
+                    <WpDownload onDownloadClose={this.onDownloadClose}/>
+                }
             </div>
         );
     }

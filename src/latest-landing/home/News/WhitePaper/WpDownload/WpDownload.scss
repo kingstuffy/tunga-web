@@ -21,7 +21,7 @@
         height: 542px;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: covers;
+        background-size: contain;
     }
 
     &__form-container {
@@ -42,5 +42,9 @@
         position: absolute;
         top: 52.5px;
         right: 52.5px;
+    }
+
+    &__icon {
+        color: #fff;
     }
 }

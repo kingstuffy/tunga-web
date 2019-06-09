@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./WpDownload.scss";
 import { Col, Row } from "reactstrap";
-import BgImg from "../../../../assets/img/blog/white-paper.png";
+import SideImg from "../../../../assets/img/blog/white-paper-download.png";
 import { Form, Title, Button, Input, Group, Select, IconGroup, Cta } from "../../../../shared/Form/Form";
 import Icon from "../../../../shared/core/Icon";
 
@@ -41,7 +41,7 @@ class WpDownload extends Component {
                         sm="0"
                         md="6">
                         <div className="WpDownload__bg-container">
-                            <div className="WpDownload__bg" style={{ backgroundImage: `url(${BgImg})` }}></div>
+                            <div className="WpDownload__bg" style={{ backgroundImage: `url(${SideImg})` }}></div>
                         </div>
                     </Col>
                     <Col
@@ -107,11 +107,11 @@ class WpDownload extends Component {
                     </Col>
                 </Row>
                 <a className="WpDownload__dismiss"
-                   onClick={this.closeVideo}>
+                   onClick={this.props.onDownloadClose}>
                     <Icon
-                        name="youtube-play"
-                        size="card"
-                        className="Vlog__icon"
+                        name="times-circle-o"
+                        size="topbar"
+                        className="WpDownload__icon"
                     />
                 </a>
             </div>
@@ -122,3 +122,4 @@ class WpDownload extends Component {
 WpDownload.propTypes = {};
 
 export default WpDownload;
+
