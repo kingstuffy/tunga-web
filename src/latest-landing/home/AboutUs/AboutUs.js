@@ -20,8 +20,8 @@ class AboutUs extends Component {
                             <img src={About} className="w-100" alt="About Us"/>
                         </picture>
                     </Col>
-                    <Col sm="12" lg="6" md="6" className="AboutMsg p-lg-5 mt-5">
-                        <div className="ml-4 mr-4">
+                    <Col sm="12" lg="6" md="6">
+                        <div className="AboutMsg">
                             <h4 className="text-primary text-uppercase abt-title">
                                 About Us
                             </h4>
