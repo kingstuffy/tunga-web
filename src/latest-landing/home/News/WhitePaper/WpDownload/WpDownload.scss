@@ -13,23 +13,36 @@
     }
 
     &__bg-container {
-        padding-top: 103px;
-        padding-left: 98px;
+        padding: 40px 70px;
+
+        @media (min-width: 992px) {
+            padding: 0;
+            padding-top: 103px;
+            padding-left: 98px;
+        }
     }
 
     &__bg {
-        height: 542px;
+        height: 261px;
         width: 100%;
         background-repeat: no-repeat;
         background-size: contain;
+
+        @media (min-width: 992px) {
+            height: 542px;
+        }
     }
 
     &__form-container {
-        padding: 54px 108px;
+        padding: 18px;
     }
 
     &__form {
-        margin-bottom: 20px;
+        margin-bottom: 32px;
+
+        @media (min-width: 992px) {
+            margin-bottom: 20px;
+        }
     }
 
     &__disclaimer {
@@ -40,8 +53,13 @@
 
     &__dismiss {
         position: absolute;
-        top: 52.5px;
-        right: 52.5px;
+        top: 22.5px;
+        right: 22.5px;
+
+        @media (min-width: 992px) {
+            top: 52.5px;
+            right: 52.5px;
+        }
     }
 
     &__icon {
