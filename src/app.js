@@ -10,6 +10,7 @@ if (__PRODUCTION__) {
 //Import local css
 import 'react-widgets/lib/less/react-widgets.less';
 import './scss/tunga.scss';
+import './latest-landing/assets/fonts/fonts.css';
 import './latest-landing/assets/scss/landing.scss'; // added by Kazeem
 
 import React from 'react';

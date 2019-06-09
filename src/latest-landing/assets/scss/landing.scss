@@ -1,5 +1,9 @@
 @import "variable";
 
+* {
+    font-family: 'HK Grotesk', sans-serif !important;
+}
+
 .bg-primary {
     background: get-color("t-blue") !important;
     color: get-color("white");
