@@ -13,11 +13,19 @@
         .abt-summary {
             font-size: 24px !important;
             line-height: 36px;
+
+            @media (min-width: 992px) {
+                width: 85%;
+            }
         }
 
         .abt-content {
             font-size: 16px !important;
             line-height: 28px;
+
+            @media (min-width: 992px) {
+                width: 85%;
+            }
         }
     }
 

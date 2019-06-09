@@ -25,11 +25,11 @@ class AboutUs extends Component {
                             <h4 className="text-primary text-uppercase abt-title">
                                 About Us
                             </h4>
-                            <h5 className="text-blue w-85 abt-summary">
+                            <h5 className="text-blue abt-summary">
                                 Tunga helps companies every step of the way in
                                 building new software products
                             </h5>
-                            <div className="abt-content w-85 text-justify">
+                            <div className="abt-content text-justify">
                                 We were founded by tech and hospitality entrepreneurs turned aid workers. As a result we
                                 have first hand experience in what it takes to both develop rapid innovations and to
                                 untap the potential of Africa’s undiscovered tech talents. With our low rates and short
