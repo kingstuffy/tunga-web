@@ -6,6 +6,7 @@
         background-size: cover;
         background-position: bottom;
         height: 250px;
+        min-height: 50vh;
 
         @media (min-width: 992px) {
             height: 100%;
