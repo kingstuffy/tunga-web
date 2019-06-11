@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Talent.scss";
 import Icon from "../../../../shared/core/Icon";
+import { Link } from "react-router-dom";
+import Routing from "../../../../constants/Routing";
 
 
 class Talent extends Component {
@@ -32,9 +34,9 @@ class Talent extends Component {
                     </div>
                 </div>
                 <div className="Talent__cta">
-                    <a className="Talent__cta-link" href={talent.url}>
+                    <Link to={`${Routing.devProfile.path}/${talent.id}`} className="Talent__cta-link">
                         View full profile <Icon className="text-white" name="arrow-right"/>
-                    </a>
+                    </Link>
                 </div>
             </div>
         );
