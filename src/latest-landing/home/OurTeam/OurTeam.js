@@ -16,7 +16,6 @@ import Reinier from "../../assets/img/our-team/team/Reinier.jpg";
 import Remo from "../../assets/img/our-team/team/Remo.jpg";
 import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Simon from "../../assets/img/our-team/team/Simon.jpg";
-import Routing from "../../constants/Routing";
 
 class OurTeam extends Component {
     constructor(props) {
@@ -201,92 +200,6 @@ class OurTeam extends Component {
                     ]
                 },
             ],
-            talents: [
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-                {
-                    name: "Name Middle Surname",
-                    location: "Kampala, Nigeria",
-                    imgUrl: TeamImg,
-                    skills: ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-                    url: Routing.devProfile.path,
-                },
-            ]
         };
     }
 
@@ -299,7 +212,7 @@ class OurTeam extends Component {
                         <CoreTeam team={this.state.team}/>
                     </div>
                     <div className="OurTeam__talent-pool">
-                        <TalentPool talents={this.state.talents}/>
+                        <TalentPool/>
                     </div>
                 </div>
                 <ScheduleCall/>

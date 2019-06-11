@@ -13,19 +13,19 @@ class Talent extends Component {
         const { talent } = this.props;
         return (
             <div className="Talent"
-                 style={{ backgroundImage: `url(${talent.imgUrl})` }}>
+                 style={{ backgroundImage: `url(${talent.image})` }}>
                 <div className="Talent__info">
                     <div className="Talent__name">
-                        {talent.name}
+                        {talent.display_name}
                     </div>
                     <div className="Talent__location">
-                        {talent.location}
+                        {talent.profile.location}
                     </div>
                     <div className="Talent__skills">
                         {
-                            talent.skills.map((skill, i) => (
-                                <div className="Talent__skill" key={i}>
-                                    {skill}
+                            talent.profile.skills.slice(0, 4).map((skill, i) => (
+                                <div className="Talent__skill" key={skill.id}>
+                                    {skill.name}
                                 </div>
                             ))
                         }
