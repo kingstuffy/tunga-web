@@ -21,7 +21,6 @@ class TalentPool extends Component {
 
     componentWillMount() {
         this.loadData(this.props);
-        console.log(this.props.talentList);
     }
 
 

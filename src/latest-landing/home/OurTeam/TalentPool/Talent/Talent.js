@@ -11,6 +11,7 @@ class Talent extends Component {
         super(props);
     }
 
+
     render() {
         const { talent } = this.props;
         return (
