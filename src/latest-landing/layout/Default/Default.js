@@ -5,16 +5,41 @@ import OurService from "../../home/OurService/OurService";
 import ScheduleCall from "../../home/ScheduleCall/ScheduleCall";
 import CaseStudies from "../../home/CaseStudies/CaseStudies";
 import Header from "../Header/Header";
+import sidenav from "../../../components/sidenav";
+import SideNav from "../../../components/sidenav";
 
+const anchors = [
+    {
+        hash: "Header",
+        title: "Tunga",
+        isActive: false,
+    },
+    {
+        hash: "AboutUs",
+        title: "AboutUs",
+        isActive: false,
+    },
+    {
+        hash: "OurService",
+        title: "OurService",
+        isActive: false,
+    },
+    {
+        hash: "CaseStudies",
+        title: "CaseStudies",
+        isActive: false,
+  },
+];
 
 class Default extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+      super(props);
   }
 
-  render() {
-    return (
+    render() {
+      return (
       <div className="Default">
+        <SideNav anchors={anchors} />
         <Header/>
         <AboutUs/>
         <OurService/>

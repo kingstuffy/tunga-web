@@ -12,7 +12,7 @@ class AboutUs extends Component {
 
     render() {
         return (
-            <section className="AboutUs">
+            <section className="AboutUs" id="AboutUs">
                 <Row>
                     <Col sm="12" lg="12" md="12" className="object-fit">
                         <picture>

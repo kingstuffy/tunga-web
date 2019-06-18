@@ -13,7 +13,7 @@ class ScheduleCall extends Component {
 
   render() {
     return (
-            <div className="ScheduleCall text-white position-relative">
+            <div className="ScheduleCall text-white position-relative" id="ScheduleCall">
                 <div className="ScheduleCall__video-bg">
                     <video
                         className="ScheduleCall__video"
