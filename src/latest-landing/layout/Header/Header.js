@@ -14,7 +14,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="Header text-white position-relative">
+            <div className="Header text-white position-relative" id="Header">
                 <div className="Header__video-bg">
                     <video
                         className="Header__video"
