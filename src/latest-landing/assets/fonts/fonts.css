@@ -7,18 +7,18 @@
 @font-face {
     font-family: 'HK Grotesk';
     font-weight: 300;
-    src: url('./hk-grotesk/HKGrotesk-light.otf');
+    src: url('./hk-grotesk/HKGrotesk-Light.otf');
 }
 
 @font-face {
     font-family: 'HK Grotesk';
     font-weight: bold;
-    src: url('./hk-grotesk/HKGrotesk-bold.otf');
+    src: url('./hk-grotesk/HKGrotesk-Bold.otf');
 }
 
 
 @font-face {
     font-family: 'HK Grotesk';
     font-style: italic;
-    src: url('./hk-grotesk/HKGrotesk-italic.otf');
+    src: url('./hk-grotesk/HKGrotesk-Italic.otf');
 }
