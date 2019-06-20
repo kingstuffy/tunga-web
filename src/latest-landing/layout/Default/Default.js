@@ -5,7 +5,6 @@ import OurService from "../../home/OurService/OurService";
 import ScheduleCall from "../../home/ScheduleCall/ScheduleCall";
 import CaseStudies from "../../home/CaseStudies/CaseStudies";
 import Header from "../Header/Header";
-import sidenav from "../../../components/sidenav";
 import SideNav from "../../../components/sidenav";
 
 const anchors = [
@@ -16,19 +15,19 @@ const anchors = [
     },
     {
         hash: "AboutUs",
-        title: "AboutUs",
+        title: "About Us",
         isActive: false,
     },
     {
         hash: "OurService",
-        title: "OurService",
+        title: "Our Service",
         isActive: false,
     },
     {
         hash: "CaseStudies",
-        title: "CaseStudies",
+        title: "Case Studies",
         isActive: false,
-  },
+    },
 ];
 
 class Default extends Component {
