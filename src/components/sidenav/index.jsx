@@ -21,10 +21,9 @@ class SideNav extends React.Component {
     const activeIds = entries.map(entry => {
       return entry.target.id;
     });
-    console.log("activeIds", activeIds);
     if (activeIds.length !== this.props.anchors.length) {
       const activeHash = activeIds[0];
-      const anchors = this.state.anchors.map(obj => {  
+      const anchors = this.state.anchors.map(obj => {
        return obj.hash === activeHash ? { ...obj, isActive: true } : {...obj, isActive: false}
       })
       this.setState({ anchors })
@@ -37,10 +36,9 @@ class SideNav extends React.Component {
       this.observer.observe(target);
     });
   }
-  
+
   handleClick = (event) => {
-    console.log(event.target.dataset.value)
-    const anchors = this.state.anchors.map(obj => {  
+    const anchors = this.state.anchors.map(obj => {
       return obj.hash === event.target.dataset.value ? { ...obj, isActive: true } : {...obj, isActive: false}
      })
      this.setState({ anchors })
@@ -71,7 +69,7 @@ class SideNav extends React.Component {
               </a>
             </li>
             ) )
-          }  
+          }
           </ul>
       </div>
     );

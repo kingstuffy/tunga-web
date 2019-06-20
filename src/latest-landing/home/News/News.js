@@ -9,6 +9,30 @@ import Vlog from "./Vlog/Vlog";
 import WhitePaper from "./WhitePaper/WhitePaper";
 import Blog from "./Blog/Blog";
 import Routing from "../../constants/Routing";
+import  SideNav from "../../../components/sidenav";
+
+const anchors = [
+    {
+        hash: "NewsArticle",
+        title: "News Article",
+        isActive: false,
+    },
+    {
+        hash: "VLOGS",
+        title: "VLOGS",
+        isActive: false,
+    },
+    {
+        hash: "WhitePaper",
+        title: "White Paper",
+        isActive: false,
+    },
+    {
+        hash: "BLOGS",
+        title: "BLOGS",
+        isActive: false,
+    },
+];
 
 class News extends Component {
     constructor(props) {
@@ -151,16 +175,17 @@ class News extends Component {
                 <div className="News__nav">
                     <Nav/>
                 </div>
-                <div className="News__news-article">
+                <SideNav anchors={anchors} />
+                <div id="NewsArticle" className="News__news-article">
                     <NewsArticle articles={this.state.articles}/>
                 </div>
-                <div className="News__vlog">
+                <div id="VLOGS" className="News__vlog">
                     <Vlog vlogs={this.state.vlogs}/>
                 </div>
-                <div className="News__vlog">
+                <div id="WhitePaper" className="News__vlog">
                     <WhitePaper/>
                 </div>
-                <div className="News__blog">
+                <div id="BLOGS" className="News__blog">
                     <Blog articles={this.state.blogArticles}/>
                 </div>
             </section>
