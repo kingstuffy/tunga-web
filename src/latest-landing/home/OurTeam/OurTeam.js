@@ -16,6 +16,26 @@ import Reinier from "../../assets/img/our-team/team/Reinier.jpg";
 import Remo from "../../assets/img/our-team/team/Remo.jpg";
 import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Simon from "../../assets/img/our-team/team/Simon.jpg";
+import Routing from "../../constants/Routing";
+import SideNav from "../../../components/sidenav";
+
+const anchors = [
+    {
+        hash: "OurTeam",
+        title: "Our Team",
+        isActive: false,
+    },
+    {
+        hash: "TalentPool",
+        title: "Talent Pool",
+        isActive: false,
+    },
+    {
+        hash: "ScheduleCall",
+        title: "Schedule Call",
+        isActive: false,
+    }
+];
 
 class OurTeam extends Component {
     constructor(props) {
@@ -207,12 +227,13 @@ class OurTeam extends Component {
         return (
             <section className="OurTeam">
                 <Nav/>
+                <SideNav anchors={anchors}/>
                 <div className="OurTeam__body p-3 pl-5 pr-5">
-                    <div className="OurTeam__core-team">
+                    <div id="OurTeam" className="OurTeam__core-team">
                         <CoreTeam team={this.state.team}/>
                     </div>
-                    <div className="OurTeam__talent-pool">
-                        <TalentPool/>
+                    <div id="TalentPool" className="OurTeam__talent-pool">
+                        <TalentPool talents={this.state.talents}/>
                     </div>
                 </div>
                 <ScheduleCall/>

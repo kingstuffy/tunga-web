@@ -10,9 +10,53 @@ import OurSolution from "./OurSolution/OurSolution";
 import ImpactSourcing from "./ImpactSourcing/ImpactSourcing";
 import Africa from "./Africa/Africa";
 import Approach from "./Approach/Approach";
+import SideNav from "../../../components/sidenav";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 import BgVideo from "../../assets/videos/our-story/bg-video.mp4";
+
+const anchors = [
+    {
+        hash: "OurStory",
+        title: "Our Story",
+        isActive: false,
+    },
+    {
+        hash: "OurDream",
+        title: "Our Dream",
+        isActive: false,
+    },
+    {
+        hash: "TheProblem",
+        title: "The Problem",
+        isActive: false,
+    },
+    {
+        hash: "OurMission",
+        title: "Our Mission",
+        isActive: false,
+    },
+    {
+        hash: "OurSolution",
+        title: "Our Solution",
+        isActive: false,
+    },
+    {
+        hash: "ImpactSourcing",
+        title: "Impact Sourcing",
+        isActive: false,
+    },
+    {
+        hash: "Africa",
+        title: "Africa",
+        isActive: false,
+    },
+    {
+        hash: "Approach",
+        title: "Aproach",
+        isActive: false,
+    },
+];
 
 class OurStory extends Component {
     constructor(props) {
@@ -23,7 +67,8 @@ class OurStory extends Component {
     render() {
         return (
             <section className="OurStory">
-                <div className="OurStory__header"
+                <SideNav anchors={anchors} />
+                <div  id="OurStory"  className="OurStory__header"
                      style={{ backgroundImage: `url(${HeroBg})` }}>
                     <div className="OurStory__nav">
                         <Nav/>
@@ -46,25 +91,25 @@ class OurStory extends Component {
                         </video>
                     </div>
                 </div>
-                <div className="OurStory__our-dream">
+                <div id="OurDream" className="OurStory__our-dream">
                     <OurDream/>
                 </div>
-                <div className="OurStory__the-problem">
+                <div id="TheProblem" className="OurStory__the-problem">
                     <TheProblem/>
                 </div>
-                <div className="OurStory__our-mission">
+                <div id="OurMission" className="OurStory__our-mission">
                     <OurMission/>
                 </div>
-                <div className="OurStory__our-solution">
+                <div id="OurSolution" className="OurStory__our-solution">
                     <OurSolution/>
                 </div>
-                <div>
+                <div id="ImpactSourcing">
                     <ImpactSourcing/>
                 </div>
-                <div>
+                <div id="Africa">
                     <Africa/>
                 </div>
-                <div>
+                <div id="Approach">
                     <Approach/>
                 </div>
             </section>
