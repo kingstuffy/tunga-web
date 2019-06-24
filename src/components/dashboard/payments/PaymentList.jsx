@@ -270,7 +270,7 @@ export default class PaymentList extends React.Component {
                                                                 <Progress message="Processing"/>
                                                             ):(
                                                                 <div>
-                                                                    {isProjectClient(invoice.project) || isPayAdmin()?(
+                                                                    {(isProjectClient(invoice.project) || isPayAdmin()) && (invoice.finalized || invoice.last_sent_at)?(
                                                                         <React.Fragment>
                                                                             <StripeButton size="sm"
                                                                                           amount={invoice.total_amount}

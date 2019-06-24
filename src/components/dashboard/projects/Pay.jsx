@@ -420,7 +420,7 @@ export default class Pay extends React.Component {
                                                                 </div>
                                                             ) : (
                                                                 <div className="clearfix">
-                                                                    {isProjectClient(invoice.project) && invoice.type !== INVOICE_TYPE_CREDIT_NOTA ? (
+                                                                    {(isProjectClient(invoice.project) && invoice.type !== INVOICE_TYPE_CREDIT_NOTA) && (invoice.finalized || invoice.last_sent_at) ? (
                                                                         <React.Fragment>
                                                                             <StripeButton size="sm"
                                                                                           amount={invoice.total_amount}
