@@ -360,7 +360,7 @@ export default class Pay extends React.Component {
                                                         <td style={{width: "35%"}}>{invoice.title}</td>
                                                         <td style={{width: "20%"}}>{moment.utc(invoice.issued_at).format('DD/MMM/YYYY')}</td>
                                                         <td style={{width: "10%"}}>
-                                                            {invoice.number || invoice.finalized === true ? (
+                                                            {invoice.number && invoice.finalized ? (
                                                                 <a href={`${ENDPOINT_INVOICES}${invoice.id}/download/?format=pdf`}
                                                                    target="_blank">
                                                                     {invoice.number}
@@ -440,33 +440,37 @@ export default class Pay extends React.Component {
                                                                                             onClick={this.onToggleActions.bind(this, invoice.id)}/>
                                                                                 {this.state.open === invoice.id ? (
                                                                                     <div className="dropper">
-                                                                                        {isAdmin() && !invoice.finalized && !invoice.number ? (
+                                                                                        {isAdmin() && !invoice.finalized && !invoice.paid ? (
                                                                                             <Button size="sm"
                                                                                                     onClick={this.onGenerateInvoice.bind(this, invoice.id)}>
                                                                                                 Generate Invoice
                                                                                             </Button>
                                                                                         ) : null}
-                                                                                        {isAdmin() && !invoice.finalized && !invoice.number ? (
+                                                                                        {isAdmin() && !invoice.finalized? (
                                                                                             <Button size="sm"
                                                                                                     onClick={this.onUpdateInvoice.bind(this, invoice)}>
                                                                                                 Edit payment
                                                                                             </Button>
                                                                                         ) : null}
-                                                                                        <Button size="sm"
-                                                                                                onClick={this.onDeleteInvoice.bind(this, invoice.id)}>
-                                                                                            Delete payment
-                                                                                        </Button>
-                                                                                        {isPayAdmin() && invoice.number && !invoice.paid ? (
+                                                                                        {isPayAdmin() && invoice.finalized && !invoice.paid ? (
                                                                                             <Button size="sm"
                                                                                                     onClick={this.onMarkPaid.bind(this, invoice.id)}>
                                                                                                 Mark as paid
                                                                                             </Button>
                                                                                         ) : null}
-                                                                                        {isPayAdmin() && invoice.number && !invoice.paid ? (
-                                                                                            <Button size="sm"
-                                                                                                    onClick={this.onMarkArchived.bind(this, invoice.id)}>
-                                                                                                Mark as archived
-                                                                                            </Button>
+                                                                                        {isAdmin() && !invoice.paid ? (
+                                                                                            <React.Fragment>
+                                                                                                <Button size="sm"
+                                                                                                        onClick={this.onMarkArchived.bind(this, invoice.id)}>
+                                                                                                    Mark as archived
+                                                                                                </Button>
+                                                                                                {!invoice.finalized?(
+                                                                                                    <Button size="sm"
+                                                                                                            onClick={this.onDeleteInvoice.bind(this, invoice.id)}>
+                                                                                                        Delete payment
+                                                                                                    </Button>
+                                                                                                ):null}
+                                                                                            </React.Fragment>
                                                                                         ) : null}
                                                                                     </div>
                                                                                 ) : null}
