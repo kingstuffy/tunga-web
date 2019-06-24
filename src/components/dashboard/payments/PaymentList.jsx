@@ -201,7 +201,7 @@ export default class PaymentList extends React.Component {
                                                     </div>
                                                 );
                                             })
-                                        ):(invoice.number && (invoice.finalized || invoice.last_sent_at))?(
+                                        ):(invoice.number && (invoice.paid || invoice.finalized || invoice.last_sent_at))?(
                                             <a href={`${ENDPOINT_INVOICES}${invoice.id}/download/?format=pdf`} target="_blank">
                                                 {invoice.number}
                                             </a>

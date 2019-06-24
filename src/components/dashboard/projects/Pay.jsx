@@ -360,7 +360,7 @@ export default class Pay extends React.Component {
                                                         <td style={{width: "35%"}}>{invoice.title}</td>
                                                         <td style={{width: "20%"}}>{moment.utc(invoice.issued_at).format('DD/MMM/YYYY')}</td>
                                                         <td style={{width: "10%"}}>
-                                                            {invoice.number && (invoice.finalized || invoice.last_sent_at) ? (
+                                                            {invoice.number && (invoice.paid || invoice.finalized || invoice.last_sent_at) ? (
                                                                 <a href={`${ENDPOINT_INVOICES}${invoice.id}/download/?format=pdf`}
                                                                    target="_blank">
                                                                     {invoice.number}
