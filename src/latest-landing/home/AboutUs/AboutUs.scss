@@ -2,6 +2,8 @@
 
 .AboutUs {
     min-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
     .AboutMsg {
         @extend %vertical-align;
         padding: 31px 18px;

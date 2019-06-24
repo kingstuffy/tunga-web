@@ -16,21 +16,25 @@ const anchors = [
         hash: "NewsArticle",
         title: "News Article",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "VLOGS",
         title: "VLOGS",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "WhitePaper",
         title: "White Paper",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "BLOGS",
         title: "BLOGS",
         isActive: false,
+        isActiveBar: false,
     },
 ];
 
@@ -172,17 +176,17 @@ class News extends Component {
     render() {
         return (
             <section className="News">
-                <div className="News__nav">
-                    <Nav/>
-                </div>
                 <SideNav anchors={anchors} />
                 <div id="NewsArticle" className="News__news-article">
+                    <div className="News__nav">
+                        <Nav/>
+                    </div>
                     <NewsArticle articles={this.state.articles}/>
                 </div>
                 <div id="VLOGS" className="News__vlog">
                     <Vlog vlogs={this.state.vlogs}/>
                 </div>
-                <div id="WhitePaper" className="News__vlog">
+                <div id="WhitePaper" className="News__white-paper">
                     <WhitePaper/>
                 </div>
                 <div id="BLOGS" className="News__blog">
