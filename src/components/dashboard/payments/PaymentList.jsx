@@ -201,7 +201,7 @@ export default class PaymentList extends React.Component {
                                                     </div>
                                                 );
                                             })
-                                        ):(
+                                        ):(invoice.finalized || invoice.last_sent_at)(
                                             <a href={`${ENDPOINT_INVOICES}${invoice.id}/download/?format=pdf`} target="_blank">
                                                 {invoice.number}
                                             </a>
@@ -283,7 +283,7 @@ export default class PaymentList extends React.Component {
                                                                     ):null}
                                                                     {isPayAdmin() && !invoice.paid?(
                                                                         <React.Fragment>
-                                                                            {invoice.finalized?(
+                                                                            {invoice.finalized || invoice.last_sent_at?(
                                                                                 <Button size="sm"
                                                                                         onClick={this.onMarkPaid.bind(this, invoice.id)}>
                                                                                     Mark as paid
