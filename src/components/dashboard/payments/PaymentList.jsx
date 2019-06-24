@@ -73,6 +73,18 @@ export default class PaymentList extends React.Component {
         });
     }
 
+    onGenerateInvoice(invoiceId) {
+        const {InvoiceActions} = this.props;
+        openConfirm(
+            <div className="font-weight-bold">Are you sure you want to generate an invoice for this payment?</div>, '',
+            true, {ok: 'Yes'}
+        ).then(response => {
+            InvoiceActions.generateInvoice(invoiceId, this.props.selectionKey);
+        }, error => {
+            // Nothing
+        });
+    }
+
     onApprovePayout(invoices) {
         const { InvoiceActions } = this.props;
         openConfirm(
@@ -269,12 +281,19 @@ export default class PaymentList extends React.Component {
                                                                             <Button size="sm" onClick={this.openPay.bind(this, invoice)}><Icon name="cash"/> Pay</Button>
                                                                         </React.Fragment>
                                                                     ):null}
-                                                                    {isPayAdmin()?(
+                                                                    {isPayAdmin() && !invoice.paid?(
                                                                         <React.Fragment>
-                                                                            <Button size="sm"
-                                                                                    onClick={this.onMarkPaid.bind(this, invoice.id)}>
-                                                                                Mark as paid
-                                                                            </Button>
+                                                                            {invoice.finalized?(
+                                                                                <Button size="sm"
+                                                                                        onClick={this.onMarkPaid.bind(this, invoice.id)}>
+                                                                                    Mark as paid
+                                                                                </Button>
+                                                                            ):(
+                                                                                <Button size="sm"
+                                                                                        onClick={this.onGenerateInvoice.bind(this, invoice.id)}>
+                                                                                    Generate Invoice
+                                                                                </Button>
+                                                                            )}
                                                                             <Button size="sm"
                                                                                     onClick={this.onMarkArchived.bind(this, invoice.id)}>
                                                                                 Mark as archived
