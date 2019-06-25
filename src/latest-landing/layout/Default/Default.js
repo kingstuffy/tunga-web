@@ -12,31 +12,35 @@ const anchors = [
         hash: "Header",
         title: "Tunga",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "AboutUs",
         title: "About Us",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "OurService",
         title: "Our Service",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "CaseStudies",
         title: "Case Studies",
         isActive: false,
+        isActiveBar: false,
     },
 ];
 
 class Default extends Component {
     constructor(props) {
-      super(props);
-  }
+        super(props);
+    }
 
     render() {
-      return (
+        return (
       <div className="Default">
         <SideNav anchors={anchors} />
         <Header/>
@@ -45,8 +49,8 @@ class Default extends Component {
         <ScheduleCall/>
         <CaseStudies/>
       </div>
-    );
-  }
+        );
+    }
 }
 
 Default.propTypes = {};

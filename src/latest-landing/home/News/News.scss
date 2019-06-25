@@ -2,9 +2,35 @@
 @import "../../assets/scss/variable";
 
 .News {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
     &__nav {
         position: absolute;
         z-index: 100;
         width: 100%;
+    }
+
+    &__news-article {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__vlog {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__white-paper {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__blog {
+        position: relative;
+        scroll-snap-align: start;
     }
 }

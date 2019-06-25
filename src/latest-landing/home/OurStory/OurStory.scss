@@ -5,12 +5,52 @@
     color: #222829;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 
     &__header {
         min-height: 100vh;
         background-size: cover;
         background-position: bottom;
         position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__our-dream {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__the-problem {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__our-mission {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__our-solution {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__impact-sourcing {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__africa {
+        position: relative;
+        scroll-snap-align: start;
+    }
+
+    &__approach {
+        position: relative;
+        scroll-snap-align: start;
     }
 
     &__nav {

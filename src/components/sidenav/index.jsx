@@ -18,16 +18,21 @@ class SideNav extends React.Component {
   }
 
   observerCallback = (entries, observer) => {
-    const activeIds = entries.map(entry => {
-      return entry.target.id;
-    });
+    const activeIds = entries.map( (entry) => {
+        if (entry.intersectionRatio > 0 ) {
+          return entry.target.id;
+        }
+        return entry.target
+      });
     if (activeIds.length !== this.props.anchors.length) {
       const activeHash = activeIds[0];
       const anchors = this.state.anchors.map(obj => {
-       return obj.hash === activeHash ? { ...obj, isActive: true } : {...obj, isActive: false}
+       return obj.hash === activeHash ?
+       { ...obj, isActive: true, isActiveBar: true } : {...obj, isActive: false, isActiveBar: false}
       })
       this.setState({ anchors })
     }
+    this.hideLabels();
   }
 
   addObserverToTargets = () => {
@@ -37,11 +42,13 @@ class SideNav extends React.Component {
     });
   }
 
-  handleClick = (event) => {
-    const anchors = this.state.anchors.map(obj => {
-      return obj.hash === event.target.dataset.value ? { ...obj, isActive: true } : {...obj, isActive: false}
-     })
-     this.setState({ anchors })
+  hideLabels = () => {
+    setTimeout(() => {
+        const anchors = this.state.anchors.map(obj => {
+            return  {...obj, isActive: false}
+        })
+        this.setState({ anchors })
+    }, 2000)
   }
 
   render () {
@@ -53,17 +60,16 @@ class SideNav extends React.Component {
             <li className="side_bar-item" key={anc.hash}>
               <div
                 className={`side_bar-tab
-                  ${anc.isActive ? "side_bar-tab-active"
+                  ${anc.isActiveBar ? "side_bar-tab-active"
                   : "side_bar-tab-hidden"
                 }`}>
                 </div>
               <a
                 className={`side_bar-label
                 ${anc.isActive ? "side_bar-label-active"
-                : "side_bar_hidden"}`}
+                : "side_bar-label-hidden"}`}
                 href={`#${anc.hash}`}
                 data-value={anc.hash}
-                onClick={this.handleClick}
               >
                 {anc.title}
               </a>
