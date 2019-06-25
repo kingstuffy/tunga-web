@@ -20,41 +20,49 @@ const anchors = [
         hash: "OurStory",
         title: "Our Story",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "OurDream",
         title: "Our Dream",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "TheProblem",
         title: "The Problem",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "OurMission",
         title: "Our Mission",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "OurSolution",
         title: "Our Solution",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "ImpactSourcing",
         title: "Impact Sourcing",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "Africa",
         title: "Africa",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "Approach",
         title: "Aproach",
         isActive: false,
+        isActiveBar: false,
     },
 ];
 
@@ -103,13 +111,13 @@ class OurStory extends Component {
                 <div id="OurSolution" className="OurStory__our-solution">
                     <OurSolution/>
                 </div>
-                <div id="ImpactSourcing">
+                <div id="ImpactSourcing" className="OurStory__impact-sourcing">
                     <ImpactSourcing/>
                 </div>
-                <div id="Africa">
+                <div id="Africa" className="OurStory__africa">
                     <Africa/>
                 </div>
-                <div id="Approach">
+                <div id="Approach" className="OurStory__approach">
                     <Approach/>
                 </div>
             </section>

@@ -24,16 +24,19 @@ const anchors = [
         hash: "OurTeam",
         title: "Our Team",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "TalentPool",
         title: "Talent Pool",
         isActive: false,
+        isActiveBar: false,
     },
     {
         hash: "ScheduleCall",
         title: "Schedule Call",
         isActive: false,
+        isActiveBar: false,
     }
 ];
 
@@ -226,17 +229,21 @@ class OurTeam extends Component {
     render() {
         return (
             <section className="OurTeam">
-                <Nav/>
-                <SideNav anchors={anchors}/>
+                <SideNav anchors={anchors} />
                 <div className="OurTeam__body p-3 pl-5 pr-5">
                     <div id="OurTeam" className="OurTeam__core-team">
+                        <div className="OurTeam__nav">
+                            <Nav />
+                        </div>
                         <CoreTeam team={this.state.team}/>
                     </div>
                     <div id="TalentPool" className="OurTeam__talent-pool">
                         <TalentPool talents={this.state.talents}/>
                     </div>
+                    <div className="OurTeam__schedule-call">
+                        <ScheduleCall/>
+                    </div>
                 </div>
-                <ScheduleCall/>
             </section>
         );
     }
