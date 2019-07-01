@@ -6,7 +6,7 @@ import * as SkillPageActions from "../actions/SkillPageActions";
 
 function mapStateToProps(state) {
     return {
-        SkillPage: state.SkillPage
+        SkillPage: state.app.SkillPage
     };
 }
 

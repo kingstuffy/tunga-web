@@ -1,25 +1,39 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import "./LoginForm.scss";
 import Icon from "../../../shared/core/Icon";
 import { Form, Title, Button, Input, Group, Label, IconGroup, Cta } from "../../../shared/Form/Form";
-
+import Error from "../../../../components/core/Error";
+import { authenticate } from "../../../../actions/AuthActions";
 
 class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
+    // componentDidUpdate(prevProps, currentProps) {
+    //   if (prevProps !== currentProps) {
+    //      console.log()
+    //   }
+    // }
+
     onFormSubmit(e) {
         e.preventDefault();
-        alert(JSON.stringify(this.state));
+        // alert(JSON.stringify(this.state));
+        this.props.authenticate(this.state).then(response => {
+            // console.log("response", response);
+            if (response) {
+                location.assign("/app");
+            }
+        });
     }
 
     handleChange(event) {
@@ -27,11 +41,20 @@ class LoginForm extends Component {
     }
 
     render() {
+
         return (
             <div className="LoginForm">
                 <div className="LoginForm__card">
                     <Form onSubmit={this.onFormSubmit}>
                         <React.Fragment>
+                            { this.props.auth.isAuthenticating.isLoginFail ?
+                             <Error
+                                    message={
+                                        this.props.auth.isAuthenticating.loginError ||
+                                        "Sorry, we couldn't log you in. Please try again."
+                                    }
+                                /> :
+                            null }
                             <Title>
                                 Welcome back
                             </Title>
@@ -73,4 +96,15 @@ class LoginForm extends Component {
 
 LoginForm.propTypes = {};
 
-export default LoginForm;
+const mapStateToProps = store => ({
+    auth: store.app.Auth
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        authenticate: (credentials) => authenticate(credentials)(dispatch),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+

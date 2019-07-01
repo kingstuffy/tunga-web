@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Home.scss";
-import Footer from "../layout/Footer/Footer";
 import { Route } from "react-router-dom";
 import IconButton from "../shared/core/IconButton";
 
@@ -29,7 +28,6 @@ class Home extends Component {
             );
           })}
         </div>
-        <Footer/>
         <div className="position-fixed icon-chat-bottom bg-primary">
           <IconButton
             name="chat-alt"

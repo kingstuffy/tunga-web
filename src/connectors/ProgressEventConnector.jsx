@@ -7,7 +7,7 @@ import * as ProgressReportActions from "../actions/ProgressReportActions";
 
 function mapStateToProps(state) {
     return {
-        ProgressEvent: state.ProgressEvent
+        ProgressEvent: state.app.ProgressEvent
     };
 }
 
