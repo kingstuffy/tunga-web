@@ -1,0 +1,32 @@
+.ScheduleCall {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(6, 46, 100, 0.8)), to(rgba(6, 46, 100, 0.8))), url("../../assets/img/maintenance.jpg") no-repeat center;
+  background: linear-gradient(0deg, rgba(6, 46, 100, 0.8), rgba(6, 46, 100, 0.8)), url("../../assets/img/maintenance.jpg") no-repeat center;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.ScheduleCall .ScheduleCall-Text {
+  font-size: 32px;
+  line-height: 42px;
+  width: 45%;
+  margin: 15.21% auto auto;
+}
+
+.ScheduleCall .ScheduleCall-Text-P {
+  font-size: 16px;
+  width: 40%;
+  line-height: 27px;
+  margin: 15px auto auto;
+  text-align: center;
+}
+
+.ScheduleCall .ScheduleCall-button {
+  min-width: 180px !important;
+}
+
+.ScheduleCall .notSure {
+  bottom: 0.75rem;
+}
+/*# sourceMappingURL=ScheduleCall.css.map */

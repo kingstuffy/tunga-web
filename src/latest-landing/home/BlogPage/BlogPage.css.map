@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,SADO,CACP,QAAQ,CAAC;EACP,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;CAClB;;AAJH,AAKE,SALO,CAKP,QAAQ,CAAA;EACN,UAAU,EAAE,GAAG,CAAC,KAAK,CAAC,qBAAqB;CAC5C",
+    "sources": [
+        "BlogPage.scss"
+    ],
+    "names": [],
+    "file": "BlogPage.css"
+}

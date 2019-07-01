@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACL,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;CAkBd;;AApBD,AAII,QAJI,CAIJ,WAAW,CAAC;EACR,UAAU,EAAE,mEAIP,EACD,gDAAgD,CAAC,SAAS,CAAC,MAAM;EACrE,eAAe,EAAE,KAAK;EACtB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CAChB;;AAdL,AAeI,QAfI,CAeJ,aAAa,CAAC;EACV,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,GAAG;EACX,IAAI,EAAE,IAAI;CACb",
+    "sources": [
+        "UseCase.scss",
+        "../../../assets/scss/variable.scss",
+        "../../../../scss/variables.scss",
+        "../../../../scss/functions.scss"
+    ],
+    "names": [],
+    "file": "UseCase.css"
+}

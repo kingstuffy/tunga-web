@@ -1,0 +1,346 @@
+// COLORS /////////////////////////////////////
+$bg: #062e64;
+$white-color: #fff;
+$font-color: #aed0ff;
+$font-fmily: hk grotesk;
+
+// BODY ////////////////////////////////////////////
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+// FOOTER ////////////////////////////////////
+footer {
+    clear: both;
+    background-color: $bg !important;
+    color: $font-color !important;
+    margin-top: 20%;
+    bottom: 0;
+
+    // ALSO FEATURED IN ///////////////////////////////
+    .also-featured {
+        margin-top: 90px;
+        padding: 11px;
+
+        @media only screen and (min-width: 768px) {
+            padding: 0;
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+
+        h5 {
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 21px;
+            color: $font-color;
+        }
+    }
+
+    // TUNGA OFFICES /////////////////////////////////////
+    .tunga-offices {
+        font-family: sans-serif, HK Grotesk;
+        margin: 44px 18px;
+
+        @media only screen and (min-width: 768px) {
+            margin: 44px;
+        }
+
+        h4 {
+            color: $font-color !important;
+            font-size: 18px;
+            line-height: 21px;
+        }
+        h5 {
+            color: $white-color !important;
+            font-size: 14px;
+            line-height: 21px;
+            padding-top: 15px;
+            margin-bottom: 9px;
+        }
+        p {
+            color: $font-color;
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+
+    // CONNECT /////////////////////////////////////
+    .connect {
+        margin: 40px 18px;
+
+        @media only screen and (min-width: 768px) {
+            margin: 40px;
+        }
+
+        font-family: sans-serif, HK Grotesk;
+        h4 {
+            color: $font-color !important;
+            font-size: 18px;
+            line-height: 21px;
+            padding-bottom: 15px;
+        }
+        .hello-tunga a {
+            color: $font-color !important;
+            font-size: 16px;
+            line-height: 19px;
+            text-decoration: none;
+            padding-top: 15px;
+        }
+        .social-networks {
+            margin-top: 15px;
+
+            a:first-child {
+                margin-left: 0;
+            }
+
+            a:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                display: inline-block;
+                text-align: center;
+                font-size: px-to-rem(18);
+                color: $bg;
+                padding-top: 10px;
+                border: 1px solid get-color("white");
+                border-radius: 8%;
+                text-decoration: none;
+                margin-right: 22px;
+            }
+        }
+    }
+
+    i.tg-ic-linkedin.linkedin {
+        font-size: 22px;
+        padding: 1px;
+        background-color: $white-color;
+        border: 1px solid get-color("white");
+        border-radius: 10%;
+    }
+
+    i.tg-ic-facebook.fb {
+        font-size: 22px;
+        padding: 1px;
+        background-color: $white-color;
+        border: 1px solid get-color("white");
+        border-radius: 10%;
+    }
+
+    i.tg-ic-twitter.twitter {
+        font-size: 22px;
+        padding: 1px;
+        background-color: $bg !important;
+        color: $white-color !important;
+    }
+
+    i.tg-ic-medium.medium {
+        font-size: 22px;
+        padding: 1px;
+        background-color: $white-color;
+        color: $bg;
+        border: 3px solid get-color("white");
+        border-radius: 10%;
+    }
+}
+
+// EXPLORE /////////////////////////////////////////
+.explore {
+    margin: 40px 18px;
+
+    @media only screen and (min-width: 768px) {
+        margin: 40px;
+    }
+
+    font-family: sans-serif, HK Grotesk;
+    h4 {
+        color: $font-color !important;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 20px;
+    }
+    li a {
+        text-decoration: none;
+
+        color: $font-color !important;
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    li {
+        list-style: none;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+}
+
+// LATEST FROM OUR BLOG ////////////////////////////
+.latest-from-our-blog {
+    margin: 40px 18px;
+
+    @media only screen and (min-width: 768px) {
+        margin: 40px;
+    }
+
+    font-family: sans-serif, HK Grotesk;
+
+    h4 {
+        color: $font-color;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 17px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $font-color !important;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    li {
+        list-style: none;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+// BOTTOM-SECTION FOOTER //////////////////////////
+.bottom-line {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: 42px;
+    margin-right: 42px;
+
+    p {
+        a {
+            color: $font-color !important;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    }
+}
+
+// HR LINES /////////////////////////////////////
+#line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #aed0ff;
+    padding: 0;
+    width: 93.5%;
+    margin-left: 40px !important;
+}
+
+// MEDIA QUERIES /////////////////////////////////
+
+// LAPTOPS /////////////////////
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    .slick-slide img {
+        width: auto;
+        height: 100px !important;
+    }
+    // TABLETS /////////////////////
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+        .slick-slide img {
+            width: auto;
+            height: 100px !important;
+        }
+        // .hide-on-mobile img{
+        //     display:none !important;
+
+        // }
+
+    }
+
+    // PHONES //////////////////////
+    @media only screen and (max-device-width: 480px) and(max-width: 480px) and (min-device-width: 320px) and(-webkit-min-device-pixel-ratio: 2) {
+        .slick-slide img {
+            width: auto;
+            height: 80px !important;
+        }
+        // .hide-on-mobile img{
+        //     display:none !important;
+
+        // }
+
+    }
+    // IMAGES SCSS ////////////////////
+    // .slick-slide img{
+    //     height:50px;
+    //     line-height: 70px;
+    //     margin:auto;
+    //     position: relative;
+    //    width:auto !important;
+    //    vertical-align: middle;
+
+    // }
+
+}
+
+.slick-slide {
+    height: 50px;
+    margin: 0 10px;
+    // background-color: lightblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: auto;
+}
+
+.slick-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bbc img {
+
+    margin: auto;
+}
+
+.party img {
+
+    margin: auto;
+}
+
+.trend img {
+
+    margin: auto;
+}
+
+.world img {
+
+    margin: auto;
+}
+
+.afn img {
+
+    margin: auto;
+}
+
+.nabc img {
+
+    margin: auto;
+}
+
+.bnr img {
+
+    margin: auto;
+}
+
+.graf img {
+
+    margin: auto;
+}
+

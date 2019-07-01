@@ -2,9 +2,10 @@
 .CaseStudies {
     padding-top: 8% !important;
     padding-bottom: 8% !important;
-    min-height: 100vh;
+    // min-height: 50vh;
     .card-center {
-        @extend %vertical-align;
+        
+        // @extend %vertical-align;
     }
     .case-title {
         line-height: 17px;
@@ -17,6 +18,6 @@
         line-height: 24px;
     }
     .card-min-height {
-        min-height: 450px;
+        // min-height: 350px;
     }
 }

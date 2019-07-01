@@ -1,0 +1,13 @@
+NavLink,
+RNavLink {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold !important;
+  color: #fff;
+}
+
+.Nav .navbar {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+/*# sourceMappingURL=Nav.css.map */

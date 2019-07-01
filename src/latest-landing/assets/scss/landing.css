@@ -1,0 +1,124 @@
+.bg-primary {
+  background: #062e64 !important;
+  color: #fff;
+}
+
+.bg-light {
+  background: rgba(6, 46, 100, 0.8) !important;
+  color: #fff;
+}
+
+.text-blue {
+  color: #062e64 !important;
+}
+
+.border-radius-0 {
+  border-radius: 0 !important;
+}
+
+.border-color-white {
+  border-color: #fff !important;
+}
+
+a {
+  cursor: pointer !important;
+}
+
+.object-fit {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-85 {
+  width: 85% !important;
+}
+
+.w-90 {
+  width: 90% !important;
+}
+
+.size-5 {
+  font-size: 5px !important;
+}
+
+.size-6 {
+  font-size: 6px !important;
+}
+
+.size-7 {
+  font-size: 7px !important;
+}
+
+.size-8 {
+  font-size: 8px !important;
+}
+
+.size-9 {
+  font-size: 9px !important;
+}
+
+.size-10 {
+  font-size: 10px !important;
+}
+
+.size-12 {
+  font-size: 12px !important;
+}
+
+.size-13 {
+  font-size: 13px !important;
+}
+
+.size-14 {
+  font-size: 14px !important;
+}
+
+.size-16 {
+  font-size: 1rem !important;
+}
+
+.size-17 {
+  font-size: 17px !important;
+}
+
+.size-18 {
+  font-size: 18px !important;
+}
+
+.size-19 {
+  font-size: 1.1875rem !important;
+}
+
+.size-20 {
+  font-size: 1.25rem !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+i.tg-ic-previous,
+i.tg-ic-next {
+  cursor: pointer !important;
+}
+
+.text-gray {
+  color: #ddd !important;
+}
+
+.t-light-blue {
+  color: rgba(6, 46, 100, 0.8) !important;
+}
+
+.bg-t-light-blue {
+  background: rgba(6, 46, 100, 0.8) !important;
+}
+
+.border-right-2 {
+  border-right: 2px #ddd;
+}
+/*# sourceMappingURL=landing.css.map */

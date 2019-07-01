@@ -1,0 +1,46 @@
+.CaseStudies .card-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.CaseStudies {
+  height: 100vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(6, 46, 100, 0.8)), to(rgba(6, 46, 100, 0.8))), url("../../assets/img/case-study/case_1.png") no-repeat center;
+  background: linear-gradient(0deg, rgba(6, 46, 100, 0.8), rgba(6, 46, 100, 0.8)), url("../../assets/img/case-study/case_1.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.CaseStudies .case-title {
+  line-height: 17px;
+}
+
+.CaseStudies .case-subtitle {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.CaseStudies .case-summary {
+  line-height: 24px;
+}
+
+.CaseStudies .card-min-height {
+  min-height: 450px;
+}
+
+.CaseStudies .case-top {
+  padding-top: 30px;
+}
+
+.CaseStudies .case-content {
+  padding: 30px;
+}
+/*# sourceMappingURL=CaseStudies.css.map */

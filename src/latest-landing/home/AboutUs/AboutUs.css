@@ -1,0 +1,32 @@
+.AboutUs .AboutMsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AboutUs {
+  min-height: 100vh;
+}
+
+.AboutUs .AboutMsg .abt-title {
+  font-size: 24px !important;
+  line-height: 36px;
+}
+
+.AboutUs .AboutMsg .abt-summary {
+  font-size: 24px !important;
+  line-height: 36px;
+}
+
+.AboutUs .AboutMsg .abt-content {
+  font-size: 16px !important;
+  line-height: 28px;
+}
+/*# sourceMappingURL=AboutUs.css.map */

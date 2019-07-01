@@ -25,11 +25,11 @@ class _CaseStudyCard extends Component {
             <div className="CaseStudyCard">
                 <Row>
                     <Col
-                        sm="12"
-                        lg="5"
-                        md="5"
-                        xs="12"
-                        xl="5"
+                        sm="6"
+                        lg="3"
+                        md="3"
+                        xs="6"
+                        xl="3"
                         className="p-0"
                         style={{
                           background:
@@ -37,15 +37,15 @@ class _CaseStudyCard extends Component {
                                 caseStudy.imgUrl +
                                 ") no-repeat center",
                           backgroundSize: "cover",
-                          minHeight: "375px"
+                        //   minHeight: "375px"
                         }}
                     />
                     <Col
-                        sm="12"
-                        lg="7"
-                        md="7"
-                        xs="12"
-                        xl="7"
+                        sm="6"
+                        lg="3"
+                        md="3"
+                        xs="6"
+                        xl="3"
                         className="p-0 border-0"
                     >
                         <Card className="border-0 pt-0">
@@ -56,16 +56,16 @@ class _CaseStudyCard extends Component {
                                     src={caseStudy.icon}
                                     alt={caseStudy.title}
                                 />
-                                <CardTitle className="text-blue size-12 mt-3">
+                                <CardTitle className="text-blue size-10 mt-2">
                                     {caseStudy.title}
                                 </CardTitle>
-                                <CardTitle className="text-blue text-uppercase size-12 mt-3">
+                                <CardTitle className="text-blue text-uppercase size-10 mt-2">
                                     Technology
                                 </CardTitle>
-                                <CardText className="size-10">
+                                <CardText className="size-8">
                                     {caseStudy.tech}
                                 </CardText>
-                                <CardTitle className="text-blue text-uppercase size-12 mt-3">
+                                <CardTitle className="text-blue text-uppercase size-10 mt-2">
                                     Lead Time
                                 </CardTitle>
                                 <CardText className="size-10">
@@ -74,10 +74,10 @@ class _CaseStudyCard extends Component {
                                 <CardTitle className="text-blue text-uppercase size-12 mt-3">
                                     Production Time
                                 </CardTitle>
-                                <CardText className="size-10">
+                                <CardText className="size-8">
                                     {caseStudy.price}
                                 </CardText>
-                                <CardText className="size-10">
+                                <CardText className="size-8">
                                     {" "}
                                     {caseStudy.description}
                                 </CardText>
@@ -91,10 +91,10 @@ class _CaseStudyCard extends Component {
                                             alt="Generic placeholder image"
                                         />
                                     </Media>
-                                    <Media body className="pl-2 size-9">
+                                    <Media body className="pl-2 size-4">
                                         <Media
                                             heading
-                                            className="size-9 text-blue"
+                                            className="size-7 text-blue"
                                         >
                                             {caseStudy.user.name}
                                         </Media>
