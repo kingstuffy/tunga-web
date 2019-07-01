@@ -33,7 +33,8 @@ class App extends React.Component {
 
     componentDidMount() {
         const {Auth} = this.props;
-        if (!this.state.hasVerified && !Auth.isAuthenticating && !this.props.Auth.isVerifying) {
+        if (!this.state.hasVerified && !Auth.isVerifying) {
+            console.log("component did mount: verify is starting");
             this.props.AuthActions.verify();
         }
 
@@ -46,11 +47,11 @@ class App extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState, snapShot) {
-        const {Auth, history} = this.props;
+    componentDidUpdate(prevProps) {
+        const {Auth} = this.props;
+        // TODO: add condition to check props equality
         if (
-            prevProps.Auth.isAuthenticating && !Auth.isAuthenticating ||
-            (prevProps.Auth.isVerifying && !Auth.isVerifying)
+            prevProps.Auth.isVerifying && !Auth.isVerifying
         ) {
             this.setState({hasVerified: true});
         }
@@ -75,7 +76,6 @@ class App extends React.Component {
     render() {
         const {Auth: {user}, AuthActions, match} = this.props,
             {logout} = AuthActions;
-
         return (
             !this.state.hasVerified || this.state.showProgress?(
                 <BootLogo/>
@@ -131,7 +131,7 @@ class App extends React.Component {
                     )}
                 </Media>
             )
-        )
+        );
     }
 }
 

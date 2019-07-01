@@ -113,7 +113,7 @@ class SearchBox extends React.Component {
 
     render() {
         const {User, Project, Invoice, onChange, disableResults, disableForm, searchPath} = this.props;
-
+        console.log("user", User);
         let searchKey = this.searchKey(),
             users = this.parseSearchEntity(User, 'users', searchKey),
             projects = this.parseSearchEntity(Project, 'projects', searchKey),
@@ -240,10 +240,11 @@ class SearchBox extends React.Component {
 }
 
 function mapStateToProps(state) {
+    console.log("redux state", state);
     return {
-        User: state.User,
-        Project: state.Project,
-        Invoice: state.Invoice
+        User: state.app.User,
+        Project: state.app.Project,
+        Invoice: state.app.Invoice
     };
 }
 

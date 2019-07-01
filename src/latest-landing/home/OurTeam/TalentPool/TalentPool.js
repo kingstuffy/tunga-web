@@ -21,7 +21,6 @@ class TalentPool extends Component {
 
     componentWillMount() {
         this.loadData(this.props);
-        console.log(this.props.talentList);
     }
 
 
@@ -107,7 +106,7 @@ TalentPool.propTypes = {};
 
 const mapStateToProps = state => ({
     is: state.app.talents.talents.is,
-    talentsList: state.app.talents.talents.talentList,
+    talents: state.app.talents.talents.talentList,
 });
 
 export default connect(mapStateToProps, { fetchTalentsRequest })(TalentPool);

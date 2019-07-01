@@ -8,7 +8,7 @@ function* fetchTalents(action) {
     try {
         const response = yield call(api, {
             method: 'get',
-            url: '/users',
+            url: 'https://api.myjson.com/bins/984vl',
             params: {
                 search: action.search,
                 page_size: action.limit,
@@ -30,10 +30,7 @@ function* viewTalent(action) {
     try {
         const response = yield call(api, {
             method: 'get',
-            url: `/orders/talent/${action.talentId}`,
-            params: {
-                populate: 'addresses',
-            },
+            url: `/orders/talent/${action.id}`,
         });
         yield put(actions.viewTalentSuccess(response.data.data));
     } catch (error) {

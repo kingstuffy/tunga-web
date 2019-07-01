@@ -1,7 +1,15 @@
 @import "../../assets/scss/util";
 
 .AboutUs {
-    min-height: 100vh;
+    border: 2px solid green;
+    display: block;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    scroll-snap-align: start;
+    position: relative;
     .AboutMsg {
         @extend %vertical-align;
         padding: 31px 18px;
@@ -38,4 +46,11 @@
         font-size: 16px;
         line-height: 24px;
     }
+}
+
+.about {
+    background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    -webkit-background-size: cover;
+    background-size: cover;
 }

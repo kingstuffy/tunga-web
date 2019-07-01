@@ -2,15 +2,37 @@
 @import "../../assets/scss/variable";
 
 .OurTeam {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    // margin-top: -20px;
+
     .navbar-nav > li > a {
         color: #222;
     }
 
+    &__nav {
+        margin-top: -48px;
+        z-index: 100;
+        width: 105%;
+    }
+
     &__core-team {
         padding: 2% 0;
+        position: relative;
+        scroll-snap-align: start;
     }
 
     &__talent-pool {
+        position: relative;
+        scroll-snap-align: start;
         padding: 7% 0 2%;
+    }
+
+    &__schedule-call {
+        position: relative;
+        scroll-snap-align: start;
     }
 }

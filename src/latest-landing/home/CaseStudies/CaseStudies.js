@@ -113,7 +113,7 @@ class CaseStudies extends Component {
         };
 
         return (
-            <section className="CaseStudies"
+            <section id="CaseStudies" className="CaseStudies"
                      style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl})` }}>
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
                 <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top">
