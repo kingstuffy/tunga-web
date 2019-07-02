@@ -119,14 +119,14 @@ class CaseStudies extends Component {
                 <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top pb-5">
                     <div className="case-content bg-white">
                         <div className="CaseStudies__body">
-                            <h4 className="case-title text-primary text-uppercase size-16 mb-3">
+                            <h4 className="case-title text-primary text-uppercase size-16 mb-1">
                                 Case Studies
                             </h4>
                             <p className="case-subtitle text-blue font-weight-bold">
                                 Tunga has completed work for over 100 clients in 12
                                 countries
                             </p>
-                            <p className="case-summary size-16 w-75 mb-5">
+                            <p className="case-summary size-16 w-75 mb-2">
                                 Our clients come from all kinds of industries and
                                 require a variety of technologies, but usually have
                                 one thing in common: they want to go live ASAP!
@@ -137,7 +137,7 @@ class CaseStudies extends Component {
                                 float="float-right"
                                 color="text-primary"
                             >
-                                <div className="card-min-height">
+                                <div className="card-min-height pb-3px">
                                     <ul className="CaseStudies__list mt-2">
                                         {this.state.data.map((data, i) => (
                                             <li

@@ -13,7 +13,7 @@ class Africa extends Component {
     render() {
         return (
             <div className="Africa">
-                <div className="text-center pt-5 pb-2">
+                <div className="text-center pt-3 pb-2">
                     <div className="text-primary size-14 font-weight-normal mb-2 mt-3">
                         WHY AFRICA
                     </div>

@@ -11,6 +11,7 @@ import ImpactSourcing from "./ImpactSourcing/ImpactSourcing";
 import Africa from "./Africa/Africa";
 import Approach from "./Approach/Approach";
 import SideNav from "../../../components/sidenav";
+import Footer from "../../layout/Footer/Footer";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 import BgVideo from "../../assets/videos/our-story/bg-video.mp4";
@@ -61,6 +62,12 @@ const anchors = [
     {
         hash: "Approach",
         title: "Aproach",
+        isActive: false,
+        isActiveBar: false,
+    },
+    {
+        hash: "Footer",
+        title: "Footer",
         isActive: false,
         isActiveBar: false,
     },
@@ -120,6 +127,7 @@ class OurStory extends Component {
                 <div id="Approach" className="OurStory__approach">
                     <Approach/>
                 </div>
+                <Footer />
             </section>
         );
     }

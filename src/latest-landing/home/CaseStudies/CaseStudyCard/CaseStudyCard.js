@@ -18,7 +18,7 @@ class CaseStudyCard extends Component {
   render() {
     const { caseStudy } = this.props;
     return (
-            <div className="CaseStudyCard w-100">
+            <div className="CaseStudyCard w-100" style={{ marginTop: "-20px"}}>
                 <Card className="border-0 pt-0 w-100">
                     <CardBody className="pt-0">
                         <img src={caseStudy.icon} alt={caseStudy.title} />
@@ -65,11 +65,11 @@ class CaseStudyCard extends Component {
                                 </CardText>
                             </Col>
                         </Row>
-                        <CardText className="mt-4 mb-4 size-12">
+                        <CardText className="mt-4 mb-3 size-12">
                             {" "}
                             {caseStudy.description}
                         </CardText>
-                        <Media>
+                        <Media style={{marginTop: "-5px"}}>
                             <Media left href="#">
                                 <Media
                                     object
