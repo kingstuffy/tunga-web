@@ -9,10 +9,10 @@ import "../Footer/slick/slick/slick.css";
 import "../Footer/slick/slick/slick-theme.css";
 
 import BBC from "./../../../latest-landing/assets/img/footer/BBC.png";
-import campusparty from "./../../../latest-landing/assets/img/footer/campusparty";
-import oneworld from "./../../../latest-landing/assets/img/footer/oneworld";
-import trendwatching from "./../../../latest-landing/assets/img/footer/trendwatching";
-import bnr1 from "./../../../latest-landing/assets/img/footer/bnr1";
+import campusparty from "./../../../latest-landing/assets/img/footer/campusparty.png";
+import oneworld from "./../../../latest-landing/assets/img/footer/oneworld.png";
+import trendwatching from "./../../../latest-landing/assets/img/footer/trendwatching.png";
+import bnr1 from "./../../../latest-landing/assets/img/footer/bnr1.png";
 import African from "./../../../latest-landing/assets/img/footer/African.png";
 import NABC from "./../../../latest-landing/assets/img/footer/NABC.png";
 import Detelegraph from "./../../../latest-landing/assets/img/footer/Detelegraph.png";
@@ -73,7 +73,7 @@ class Footer extends Component {
 });
 
     return (
-            <footer>
+            <footer id="Footer">
                 {/*------------ Press------------- */}
                 <Row>
                     <Col md="3" sm="6">

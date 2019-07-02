@@ -116,7 +116,7 @@ class CaseStudies extends Component {
             <section id="CaseStudies" className="CaseStudies"
                      style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl})` }}>
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
-                <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top">
+                <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top pb-5">
                     <div className="case-content bg-white">
                         <div className="CaseStudies__body">
                             <h4 className="case-title text-primary text-uppercase size-16 mb-3">

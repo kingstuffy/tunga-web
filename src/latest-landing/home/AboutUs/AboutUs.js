@@ -16,16 +16,16 @@ class AboutUs extends Component {
                 <div
                     className="about"
                     style={{
-                        border: "2px solid black",
-                        height: "80vh",
+                        // border: "2px solid black",
+                        height: "70vh",
                         width: "100vw",
                         backgroundImage: `url(${About})`
                     }}
                 >
                 </div>
-                <div style={{border: "2px solid yellow", height: "50vh"}}>
+                <div style={{ height: "50vh"}} className="ml-5 AboutMsg">
                     <Row>
-                        <Col>
+                        <Col sm="12" lg="6" md="6">
                             <div>
                                 <h4 className="text-primary text-uppercase abt-title">
                                     About Us
@@ -42,7 +42,7 @@ class AboutUs extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col>
+                        <Col sm="12" lg="6" md="6">
                             <div className="ml-4 mr-4">
                                 <ListGroup className="p-0">
                                     <ListGroupItem className="border-0 pl-0">

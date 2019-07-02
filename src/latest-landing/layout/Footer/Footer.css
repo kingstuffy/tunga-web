@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+footer {
+  clear: both;
+  background-color: #062E64 !important;
+  color: #fff !important;
+  margin-top: 20%;
+  bottom: 0;
+}
+
+footer .also-featured {
+  margin-top: 60px;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+footer .also-featured h5 {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  color: #AED0FF;
+}
+
+footer .tunga-offices {
+  margin: 40px;
+  font-family: sans-serif, HK Grotesk;
+}
+
+footer .tunga-offices h4 {
+  color: #AED0FF !important;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+footer .tunga-offices h5 {
+  color: #fff !important;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 15px;
+}
+
+footer .tunga-offices p {
+  color: #AED0FF;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+footer .connect {
+  margin: 40px;
+  font-family: sans-serif,HK Grotesk;
+}
+
+footer .connect h4 {
+  color: #AED0FF !important;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+footer .connect .hello-tunga a {
+  color: #AED0FF !important;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+footer .connect .social-networks {
+  margin-top: 15px;
+}
+
+footer .connect .social-networks a:first-child {
+  margin-left: 0;
+}
+
+footer .connect .social-networks a:last-child {
+  margin-right: 0;
+}
+
+footer .connect .social-networks a {
+  display: inline-block;
+  text-align: center;
+  font-size: px-to-rem(18);
+  color: #062E64;
+  width: 40px;
+  height: 40px;
+  padding-top: 6px;
+  border: 1px solid get-color("white");
+  border-radius: 8%;
+  text-decoration: none;
+}
+
+footer i.tg-ic-linkedin.linkedin {
+  font-size: 20px;
+  background-color: #fff;
+  border: 1px solid get-color("white");
+  border-radius: 10%;
+}
+
+footer i.tg-ic-facebook.fb {
+  font-size: 20px;
+  background-color: #fff;
+  border: 1px solid get-color("white");
+  border-radius: 10%;
+}
+
+footer i.tg-ic-twitter.twitter {
+  font-size: 25px;
+  background-color: #062E64 !important;
+  color: #fff !important;
+}
+
+footer i.tg-ic-medium.medium {
+  font-size: 20px;
+  background-color: #fff;
+  color: #062E64;
+  border: 3px solid get-color("white");
+  border-radius: 10%;
+}
+
+.explore {
+  margin-top: 40px;
+  font-family: sans-serif, HK Grotesk;
+}
+
+.explore h4 {
+  color: #AED0FF !important;
+  font-size: 18px;
+  line-height: 22px;
+  margin-left: 50px;
+}
+
+.explore li a {
+  text-decoration: none;
+  color: #AED0FF !important;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.explore li {
+  list-style: none;
+  line-height: 21px;
+  padding: 8px;
+}
+
+.latest-from-our-blog {
+  margin: 40px;
+  font-family: sans-serif, HK Grotesk;
+}
+
+.latest-from-our-blog h4 {
+  color: #AED0FF;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.latest-from-our-blog a {
+  text-decoration: none;
+  color: #AED0FF !important;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.latest-from-our-blog li {
+  list-style: none;
+  line-height: 24px;
+  padding: 8px;
+}
+
+.latest-from-our-blog hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #AED0FF;
+  padding: 0;
+  width: 93%;
+}
+
+.bottom-line {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  margin-left: 42px;
+  margin-right: 42px;
+}
+
+.bottom-line p a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+}
+/*# sourceMappingURL=Footer.css.map */

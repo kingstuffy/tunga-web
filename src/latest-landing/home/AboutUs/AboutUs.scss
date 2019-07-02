@@ -1,31 +1,28 @@
 @import "../../assets/scss/util";
 
 .AboutUs {
-    border: 2px solid green;
+    // border: 2px solid green;
     display: block;
     height: 100%;
     width: 100%;
-    display: flex;
-    // justify-content: space-between;
-    flex-direction: column;
     scroll-snap-align: start;
     position: relative;
     .AboutMsg {
-        @extend %vertical-align;
-        padding: 31px 18px;
+        // @extend %vertical-align;
+        // padding: 31px 18px;
 
         @media (min-width: 992px) {
-            padding: 50px 70px;
+            // padding: 50px 70px;
         }
 
         .abt-title {
-            font-size: 17px !important;
-            line-height: 29px;
+            // font-size: 17px !important;
+            // line-height: 29px;
         }
 
         .abt-summary {
             font-size: 24px !important;
-            line-height: 36px;
+            // line-height: 36px;
 
             @media (min-width: 992px) {
                 width: 85%;
@@ -34,7 +31,7 @@
 
         .abt-content {
             font-size: 16px !important;
-            line-height: 28px;
+            // line-height: 28px;
 
             @media (min-width: 992px) {
                 width: 85%;
@@ -44,13 +41,14 @@
 
     &__feature {
         font-size: 16px;
-        line-height: 24px;
+        // line-height: 24px;
     }
 }
 
 .about {
+    overflow: hidden;
     background-repeat: no-repeat;
-    // background-position: 50% 50%;
     -webkit-background-size: cover;
     background-size: cover;
+    background-position:  50% 50%;
 }
