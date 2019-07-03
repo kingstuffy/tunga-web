@@ -18,6 +18,7 @@ import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Simon from "../../assets/img/our-team/team/Simon.jpg";
 import Routing from "../../constants/Routing";
 import SideNav from "../../../components/sidenav";
+import Footer from "../../layout/Footer/Footer";
 
 const anchors = [
     {
@@ -37,7 +38,13 @@ const anchors = [
         title: "Schedule Call",
         isActive: false,
         isActiveBar: false,
-    }
+    },
+    {
+        hash: "Footer",
+        title: "Footer",
+        isActive: false,
+        isActiveBar: false,
+    },
 ];
 
 class OurTeam extends Component {
@@ -243,6 +250,7 @@ class OurTeam extends Component {
                     <div className="OurTeam__schedule-call">
                         <ScheduleCall/>
                     </div>
+                    <Footer />
                 </div>
             </section>
         );

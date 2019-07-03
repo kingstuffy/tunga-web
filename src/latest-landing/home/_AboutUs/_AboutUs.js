@@ -4,12 +4,13 @@ import "./_AboutUs.scss";
 import { Col, ListGroup, ListGroupItem, Media, Row } from "reactstrap";
 import About from "../../assets/img/about/about.png";
 import Icon from "../../shared/core/Icon";
+
 class _AboutUs extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
             <section className="AboutUs">
                 <Row>
                     <Col sm="12" lg="6" md="6" className="AboutMsg p-lg-5 mt-5">
@@ -77,13 +78,10 @@ class _AboutUs extends Component {
                             </div>
                         </div>
                     </Col>
-                    <Col sm="12" lg="6" md="6" className="object-fit">
-                        <img src={About} className="w-100" alt="About Us" />
-                    </Col>
                 </Row>
             </section>
-    );
-  }
+      );
+    }
 }
 _AboutUs.propTypes = {};
 

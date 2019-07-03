@@ -10,7 +10,7 @@ import * as InterestActions from '../actions/InterestPollActions';
 
 function mapStateToProps(state) {
     return {
-        Project: state.Project
+        Project: state.app.Project
     };
 }
 

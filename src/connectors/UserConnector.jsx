@@ -6,7 +6,7 @@ import * as UserActions from "../actions/UserActions";
 
 function mapStateToProps(state) {
     return {
-        User: state.User
+        User: state.app.User
     };
 }
 

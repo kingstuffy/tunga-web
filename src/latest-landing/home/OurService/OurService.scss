@@ -3,7 +3,8 @@
 
 .OurService {
     //background: rgba(251, 234, 237, 0.2);
-    padding: 18px 31px;
+    border: 2px solid green;
+    // padding: 18px 31px;
     background: #fefbfb;
     scroll-behavior: smooth;
     scroll-snap-align: start;
@@ -17,7 +18,7 @@
     }
 
     &__container {
-        padding: 3.2% 0;
+        // padding: 3.2% 0;
         overflow: hidden;
     }
 

@@ -64,20 +64,24 @@ export const RETRIEVE_INVITE_FAILED = 'RETRIEVE_INVITE_FAILED';
 export function authenticate(credentials) {
     return dispatch => {
         dispatch(authStart(credentials));
-        axios
+        console.log("credentials", credentials)
+        return axios
             .post(ENDPOINT_LOGIN, credentials)
             .then(function(response) {
                 dispatch(authSuccess(response.data));
+                return response.data;
             })
             .catch(function(error) {
+                console.log("error", error);
                 dispatch(
-                    authFailed(error.response ? error.response.data : null),
+                    authFailed(error.response ? error.response.data : null)
                 );
             });
     };
 }
 
 export function authStart(credentials) {
+    console.log(credentials);
     return {
         type: LOGIN_START,
         credentials,
@@ -145,7 +149,9 @@ export function authEmailVisitorFailed(error) {
 }
 
 export function verify() {
+    console.log("verify")
     return dispatch => {
+        console.log("verify inner", dispatch)
         dispatch(verifyStart());
         axios
             .get(ENDPOINT_VERIFY)

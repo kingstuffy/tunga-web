@@ -7,8 +7,8 @@ import * as SettingsActions from "../actions/SettingsActions";
 
 function mapStateToProps(state) {
     return {
-        Auth: state.Auth,
-        Profile: state.Profile
+        Auth: state.app.Auth,
+        Profile: state.app.Profile
     };
 }
 

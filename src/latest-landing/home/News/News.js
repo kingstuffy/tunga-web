@@ -10,6 +10,7 @@ import WhitePaper from "./WhitePaper/WhitePaper";
 import Blog from "./Blog/Blog";
 import Routing from "../../constants/Routing";
 import  SideNav from "../../../components/sidenav";
+import Footer from "../../layout/Footer/Footer";
 
 const anchors = [
     {
@@ -33,6 +34,12 @@ const anchors = [
     {
         hash: "BLOGS",
         title: "BLOGS",
+        isActive: false,
+        isActiveBar: false,
+    },
+    {
+        hash: "Footer",
+        title: "Footer",
         isActive: false,
         isActiveBar: false,
     },
@@ -192,6 +199,7 @@ class News extends Component {
                 <div id="BLOGS" className="News__blog">
                     <Blog articles={this.state.blogArticles}/>
                 </div>
+                <Footer />
             </section>
         );
     }

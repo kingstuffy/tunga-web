@@ -6,6 +6,7 @@ import ScheduleCall from "../../home/ScheduleCall/ScheduleCall";
 import CaseStudies from "../../home/CaseStudies/CaseStudies";
 import Header from "../Header/Header";
 import SideNav from "../../../components/sidenav";
+import Footer from "../Footer/Footer";
 
 const anchors = [
     {
@@ -27,8 +28,20 @@ const anchors = [
         isActiveBar: false,
     },
     {
+        hash: "ScheduleCall",
+        title: "Schedule Call",
+        isActive: false,
+        isActiveBar: false,
+    },
+    {
         hash: "CaseStudies",
         title: "Case Studies",
+        isActive: false,
+        isActiveBar: false,
+    },
+    {
+        hash: "Footer",
+        title: "Footer",
         isActive: false,
         isActiveBar: false,
     },
@@ -48,6 +61,7 @@ class Default extends Component {
         <OurService/>
         <ScheduleCall/>
         <CaseStudies/>
+        <Footer />
       </div>
         );
     }

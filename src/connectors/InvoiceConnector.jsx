@@ -6,7 +6,7 @@ import * as InvoiceActions from "../actions/InvoiceActions";
 
 function mapStateToProps(state) {
     return {
-        Invoice: state.Invoice
+        Invoice: state.app.Invoice
     };
 }
 

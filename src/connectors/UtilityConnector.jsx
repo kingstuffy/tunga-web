@@ -6,7 +6,7 @@ import * as UtilityActions from "../actions/UtilityActions";
 
 function mapStateToProps(state) {
     return {
-        Utility: state.Utility
+        Utility: state.app.Utility
     };
 }
 

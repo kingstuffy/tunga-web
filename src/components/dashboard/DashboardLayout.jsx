@@ -19,7 +19,7 @@ export default class DashboardLayout extends React.Component {
     };
 
     static propTypes = {
-        user: PropTypes.object.required,
+        user: PropTypes.object, // there must be a new way of representing required props
         logout: PropTypes.func,
         match: PropTypes.object,
         isLargeDevice: PropTypes.bool,

@@ -1,7 +1,7 @@
 import store from '../../store';
 
 export function getAuth() {
-    return store.getState().Auth;
+    return store.getState().app.Auth;
 }
 
 export function getUser() {
