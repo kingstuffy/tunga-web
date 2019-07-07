@@ -109,4 +109,10 @@ const mapStateToProps = state => ({
     talents: state.app.talents.talents.talentList,
 });
 
-export default connect(mapStateToProps, { fetchTalentsRequest })(TalentPool);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchTalentsRequest: (params) => dispatch(fetchTalentsRequest(params))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TalentPool);

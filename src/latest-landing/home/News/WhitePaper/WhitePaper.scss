@@ -2,16 +2,17 @@
 @import "../../../assets/scss/variable";
 
 .WhitePaper {
-
+    
     &__bg {
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 351px;
 
         @media (min-width: 992px) {
-            height: 380px;
+            height: 58vh;
         }
     }
 
@@ -28,6 +29,7 @@
         line-height: 19px;
         color: #DA3451;
         margin-bottom: 4px;
+        margin-top: -13px;
     }
 
     &__subheading {
@@ -37,9 +39,15 @@
     }
 
     &__section {
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 24px;
         color: #000000;
+
+        @media (min-width: 992px) {
+            height: 42vh;
+            font-size: 16px;
+            line-height: 21px;
+        }
     }
 
     &__text {

@@ -16,7 +16,6 @@ class AboutUs extends Component {
                 <div
                     className="about"
                     style={{
-                        // border: "2px solid black",
                         height: "70vh",
                         width: "100vw",
                         backgroundImage: `url(${About})`

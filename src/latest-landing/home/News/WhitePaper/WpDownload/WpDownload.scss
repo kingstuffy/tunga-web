@@ -3,7 +3,12 @@
 
 .WpDownload {
     background: linear-gradient(0deg, #062E64, #062E64);
-    position: relative;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 
     &__title {
         font-size: 16px;
@@ -57,8 +62,8 @@
         right: 22.5px;
 
         @media (min-width: 992px) {
-            top: 52.5px;
-            right: 52.5px;
+            top: 0;
+            right: 50px;
         }
     }
 
