@@ -25,4 +25,8 @@ RNavLink {
             padding: 25px 70px;
         }
     }
+
+    .nav-item .active {
+        font-weight: 600;
+    }
 }
