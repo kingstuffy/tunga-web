@@ -7,11 +7,14 @@
     width: 100%;
     scroll-snap-align: start;
     position: relative;
+
     .AboutMsg {
         // @extend %vertical-align;
         // padding: 31px 18px;
+        padding-top: 31px;
 
         @media (min-width: 992px) {
+            padding-top: 50px;
             // padding: 50px 70px;
         }
 
