@@ -59,7 +59,7 @@ class Default extends Component {
         <Header/>
         <AboutUs/>
         <OurService/>
-        <ScheduleCall/>
+        <ScheduleCall showCaseStudies={true}/>
         <CaseStudies/>
         <Footer />
       </div>

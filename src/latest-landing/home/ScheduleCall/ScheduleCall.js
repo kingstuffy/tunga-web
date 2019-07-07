@@ -7,12 +7,14 @@ import Icon from "../../shared/core/Icon";
 import BgVideo from "../../assets/videos/home/section-4.mp4";
 
 class ScheduleCall extends Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return (
+    render() {
+        const { showCaseStudies } = this.props;
+
+        return (
             <div className="ScheduleCall text-white position-relative" id="ScheduleCall">
                 <div className="ScheduleCall__video-bg">
                     <video
@@ -46,6 +48,7 @@ class ScheduleCall extends Component {
                             </Button>
                         </div>
                     </Col>
+                    {showCaseStudies &&
                     <Col
                         lg="12"
                         sm="12"
@@ -55,14 +58,15 @@ class ScheduleCall extends Component {
                         <div className="" align="center">
                             <p className="">Not sure? See Case Studies</p>
                             <p>
-                                <Icon name="arrow-down" size="md" />
+                                <Icon name="arrow-down" size="md"/>
                             </p>
                         </div>
                     </Col>
+                    }
                 </Row>
             </div>
-    );
-  }
+        );
+    }
 }
 
 ScheduleCall.propTypes = {};
