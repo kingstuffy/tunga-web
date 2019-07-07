@@ -46,7 +46,7 @@ class CoreTeam extends Component {
 
         return (
             <section className="CoreTeam">
-                <h4 className="text-primary size-16 text-uppercase font-weight-light">
+                <h4 className="text-primary size-16 text-uppercase font-weight-bold">
                     CORE TEAM
                 </h4>
                 <div className="CoreTeam__container">

@@ -237,21 +237,19 @@ class OurTeam extends Component {
         return (
             <section className="OurTeam">
                 <SideNav anchors={anchors} />
-                <div className="OurTeam__body p-3 pl-5 pr-5">
-                    <div id="OurTeam" className="OurTeam__core-team">
-                        <div className="OurTeam__nav">
-                            <Nav />
-                        </div>
-                        <CoreTeam team={this.state.team}/>
+                <div id="OurTeam" className="OurTeam__core-team">
+                    <div className="OurTeam__nav">
+                        <Nav />
                     </div>
-                    <div id="TalentPool" className="OurTeam__talent-pool">
-                        <TalentPool talents={this.state.talents}/>
-                    </div>
-                    <div className="OurTeam__schedule-call">
-                        <ScheduleCall/>
-                    </div>
-                    <Footer />
+                    <CoreTeam team={this.state.team}/>
                 </div>
+                <div id="TalentPool" className="OurTeam__talent-pool">
+                    <TalentPool talents={this.state.talents}/>
+                </div>
+                <div className="OurTeam__schedule-call">
+                    <ScheduleCall/>
+                </div>
+                <Footer />
             </section>
         );
     }

@@ -1,13 +1,16 @@
 @import "../../../../scss/variables";
 
 .Approach {
+    // border: 2px solid blue;
+    // padding: 50px;
+    min-height: 100vh;
+
     &__bg {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
         height: 250px;
         min-height: 50vh;
-
         @media (min-width: 992px) {
             height: 100%;
         }

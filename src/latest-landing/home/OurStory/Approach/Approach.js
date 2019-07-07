@@ -14,7 +14,7 @@ class Approach extends Component {
     render() {
         return (
             <div className="Approach">
-                <div className="row">
+                <div className="row" style={{ height: "50vh", zIndex: 1, overflowY: "hidden"}}>
                     <div className="col-md-6 col-sm-12 p-0 order-md-2">
                         <div className="Approach__bg"
                              style={{ backgroundImage: `url(${ApproachRight})` }}/>
@@ -23,7 +23,7 @@ class Approach extends Component {
                         <div className="text-primary size-14 font-weight-normal mb-2">
                             WHY AFRICA
                         </div>
-                        <div className="text-blue size-18 font-weight-normal mb-3">
+                        <div className="text-blue size-18 font-weight-normal">
                             Tackling huge youth unemployment
                         </div>
                         <div>
@@ -35,12 +35,12 @@ class Approach extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row" style={{height: "50vh", zIndex: 1, overflowY: "hidden"}}>
                     <div className="col-md-6 col-sm-12 p-0">
                         <div className="Approach__bg"
                              style={{ backgroundImage: `url(${ApproachLeft})` }}/>
                     </div>
-                    <div className="col-md-6 col-sm-12 Approach__section m-b-3">
+                    <div className="col-md-6 col-sm-12 Approach__section">
                         <div>
                             Our platform is set-up to help the developers be successful by matching only verified
                             skills, by using best practice templates in project planning and specifying requirements,
