@@ -82,9 +82,8 @@ class OurStory extends Component {
     render() {
         return (
             <section className="OurStory">
-                <SideNav anchors={anchors} />
-                <div  id="OurStory"  className="OurStory__header"
-                     style={{ backgroundImage: `url(${HeroBg})` }}>
+                <SideNav anchors={anchors}/>
+                <div id="OurStory" className="OurStory__header">
                     <div className="OurStory__nav">
                         <Nav/>
                     </div>
@@ -127,7 +126,7 @@ class OurStory extends Component {
                 <div id="Approach" className="OurStory__approach">
                     <Approach/>
                 </div>
-                <Footer />
+                <Footer/>
             </section>
         );
     }
