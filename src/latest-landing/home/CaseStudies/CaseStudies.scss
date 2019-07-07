@@ -36,7 +36,11 @@
         padding-top: 97px;
     }
     .case-content {
-        padding: 30px;
+        padding: 30px 18px;
+
+        @media (min-width: 768px) {
+            padding: 55px 60px;
+        }
     }
 
     &__body {
