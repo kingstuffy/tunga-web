@@ -27,11 +27,11 @@ class LoginForm extends Component {
 
     onFormSubmit(e) {
         e.preventDefault();
-        // alert(JSON.stringify(this.state));
+        // alert(JSON.stringify(this.spagetate));
         this.props.authenticate(this.state).then(response => {
             // console.log("response", response);
             if (response) {
-                location.assign("/app");
+                location.assign("/dashboard");
             }
         });
     }

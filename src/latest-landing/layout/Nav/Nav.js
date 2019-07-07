@@ -54,22 +54,22 @@ class Nav extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <RNav className="ml-auto text-right" navbar>
                                 <NavItem>
-                                    <NavLink to={Routing.ourStory.path}>
+                                    <NavLink to={Routing.ourStory.path} activeClassName="font-weight-bold text-black">
                                         {Routing.ourStory.name}
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to={Routing.ourTeam.path}>
+                                    <NavLink to={Routing.ourTeam.path} activeClassName="font-weight-bold text-black">
                                         {Routing.ourTeam.name}
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to={Routing.news.path}>
+                                    <NavLink to={Routing.news.path} activeClassName="font-weight-bold text-black">
                                         {Routing.news.name}
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to={Routing.login.path}>
+                                    <NavLink to={Routing.login.path} activeClassName="font-weight-bold text-black">
                                         {Routing.login.name}
                                     </NavLink>
                                 </NavItem>

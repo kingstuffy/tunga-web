@@ -33,9 +33,14 @@ class OurMission extends Component {
                         <ul className="OurMission__logos-list row">
                             {
                                 this.state.logos.map((logo, i) => (
+                                    logo === ButteryflyWorks || logo === Oxfam || logo === Dioraphte ? (
+                                    <li className="OurMission__logos-item col-md-4 col-xs-6 mb-4 mt-4" key={i}>
+                                        <img src={logo} className="OurMission__logo" style= { {filter: "invert(99%) sepia(99%) saturate(0%) hue-rotate(248deg) brightness(107%) contrast(100%)"} }/>
+                                    </li> ) : (
                                     <li className="OurMission__logos-item col-md-4 col-xs-6 mb-4 mt-4" key={i}>
                                         <img src={logo} className="OurMission__logo"/>
                                     </li>
+                                    )
                                 ))
                             }
                         </ul>

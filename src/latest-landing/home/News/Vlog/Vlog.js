@@ -64,7 +64,7 @@ class Vlog extends Component {
                 <div className="Vlog__container">
                     <Carousel
                         pagination={pagination}
-                        float="float-right"
+                        float="float-right v_pagination"
                         color="text-primary"
                     >
                         <ul className="Vlog__list" style={{ left: this.state.leftPosition }}>
@@ -81,7 +81,7 @@ class Vlog extends Component {
                                                         className="Vlog__item"
                                                         key={j}
                                                         onClick={() => this.onVlogClick(vlog)}
-                                                        style={{ backgroundImage: `url(${vlog.imgUrl})` }}>
+                                                        style={{ backgroundImage: `url(${vlog.imgUrl})`}}>
                                                         <div className="Vlog__item-container">
                                                             <div className="Vlog__title">
                                                                 {vlog.title}

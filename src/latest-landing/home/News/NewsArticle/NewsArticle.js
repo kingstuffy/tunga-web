@@ -46,7 +46,7 @@ class NewsArticle extends Component {
                             {
                                 articles.map((article, key) => (
                                     <li className="NewsArticle__item" key={key}
-                                        style={{ backgroundImage: `url(${article.imgUrl})` }}>
+                                        style={{ backgroundImage: `url(${article.imgUrl})`, height: "100vh" }}>
                                         <div className="NewsArticle__item-container">
                                             <div className="NewsArticle__title">
                                                 {article.title}

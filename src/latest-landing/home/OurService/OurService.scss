@@ -2,7 +2,7 @@
 @import "../../assets/scss/variable";
 
 .OurService {
-    //background: rgba(251, 234, 237, 0.2);
+    // background: rgba(251, 234, 237, 0.2);
     // padding: 18px 31px;
     background: #fefbfb;
     scroll-behavior: smooth;
@@ -10,6 +10,13 @@
     position: relative;
     @media (min-width: 992px) {
         padding: 92px 70px;
+    }
+
+    .header {
+        @media (min-width: 992px) {
+            margin-bottom: 30px;
+            margin-top: -19px;
+        }
     }
 
     .card-center {
