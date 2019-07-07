@@ -23,7 +23,9 @@
     }
 
     &__btn {
-        border: 1px solid #444;
+        border: 1px solid rgba(6, 46, 100, 0.25);
         padding: 4px 20px;
+        border-radius: 0;
+        color: #062E64;
     }
 }

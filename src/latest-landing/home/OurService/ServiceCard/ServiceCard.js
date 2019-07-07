@@ -20,15 +20,15 @@ class ServiceCard extends Component {
                              src={service.imgUrl}
                              alt="Card image cap"/>
                     <CardBody className="">
-                        <CardTitle className="text-blue">
+                        <CardTitle className="text-blue font-weight-bold">
                             {service.title}
                         </CardTitle>
                         <CardText className="size-16">{service.description}</CardText>
-                        <div className="text-blue font-weight-medium">
+                        <div className="text-blue font-weight-bold">
                             LEAD TIME
                         </div>
                         <CardText className="size-14">{service.leadTime}</CardText>
-                        <div className="text-blue font-weight-medium">
+                        <div className="text-blue font-weight-bold">
                             PRICE INDICATION
                         </div>
                         <CardText className="size-14">{service.price}</CardText>

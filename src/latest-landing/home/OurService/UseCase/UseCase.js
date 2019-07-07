@@ -12,7 +12,7 @@ class UseCase extends Component {
         const { useCases } = this.props;
         return (
             <div className="UseCase">
-                <div className="text-blue font-weight-medium mb-2">
+                <div className="text-blue font-weight-bold mb-2">
                     USE CASES
                 </div>
                 {useCases.map((info, i) => (

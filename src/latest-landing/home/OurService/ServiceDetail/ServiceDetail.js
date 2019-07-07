@@ -19,17 +19,17 @@ class ServiceDetail extends Component {
                 <div className="ServiceDetail__card">
                     <Card className="border-0">
                         <CardBody className="">
-                            <CardTitle className="text-blue">
+                            <CardTitle className="text-blue font-weight-bold">
                                 {service.title}
                             </CardTitle>
                             <CardText className="size-16">
                                 {service.longDescription || service.description}
                             </CardText>
-                            <div className="text-blue font-weight-medium">
+                            <div className="text-blue font-weight-bold">
                                 LEAD TIME
                             </div>
                             <CardText className="size-14">{service.leadTime}</CardText>
-                            <div className="text-blue font-weight-medium">
+                            <div className="text-blue font-weight-bold">
                                 PRICE INDICATION
                             </div>
                             <CardText className="size-14">{service.price}</CardText>
