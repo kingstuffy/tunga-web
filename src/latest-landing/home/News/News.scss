@@ -5,6 +5,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     height: 100vh;
+    max-width: 100%;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 
@@ -17,6 +18,9 @@
     &__news-article {
         position: relative;
         scroll-snap-align: start;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
     }
 
     &__vlog {

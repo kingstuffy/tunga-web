@@ -8,7 +8,7 @@ import Login from "../home/Login/Login";
 import Routing from "../constants/Routing";
 import BlogPage from "../home/BlogPage/BlogPage";
 import DevProfile from "../home/DevProfile/DevProfile";
-import App from '../../components/App';
+import Dashboard from '../../components/App';
 
 export default [
     {
@@ -22,12 +22,6 @@ export default [
                 component: DefaultBody,
                 exact: true,
                 name: Routing.home.name
-            },
-            {
-                path: "/dashboard",
-                component: App,
-                exact: true,
-                name: "dashboard"
             },
             {
                 path: Routing.ourStory.path,
@@ -64,6 +58,54 @@ export default [
                 name: Routing.devProfile.name,
                 exact: false,
                 component: DevProfile
+            },
+            {
+                path: "/dashboard",
+                component: Dashboard,
+                exact: true,
+                name: "dashboard"
+            },
+            {
+                path: "/projects",
+                component: Dashboard,
+                exact: true,
+                name: "projects"
+            },
+            {
+                path: "/network",
+                component: Dashboard,
+                exact: true,
+                name: "network"
+            },
+            {
+                path: "/payments",
+                component: Dashboard,
+                exact: true,
+                name: "payments"
+            },
+            {
+                path: "/settings",
+                component: Dashboard,
+                exact: true,
+                name: "settings"
+            },
+            {
+                path: "/onboard",
+                component: Dashboard,
+                exact: true,
+                name: "onboard"
+            },
+            {
+                path: "/work",
+                component: Dashboard,
+                exact: true,
+                name: "work"
+            },
+            {
+                path: "/proposal",
+                component: Dashboard,
+                exact: true,
+                name: "proposal"
             },
         ]
     }

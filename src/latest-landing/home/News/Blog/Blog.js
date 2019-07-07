@@ -63,7 +63,7 @@ class Blog extends Component {
                                             posts.map(
                                                 (article, j) => (
                                                     <li className="Blog__item" key={j}
-                                                        style={{ backgroundImage: `url(${article.imgUrl})` }}>
+                                                        style={{ backgroundImage: `url(${article.imgUrl})`, height: "60vh" }}>
                                                         <div
                                                             className="Blog__item-container">
                                                             <div className="Blog__title">

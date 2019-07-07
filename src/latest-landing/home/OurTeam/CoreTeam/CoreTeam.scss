@@ -2,6 +2,12 @@
 @import "../../../assets/scss/variable";
 
 .CoreTeam {
+    padding-left: 30px;
+
+    .float-right {
+        padding-right: 56px;
+        margin-bottom: 7px;
+    }
 
     &__container {
         overflow: hidden;

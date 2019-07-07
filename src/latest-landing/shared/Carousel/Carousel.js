@@ -61,7 +61,7 @@ class Carousel extends Component {
             if (dataPerPage) {
                 return dataPerPage;
             }
-
+            console.log(data.perPage);
             return windowWith <= data.breakpoint ? data.perPage : 0;
         }, 0);
     }

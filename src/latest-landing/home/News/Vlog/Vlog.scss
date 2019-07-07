@@ -23,11 +23,28 @@
         font-size: 16px;
         line-height: 19px;
         color: #DA3451;
+
+        @media (min-width: 992px) {
+            margin-top: -65px;
+        }
     }
 
     &__container {
-        overflow: hidden;
-        margin-top: -30px;
+        overflow-x: hidden;
+        margin-top: -24px;
+        width: 100vw;
+        
+        @media (min-width: 992px) {
+            margin-top: -24px;
+        }
+    }
+
+    .v_pagination {
+        padding-right: 100px;
+    }
+
+    &__row {
+        margin-top: -8px;
     }
 
     &__list {
@@ -58,6 +75,7 @@
     &__item-container {
         position: relative;
         z-index: 10;
+        margin-top: -5px;
         padding: 20px;
         height: 100%;
     }

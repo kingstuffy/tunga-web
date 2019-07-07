@@ -2,7 +2,7 @@ import React, { Component, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import Routes from "./configs/Routes.conf";
 
-// console.log = () => null; // silent all consoles
+// console.log = () => null;
 class App extends Component {
     loading = () => <div>Loading...</div>;
 
