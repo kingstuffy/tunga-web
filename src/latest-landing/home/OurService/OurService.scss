@@ -8,6 +8,8 @@
     scroll-behavior: smooth;
     scroll-snap-align: start;
     position: relative;
+    min-height: 100vh;
+
     @media (min-width: 992px) {
         padding: 92px 70px;
     }
