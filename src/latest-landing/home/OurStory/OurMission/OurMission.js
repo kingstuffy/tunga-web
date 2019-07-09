@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./OurMission.scss";
-import ButteryflyWorks from "../../../assets/img/our-story/butterfly-works-inverted.png";
-import TridonBank from "../../../assets/img/our-story/tridon-bank.png";
+import ButteryflyWorks from "../../../assets/img/our-story/butterfly_works.png";
+import TridonBank from "../../../assets/img/our-story/triodos.png";
 import Doen from "../../../assets/img/our-story/doen.png";
 import Oxfam from "../../../assets/img/our-story/oxfam.png";
 import Edukans from "../../../assets/img/our-story/edukans.png";
@@ -35,7 +35,7 @@ class OurMission extends Component {
                                 this.state.logos.map((logo, i) => (
                                     logo === ButteryflyWorks || logo === Oxfam || logo === Dioraphte ? (
                                     <li className="OurMission__logos-item col-md-4 col-xs-6 mb-4 mt-4" key={i}>
-                                        <img src={logo} className="OurMission__logo" style= { {filter: "invert(99%) sepia(99%) saturate(0%) hue-rotate(248deg) brightness(107%) contrast(100%)"} }/>
+                                        <img src={logo} className="OurMission__logo"/>
                                     </li> ) : (
                                     <li className="OurMission__logos-item col-md-4 col-xs-6 mb-4 mt-4" key={i}>
                                         <img src={logo} className="OurMission__logo"/>
