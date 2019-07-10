@@ -14,15 +14,10 @@ class AboutUs extends Component {
         return (
             <section className="AboutUs" id="AboutUs">
                 <div
-                    className="about"
-                    style={{
-                        height: "70vh",
-                        width: "100vw",
-                        backgroundImage: `url(${About})`
-                    }}
-                >
+                    className="AboutUs__bg"
+                    style={{ backgroundImage: `url(${About})` }}>
                 </div>
-                <div style={{ height: "50vh"}} className="ml-5 AboutMsg">
+                <div className="AboutUs__content">
                     <Row>
                         <Col sm="12" lg="6" md="6">
                             <div>
@@ -34,15 +29,17 @@ class AboutUs extends Component {
                                     building new software products
                                 </h5>
                                 <div className="abt-content text-justify">
-                                    We were founded by tech and hospitality entrepreneurs turned aid workers. As a result we
+                                    We were founded by tech and hospitality entrepreneurs turned aid workers. As a
+                                    result we
                                     have first hand experience in what it takes to both develop rapid innovations and to
-                                    untap the potential of Africa’s undiscovered tech talents. With our low rates and short
+                                    untap the potential of Africa’s undiscovered tech talents. With our low rates and
+                                    short
                                     lead times we can have your product up and running super fast!
                                 </div>
                             </div>
                         </Col>
                         <Col sm="12" lg="6" md="6">
-                            <div className="ml-4 mr-4">
+                            <div className="">
                                 <ListGroup className="p-0">
                                     <ListGroupItem className="border-0 pl-0">
                                         <Icon

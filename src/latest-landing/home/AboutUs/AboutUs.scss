@@ -3,19 +3,50 @@
 .AboutUs {
     // border: 2px solid green;
     display: block;
-    height: 100%;
     width: 100%;
-    scroll-snap-align: start;
     position: relative;
 
-    .AboutMsg {
-        // @extend %vertical-align;
-        // padding: 31px 18px;
-        padding-top: 31px;
+    @media (min-width: 992px) {
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    &__bg {
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: top;
+        height: 55vh;
+        width: 100%;
+        z-index: 1;
+
+        @media (max-width: 992px) {
+            scroll-snap-align: start;
+        }
 
         @media (min-width: 992px) {
-            padding-top: 50px;
-            // padding: 50px 70px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__content {
+        // @extend %vertical-align;
+        padding: 31px 18px;
+        min-height: 30vh;
+        z-index: 10;
+        background-color: #fff;
+        position: relative;
+
+        @media (max-width: 992px) {
+            scroll-snap-align: start;
+        }
+
+        @media (min-width: 992px) {
+            padding: 50px 70px;
+            position: absolute;
+            bottom: 0;
         }
 
         .abt-title {
@@ -46,12 +77,4 @@
         font-size: 16px;
         // line-height: 24px;
     }
-}
-
-.about {
-    overflow: hidden;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position:  50% 50%;
 }
