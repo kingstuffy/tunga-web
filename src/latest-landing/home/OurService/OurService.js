@@ -6,6 +6,21 @@ import Service1 from "../../assets/img/service/service1.png";
 import Service2 from "../../assets/img/service/service2.png";
 import Service3 from "../../assets/img/service/service3.png";
 import Service4 from "../../assets/img/service/service4.png";
+
+import DedicatedDevelopers from "../../assets/videos/home/our-services/Dedicated developers - vid.mp4";
+import DedicatedDevelopersDetail from "../../assets/videos/home/our-services/Dedicated developers - big page.mp4";
+import DesignScoping from "../../assets/videos/home/our-services/Design and scoping.mp4";
+import DesignScopingDetail from "../../assets/videos/home/our-services/Design and scoping - detail page.mp4";
+import DeveloperDemand from "../../assets/videos/home/our-services/Developer on demand.mp4";
+import DeveloperDemandDetail from "../../assets/videos/home/our-services/Developer on demand detail page.mp4";
+import ProjectOutsourcing from "../../assets/videos/home/our-services/Project outsourcing.mp4";
+import ProjectOutsourcingDetail from "../../assets/videos/home/our-services/Project outsourcing - detail page.mp4";
+import Recruitment from "../../assets/videos/home/our-services/Recruitment .mp4";
+import RecruitmentDetail from "../../assets/videos/home/our-services/Recruitment - detail page.mp4";
+import SoftwareMaintenance from "../../assets/videos/home/our-services/Software maintenance.mp4";
+import SoftwareMaintenanceDetail from "../../assets/videos/home/our-services/Software maintenace detail page.mp4";
+
+
 import case1 from "../../assets/img/service/service1.png";
 import case2 from "../../assets/img/service/service2.png";
 import Icon from "../../shared/core/Icon";
@@ -28,6 +43,8 @@ class OurService extends Component {
                         Reinforce your team with remote developers - full time or part time; temporary or permanent.
                     `,
                     imgUrl: Service1,
+                    videoMain: DedicatedDevelopers,
+                    videoDetails: DedicatedDevelopersDetail,
                     leadTime: "1 - 2 weeks",
                     price: "23 - 26 EUR per hour",
                     useCases: [
@@ -48,6 +65,8 @@ class OurService extends Component {
                     description:
                         "We run the show for you from idea to launch - x.0 versions, beta’s, alpha’s, MVP’s, prototypes ",
                     imgUrl: Service2,
+                    videoMain: ProjectOutsourcing,
+                    videoDetails: ProjectOutsourcingDetail,
                     leadTime: "2 - 3 weeks",
                     price: "5,000 EUR (prototype) - 18,000 EUR (v1.0) ",
                     useCases: [
@@ -68,6 +87,8 @@ class OurService extends Component {
                     description:
                         "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
                     imgUrl: Service3,
+                    videoMain: DesignScoping,
+                    videoDetails: DesignScopingDetail,
                     leadTime: "1 - 2 weeks",
                     price: "1,000 - 3,000 EUR"
                 },
@@ -76,33 +97,31 @@ class OurService extends Component {
                     description:
                         "Quick access to a developer for incidental needs - Product improvements, additional func",
                     imgUrl: Service4,
+                    videoMain: DeveloperDemand,
+                    videoDetails: DeveloperDemandDetail,
                     leadTime: "< 1 week",
                     price: "23 - 26 EUR per hour"
                 },
                 {
-                    title: "Developers on-demand",
+                    title: "Recruitment",
                     description:
                         "Quick access to a developer for incidental needs - Product improvements, additional func",
                     imgUrl: Service4,
+                    videoMain: Recruitment,
+                    videoDetails: RecruitmentDetail,
                     leadTime: "< 1 week",
                     price: "23 - 26 EUR per hour"
                 },
                 {
-                    title: "Scoping & design",
+                    title: "Software Maintenance",
                     description:
                         "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
                     imgUrl: Service3,
+                    videoMain: SoftwareMaintenance,
+                    videoDetails: SoftwareMaintenanceDetail,
                     leadTime: "1 - 2 weeks",
                     price: "1,000 - 3,000 EUR"
                 },
-                {
-                    title: "Dedicated developers",
-                    description:
-                        "Reinforce your team with remote developers - full time or part time; temporary or permanent",
-                    imgUrl: Service1,
-                    leadTime: "1 - 2 weeks",
-                    price: "23 - 26 EUR per hour"
-                }
             ],
             dataPerPage: [],
             paginate: {

@@ -15,10 +15,18 @@ class ServiceCard extends Component {
         return (
             <div className="ServiceCard">
                 <Card className="border-0">
-                    <CardImg top width="100%"
-                             className="ServiceCard__img"
-                             src={service.imgUrl}
-                             alt="Card image cap"/>
+                    <div className="ServiceCard__video-card">
+                        <video
+                            className="ServiceCard__video"
+                            autoPlay
+                            loop
+                            muted>
+                            <source
+                                src={service.videoMain}
+                                type="video/mp4"
+                            />
+                        </video>
+                    </div>
                     <CardBody className="">
                         <CardTitle className="text-blue font-weight-bold">
                             {service.title}

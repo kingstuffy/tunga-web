@@ -1,7 +1,14 @@
 @import "../../../assets/scss/util";
 @import "../../../assets/scss/variable";
 .ServiceCard {
-   &__img {
-       height: 215px;
-   }
+    &__video-card {
+        width: 100%;
+        height: 215px;
+    }
+
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
