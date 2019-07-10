@@ -236,7 +236,7 @@ class OurTeam extends Component {
     render() {
         return (
             <section className="OurTeam">
-                <SideNav anchors={anchors} />
+                <SideNav anchors={anchors} bgColor="#062E64" color="#062E64"/>
                 <div id="OurTeam" className="OurTeam__core-team">
                     <div className="OurTeam__nav">
                         <Nav />

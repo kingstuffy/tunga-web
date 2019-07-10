@@ -59,6 +59,7 @@ class SideNav extends React.Component {
             this.state.anchors.map(anc => (
             <li className="side_bar-item" key={anc.hash}>
               <div
+                style={{backgroundColor: this.props.bgColor}}
                 className={`side_bar-tab
                   ${anc.isActiveBar ? "side_bar-tab-active"
                   : "side_bar-tab-hidden"
@@ -70,6 +71,7 @@ class SideNav extends React.Component {
                 : "side_bar-label-hidden"}`}
                 href={`#${anc.hash}`}
                 data-value={anc.hash}
+                style={{color: this.props.color}}
               >
                 {anc.title}
               </a>

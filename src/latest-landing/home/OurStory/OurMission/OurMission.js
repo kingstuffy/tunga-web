@@ -4,7 +4,7 @@ import "./OurMission.scss";
 import ButteryflyWorks from "../../../assets/img/our-story/butterfly_works.png";
 import TridonBank from "../../../assets/img/our-story/triodos.png";
 import Doen from "../../../assets/img/our-story/doen.png";
-import Oxfam from "../../../assets/img/our-story/oxfam.png";
+// import Oxfam from "../../../assets/img/our-story/oxfam.png";
 import Edukans from "../../../assets/img/our-story/edukans.png";
 import Dioraphte from "../../../assets/img/our-story/dioraphte.png";
 
@@ -18,7 +18,6 @@ class OurMission extends Component {
                 ButteryflyWorks,
                 TridonBank,
                 Doen,
-                Oxfam,
                 Edukans,
                 Dioraphte,
             ]
@@ -33,7 +32,7 @@ class OurMission extends Component {
                         <ul className="OurMission__logos-list row">
                             {
                                 this.state.logos.map((logo, i) => (
-                                    logo === ButteryflyWorks || logo === Oxfam || logo === Dioraphte ? (
+                                    logo === ButteryflyWorks || logo === Dioraphte ? (
                                     <li className="OurMission__logos-item col-md-4 col-xs-6 mb-4 mt-4" key={i}>
                                         <img src={logo} className="OurMission__logo"/>
                                     </li> ) : (

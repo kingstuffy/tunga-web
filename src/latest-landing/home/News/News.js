@@ -183,7 +183,7 @@ class News extends Component {
     render() {
         return (
             <section className="News">
-                <SideNav anchors={anchors} />
+                <SideNav anchors={anchors} bgColor="#062E64" color="#062E64"/>
                 <div id="NewsArticle" className="News__news-article">
                     <div className="News__nav">
                         <Nav/>
