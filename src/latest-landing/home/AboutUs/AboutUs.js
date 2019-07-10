@@ -19,7 +19,7 @@ class AboutUs extends Component {
                 </div>
                 <div className="AboutUs__content">
                     <Row>
-                        <Col sm="12" lg="6" md="6">
+                        <Col sm="12" lg="7" md="7">
                             <div>
                                 <h4 className="text-primary text-uppercase abt-title">
                                     About Us
@@ -38,7 +38,7 @@ class AboutUs extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col sm="12" lg="6" md="6">
+                        <Col sm="12" lg="5" md="5">
                             <div className="">
                                 <ListGroup className="p-0">
                                     <ListGroupItem className="border-0 pl-0">
