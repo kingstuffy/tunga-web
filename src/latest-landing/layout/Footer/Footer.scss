@@ -27,6 +27,7 @@ footer {
     bottom: 0;
     scroll-snap-align: start;
     position: relative;
+    min-height: 100vh;
 
     // ALSO FEATURED IN ///////////////////////////////
     .also-featured {
