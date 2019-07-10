@@ -56,10 +56,10 @@
     }
 
     &__detail {
-        margin: 0 -2em;
-
-        @media (min-width: 992px) {
-            margin: 0 -4em;
-        }
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        width: 100%;
+        left: 0;
     }
 }

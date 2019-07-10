@@ -117,7 +117,6 @@ class OurService extends Component {
             nextService: null,
         };
 
-        this.detailsRef = null;
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.onServiceSelection = this.onServiceSelection.bind(this);
         this.onCloseServiceDetail = this.onCloseServiceDetail.bind(this);
@@ -159,10 +158,6 @@ class OurService extends Component {
         if (index !== -1 && index !== this.state.data.length - 1) {
             const nextService = this.state.data[index + 1];
             this.setState({ selectedService, nextService });
-
-            if (this.detailsRef) {
-                window.scrollTo(0, this.detailsRef.offsetTop);
-            }
             return;
         }
 
@@ -224,17 +219,17 @@ class OurService extends Component {
                         )}
                     </ul>
                 </div>
-                <div className="OurService__detail" ref={(ref) => this.detailsRef = ref}>
-                    {
-                        this.state.selectedService &&
+                {
+                    this.state.selectedService &&
+                    <div className="OurService__detail">
                         <ServiceDetail
                             service={this.state.selectedService}
                             nextService={this.state.nextService}
                             onServiceSelection={this.onServiceSelection}
                             onCloseServiceDetail={this.onCloseServiceDetail}
                         />
-                    }
-                </div>
+                    </div>
+                }
             </section>
         );
     }
