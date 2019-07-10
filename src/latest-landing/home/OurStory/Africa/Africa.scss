@@ -1,6 +1,9 @@
 @import "../../../../scss/variables";
 
 .Africa {
+    height: 100vh;
+    width: 100vw;
+
     &__bg {
         background-repeat: no-repeat;
         background-size: cover;
@@ -17,6 +20,7 @@
 
         @media (min-width: 992px) {
             padding: 1% 2%;
+            margin-top: -45px;
         }
     }
 }

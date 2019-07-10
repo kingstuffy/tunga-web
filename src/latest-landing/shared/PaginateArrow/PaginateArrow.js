@@ -15,7 +15,7 @@ class PaginateArrow extends Component {
                 <span className={float}>
                     <Icon
                         onClick={() => This.paging(paginate.current - 1)}
-                        className={paginate.current === 1 ? "text-gray" : color}
+                        className={`${paginate.current === 1 ? "text-gray" : color} mr-3`}
                         name="previous"
                         size="md"
                     />

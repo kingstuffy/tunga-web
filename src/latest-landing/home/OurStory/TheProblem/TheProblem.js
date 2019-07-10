@@ -20,10 +20,10 @@ class TheProblem extends Component {
                     position="left"
                 >
                     <div className="TheProblem__content">
-                        <div className="text-primary size-14 font-weight-normal mb-2">
+                        <div className="text-primary size-14 font-weight-bold mb-2">
                             THE PROBLEM
                         </div>
-                        <div className="text-blue size-18 font-weight-normal mb-2">
+                        <div className="text-blue size-18 font-weight-bold mb-2">
                             African youths don’t have the same opportunities
                         </div>
                         <div className="mb-4">

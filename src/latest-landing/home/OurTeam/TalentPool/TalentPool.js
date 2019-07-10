@@ -61,7 +61,7 @@ class TalentPool extends Component {
 
         return (
             <section className="TalentPool">
-                <h4 className="text-primary size-16 text-uppercase font-weight-medium">
+                <h4 className="text-primary size-16 text-uppercase font-weight-bold" style={{ paddingLeft: "30px"}}>
                     TALENT POOL
                 </h4>
                 <div className="TalentPool__seatch-form">
