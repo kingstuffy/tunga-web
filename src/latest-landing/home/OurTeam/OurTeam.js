@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactPageScroller from "react-page-scroller";
+
 import "./OurTeam.scss";
 import CoreTeam from "./CoreTeam/CoreTeam";
 import TalentPool from "./TalentPool/TalentPool";
@@ -20,30 +22,38 @@ import Routing from "../../constants/Routing";
 import SideNav from "../../../components/sidenav";
 import Footer from "../../layout/Footer/Footer";
 
-const anchors = [
+const pages = [
     {
         hash: "OurTeam",
         title: "Our Team",
         isActive: false,
         isActiveBar: false,
+        color: "#062E64",
+        bgColor: "#062E64"
     },
     {
         hash: "TalentPool",
         title: "Talent Pool",
         isActive: false,
         isActiveBar: false,
+        color: "#062E64",
+        bgColor: "#062E64"
     },
     {
         hash: "ScheduleCall",
         title: "Schedule Call",
         isActive: false,
         isActiveBar: false,
+        color: "#fff",
+        bgColor: "#fff"
     },
     {
         hash: "Footer",
         title: "Footer",
         isActive: false,
         isActiveBar: false,
+        color: "#fff",
+        bgColor: "#fff"
     },
 ];
 
@@ -233,23 +243,34 @@ class OurTeam extends Component {
         };
     }
 
+
+    goToPage = (pageNumber) => {
+        return this.reactPageScroller.goToPage(pageNumber)
+    }
+
+    pageOnChange = (pageNumber) => {
+        console.log("current page", pageNumber)
+    }
+
     render() {
         return (
             <section className="OurTeam">
-                <SideNav anchors={anchors} bgColor="#062E64" color="#062E64"/>
-                <div id="OurTeam" className="OurTeam__core-team">
-                    <div className="OurTeam__nav">
-                        <Nav />
+                <ReactPageScroller  ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
+                    <div id="OurTeam" className="OurTeam__core-team">
+                        <div className="OurTeam__nav">
+                            <Nav />
+                        </div>
+                        <CoreTeam team={this.state.team}/>
                     </div>
-                    <CoreTeam team={this.state.team}/>
-                </div>
-                <div id="TalentPool" className="OurTeam__talent-pool">
-                    <TalentPool talents={this.state.talents}/>
-                </div>
-                <div className="OurTeam__schedule-call">
-                    <ScheduleCall/>
-                </div>
-                <Footer />
+                    <div id="TalentPool" className="OurTeam__talent-pool">
+                        <TalentPool talents={this.state.talents}/>
+                    </div>
+                    <div className="OurTeam__schedule-call">
+                        <ScheduleCall/>
+                    </div>
+                    <Footer />
+                </ReactPageScroller>
+                <SideNav pages={pages} goToPage={this.goToPage}/>
             </section>
         );
     }

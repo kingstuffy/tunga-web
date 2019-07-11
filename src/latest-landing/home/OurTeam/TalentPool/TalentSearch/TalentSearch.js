@@ -36,9 +36,9 @@ class TalentSearch extends Component {
                 <div className="TalentSearch__container">
                     <form className="TalentSearch__form" onSubmit={this.onFormSubmit}>
                         <div className="TalentSearch__icon-group">
-                            <IconGroup>
+                            <IconGroup style={{width: "176%"}}>
                                 <Icon className="Form__input-icon" name='lock-alt' size='card'/>
-                                <Input className="Form__input--has-icon  TalentSearch-input" type="text"
+                                <Input className="Form__input--has-icon" id="TalentSearch-input" type="text"
                                     name="query" value={this.state.query} onChange={this.handleChange}
                                     placeholder="Enter Business Email to unlock search"/>
                                 <Button

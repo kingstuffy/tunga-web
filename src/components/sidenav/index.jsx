@@ -3,52 +3,74 @@ import React from 'react';
 import "./sidenav.css";
 
 class SideNav extends React.Component {
-  observe = null;
 
   constructor(props) {
     super(props)
+    this.timer = null;
+    this.observer = null
     this.state = {
-      anchors: this.props.anchors
+      pages: this.props.pages
     }
   }
 
   componentDidMount() {
     this.observer = new IntersectionObserver(this.observerCallback, {threshold: 0.7});
-    this.addObserverToTargets();
+    setTimeout(() => this.addObserverToTargets(), 1000);
   }
 
-  observerCallback = (entries, observer) => {
-    const activeIds = entries.map( (entry) => {
-        if (entry.intersectionRatio > 0 ) {
-          return entry.target.id;
-        }
-        return entry.target
-      });
-    if (activeIds.length !== this.props.anchors.length) {
-      const activeHash = activeIds[0];
-      const anchors = this.state.anchors.map(obj => {
+  componentWillUnmount () {
+    this.observer = null
+    clearTimeout(this.timer);
+  }
+
+  observerCallback = (entries, _observer) => {
+    const activeTargets = entries.map( (entry) => {
+      if (entry.intersectionRatio > 0 ) {
+        return entry.target.id;
+      }
+      return entry.target
+    });
+
+    if (activeTargets.length !== this.props.pages.length) {
+      const activeHash = activeTargets[0];
+      const pages = this.state.pages.map(obj => {
        return obj.hash === activeHash ?
        { ...obj, isActive: true, isActiveBar: true } : {...obj, isActive: false, isActiveBar: false}
       })
-      this.setState({ anchors })
+      this.setState({ pages })
+      this.hideLabels();
+      this.addObserverToTargets();
     }
-    this.hideLabels();
+
   }
 
   addObserverToTargets = () => {
-    this.props.anchors.forEach((anc) => {
+    const pages = this.state.pages.map((anc) => {
       const target = document.getElementById(anc.hash);
-      this.observer.observe(target);
+
+      if (target && !anc.isObserved) {
+        this.observer.observe(target);
+        return { ...anc, isObserved: true}
+      }
+
+      return anc;
     });
+    this.setState({ pages })
   }
 
-  hideLabels = () => {
-    setTimeout(() => {
-        const anchors = this.state.anchors.map(obj => {
-            return  {...obj, isActive: false}
-        })
-        this.setState({ anchors })
-    }, 2000)
+  hideLabels () {
+    this.timer = setTimeout(() => {
+      const pages = this.state.pages.map(obj => {
+        return {...obj, isActive: false};
+       });
+      this.setState({ pages });
+    }, 5000);
+  }
+
+  handleClick = (pageNumber) => (event) => {
+    console.log("page to navigate to", pageNumber)
+    this.props.goToPage(pageNumber);
+    event.preventDefault();
   }
 
   render () {
@@ -56,10 +78,10 @@ class SideNav extends React.Component {
       <div>
           <ul className="side_bar">
           {
-            this.state.anchors.map(anc => (
+            this.state.pages.map( (anc, index) => (
             <li className="side_bar-item" key={anc.hash}>
               <div
-                style={{backgroundColor: this.props.bgColor}}
+                style={ anc.isActiveBar ? { backgroundColor: anc.bgColor } : { backgroundColor: "#062E64" } }
                 className={`side_bar-tab
                   ${anc.isActiveBar ? "side_bar-tab-active"
                   : "side_bar-tab-hidden"
@@ -71,7 +93,8 @@ class SideNav extends React.Component {
                 : "side_bar-label-hidden"}`}
                 href={`#${anc.hash}`}
                 data-value={anc.hash}
-                style={{color: this.props.color}}
+                style={{color: anc.color}}
+                onClick={this.handleClick(index)}
               >
                 {anc.title}
               </a>
