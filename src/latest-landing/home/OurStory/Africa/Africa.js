@@ -14,10 +14,10 @@ class Africa extends Component {
         return (
             <div className="Africa">
                 <div className="text-center pt-3 pb-2">
-                    <div className="text-primary size-14 font-weight-normal mb-2 mt-3">
+                    <div className="text-primary size-14 font-weight-bold mb-2 mt-3">
                         WHY AFRICA
                     </div>
-                    <div className="text-blue size-18 font-weight-normal mb-2">
+                    <div className="text-blue size-18 font-weight-bold mb-2">
                         Tackling huge youth unemployment
                     </div>
                 </div>

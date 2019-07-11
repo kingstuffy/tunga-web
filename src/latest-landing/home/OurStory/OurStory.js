@@ -82,7 +82,7 @@ class OurStory extends Component {
     render() {
         return (
             <section className="OurStory">
-                <SideNav anchors={anchors}/>
+                <SideNav anchors={anchors} bgColor="#062E64" color="#062E64"/>
                 <div id="OurStory" className="OurStory__header">
                     <div className="OurStory__nav">
                         <Nav/>

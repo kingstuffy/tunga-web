@@ -7,18 +7,9 @@
     height: 100vh;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    
+
     .navbar-nav > li > a {
         color: #222;
-    }
-
-    &__nav {
-        // margin-top: -48px;
-        // z-index: 100;
-        // width: 105%;  // margin-top: 5px;
-        // position: relative;
-        // z-index: 10;
-        margin-top: -13px;
     }
 
     &__core-team {

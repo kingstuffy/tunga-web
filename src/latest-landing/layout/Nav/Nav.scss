@@ -26,6 +26,10 @@ RNavLink {
         }
     }
 
+    .btn-primary {
+        box-shadow: none !important;
+    }
+
     .nav-item .active {
         font-weight: 600;
     }

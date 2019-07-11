@@ -32,13 +32,13 @@ class WhitePaper extends Component {
             <div className="WhitePaper">
                 <div className="WhitePaper__bg" style={{ backgroundImage: `url(${BgImg})` }}></div>
                 <div className="WhitePaper__body">
-                    <div className="WhitePaper__heading">
+                    <div className="WhitePaper__heading font-weight-bold">
                         WHITEPAPER
                     </div>
                     <Row>
                         <Col sm="12" md="4">
                             <div className="WhitePaper__section">
-                                <div className="WhitePaper__subheading">
+                                <div className="WhitePaper__subheading font-weight-bold">
                                     Best African countries for sourcing software developers in 2019
                                 </div>
                                 <div className="WhitePaper__text">
@@ -81,7 +81,7 @@ class WhitePaper extends Component {
                                         country?
                                     </li>
                                 </ul>
-                                <div className="text-center mt-2">
+                                <div className="text-center mt-5">
                                     <Button onClick={this.onDownloadOpen}>
                                         Download
                                     </Button>

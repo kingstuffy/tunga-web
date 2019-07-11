@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./ServiceCard.scss";
 import { Card, CardBody, CardText, CardTitle, CardImg } from "reactstrap";
-import Icon from "../../../shared/core/Icon";
+import arrow from "../../../assets/img/service/Vector-1.png";
 
 
 class ServiceCard extends Component {
@@ -40,12 +40,12 @@ class ServiceCard extends Component {
                             PRICE INDICATION
                         </div>
                         <CardText className="size-14">{service.price}</CardText>
-                        <a className="ServiceCard__cta text-primary size-18"
+                        <a className="ServiceCard__cta text-primary font-weight-bold size-18"
                            onClick={() => {
                                onServiceSelection(service);
                            }}
                         >
-                            Learn more <Icon name='arrow-right' size='card'/>
+                            Learn more <img src={arrow} />
                         </a>
                     </CardBody>
                 </Card>

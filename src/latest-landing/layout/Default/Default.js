@@ -55,7 +55,7 @@ class Default extends Component {
     render() {
         return (
       <div className="Default">
-        <SideNav anchors={anchors} />
+        <SideNav anchors={anchors}  bgColor="#062E64" color="#062E64"/>
         <Header/>
         <AboutUs/>
         <OurService/>

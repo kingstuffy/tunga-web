@@ -39,10 +39,10 @@ class ImpactSourcing extends Component {
                         </div>
                     </div>
                     <div className="ImpactSourcing__content col-md-6 col-sm-12">
-                        <div className="text-primary size-14 font-weight-normal mb-2 mt-3">
+                        <div className="text-primary size-14 font-weight-bold mb-2 mt-3">
                             IMPACT SOURCING
                         </div>
-                        <div className="text-blue size-18 font-weight-normal mb-2">
+                        <div className="text-blue size-18 font-weight-bold mb-2">
                             Software outsourcing done right
                         </div>
                         <div className="mb-4">

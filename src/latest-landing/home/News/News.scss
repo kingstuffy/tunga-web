@@ -5,7 +5,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     height: 100vh;
-    max-width: 100%;
+    max-width: 100vw;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 
@@ -21,20 +21,30 @@
         overflow: hidden;
         width: 100vw;
         height: 100vh;
+        overflow-x: hidden;
     }
 
     &__vlog {
+        width: 100vw;
+        overflow: hidden;
         position: relative;
         scroll-snap-align: start;
+        overflow-x: hidden;
     }
 
     &__white-paper {
+        width: 100vw;
+        overflow: hidden;
         position: relative;
         scroll-snap-align: start;
+        overflow-x: hidden;
     }
 
     &__blog {
+        width: 100vw;
+        overflow: hidden;
         position: relative;
         scroll-snap-align: start;
+        overflow-x: hidden;
     }
 }

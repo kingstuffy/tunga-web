@@ -58,7 +58,7 @@ class Vlog extends Component {
 
         return (
             <section className={`Vlog Vlog--${classModifier}`}>
-                <div className="Vlog__heading">
+                <div className="Vlog__heading font-weight-bold">
                     VLOGS
                 </div>
                 <div className="Vlog__container">

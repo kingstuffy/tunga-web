@@ -80,7 +80,7 @@ class Carousel extends Component {
                 <div className={`${float} Carousel__pagination`}>
                     <Icon
                         onClick={() => hasPrevious && this.updatePage(this.state.current - 1)}
-                        className={hasPrevious ? color : 'text-gray'}
+                        className={`${hasPrevious ? color : "text-gray"} mr-3`}
                         name="previous"
                         size="md"
                     />

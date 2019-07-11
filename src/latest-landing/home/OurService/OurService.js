@@ -211,7 +211,7 @@ class OurService extends Component {
     render() {
         return (
             <section className="OurService" id="OurService">
-                <h4 className="text-primary size-18 text-uppercase header">
+                <h4 className="text-primary size-18 text-uppercase header font-weight-bold">
                     Our Services
                     <PaginateArrow
                         This={this}

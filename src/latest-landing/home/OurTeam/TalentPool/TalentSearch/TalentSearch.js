@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./TalentSearch.scss";
+// import Button from "../../../../shared/core/Button";
 import Icon from "../../../../shared/core/Icon";
-import { Input, IconGroup } from "../../../../shared/Form/Form";
+import {  Group, Input, IconGroup, Button } from "../../../../shared/Form/Form";
 
 
 class TalentSearch extends Component {
@@ -36,10 +37,15 @@ class TalentSearch extends Component {
                     <form className="TalentSearch__form" onSubmit={this.onFormSubmit}>
                         <div className="TalentSearch__icon-group">
                             <IconGroup>
-                                <Icon className="Form__input-icon" name='search' size='card'/>
-                                <Input className="Form__input--has-icon Form__input--b-b" type="text"
-                                       name="query" value={this.state.query} onChange={this.handleChange}
-                                       placeholder="Search by skills or technology"/>
+                                <Icon className="Form__input-icon" name='lock-alt' size='card'/>
+                                <Input className="Form__input--has-icon  TalentSearch-input" type="text"
+                                    name="query" value={this.state.query} onChange={this.handleChange}
+                                    placeholder="Enter Business Email to unlock search"/>
+                                <Button
+                                    className="p-4 border-radius-0 TalentSearch-button"
+                                >
+                                    Go
+                                </Button>
                             </IconGroup>
                         </div>
                     </form>

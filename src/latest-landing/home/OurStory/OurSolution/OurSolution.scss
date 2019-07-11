@@ -3,6 +3,14 @@
 .OurSolution {
     min-height: 100vh;
 
+    &__video {
+        width: 460px;
+        height: 360px;
+        margin-top: 87px;
+        margin-left: -20px;
+        object-fit: cover;
+    }
+
     &__content {
         padding: 10% 8%;
 

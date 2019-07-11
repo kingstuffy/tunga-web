@@ -21,13 +21,13 @@ class OurDream extends Component {
                     position="right"
                 >
                     <div className="OurDream__content">
-                        <div className="text-primary size-14 font-weight-normal mb-2">
+                        <div className="OurDream__title text-primary size-14 font-weight-bold mb-2">
                             OUR DREAM
                         </div>
-                        <div className="text-blue size-18 font-weight-normal mb-2">
+                        <div className="OurDream__title  text-blue size-18 font-weight-bold mb-2">
                             Equal opportunity for all youths
                         </div>
-                        <div className="mb-4">
+                        <div className="mb-4 OurDream__paragraph ">
                             Being able to take control of and choose your own destiny is a universal value. And it
                             probably is disproportionately so among software developers and startup entrepreneurs like
                             ourselves. Tunga is founded by not-for-profit
