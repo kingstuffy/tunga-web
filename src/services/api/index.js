@@ -7,6 +7,7 @@ const api = (payload) => {
         baseURL: apiConfig.url,
         params: {},
         data: {},
+        withCredentials: false,
     });
 
     return axios.request(config);

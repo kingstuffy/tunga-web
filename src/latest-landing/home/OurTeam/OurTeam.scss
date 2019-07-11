@@ -22,7 +22,11 @@
     &__talent-pool {
         position: relative;
         scroll-snap-align: start;
-        padding: 7% 0 2%;
+        padding: 50px 0 50px 18px;
+
+        @media (min-width: 992px) {
+            padding: 50px 0 50px 70px;
+        }
     }
 
     &__schedule-call {

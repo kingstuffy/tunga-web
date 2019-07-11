@@ -2,7 +2,6 @@
 @import "../../../assets/scss/variable";
 
 .TalentPool {
-
     &__container {
         overflow: hidden;
         margin-top: -30px;
@@ -28,5 +27,13 @@
         @media (min-width: 992px) {
             width: 20%;
         }
+    }
+
+    .Carousel__pagination {
+        padding-right: 70px;
+    }
+
+    .Carousel__container {
+        padding-top: 10px;
     }
 }

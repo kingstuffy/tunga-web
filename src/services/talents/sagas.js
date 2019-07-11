@@ -8,7 +8,7 @@ function* fetchTalents(action) {
     try {
         const response = yield call(api, {
             method: 'get',
-            url: 'https://api.myjson.com/bins/984vl',
+            url: '/users/',
             params: {
                 search: action.search,
                 page_size: action.limit,
