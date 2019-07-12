@@ -168,7 +168,7 @@ class Footer extends Component {
 
                 <hr id="line"/>
                 {/*------------------Our Offices------------------- */}
-                <Row>
+                <Row style={{marginTop: "-52px"}}>
                     <Col md="3" sm="6">
                         <div className="tunga-offices">
                             <div className="tunga-kampala">
