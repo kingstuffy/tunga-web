@@ -75,13 +75,13 @@ class SideNav extends React.Component {
 
   render () {
     return (
-      <div>
-          <ul className="side_bar">
+      <div className="side_bar">
+          <ul>
           {
             this.state.pages.map( (anc, index) => (
             <li className="side_bar-item" key={anc.hash}>
               <div
-                style={ anc.isActiveBar ? { backgroundColor: anc.bgColor } : { backgroundColor: "#062E64" } }
+                style={ anc.isActiveBar ? { backgroundColor: anc.bgColor } : { backgroundColor: "#333" } }
                 className={`side_bar-tab
                   ${anc.isActiveBar ? "side_bar-tab-active"
                   : "side_bar-tab-hidden"
