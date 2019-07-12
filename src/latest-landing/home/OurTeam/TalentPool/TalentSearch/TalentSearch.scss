@@ -10,7 +10,6 @@
 
 .Form__input-icon-group {
     display: flex;
-    width: 176%;
 }
 
 .TalentSearch-button {
@@ -19,6 +18,7 @@
     height: 3.5rem !important;
 }
 
-.TalentSearch-input {
+#TalentSearch-input {
     height: 57px !important;
+    width: 176%;
 }

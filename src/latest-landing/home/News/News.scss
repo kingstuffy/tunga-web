@@ -17,7 +17,7 @@
 
     &__news-article {
         position: relative;
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
         overflow: hidden;
         width: 100vw;
         height: 100vh;
@@ -28,7 +28,7 @@
         width: 100vw;
         overflow: hidden;
         position: relative;
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
         overflow-x: hidden;
     }
 
@@ -36,7 +36,7 @@
         width: 100vw;
         overflow: hidden;
         position: relative;
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
         overflow-x: hidden;
     }
 
@@ -44,7 +44,7 @@
         width: 100vw;
         overflow: hidden;
         position: relative;
-        scroll-snap-align: start;
+        // scroll-snap-align: start;
         overflow-x: hidden;
     }
 }
