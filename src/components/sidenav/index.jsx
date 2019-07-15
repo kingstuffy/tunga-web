@@ -6,8 +6,11 @@ class SideNav extends React.Component {
 
   constructor(props) {
     super(props)
-    this.timer = null;
-    this.observer = null
+    this.hideLabelsTimer = null;
+    this.showActiveLabelTimer = null;
+    this.observer = null;
+    this.observed = [];
+    this.triggerRender = true;
     this.state = {
       pages: this.props.pages
     }
@@ -19,8 +22,8 @@ class SideNav extends React.Component {
   }
 
   componentWillUnmount () {
-    this.observer = null
-    clearTimeout(this.timer);
+    clearTimeout(this.showLabel);
+    clearTimeout(this.hideLabelsTimer);
   }
 
   observerCallback = (entries, _observer) => {
@@ -33,12 +36,16 @@ class SideNav extends React.Component {
 
     if (activeTargets.length !== this.props.pages.length) {
       const activeHash = activeTargets[0];
-      const pages = this.state.pages.map(obj => {
-       return obj.hash === activeHash ?
-       { ...obj, isActive: true, isActiveBar: true } : {...obj, isActive: false, isActiveBar: false}
+      const page = this.state.pages.find(obj => {
+       return obj.hash === activeHash
       })
-      this.setState({ pages })
-      this.hideLabels();
+      this.observed = [...this.observed, page]
+
+      if (this.triggerRender) {
+        this.triggerRender = false;
+        this.showLabel();
+      }
+
       this.addObserverToTargets();
     }
 
@@ -58,13 +65,26 @@ class SideNav extends React.Component {
     this.setState({ pages })
   }
 
+  showLabel = () => {
+    this.showActiveLabelTimer = setTimeout(() => {
+      this.triggerRender = true;
+      const active = this.observed[this.observed.length - 1]
+      const pages = this.state.pages.map(obj => {
+        return active.hash === obj.hash
+          ? { ...obj, isActive: true, isActiveBar: true } : {...obj, isActive: false, isActiveBar: false};
+       });
+      this.setState({ pages });
+      this.hideLabels();
+    }, 600);
+  }
+
   hideLabels () {
-    this.timer = setTimeout(() => {
+    this.hideLabelsTimer = setTimeout(() => {
       const pages = this.state.pages.map(obj => {
         return {...obj, isActive: false};
        });
       this.setState({ pages });
-    }, 5000);
+    }, 1500);
   }
 
   handleClick = (pageNumber) => (event) => {
