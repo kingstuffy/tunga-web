@@ -5,6 +5,7 @@ import * as actions from './actions';
 import * as types from './constants';
 
 function* fetchTalents(action) {
+    console.log(action);
     try {
         const response = yield call(api, {
             method: 'get',

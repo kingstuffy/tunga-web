@@ -1,8 +1,8 @@
 import * as types from './constants';
 
-export const fetchTalentsRequest = (page = 1) => ({
+export const fetchTalentsRequest = (params) => ({
     type: types.FETCH_TALENTS_REQUEST,
-    page,
+    ...params,
 });
 
 export const fetchTalentsSuccess = (data) => ({

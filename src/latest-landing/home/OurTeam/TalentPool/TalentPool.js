@@ -17,11 +17,18 @@ class TalentPool extends Component {
         };
 
         this.loadData = this.loadData.bind(this);
+        this.onSearchQuery = this.onSearchQuery.bind(this);
     }
 
 
     componentWillMount() {
-        this.loadData(this.props);
+        // this.loadData(this.props);
+        this.loadData('');
+    }
+
+
+    onSearchQuery(query) {
+        this.loadData(query);
     }
 
 
@@ -66,11 +73,11 @@ class TalentPool extends Component {
                     TALENT POOL
                 </h4>
                 <div className="TalentPool__search-form">
-                    <TalentSearch/>
+                    <TalentSearch onSearchQuery={this.onSearchQuery}/>
                 </div>
                 <div className="TalentPool__container">
                     {
-                        is.loading
+                        is.fetching
                             ?
                             <div className="TalentPool__loader">
                                 <Loader/>
@@ -116,6 +123,7 @@ TalentPool.propTypes = {};
 const mapStateToProps = state => ({
     is: state.app.talents.talents.is,
     talents: state.app.talents.talents.talentList,
+    auth: state.app.Auth,
 });
 
 const mapDispatchToProps = (dispatch) => {
