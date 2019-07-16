@@ -1,4 +1,4 @@
-const BACKEND_PATH = __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : '/') : 'https://tunga.io/');
+const BACKEND_PATH = __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : 'https://tunga.io/') : 'https://tunga.io/');
 const API_PATH = 'api';
 const SOCIAL_LOGIN_PATH = 'accounts/social';
 
