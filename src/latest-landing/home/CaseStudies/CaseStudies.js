@@ -5,9 +5,17 @@ import Case2Img from "../../assets/img/case-study/Casestudy2.jpg";
 import Case3Img from "../../assets/img/case-study/Casestudy3.jpg";
 import Case4Img from "../../assets/img/case-study/Casestudy4.jpg";
 import Icon1 from "../../assets/img/case-study/impulse.png";
-import Icon2 from "../../assets/img/case-study/maker.png";
+import Icon2 from "../../assets/img/case-study/tree.png";
+import Icon3 from "../../assets/img/case-study/cuurios-logo.png";
+import Icon4 from "../../assets/img/case-study/Provolve.png";
+import Icon5 from "../../assets/img/case-study/CZW.png";
+import Icon6 from "../../assets/img/case-study/Logo_niluk.png";
 import User1 from "../../assets/img/user/user1.png";
-import User2 from "../../assets/img/user/user2.png";
+import User2 from "../../assets/img/case-study/Ineke.png";
+import User3 from "../../assets/img/case-study/Leen.png";
+import User4 from "../../assets/img/case-study/Dereck.png";
+import User5 from "../../assets/img/case-study/Kasper.png";
+import User6 from "../../assets/img/case-study/Elena.png";
 import { paging } from "../../Utils/Utils";
 import { Col, Row } from "reactstrap";
 import CaseStudyCard from "./CaseStudyCard/CaseStudyCard";
@@ -19,69 +27,101 @@ class CaseStudies extends Component {
         this.state = {
             data: [
                 {
-                    title: "Dedicated developers",
+                    title: "Project outsourcing",
                     description:
                         "As a startup with a technical proposition but not being developers ourselves, we needed a reliable partner to develop our product with. Tunga has consulted us to figure out the best technical approach and developed our product in clear sprints ever since ",
                     imgUrl: Case1Img,
-                    leadTime: "2 weeks",
-                    price: "23 - 26 EUR per hour",
+                    leadTime: "1 week",
+                    price: "Ongoing development",
                     icon: Icon1,
-                    tech: "Nodejs, Angular",
+                    tech: "PHP, Vue.js",
                     user: {
-                        name: "Kazeem Olanipekun",
+                        name: "Annemiek Pronk",
                         pic: User1,
-                        position: "Project Manager",
+                        position: "Product owner",
                         company: "Impusle"
                     }
                 },
                 {
                     title: "Project outsourcing",
                     description:
-                        "We run the show for you from idea to launch - x.0 versions, beta’s, alpha’s, MVP’s, prototypes ",
+                        "We've been developing several mobile applications with the guys from Tunga. What I like about working with them is that they are communicating clearly, and are very knowledgeable and proactive. Via the Tunga platform and its daily progress report, I am always in control over the progress of the projects that are running for our company. The Tunga people have a great customer mindset: they make things work for no matter what happens or changes.",
                     imgUrl: Case2Img,
-                    leadTime: "3 weeks",
-                    price: "5,000 EUR (prototype) - 18,000 EUR (v1.0) ",
+                    leadTime: "2 weeks",
+                    price: "3 - 4 months ",
                     icon: Icon2,
-                    tech: "Nodejs, Angular",
+                    tech: "Android",
                     user: {
-                        name: "Kazeem Olanipekun",
+                        name: "Ineke Aquarius",
                         pic: User2,
-                        position: "Project Manager",
-                        company: "Impusle"
+                        position: "Managing director",
+                        company: "Mango Tree"
                     }
                 },
                 {
-                    title: "Scoping & design",
+                    title: "Dedicated developer",
                     description:
-                        "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
+                        "Tunga was able to provide us very good candidates at short notice. Within two weeks from the initial contact Michael joined the team as a dedicated front-end developer. This was exactly the kickstart we'd hoped for! After a few months, we expanded the team with another dedicated developer.",
                     imgUrl: Case3Img,
                     leadTime: "2 weeks",
-                    price: "1,000 - 3,000 EUR",
-                    icon: Icon2,
-                    tech: "Nodejs, Angular",
+                    price: "3 - 4 months",
+                    icon: Icon3,
+                    tech: "Angular, Java, Spring",
                     user: {
-                        name: "Kazeem Olanipekun",
-                        pic: User2,
-                        position: "Project Owner",
-                        company: "Impusle"
+                        name: "Leen de Graaff",
+                        pic: User3,
+                        position: "Co-Founder Cuurios",
+                        company: "Cuurios"
                     }
                 },
                 {
-                    title: "Developers on-demand",
+                    title: "Dedicated developer",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "We didn't have any experience of outsourcing work to another country. From second hand experiences I can say things can go terribly wrong. But we took the plunge as an experiment and were quickly delighted by their way of working. Communication is top notch either in writing (we use Slack as a main communication channel) but also when talking on audio or in a video session. We initially started with Tunga on just one walled off project for expansion of our product. We wanted to see if this was feasible and doable. Luckily it was! Tunga managed this perfectly.",
                     imgUrl: Case4Img,
-                    leadTime: "1 week",
-                    price: "23 - 26 EUR per hour",
-                    icon: Icon1,
-                    tech: "Nodejs, Angular",
+                    leadTime: "2 weeks",
+                    price: "Ongoing development",
+                    icon: Icon4,
+                    tech: ".NET",
                     user: {
-                        name: "Kazeem Olanipekun",
-                        pic: User1,
-                        position: "Project Manager",
-                        company: "Impusle"
+                        name: "Dereck Breuning",
+                        pic: User4,
+                        position: " Co-Founder Provolve IT",
+                        company: "Provolve IT"
                     }
                 },
+                {
+                    title: "Project outsourcing",
+                    description:
+                        "Tunga is a great development partner. After finishing a first app, we are currently developing a second mobile application for our elderly care company with a team of Tunga developers. I am not a techy person myself, so it is great that Tunga offers project managers that take care of planning, scoping and managing the team. Having a single point of contact at Tunga that effectively keeps me in the loop, gives me the freedom to work on the growth of my company.",
+                    imgUrl: Case1Img,
+                    leadTime: "2 weeks",
+                    price: "5 months",
+                    icon: Icon5,
+                    tech: "React native",
+                    user: {
+                        name: "Kasper Spruyt",
+                        pic: User5,
+                        position: "Founder CWZ",
+                        company: "CWZ"
+                    }
+                },
+                {
+                    title: "Project outsourcing",
+                    description:
+                        "Tunga's African teal talents have the technical knowledge and experience and they immediately said they loved working Niluk because of our social goals. The collaboration is very professional, with respect and appreciation from both sides. If deadlines are not met, the team indicated this in time, which is very nice. I trust them 100% and can recommend Tunga to anyone.",
+                    imgUrl: Case3Img,
+                    leadTime: "1 week",
+                    price: "5 months",
+                    icon: Icon6,
+                    tech: "React Native",
+                    user: {
+                        name: "Elena Köstler",
+                        pic: User6,
+                        position: "Founder",
+                        company: "Niluk"
+                    }
+                }
             ],
         };
 
@@ -134,7 +174,7 @@ class CaseStudies extends Component {
                             <Carousel
                                 pagination={pagination}
                                 onPageChange={this.onPageChange}
-                                float="float-right"
+                                float="float-right k"
                                 color="text-primary"
                             >
                                 <div className="card-min-height pb-3px">
