@@ -31,9 +31,10 @@ function* viewTalent(action) {
     try {
         const response = yield call(api, {
             method: 'get',
-            url: `/orders/talent/${action.id}`,
+            url: `/users/${action.id}/`,
         });
-        yield put(actions.viewTalentSuccess(response.data.data));
+        console.log(response.data);
+        yield put(actions.viewTalentSuccess(response.data));
     } catch (error) {
         if (has(error, 'response.data.message')) {
             yield put(actions.viewTalentFailure(error.response.data.message));

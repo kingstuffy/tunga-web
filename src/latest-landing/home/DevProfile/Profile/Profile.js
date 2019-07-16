@@ -18,11 +18,13 @@ class Profile extends Component {
     }
 
     render() {
+        const { talent } = this.props;
+
         return (
             <div className="Profile">
                 <Row>
                     <Col sm="4">
-                        <Info/>
+                        <Info talent={talent}/>
                     </Col>
                     <Col sm="8">
                         <Row className="Profile__badges-ratings">
@@ -30,7 +32,7 @@ class Profile extends Component {
                                 <Badges/>
                             </Col>
                             <Col md="7" sm="12">
-                                <Ratings/>
+                                <Ratings talent={talent}/>
                             </Col>
                         </Row>
                         <Row className="Profile__map-skill-set">
@@ -38,7 +40,7 @@ class Profile extends Component {
                                 <Map/>
                             </Col>
                             <Col md="7" sm="12">
-                                <SkillSet/>
+                                <SkillSet talent={talent}/>
                             </Col>
                         </Row>
                     </Col>

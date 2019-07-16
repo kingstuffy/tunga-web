@@ -23,26 +23,26 @@ class Info extends Component {
 
 
     render() {
+        const { talent } = this.props;
+
         return (
             <div className="Info">
-                <img src={ProfileImg} className="Info__img mb-3"/>
+                <img src={talent.image} className="Info__img mb-3"/>
                 <div className="size-13 text-primary mb-1">
-                    John Chinedu
+                    {talent.display_name}
                 </div>
                 <div className="size-12 mb-3">
-                    Lagos, Nigeria
+                    {talent.profile.city}, {talent.profile.country_name}
                 </div>
                 <div className="size-13 mb-4">
-                    Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.
-                    Checkmate... Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the
-                    tourists.
+                    {talent.profile.bio}
                 </div>
                 <ul className="Info__skills mb-3">
                     {
-                        this.state.skills.map((skill, i) => (
-                            <li className="Info__skill-item" key={i}>
+                        talent.profile.skills.map((skill) => (
+                            <li className="Info__skill-item" key={skill.id}>
                                 <div className="Info__skill">
-                                    {skill}
+                                    {skill.name}
                                 </div>
                             </li>
                         ))
@@ -51,7 +51,7 @@ class Info extends Component {
                 </ul>
                 <div className="Info__cta">
                     <Button type="submit">
-                        Hire John
+                        Hire {talent.first_name}
                     </Button>
                 </div>
             </div>

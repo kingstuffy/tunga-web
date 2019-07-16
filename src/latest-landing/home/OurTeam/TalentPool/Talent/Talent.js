@@ -35,7 +35,7 @@ class Talent extends Component {
                     </div>
                 </div>
                 <div className="Talent__cta">
-                    <Link to={`${Routing.devProfile.path}/${talent.id}`} className="Talent__cta-link">
+                    <Link to={`${Routing.devProfile.basePath}/${talent.id}`} className="Talent__cta-link">
                         View full profile <Icon className="text-white" name="arrow-right"/>
                     </Link>
                 </div>

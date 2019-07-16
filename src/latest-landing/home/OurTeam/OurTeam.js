@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactPageScroller from "react-page-scroller";
+import queryString from "query-string";
 
 import "./OurTeam.scss";
 import CoreTeam from "./CoreTeam/CoreTeam";
@@ -253,22 +254,25 @@ class OurTeam extends Component {
     }
 
     render() {
+        const { location } = this.props;
+        const query = queryString.parse(location.search).query;
+
         return (
             <section className="OurTeam">
-                <ReactPageScroller  ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
+                <ReactPageScroller ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
                     <div id="OurTeam" className="OurTeam__core-team">
                         <div className="OurTeam__nav">
-                            <Nav />
+                            <Nav/>
                         </div>
                         <CoreTeam team={this.state.team}/>
                     </div>
                     <div id="TalentPool" className="OurTeam__talent-pool">
-                        <TalentPool talents={this.state.talents}/>
+                        <TalentPool query={query} talents={this.state.talents}/>
                     </div>
                     <div className="OurTeam__schedule-call">
                         <ScheduleCall/>
                     </div>
-                    <Footer />
+                    <Footer/>
                 </ReactPageScroller>
                 <SideNav pages={pages} goToPage={this.goToPage}/>
             </section>

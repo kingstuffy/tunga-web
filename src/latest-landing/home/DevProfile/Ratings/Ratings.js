@@ -26,17 +26,19 @@ class Ratings extends Component {
 
 
     render() {
+        const { talent } = this.props;
+
         return (
             <div className="Ratings">
                 <ul className="Ratings__list">
                     {
-                        this.state.ratings.map((rating, key) => (
-                            <li className="Ratings__item" key={key}>
+                        talent.ratings.details.map((rating) => (
+                            <li className="Ratings__item" key={rating.criteria}>
                                 <div className="Ratings__rating">
-                                    {rating.rating}
+                                    {rating.display_avg}
                                 </div>
                                 <div className="Ratings__title">
-                                    {rating.title}
+                                    {rating.display_criteria}
                                 </div>
                             </li>
                         ))

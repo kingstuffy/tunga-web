@@ -10,5 +10,5 @@ export default {
   news: { path: "/news", name: "News" },
   blog: { path: "/blog", name: "Blog", loc: 'blog' },
   login: { path: "/login", name: "Log in", loc: 'login' },
-  devProfile: { path: "/dev-profile/:id", name: "Developer Profile" },
+  devProfile: { path: "/dev-profile/:id", basePath: "/dev-profile", name: "Developer Profile" },
 };
