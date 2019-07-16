@@ -10,7 +10,6 @@ class BlogPage extends Component {
   }
 
   render() {
-    console.log("sssss");
     return (
       <div className="BlogPage">
         <BlogHeader/>
