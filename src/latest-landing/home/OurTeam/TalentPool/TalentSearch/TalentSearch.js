@@ -5,7 +5,8 @@ import "./TalentSearch.scss";
 import Icon from "../../../../shared/core/Icon";
 import { Group, Input, IconGroup, Button } from "../../../../shared/Form/Form";
 import { connect } from "react-redux";
-import { fetchTalentsRequest } from "../../../../../services/talents/actions";
+import { isBusinessEmail } from "../../../../../components/utils/search";
+import { authenticateEmailVisitor } from "../../../../../actions/AuthActions";
 
 
 class TalentSearch extends Component {
@@ -14,7 +15,7 @@ class TalentSearch extends Component {
 
         this.state = {
             query: '',
-            businessEmail: '',
+            email: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -25,7 +26,15 @@ class TalentSearch extends Component {
 
     onEmailSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
+        const email = this.state.email;
+        if (email) {
+            console.log(isBusinessEmail(email), email);
+            if (isBusinessEmail(email)) {
+                this.props.authenticateEmailVisitor({ email, via_search: true, search: this.state.query });
+            } else {
+                // this.setState({ [`${loadMore ? 'emailMore' : 'emailUnlock'}Error`]: 'Please enter a business email.' });
+            }
+        }
     }
 
 
@@ -47,7 +56,7 @@ class TalentSearch extends Component {
             <div className="TalentSearch">
                 <div className="TalentSearch__container">
                     {
-                        auth.isEmailVisitor || auth.isAuthenticated || true
+                        auth.isEmailVisitor || auth.isAuthenticated
                             ?
                             <form className="TalentSearch__form" onSubmit={this.onSearchQuery}>
                                 <div className="TalentSearch__icon-group">
@@ -64,10 +73,11 @@ class TalentSearch extends Component {
                                 <div className="TalentSearch__icon-group">
                                     <IconGroup style={{ width: "176%" }}>
                                         <Icon className="Form__input-icon" name='lock-alt' size='card'/>
-                                        <Input className="Form__input--has-icon" id="TalentSearch-input" type="text"
-                                               name="businessEmail" value={this.state.businessEmail} onChange={this.handleChange}
+                                        <Input className="Form__input--has-icon" id="TalentSearch-input" type="email"
+                                               name="email" value={this.state.email}
+                                               onChange={this.handleChange}
                                                placeholder="Enter Business Email to unlock search"/>
-                                        <Button
+                                        <Button type="submit"
                                             className="p-4 border-radius-0 TalentSearch-button"
                                         >
                                             Go
@@ -90,7 +100,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // fetchTalentsRequest: (params) => dispatch(fetchTalentsRequest(params))
+        authenticateEmailVisitor: (params) => dispatch(authenticateEmailVisitor(params))
     };
 };
 
