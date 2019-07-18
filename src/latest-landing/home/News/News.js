@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactPageScroller from "react-page-scroller";
 import "./News.scss";
 import Nav from "../../layout/Nav/Nav";
 import TeamImg from "../../assets/img/our-team/user.png";
@@ -10,7 +9,7 @@ import Vlog from "./Vlog/Vlog";
 import WhitePaper from "./WhitePaper/WhitePaper";
 import Blog from "./Blog/Blog";
 import Routing from "../../constants/Routing";
-import  SideNav from "../../../components/sidenav";
+import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
 
 const pages = [
@@ -202,7 +201,7 @@ class News extends Component {
     render() {
         return (
             <section className="News">
-                <ReactPageScroller  ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
+                <PageScroller pages={pages}>
                     <div id="NewsArticle" className="News__news-article">
                         <div className="News__nav">
                             <Nav/>
@@ -219,8 +218,7 @@ class News extends Component {
                         <Blog articles={this.state.blogArticles}/>
                     </div>
                     <Footer />
-                </ReactPageScroller>
-                <SideNav pages={pages} goToPage={this.goToPage}/>
+                </PageScroller>
             </section>
         );
     }
