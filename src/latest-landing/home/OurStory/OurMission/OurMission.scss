@@ -2,14 +2,16 @@
 
 .OurMission {
     &__logos {
-        @media (min-width: 992px) {
-            height: 100vh;
-        }
         background-color: #062E64;
-        padding: 15% 8%;
+        padding: 0 8%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
 
         @media (min-width: 992px) {
-            padding: 13% 5%;
+            padding: 0 5%;
+            height: 100vh;
         }
     }
 
@@ -23,10 +25,13 @@
     }
 
     &__content {
-        padding: 15% 8%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 33px;
 
         @media (min-width: 992px) {
-            padding: 13% 5%;
+            padding: 0 5%;
         }
     }
 
