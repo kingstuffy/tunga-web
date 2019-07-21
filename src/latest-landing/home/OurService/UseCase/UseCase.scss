@@ -4,6 +4,11 @@
     position: relative;
     width: 100%;
 
+    &__header {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
     &__img {
         height: 175px;
     }
@@ -27,5 +32,15 @@
         padding: 4px 20px;
         border-radius: 0;
         color: #062E64;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__title {
+        color: #222829;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
     }
 }

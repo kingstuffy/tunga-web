@@ -12,7 +12,7 @@ class UseCase extends Component {
         const { useCases } = this.props;
         return (
             <div className="UseCase">
-                <div className="text-blue font-weight-bold mb-2">
+                <div className="text-blue font-weight-bold UseCase__header">
                     USE CASES
                 </div>
                 {useCases.map((info, i) => (
@@ -23,7 +23,7 @@ class UseCase extends Component {
                             className="UseCase__img"
                             style={{ background: `url(${info.imgUrl})` }}>
                         </div>
-                        <div className="UseCase__title text-blue size-16 mt-3 mb-3">
+                        <div className="UseCase__title mt-3 mb-3">
                             {info.title}
                         </div>
                         <div className="UseCase__cta">
