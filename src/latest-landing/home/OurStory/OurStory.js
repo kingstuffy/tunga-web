@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactPageScroller from "react-page-scroller";
 import "./OurStory.scss";
 
 import Nav from "../../layout/Nav/Nav";
@@ -11,7 +10,7 @@ import OurSolution from "./OurSolution/OurSolution";
 import ImpactSourcing from "./ImpactSourcing/ImpactSourcing";
 import Africa from "./Africa/Africa";
 import Approach from "./Approach/Approach";
-import SideNav from "../../../components/sidenav";
+import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
@@ -93,23 +92,11 @@ const pages = [
 ];
 
 class OurStory extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
-    }
-
-    pageOnChange = (pageNumber) => {
-        console.log("current page", pageNumber)
-    }
 
     render() {
         return (
             <section className="OurStory">
-                <ReactPageScroller  ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
+                <PageScroller  pages={pages}>
                     <div id="OurStory" className="OurStory__header">
                         <div className="OurStory__nav">
                             <Nav/>
@@ -154,8 +141,7 @@ class OurStory extends Component {
                         <Approach/>
                     </div>
                     <Footer/>
-                </ReactPageScroller>
-                <SideNav pages={pages}  goToPage={this.goToPage}/>
+                </PageScroller>
             </section>
         );
     }

@@ -3,17 +3,20 @@
 .ImageBox {
     $root: &;
     position: relative;
-    min-height: 100vh;
+    // min-height: 100vh;
 
     @media (min-width: 992px) {
         padding-top: 40%;
+        height: 100vh;
     }
+
 
     &__img {
         width: 100%;
         top: 0;
         position: relative;
-        height: 211px;
+        // height: 211px;
+        height: 100vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

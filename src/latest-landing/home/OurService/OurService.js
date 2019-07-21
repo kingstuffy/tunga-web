@@ -173,12 +173,9 @@ class OurService extends Component {
 
 
     onServiceSelection(selectedService) {
-        // console.log("sevice", selectedService);
         const index = this.state.data.indexOf(selectedService);
-        // console.log("index", index);
         if (index !== -1 && index !== this.state.data.length - 1) {
             const nextService = this.state.data[index + 1];
-            // console.log("nextsevice", nextService);
             this.setState({ selectedService, nextService });
             return;
         }
