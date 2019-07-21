@@ -14,6 +14,8 @@ class Talent extends Component {
 
     render() {
         const { talent } = this.props;
+        const profile = talent.profile || { skills: [] };
+
         return (
             <div className="Talent"
                  style={{ backgroundImage: `url(${talent.image})` }}>
@@ -22,11 +24,11 @@ class Talent extends Component {
                         {talent.display_name}
                     </div>
                     <div className="Talent__location">
-                        {talent.profile.location}
+                        {profile.location}
                     </div>
                     <div className="Talent__skills">
                         {
-                            talent.profile.skills.slice(0, 4).map((skill, i) => (
+                            profile.skills.slice(0, 4).map((skill, i) => (
                                 <div className="Talent__skill" key={skill.id}>
                                     {skill.name}
                                 </div>

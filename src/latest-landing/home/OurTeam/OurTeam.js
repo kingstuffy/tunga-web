@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactPageScroller from "react-page-scroller";
 // import queryString from "query-string";
+import PageScroller from "../../../components/pageScroller";
 
 import "./OurTeam.scss";
 import CoreTeam from "./CoreTeam/CoreTeam";
@@ -19,8 +19,6 @@ import Reinier from "../../assets/img/our-team/team/Reinier.jpg";
 import Remo from "../../assets/img/our-team/team/Remo.jpg";
 import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Simon from "../../assets/img/our-team/team/Simon.jpg";
-import Routing from "../../constants/Routing";
-import SideNav from "../../../components/sidenav";
 import Footer from "../../layout/Footer/Footer";
 
 const pages = [
@@ -260,7 +258,7 @@ class OurTeam extends Component {
 
         return (
             <section className="OurTeam">
-                <ReactPageScroller ref={c => this.reactPageScroller = c} pageOnChange={this.pageOnChange}>
+                <PageScroller pages={pages}>
                     <div id="OurTeam" className="OurTeam__core-team">
                         <div className="OurTeam__nav">
                             <Nav/>
@@ -274,8 +272,7 @@ class OurTeam extends Component {
                         <ScheduleCall/>
                     </div>
                     <Footer/>
-                </ReactPageScroller>
-                <SideNav pages={pages} goToPage={this.goToPage}/>
+                </PageScroller>
             </section>
         );
     }

@@ -24,7 +24,7 @@ class PageScroller extends React.Component {
         return(
         <div>
             {
-                screen > 700 ? (
+                screen > 1024 ? (
                     <div>
                         <ReactPageScroller
                             ref={c => this.reactPageScroller = c}

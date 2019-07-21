@@ -56,6 +56,7 @@ class TalentPool extends Component {
 
     render() {
         const { talents, is } = this.props;
+        console.log(talents);
         const talentsPerRow = parseInt(talents.length / 2, 10);
         const splitTalents = [
             talents.slice(0, talentsPerRow),

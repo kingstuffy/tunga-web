@@ -22,7 +22,7 @@ class CaseStudyCard extends Component {
                 <Card className="border-0 pt-0 w-100">
                     <CardBody className="pt-0 p-0">
                         <img src={caseStudy.icon} alt={caseStudy.title} className="rounded"/>
-                        <CardTitle className="text-blue size-18 mt-1 font-weight-bold">
+                        <CardTitle className="text-blue size-18 mt-3 font-weight-bold">
                             {caseStudy.title}
                         </CardTitle>
                         <Row>
@@ -65,7 +65,7 @@ class CaseStudyCard extends Component {
                                 </CardText>
                             </Col>
                         </Row>
-                        <CardText className="mt-3 mb-3 size-16 font-italic">
+                        <CardText className="mt-4 mb-4 size-16 font-italic">
                             {" "}
                             {caseStudy.description}
                         </CardText>

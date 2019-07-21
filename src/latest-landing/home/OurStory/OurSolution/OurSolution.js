@@ -13,7 +13,7 @@ class OurSolution extends Component {
         return (
             <div className="OurSolution">
                 <div className="row">
-                    <div className="OurSolution__content col-md-5 col-sm-12">
+                    <div className="OurSolution__content col-md-12 col-lg-5  col-sm-12">
                         <div className="text-primary size-14 font-weight-bold mb-2 mt-3">
                             OUR SOLUTION
                         </div>
@@ -37,7 +37,7 @@ class OurSolution extends Component {
                             projects.
                         </div>
                     </div>
-                    <div className="OurSolution__video col-md-7 col-sm-12 container">
+                    <div className="OurSolution__video col-lg-7 col-md-12 col-sm-12 container">
                         <video
                             className="OurSolution__video"
                             controls
