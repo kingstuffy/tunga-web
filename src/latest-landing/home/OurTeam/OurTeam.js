@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import queryString from "query-string";
+// import queryString from "query-string";
 import PageScroller from "../../../components/pageScroller";
 
 import "./OurTeam.scss";
@@ -253,7 +253,8 @@ class OurTeam extends Component {
 
     render() {
         const { location } = this.props;
-        const query = queryString.parse(location.search).query;
+        // replace with another lib;; build issues with query-string
+        const query = location.search.replace('?query=', '');
 
         return (
             <section className="OurTeam">

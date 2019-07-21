@@ -7,6 +7,12 @@ class NewsArticle extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onBtnClick = this.onBtnClick.bind(this);
+    }
+
+
+    onBtnClick(url) {
+        window.open(url, '_blank');
     }
 
 
@@ -56,6 +62,7 @@ class NewsArticle extends Component {
                                             </div>
                                             <div className="NewsArticle__cta">
                                                 <Button
+                                                    onClick={() => this.onBtnClick(article.url)}
                                                     size="md"
                                                     className="btn NewsArticle__btn btn-inverted"
                                                     variant=""
