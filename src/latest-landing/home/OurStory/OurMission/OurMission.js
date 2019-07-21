@@ -4,7 +4,7 @@ import "./OurMission.scss";
 import ButteryflyWorks from "../../../assets/img/our-story/butterfly_works.png";
 import TridonBank from "../../../assets/img/our-story/triodos.png";
 import Doen from "../../../assets/img/our-story/doen.png";
-// import Oxfam from "../../../assets/img/our-story/oxfam.png";
+import Oxfam from "../../../assets/img/our-story/oxfam.png";
 import Edukans from "../../../assets/img/our-story/edukans.png";
 import Dioraphte from "../../../assets/img/our-story/dioraphte.png";
 
@@ -18,6 +18,7 @@ class OurMission extends Component {
                 ButteryflyWorks,
                 TridonBank,
                 Doen,
+                Oxfam,
                 Edukans,
                 Dioraphte,
             ]
