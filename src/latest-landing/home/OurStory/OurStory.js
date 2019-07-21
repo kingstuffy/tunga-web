@@ -92,17 +92,34 @@ const pages = [
 ];
 
 class OurStory extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            gotToPage: false,
+        };
+
+        this.onLearnMore = this.onLearnMore.bind(this);
+        this.onPageScroll = this.onPageScroll.bind(this);
+    }
+
+    onLearnMore() {
+        this.setState({ gotToPage: 1 });
+    }
+
+    onPageScroll() {
+        this.setState({ gotToPage: false });
+    }
 
     render() {
         return (
             <section className="OurStory">
-                <PageScroller  pages={pages}>
+                <PageScroller pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}>
                     <div id="OurStory" className="OurStory__header">
                         <div className="OurStory__nav">
                             <Nav/>
                         </div>
                         <div className="OurStory__hero">
-                            <Hero/>
+                            <Hero onLearnMore={this.onLearnMore}/>
                         </div>
                         <div className="OurStory__hero-mask">
                         </div>

@@ -12,35 +12,44 @@ class PageScroller extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({screenWidth: window.innerWidth});
+        this.setState({ screenWidth: window.innerWidth });
     }
 
     goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
+        if (this.reactPageScroller) {
+            return this.reactPageScroller.goToPage(pageNumber)
+        }
     }
 
     render() {
         const screen = this.state.screenWidth;
-        return(
-        <div>
-            {
-                screen > 1024 ? (
-                    <div>
-                        <ReactPageScroller
-                            ref={c => this.reactPageScroller = c}
-                            animationTimer={800}
-                        >
+        const { goToPage, onPageScrolled } = this.props;
+
+        if (typeof goToPage !== 'undefined' && goToPage !== false) {
+            this.goToPage(goToPage);
+            onPageScrolled && onPageScrolled();
+        }
+
+        return (
+            <div>
+                {
+                    screen > 1024 ? (
+                        <div>
+                            <ReactPageScroller
+                                ref={c => this.reactPageScroller = c}
+                                animationTimer={800}
+                            >
+                                {this.props.children}
+                            </ ReactPageScroller>
+                            <SideNav pages={this.props.pages} goToPage={this.goToPage}/>
+                        </div>
+                    ) : (
+                        <div>
                             {this.props.children}
-                        </ ReactPageScroller>
-                        <SideNav pages={this.props.pages}  goToPage={this.goToPage}/>
-                    </div>
-                ) : (
-                    <div>
-                        {this.props.children}
-                    </div>
-                )
-            }
-        </div>
+                        </div>
+                    )
+                }
+            </div>
         );
     }
 }

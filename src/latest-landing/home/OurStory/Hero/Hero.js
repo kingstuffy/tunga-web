@@ -11,6 +11,8 @@ class Hero extends Component {
     }
 
     render() {
+        const { onLearnMore } = this.props;
+
         return (
             <div className="Hero">
                 <div className="Hero__title">
@@ -20,10 +22,10 @@ class Hero extends Component {
                     Our mission: 21st century jobs for African youths
                 </div>
                 <a className="Hero__cta-link">
-                    <Button
-                        size="md"
-                        className="btn Hero__cta-btn btn-inverted"
-                        variant=""
+                    <Button onClick={onLearnMore}
+                            size="md"
+                            className="btn Hero__cta-btn btn-inverted"
+                            variant=""
                     >
                         Learn more
                     </Button>
