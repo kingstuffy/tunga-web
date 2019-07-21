@@ -32,8 +32,7 @@ class Vlog extends Component {
         return (
             <div className="VlogVideo">
                 <div
-                    className={`VlogVideo__container VlogVideo__container--${playingModifier}`}
-                    style={{ backgroundImage: `url(${vlog.imgUrl})` }}>
+                    className={`VlogVideo__container VlogVideo__container--${playingModifier}`}>
                     <a className="VlogVideo__dismiss"
                        onClick={this.closeVideo}>
                         <Icon
@@ -41,32 +40,12 @@ class Vlog extends Component {
                             size="topbar"
                         />
                     </a>
-                    {
-                        !this.state.isPlaying
-                        &&
-                        <a className="VlogVideo__play"
-                           onClick={this.onVideoPlay}>
-                            <Icon
-                                name="youtube-play"
-                                size="card"
-                                className="Vlog__icon"
-                            />
-                        </a>
-                    }
-                    {
-                        this.state.isPlaying
-                        &&
-                        <video
-                            className="VlogVideo__video"
-                            autoPlay
-                            loop
-                            muted>
-                            <source
-                                src={vlog.videoUrl}
-                                type="video/mp4"
-                            />
-                        </video>
-                    }
+                    <div className="VlogVideo__container">
+                        <iframe allowFullScreen="allowFullScreen"
+                                src={`https://www.youtube.com/embed/${vlog.id.videoId}?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=100`}
+                                width="100%" height="100%" allowtransparency="true" frameBorder="0">
+                        </iframe>
+                    </div>
                     <div className="VlogVideo__height-mask">&nsbp;</div>
                 </div>
             </div>

@@ -26,10 +26,12 @@
         height: 40px;
         color: #fff;
         position: absolute;
-        top: 23px;
-        right: 23px;
+        // top: 23px;
+        // right: 23px;
         cursor: pointer;
         z-index: 1000;
+        top: -37px;
+        right: 0;
     }
 
     a#{$root}__play {
@@ -52,5 +54,9 @@
     &__video {
         max-width: 100%;
         max-height: 100%;
+    }
+
+    &__container {
+        height: 100%;
     }
 }

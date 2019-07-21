@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "./Vlog.scss";
 import Carousel from "../../../shared/Carousel/Carousel";
 import Icon from "../../../shared/core/Icon";
 import VlogVideo from './VlogVideo/VlogVideo';
+
+import { fetchVlogsRequest } from '../../../../services/vlogs/actions';
+
 
 class Vlog extends Component {
     constructor(props) {
@@ -26,6 +30,16 @@ class Vlog extends Component {
 
     onVideoClose() {
         this.setState({ selectedVlog: false });
+    }
+
+
+    componentWillMount() {
+        this.loadData();
+    }
+
+
+    loadData() {
+        this.props.fetchVlogsRequest({ limit: 12 });
     }
 
 
@@ -81,10 +95,10 @@ class Vlog extends Component {
                                                         className="Vlog__item"
                                                         key={j}
                                                         onClick={() => this.onVlogClick(vlog)}
-                                                        style={{ backgroundImage: `url(${vlog.imgUrl})`}}>
+                                                        style={{ backgroundImage: `url(${vlog.snippet.thumbnails.high.url})`}}>
                                                         <div className="Vlog__item-container">
                                                             <div className="Vlog__title">
-                                                                {vlog.title}
+                                                                {vlog.snippet.title}
                                                             </div>
                                                             <a className="Vlog__cta">
                                                                 <Icon
@@ -118,4 +132,16 @@ class Vlog extends Component {
 
 Vlog.propTypes = {};
 
-export default Vlog;
+
+const mapStateToProps = state => ({
+    is: state.app.vlogs.vlogs.is,
+    vlogs: state.app.vlogs.vlogs.list,
+});
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchVlogsRequest: (params) => dispatch(fetchVlogsRequest(params))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vlog);
