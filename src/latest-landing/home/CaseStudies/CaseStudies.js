@@ -156,25 +156,27 @@ class CaseStudies extends Component {
             <section id="CaseStudies" className="CaseStudies"
                      style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl})` }}>
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
-                <div className="col-11 col-sm-11 col-lg-6 col-md-6 pl-0 bg-transparent case-top pb-5">
+                <div className="CaseStudies__content bg-transparent case-top">
                     <div className="case-content bg-white">
                         <div className="CaseStudies__body">
-                            <h4 className="case-title text-primary text-uppercase size-16 mb-1">
-                                Case Studies
-                            </h4>
-                            <p className="case-subtitle text-blue font-weight-bold">
-                                Tunga has completed work for over 100 clients in 12
-                                countries
-                            </p>
-                            <p className="case-summary size-16 w-75 mb-2">
-                                Our clients come from all kinds of industries and
-                                require a variety of technologies, but usually have
-                                one thing in common: they want to go live ASAP!
-                            </p>
+                            <div className="CaseStudies__info">
+                                <h4 className="case-title text-primary text-uppercase size-16 mb-1">
+                                    Case Studies
+                                </h4>
+                                <p className="case-subtitle text-blue font-weight-bold">
+                                    Tunga has completed work for over 100 clients in 12
+                                    countries
+                                </p>
+                                <p className="case-summary size-16 mb-2">
+                                    Our clients come from all kinds of industries and
+                                    require a variety of technologies, but usually have
+                                    one thing in common: they want to go live ASAP!
+                                </p>
+                            </div>
                             <Carousel
                                 pagination={pagination}
                                 onPageChange={this.onPageChange}
-                                float="float-right k"
+                                float="float-right"
                                 color="text-primary"
                             >
                                 <div className="card-min-height pb-3px">

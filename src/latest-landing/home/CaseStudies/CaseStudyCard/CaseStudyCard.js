@@ -25,46 +25,32 @@ class CaseStudyCard extends Component {
                         <CardTitle className="text-blue size-18 mt-3 font-weight-bold">
                             {caseStudy.title}
                         </CardTitle>
-                        <Row>
-                            <Col
-                                sm={12}
-                                md={4}
-                                lg={4}
-                                xs={12}
-                                xl={4}
-                                className="border-right-2"
-                            >
-                                <CardTitle className="text-blue text-uppercase size-14 mt-2 mb-1">
+                        <div className="CaseStudyCard__skills">
+                            <div className="CaseStudyCard__skill CaseStudyCard__skill--first">
+                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
                                     Technology
                                 </CardTitle>
                                 <CardText className="size-16">
                                     {caseStudy.tech}
                                 </CardText>
-                            </Col>
-                            <Col
-                                sm={12}
-                                md={4}
-                                lg={4}
-                                xs={12}
-                                xl={4}
-                                className="border-right-2"
-                            >
-                                <CardTitle className="text-blue text-uppercase size-14 mt-2 mb-1">
+                            </div>
+                            <div className="CaseStudyCard__skill">
+                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
                                     Lead Time
                                 </CardTitle>
                                 <CardText className="size-16">
                                     {caseStudy.leadTime}
                                 </CardText>
-                            </Col>
-                            <Col sm={12} md={4} lg={4} xs={12} xl={4}>
-                                <CardTitle className="text-blue text-uppercase size-14 mt-2 mb-1">
+                            </div>
+                            <div className="CaseStudyCard__skill CaseStudyCard__skill--last">
+                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
                                     Production Time
                                 </CardTitle>
                                 <CardText className="size-16">
                                     {caseStudy.price}
                                 </CardText>
-                            </Col>
-                        </Row>
+                            </div>
+                        </div>
                         <CardText className="mt-4 mb-4 size-16 font-italic">
                             {" "}
                             {caseStudy.description}
@@ -82,7 +68,7 @@ class CaseStudyCard extends Component {
                                 <Media heading className="size-16 text-blue mb-0">
                                     {caseStudy.user.name}
                                 </Media>
-                                <Media className="size-14 font-italic">
+                                <Media className="size-14">
                                     {caseStudy.user.position +
                                     ", " +
                                     caseStudy.user.company}

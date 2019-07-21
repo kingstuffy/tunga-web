@@ -13,52 +13,52 @@
     -webkit-transition: background-image 0.3s ease-in-out;
     transition: background-image 0.3s ease-in-out;
 
-    @media  screen and (min-width: 800px)  {
+    @media screen and (min-width: 992px) {
         width: 100vh;
         height: 100vh;
-    }
-
-    .k {
-        margin-top: -7px;
-
-        @media (max-width: 600px) {
-            margin-top: 0;
-        }
     }
 
     .card-center {
         @extend %vertical-align;
     }
+
     .case-title {
         line-height: 17px;
     }
+
     .case-subtitle {
         font-size: 24px;
         line-height: 36px;
     }
+
     .case-summary {
         line-height: 24px;
+
+        @media screen and (min-width: 992px) {
+            width: 75%;
+        }
     }
+
     .card-min-height {
         // min-height: 450px;
     }
-    .case-top {
-        padding-top: 97px;
-    }
+
     .case-content {
         padding: 30px 18px;
 
         @media (min-width: 768px) {
-            padding: 55px 60px;
+            padding: 50px 60px;
         }
     }
 
     &__body {
         overflow-x: hidden;
+    }
 
-        @media (min-width: 768px) {
-            margin-top: -35px;
-        }
+    &__info {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #D9E9FF;
+        margin-bottom: 30px;
     }
 
     &__list {
@@ -74,5 +74,30 @@
         display: inline-block;
         white-space: normal;
         position: relative;
+    }
+
+    &__content {
+        width: 97%;
+        padding-top: 200px;
+
+        @media screen and (min-width: 992px) {
+            width: 49%;
+            padding-top: 0;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .Carousel {
+        position: relative;
+    }
+
+    .Carousel__pagination {
+        margin-bottom: 20px;
+        position: absolute;
+        top: 12px;
+        right: 0;
+        z-index: 100;
+        background-color: #fff;
     }
 }

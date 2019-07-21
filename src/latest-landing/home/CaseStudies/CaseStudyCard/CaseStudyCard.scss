@@ -1,12 +1,41 @@
-.rounded{
+.rounded {
     height: 40px;
 }
 
-.round{
+.round {
     height: 40px;
 }
 
 .CaseStudies__list li:nth-child(3) div div div .rounded {
     margin-left: -22px;
     height: 40px;
+}
+
+.CaseStudyCard {
+    &__skills {
+        display: flex;
+    }
+
+    &__skill {
+        padding: 0 11px;
+        border-right: 1px solid #D9E9FF;
+
+        @media screen and (min-width: 992px) {
+            padding: 0 40px;
+            width: 33%;
+
+            &--last {
+                width: 41%;
+            }
+        }
+
+        &--first {
+            padding-left: 0;
+        }
+
+        &--last {
+            border-right: 0;
+            padding-right: 0;
+        }
+    }
 }
