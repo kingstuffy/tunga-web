@@ -45,7 +45,8 @@ class ServiceCard extends Component {
                                onServiceSelection(service);
                            }}
                         >
-                            Learn more <img src={arrow} />
+                            <span className="ServiceCard__cta-text">Learn more</span>
+                                <img src={arrow} />
                         </a>
                     </CardBody>
                 </Card>

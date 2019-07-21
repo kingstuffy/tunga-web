@@ -30,6 +30,11 @@ RNavLink {
         box-shadow: none !important;
     }
 
+    .nav-item {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
     .nav-item .active {
         font-weight: 600;
     }
