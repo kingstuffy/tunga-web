@@ -38,6 +38,7 @@ class DevProfile extends Component {
 
     render() {
         const { talent } = this.props;
+        talent.profile = talent.profile || { skills: [], skills_details: {} };
 
         return (
             <section className="DevProfile">
