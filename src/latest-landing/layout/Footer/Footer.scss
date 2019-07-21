@@ -26,13 +26,13 @@ footer {
     color: $font-color !important;
     bottom: 0;
     position: relative;
-    // min-height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     overflow: hidden;
 
     // ALSO FEATURED IN ///////////////////////////////
     .also-featured {
-        margin-top: 90px;
+        margin-top: 60px;
         padding: 11px;
 
         @media only screen and (min-width: 768px) {
@@ -56,6 +56,7 @@ footer {
 
         @media only screen and (min-width: 768px) {
             margin: 44px;
+            margin-top: 55px;
         }
 
         h4 {
@@ -345,3 +346,15 @@ footer {
     margin: auto;
 }
 
+.Footer {
+    position: relative;
+
+    &__bottom {
+        bottom: 0;
+        width: 100%;
+
+        @media (min-width: 992px) {
+            position: absolute;
+        }
+    }
+}

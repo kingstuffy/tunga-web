@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 import Slider from "react-slick";
 import Icon from "../../../components/core/Icon";
-import { Col, Container, Row } from "reactstrap";
+import {Col, Container, Row} from "reactstrap";
 
 import "../Footer/slick/slick/slick.css";
 import "../Footer/slick/slick/slick-theme.css";
@@ -21,59 +21,60 @@ import "../Footer/slick/slick/slick-theme.css";
 import "./Footer.scss";
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-  var settings =({
-    dots: false,
-    swipeToSlide: true,
-   pauseOnHover:true,
-    infinite: true,
-    speed: 500,
-    autoplay:true,
-    draggable: true,
-    autoplaySpeed: 2000,
-     arrows: false,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-      }
+    constructor(props) {
+        super(props);
+    }
 
-    }, {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 2,
+    render() {
+        var settings = ({
+            dots: false,
+            swipeToSlide: true,
+            pauseOnHover: true,
+            infinite: true,
+            speed: 500,
+            autoplay: true,
+            draggable: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
 
-
-      }
+            }, {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
 
 
-    }, {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+                }
 
 
-      }
-    }, {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
 
-        }
-    }]
-});
 
-    return (
-            <footer id="Footer">
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+
+                }
+            }]
+        });
+
+        return (
+            <footer id="Footer" className="Footer">
                 {/*------------ Press------------- */}
                 <Row>
                     <Col md="3" sm="6">
@@ -168,7 +169,7 @@ class Footer extends Component {
 
                 <hr id="line"/>
                 {/*------------------Our Offices------------------- */}
-                <Row style={{marginTop: "-52px"}}>
+                <Row>
                     <Col md="3" sm="6">
                         <div className="tunga-offices">
                             <div className="tunga-kampala">
@@ -223,7 +224,7 @@ class Footer extends Component {
                                     id="fb"
                                     title="Facebook"
                                 >
-                                    <Icon className="fb" name="facebook" />
+                                    <Icon className="fb" name="facebook"/>
                                 </a>
                                 <a
                                     target="_blank"
@@ -231,7 +232,7 @@ class Footer extends Component {
                                     id="twitter"
                                     title="Twitter"
                                 >
-                                    <Icon className="twitter" name="twitter" />
+                                    <Icon className="twitter" name="twitter"/>
                                 </a>
                                 <a
                                     target="_blank"
@@ -239,7 +240,7 @@ class Footer extends Component {
                                     id="medium"
                                     title="Medium"
                                 >
-                                    <Icon className="medium" name="medium" />
+                                    <Icon className="medium" name="medium"/>
                                 </a>
                             </div>
                         </div>
@@ -307,44 +308,47 @@ class Footer extends Component {
                         </div>
                     </Col>
                 </Row>
-                <hr id="line"/>
-                <Row>
-                    {/*-----------------------Footer Bottom-------------------------------- */}
+                <div className="Footer__bottom">
+                    <hr id="line"/>
+                    <Row>
+                        {/*-----------------------Footer Bottom-------------------------------- */}
 
-                    <Col md="6" sm="6">
-                        <div className="bottom-line">
-                            <p className="text-xs-left">
-                                {new Date().getFullYear()} Tunga Bv - All rights
-                                reserved
-                            </p>
-                        </div>
-                    </Col>
-                    <Col md="2" sm="4">
-                        <div className="bottom-line">
-                            <p className="text-xs-right">
-                                <a href="#">Privacy policy</a>
-                            </p>
-                        </div>
-                    </Col>
-                    <Col md="2" sm="4">
-                        <div className="bottom-line">
-                            <p className="text-xs-right">
-                                <a href="#">User Agreement</a>
-                            </p>
-                        </div>
-                    </Col>
-                    <Col md="2" sm="4">
-                        <div className="bottom-line">
-                            <p className="text-xs-right">
-                                <a href="#">Code of conduct</a>
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
+                        <Col md="6" sm="6">
+                            <div className="bottom-line">
+                                <p className="text-xs-left">
+                                    {new Date().getFullYear()} Tunga Bv - All rights
+                                    reserved
+                                </p>
+                            </div>
+                        </Col>
+                        <Col md="2" sm="4">
+                            <div className="bottom-line">
+                                <p className="text-xs-right">
+                                    <a href="#">Privacy policy</a>
+                                </p>
+                            </div>
+                        </Col>
+                        <Col md="2" sm="4">
+                            <div className="bottom-line">
+                                <p className="text-xs-right">
+                                    <a href="#">User Agreement</a>
+                                </p>
+                            </div>
+                        </Col>
+                        <Col md="2" sm="4">
+                            <div className="bottom-line">
+                                <p className="text-xs-right">
+                                    <a href="#">Code of conduct</a>
+                                </p>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
             </footer>
-      );
-  }
+        );
+    }
 }
+
 Footer.propTypes = {};
 
 export default Footer;
