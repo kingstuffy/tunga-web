@@ -46,10 +46,10 @@ class OurMission extends Component {
                         </ul>
                     </div>
                     <div className="OurMission__content col-md-6 col-sm-12">
-                        <div className="text-primary size-14 font-weight-bold mb-2 mt-3">
+                        <div className="text-primary OurStory__title mb-2 mt-3">
                             OUR MISSION
                         </div>
-                        <div className="text-blue size-18 font-weight-bold mb-2">
+                        <div className="text-blue OurStory__summary mb-2">
                             21st century jobs for African youths
                         </div>
                         <div>

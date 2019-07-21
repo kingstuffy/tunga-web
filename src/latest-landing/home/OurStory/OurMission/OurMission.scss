@@ -48,4 +48,20 @@
             max-width: 125px;
         }
     }
+
+    &__title {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: bold;
+    }
+
+    &__summary {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: bold;
+
+        @media only screen and (min-width: 992px) {
+            width: 80%;
+        }
+    }
 }

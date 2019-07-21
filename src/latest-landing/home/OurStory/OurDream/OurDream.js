@@ -21,10 +21,10 @@ class OurDream extends Component {
                     position="right"
                 >
                     <div className="OurDream__content">
-                        <div className="OurDream__title text-primary size-14 font-weight-bold mb-2">
+                        <div className="OurStory__title text-primary size-14 font-weight-bold mb-2">
                             OUR DREAM
                         </div>
-                        <div className="OurDream__title  text-blue size-18 font-weight-bold mb-2">
+                        <div className="OurStory__summary  text-blue size-18 font-weight-bold mb-2">
                             Equal opportunity for all youths
                         </div>
                         <div className="mb-4 OurDream__paragraph ">

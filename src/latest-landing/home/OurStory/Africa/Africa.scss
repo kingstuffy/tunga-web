@@ -1,6 +1,14 @@
 @import "../../../../scss/variables";
 
 .Africa {
+    &__header {
+        padding: 18px 15px;
+
+        @media (min-width: 992px) {
+            padding: 50px;
+        }
+    }
+
     &__bg {
         background-repeat: no-repeat;
         background-size: cover;
@@ -13,11 +21,31 @@
     }
 
     &__content {
-        padding: 1% 2%;
+        padding: 18px 30px;
 
         @media (min-width: 992px) {
-            padding: 1% 2%;
-            margin-top: -45px;
+            padding: 30px 114px;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 50px;
+
+        @media (min-width: 992px) {
+            width: 50%;
+            float: left;
+            margin-bottom: 0;
+
+            &--left {
+                padding-right: 40px;
+            }
+
+            &--right {
+                padding-left: 10px;
+            }
         }
     }
 }

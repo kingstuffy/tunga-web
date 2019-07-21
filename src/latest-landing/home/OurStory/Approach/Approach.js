@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Approach.scss";
-import Button from "../../../shared/core/Button";
 import ApproachLeft from "../../../assets/img/our-story/approach-left.png";
 import ApproachRight from "../../../assets/img/our-story/approach-right.png";
 
@@ -14,17 +13,15 @@ class Approach extends Component {
     render() {
         return (
             <div className="Approach">
-                <div className="row" style={{ height: "50vh", zIndex: 1, overflowY: "hidden"}}>
-                    <div className="col-md-6 col-sm-12 p-0 order-md-2">
-                        <div className="Approach__bg"
-                             style={{ backgroundImage: `url(${ApproachRight})` }}/>
-                    </div>
-                    <div className="col-md-6 col-sm-12 Approach__section order-md-1">
-                        <div className="text-primary size-14 font-weight-normal mb-2">
-                            WHY AFRICA
+                <div className="Approach__section">
+                    <div className="Approach__bg Approach__bg--top"
+                         style={{ backgroundImage: `url(${ApproachRight})` }}/>
+                    <div className="Approach__content">
+                        <div className="text-primary OurStory__title mb-2">
+                            APPROACH
                         </div>
-                        <div className="text-blue size-18 font-weight-normal">
-                            Tackling huge youth unemployment
+                        <div className="text-blue OurStory__summary">
+                            Our human-centered approach cuts both ways
                         </div>
                         <div>
                             Our way of working allows us to do software outsourcing better than traditional players in
@@ -35,12 +32,10 @@ class Approach extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{height: "50vh", zIndex: 1, overflowY: "hidden"}}>
-                    <div className="col-md-6 col-sm-12 p-0">
-                        <div className="Approach__bg"
-                             style={{ backgroundImage: `url(${ApproachLeft})` }}/>
-                    </div>
-                    <div className="col-md-6 col-sm-12 Approach__section">
+                <div className="Approach__section">
+                    <div className="Approach__bg"
+                         style={{ backgroundImage: `url(${ApproachLeft})` }}/>
+                    <div className="Approach__content">
                         <div>
                             Our platform is set-up to help the developers be successful by matching only verified
                             skills, by using best practice templates in project planning and specifying requirements,

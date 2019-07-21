@@ -14,8 +14,8 @@
     // scroll-snap-align: start;
 
     .Header-Text {
-        font-size: 22px;
-        line-height: 35px;
+        font-size: 24px;
+        line-height: 36px;
         width: 90%;
         margin: 27% auto auto;
         font-weight: 500 !important;
@@ -30,14 +30,16 @@
     }
 
     .Header-Text-P {
-        font-size: 16px;
         width: 87%;
-        line-height: 27px;
         margin: 15px auto auto;
         text-align: center;
+        font-size: 16px;
+        line-height: 24px;
 
         @media (min-width: 768px) {
-            width: 40%;
+            font-size: 18px;
+            line-height: 27px;
+            width: 50%;
         }
     }
 
