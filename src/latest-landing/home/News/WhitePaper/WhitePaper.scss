@@ -2,17 +2,21 @@
 @import "../../../assets/scss/variable";
 
 .WhitePaper {
+    position: relative;
+
+    @media (min-width: 992px) {
+        height: 100vh;
+    }
 
     &__bg {
         width: 100vw;
-        height: 100vh;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 351px;
 
         @media (min-width: 992px) {
-            height: 58vh;
+            height: 60vh;
         }
     }
 
@@ -21,6 +25,9 @@
 
         @media (min-width: 992px) {
             padding: 20px 70px;
+            min-height: 40vh;
+            position: absolute;
+            bottom: 0;
         }
     }
 
@@ -29,13 +36,13 @@
         line-height: 28px;
         color: #DA3451;
         margin-bottom: 4px;
-        margin-top: -13px;
     }
 
     &__subheading {
         font-size: 24px;
         line-height: 36px;
         color: #062E64;
+        margin-bottom: 12px;
     }
 
     &__section {
@@ -44,9 +51,13 @@
         color: #000000;
 
         @media (min-width: 992px) {
-            height: 42vh;
             font-size: 16px;
             line-height: 21px;
+            padding-right: 23px;
+
+            &--with-top {
+                padding-top: 9px;
+            }
         }
     }
 

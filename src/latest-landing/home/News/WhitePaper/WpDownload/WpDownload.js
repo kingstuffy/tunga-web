@@ -100,8 +100,8 @@ class WpDownload extends Component {
                                 have an account at Tunga, you can control the messages you receive from us in your
                                 settings. If you are a guest visitor, you can unsubscribe from Tunga marketing messages
                                 any time by clicking the unsubscribe button in the e-mail or by sending us an e-mail to
-                                hello@tunga.io with the word “Unsubscribe” in the subject. To learn more, please visit
-                                Tunga’s Privacy Policy page.
+                                <b>hello@tunga.io</b> with the word “Unsubscribe” in the subject. To learn more, please visit
+                                Tunga’s <b>Privacy Policy</b> page.
                             </div>
                         </div>
                     </Col>

@@ -44,13 +44,13 @@ class Blog extends Component {
         return (
             <section className="Blog">
                 <div className="Blog__heading">
-                    BLOGS
+                    BLOG POSTS
                 </div>
                 <div className="Blog__container">
                     <Carousel
                         pagination={pagination}
                         float="float-right"
-                        color="text-primary"
+                        color="text-white"
                     >
                         <ul className="Blog__list" style={{ left: this.state.leftPosition }}>
                             {splitArticles.map(
@@ -78,7 +78,7 @@ class Blog extends Component {
                                                                     className="btn Blog__btn btn-inverted"
                                                                     variant=""
                                                                     onClick={() => {
-                                                                        window.location.href = article.url;
+                                                                        window.open(article.url, '_blank');
                                                                     }}
                                                                 >
                                                                     Read now

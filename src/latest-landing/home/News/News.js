@@ -15,6 +15,8 @@ import RadobankLogo from "../../assets/img/news/rabobank-logo.jpg";
 import AdPicture from "../../assets/img/news/ad-picture.jpg";
 import AdLogo from "../../assets/img/news/ad-logo.png";
 
+import blogArticles from './content/blogs';
+
 import TeamImg from "../../assets/img/our-team/user.png";
 import VlogImg from "../../assets/img/blog/vlog.png";
 import VlogVideo from "../../assets/videos/home/section-1.mp4";
@@ -169,56 +171,7 @@ class News extends Component {
                     videoUrl: VlogVideo,
                 },
             ],
-            blogArticles: [
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-                {
-                    title: 'Title of the blog post goes here',
-                    summary: 'Yeah, but your scientists were so preoccupied with whether or not they could, they didn\'t stop to think if they should. My dad once told me, laugh and the world laughs with you...',
-                    imgUrl: TeamImg,
-                    url: Routing.blog.path,
-                },
-            ]
+            blogArticles,
         };
     }
 

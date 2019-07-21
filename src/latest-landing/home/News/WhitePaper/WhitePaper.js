@@ -51,7 +51,7 @@ class WhitePaper extends Component {
                             </div>
                         </Col>
                         <Col sm="12" md="4">
-                            <div className="WhitePaper__section">
+                            <div className="WhitePaper__section WhitePaper__section--with-top">
                                 <div className="WhitePaper__text">
                                     But where to start? Download our whitepaper and get the hard numbers on sourcing
                                     software programmers from Africa:
@@ -70,7 +70,7 @@ class WhitePaper extends Component {
                             </div>
                         </Col>
                         <Col sm="12" md="4">
-                            <div className="WhitePaper__section">
+                            <div className="WhitePaper__section WhitePaper__section--with-top">
                                 <ul className="WhitePaper__list">
                                     <li className="WhitePaper__point">
                                         Which countries have the most potential moving forward in terms of business and
