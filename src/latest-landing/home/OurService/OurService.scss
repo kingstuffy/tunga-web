@@ -34,6 +34,18 @@
         // padding: 3.2% 0;
         overflow: hidden;
         width: 100vw;
+
+        @media (min-width: 992px) {
+            &::after {
+                content: '';
+                height: 60vh;
+                width: 100%;
+                display: block;
+                z-index: -1;
+                background-color: #fefbfb;
+                position: absolute;
+            }
+        }
     }
 
     &__list {
