@@ -51,13 +51,18 @@
         white-space: normal;
 
         @media (min-width: 768px) {
-            padding-right: 23px;
-            width: 46%;
+            margin-right: 23px;
+            width: 29%;
+            padding-bottom: 99999px;
+            margin-bottom: -99999px;
         }
 
         @media (min-width: 992px) {
-            padding-right: 23px;
-            width: 31%;
+            margin-right: 23px;
+            width: 29%;
+            padding-bottom: 99999px;
+            margin-bottom: -99999px;
+            background-color: #fff;
         }
     }
 

@@ -56,12 +56,15 @@ class TalentPool extends Component {
 
     render() {
         const { talents, is } = this.props;
-        console.log(talents);
-        const talentsPerRow = parseInt(talents.length / 2, 10);
+        let talentsPerRow = parseInt(talents.length / 2, 10);
+        talentsPerRow = talentsPerRow < 5 ? 5 : talentsPerRow;
         const splitTalents = [
             talents.slice(0, talentsPerRow),
-            talents.slice(talentsPerRow),
         ];
+        if (talents.length > talentsPerRow) {
+            splitTalents.push(talents.slice(talentsPerRow));
+        }
+
         const pagination = {
             total: talentsPerRow,
             perPage: this.getDataPerPage()

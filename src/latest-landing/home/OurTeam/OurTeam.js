@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 // import queryString from "query-string";
 import PageScroller from "../../../components/pageScroller";
 

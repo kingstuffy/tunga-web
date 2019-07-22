@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./ServiceDetail.scss";
 import UseCase from "../UseCase/UseCase";
 import {Card, CardBody, CardText, CardTitle, CardImg} from "reactstrap";
+import IconDismiss from "../../../assets/img/common/icons/icon-dismiss.png";
 import Icon from "../../../shared/core/Icon";
 
 class ServiceDetail extends Component {
@@ -70,7 +71,7 @@ class ServiceDetail extends Component {
                    onClick={() => {
                        onCloseServiceDetail();
                    }}>
-                    <Icon name='times-circle-o' size='md'/>
+                    <img className="ServiceDetail__dismiss-img" src={IconDismiss} alt="close section"/>
                 </a>
             </section>
         );
