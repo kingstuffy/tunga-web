@@ -28,11 +28,11 @@ class TalentSearch extends Component {
         e.preventDefault();
         const email = this.state.email;
         if (email) {
-            console.log(isBusinessEmail(email), email);
             if (isBusinessEmail(email)) {
+                this.setState({ emailError: false });
                 this.props.authenticateEmailVisitor({ email, via_search: true, search: this.state.query });
             } else {
-                // this.setState({ [`${loadMore ? 'emailMore' : 'emailUnlock'}Error`]: 'Please enter a business email.' });
+                this.setState({ emailError: true });
             }
         }
     }
@@ -51,6 +51,7 @@ class TalentSearch extends Component {
 
     render() {
         const { auth } = this.props;
+        console.log(this.state.emailError);
 
         return (
             <div className="TalentSearch">
@@ -78,12 +79,18 @@ class TalentSearch extends Component {
                                                onChange={this.handleChange}
                                                placeholder="Enter Business Email to unlock search"/>
                                         <Button type="submit"
-                                            className="p-4 border-radius-0 TalentSearch-button"
+                                                className="p-4 border-radius-0 TalentSearch-button"
                                         >
                                             Go
                                         </Button>
                                     </IconGroup>
                                 </div>
+                                {
+                                    this.state.emailError &&
+                                    <div className="Form__group text-danger mt-2">
+                                        Please enter a valid business email
+                                    </div>
+                                }
                             </form>
                     }
                 </div>

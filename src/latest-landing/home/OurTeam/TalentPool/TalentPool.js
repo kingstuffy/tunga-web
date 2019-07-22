@@ -6,6 +6,7 @@ import Carousel from "../../../shared/Carousel/Carousel";
 import Loader from "../../../shared/Loader/Loader";
 import Talent from "./Talent/Talent";
 import TalentSearch from "./TalentSearch/TalentSearch";
+import Icon from "../../../shared/core/Icon";
 
 class TalentPool extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class TalentPool extends Component {
 
     onSearchQuery(query) {
         this.loadData(query);
+        this.setState({ lastQuery: query });
     }
 
 
@@ -55,7 +57,7 @@ class TalentPool extends Component {
 
 
     render() {
-        const { talents, is } = this.props;
+        const { talents, is, query } = this.props;
         let talentsPerRow = parseInt(talents.length / 2, 10);
         talentsPerRow = talentsPerRow < 5 ? 5 : talentsPerRow;
         const splitTalents = [
@@ -79,6 +81,13 @@ class TalentPool extends Component {
                     <TalentSearch onSearchQuery={this.onSearchQuery}/>
                 </div>
                 <div className="TalentPool__container">
+                    {
+                        !talents.length && !is.fetching &&
+                        <div className="TalentPool__empty-state text-danger">
+                            No results found for '{query || this.state.lastQuery}'
+                            <Icon className="text-primary mt-3" name="search-alt" size='lg'/>
+                        </div>
+                    }
                     {
                         is.fetching
                             ?

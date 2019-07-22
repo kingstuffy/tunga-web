@@ -35,6 +35,15 @@
         height: 60vh;
     }
 
+    &__empty-state {
+        height: 60vh;
+        display: flex;
+        font-size: 16px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
     .Carousel__pagination {
         padding-right: 70px;
     }
