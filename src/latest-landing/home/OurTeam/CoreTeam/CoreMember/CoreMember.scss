@@ -10,6 +10,10 @@
     white-space: nowrap;
     background-position: center;
 
+    @media (min-width: 992px) {
+        height: 40vh;
+    }
+
     &__info {
         color: #fff;
         position: relative;

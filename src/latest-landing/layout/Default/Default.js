@@ -62,22 +62,35 @@ const pages = [
 class Default extends Component {
     constructor(props) {
         super(props);
+        this.state = {};
+        this.onUseCaseClick = this.onUseCaseClick.bind(this);
+        this.onPageScroll = this.onPageScroll.bind(this);
+    }
+
+    onUseCaseClick() {
+        this.setState({ gotToPage: 4 });
+    }
+
+    onPageScroll() {
+        this.setState({ gotToPage: false });
     }
 
     render() {
         return (
-      <div className="Default">
-        <PageScroller
-            pages={pages}
-        >
-            <Header/>
-            <AboutUs/>
-            <OurService/>
-            <ScheduleCall showCaseStudies={true}/>
-            <CaseStudies/>
-            <Footer />
-        </PageScroller>
-      </div>
+            <div className="Default">
+                <PageScroller
+                    pages={pages}
+                    onPageScroll={this.onPageScroll}
+                    goToPage={this.state.gotToPage}
+                >
+                    <Header/>
+                    <AboutUs/>
+                    <OurService onUseCaseClick={this.onUseCaseClick}/>
+                    <ScheduleCall showCaseStudies={true}/>
+                    <CaseStudies/>
+                    <Footer/>
+                </PageScroller>
+            </div>
         );
     }
 }

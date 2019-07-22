@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./ServiceDetail.scss";
 import UseCase from "../UseCase/UseCase";
-import {Card, CardBody, CardText, CardTitle, CardImg} from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, CardImg } from "reactstrap";
 import IconDismiss from "../../../assets/img/common/icons/icon-dismiss.png";
 import Icon from "../../../shared/core/Icon";
 
@@ -12,7 +12,7 @@ class ServiceDetail extends Component {
     }
 
     render() {
-        const {service, nextService, onServiceSelection, onCloseServiceDetail} = this.props;
+        const { service, nextService, onServiceSelection, onCloseServiceDetail, onUseCaseClick } = this.props;
         return (
             <section className="ServiceDetail">
                 <div className="ServiceDetail__left-bg">
@@ -49,7 +49,10 @@ class ServiceDetail extends Component {
                                 {service.price}
                             </CardText>
                             <div className="ServiceDetail__use-case">
-                                <UseCase useCases={service.useCases || []}/>
+                                <UseCase onUseCaseClick={() => {
+                                    onUseCaseClick();
+                                    onCloseServiceDetail();
+                                }} useCases={service.useCases || []}/>
                             </div>
                             <div className="mt-5">
                                 {nextService &&

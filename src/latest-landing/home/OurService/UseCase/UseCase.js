@@ -9,7 +9,7 @@ class UseCase extends Component {
     }
 
     render() {
-        const { useCases } = this.props;
+        const { useCases, onUseCaseClick } = this.props;
         return (
             <div className="UseCase">
                 <div className="text-blue font-weight-bold UseCase__header">
@@ -28,6 +28,7 @@ class UseCase extends Component {
                         </div>
                         <div className="UseCase__cta">
                             <Button
+                                onClick={onUseCaseClick}
                                 size="md"
                                 className="btn UseCase__btn"
                                 variant=""

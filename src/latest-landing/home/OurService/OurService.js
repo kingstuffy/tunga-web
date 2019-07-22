@@ -49,16 +49,17 @@ class OurService extends Component {
                     price: "23 - 26 EUR per hour",
                     useCases: [
                         {
-                            title: "This is where case one title goes",
+                            title: "Cuurios",
                             description: "This is where case two title goes",
                             imgUrl: case1
                         },
                         {
-                            title: "This is where case two title goes",
+                            title: "Provolve IT",
                             description: "This is where case two title goes",
                             imgUrl: case2
                         }
-                    ]
+                    ],
+                    tag: 'dedicated-developers'
                 },
                 {
                     title: "Project outsourcing",
@@ -71,16 +72,17 @@ class OurService extends Component {
                     price: "5,000 EUR (prototype) - 18,000 EUR (v1.0) ",
                     useCases: [
                         {
-                            title: "This is where case one title goes",
+                            title: "Impulse",
                             description: "This is where case two title goes",
                             imgUrl: case1
                         },
                         {
-                            title: "This is where case two title goes",
+                            title: "CWZ",
                             description: "This is where case two title goes",
                             imgUrl: case2
                         }
-                    ]
+                    ],
+                    tag: 'project-outsourcing',
                 },
                 {
                     title: "Scoping & design",
@@ -90,7 +92,15 @@ class OurService extends Component {
                     videoMain: DesignScoping,
                     videoDetails: DesignScopingDetail,
                     leadTime: "1 - 2 weeks",
-                    price: "1,000 - 3,000 EUR"
+                    price: "1,000 - 3,000 EUR",
+                    useCases: [
+                        {
+                            title: "CoffeeChat",
+                            description: "This is where case two title goes",
+                            imgUrl: case1
+                        }
+                    ],
+                    tag: 'scoping',
                 },
                 {
                     title: "Developers on-demand",
@@ -209,6 +219,8 @@ class OurService extends Component {
 
 
     render() {
+        const { onUseCaseClick } = this.props;
+
         return (
             <section className="OurService" id="OurService">
                 <div className="text-primary OurService__header font-weight-bold">
@@ -246,6 +258,7 @@ class OurService extends Component {
                             nextService={this.state.nextService}
                             onServiceSelection={this.onServiceSelection}
                             onCloseServiceDetail={this.onCloseServiceDetail}
+                            onUseCaseClick={onUseCaseClick}
                         />
                     </div>
                 }
