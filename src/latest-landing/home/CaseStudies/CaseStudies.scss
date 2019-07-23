@@ -46,6 +46,11 @@
     .case-content {
         padding: 30px 18px;
 
+        @media screen and (min-width: 992px) {
+            height: 100vh;
+            margin-bottom: -60px;
+        }
+
         @media (min-width: 768px) {
             padding: 50px 60px;
         }

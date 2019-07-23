@@ -108,7 +108,7 @@ class SideNav extends React.Component {
                 }`}>
                 </div>
               <a
-                className={`side_bar-label
+                className={`side_bar-label font-weight-bold
                 ${anc.isActive ? "side_bar-label-active"
                 : "side_bar-label-hidden"}`}
                 href={`#${anc.hash}`}
