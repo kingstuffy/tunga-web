@@ -11,7 +11,9 @@
     }
 
     .float-right {
-        padding-right: 56px;
+        @media (min-width: 992px) {
+            padding-right: 63px;
+          }
         margin-bottom: 4px;
     }
 
