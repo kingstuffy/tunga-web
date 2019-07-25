@@ -14,14 +14,14 @@ class PaginateArrow extends Component {
             <span className="PaginateArrow">
                 <span className={float}>
                     <Icon
-                        onClick={() => This.paging(paginate.current - 1)}
+                        onClick={() => This.paging(paginate.current - 3)}
                         className={`${paginate.current === 1 ? "text-gray" : color} mr-3`}
                         name="previous"
                         size="md"
                     />
                     &nbsp;
                     <Icon
-                        onClick={() => This.paging(paginate.current + 1)}
+                        onClick={() => This.paging(paginate.current + 3)}
                         className={
                             paginate.current >=
                             Math.ceil(data.length / paginate.perPage)
