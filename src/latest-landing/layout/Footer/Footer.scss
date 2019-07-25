@@ -38,7 +38,6 @@ footer {
         @media only screen and (min-width: 768px) {
             padding: 0;
             margin-left: 48px;
-            margin-right: 48px;
         }
 
         h5 {
@@ -75,6 +74,7 @@ footer {
             color: #D9E9FF;
             font-size: 16px;
             line-height: 24px;
+            margin-bottom: 0
         }
     }
 
@@ -301,49 +301,13 @@ footer {
 }
 
 .slick-slide a {
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
 }
 
-.bbc img {
-
-    margin: auto;
-}
-
-.party img {
-
-    margin: auto;
-}
-
-.trend img {
-
-    margin: auto;
-}
-
-.world img {
-
-    margin: auto;
-}
-
-.afn img {
-
-    margin: auto;
-}
-
-.nabc img {
-
-    margin: auto;
-}
-
-.bnr img {
-
-    margin: auto;
-}
-
-.graf img {
-
-    margin: auto;
+.slick-slide img {
+  margin: auto
 }
 
 .Footer {
@@ -358,3 +322,10 @@ footer {
         }
     }
 }
+
+@media (min-width: 768px) {
+  .col-md-3 {
+    align-self: baseline;
+  }
+}
+  
