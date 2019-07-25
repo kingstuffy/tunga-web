@@ -166,22 +166,23 @@ class Footer extends Component {
                 {/*------------------Our Offices------------------- */}
                 <Row>
                     <Col md="3" sm="6">
-                        <div className="tunga-offices">
-                            <div className="tunga-kampala">
-                                <h4>OFFICES</h4>
-                                <h5>KAMPALA</h5>
-                                <p>Design Hub Kampala</p>
-                                <p>5th Street, Industrial Area</p>
-                                <p>Kampala, Uganda</p>
-                            </div>
-
-                            <div className="tunga-amsterdam">
-                                <h5>AMSTERDAM</h5>
-                                <p>The Collab Wibautstraat 131</p>
-                                <p>1091 GL Amsterdam</p>
-                                <p>The Netherlands</p>
-                            </div>
+                      <div className="tunga-offices">
+                        <h4>OFFICES</h4>
+                        <div className="tunga-kampala">
+                            
+                            <h5>KAMPALA</h5>
+                            <p>Design Hub Kampala</p>
+                            <p>5th Street, Industrial Area</p>
+                            <p>Kampala, Uganda</p>
                         </div>
+
+                        <div className="tunga-amsterdam">
+                            <h5>AMSTERDAM</h5>
+                            <p>The Collab Wibautstraat 131</p>
+                            <p>1091 GL Amsterdam</p>
+                            <p>The Netherlands</p>
+                        </div>
+                      </div>
                     </Col>
 
                     {/*--------------------------Connect With Us---------------------- */}
