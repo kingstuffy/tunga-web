@@ -11,7 +11,7 @@
     background-position: center;
 
     @media (min-width: 992px) {
-        height: 40vh;
+        height: calc(50vh - 105px);
     }
 
     &__info {
