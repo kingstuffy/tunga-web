@@ -96,7 +96,7 @@ class Blog extends Component {
                                                                     {article.title}
                                                                 </div>
                                                                 <div className="Blog__summary">
-                                                                    {article.summary}
+                                                                    {article.subtitle}
                                                                 </div>
                                                                 <div className="Blog__cta">
                                                                     <Button
