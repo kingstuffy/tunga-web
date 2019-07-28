@@ -5,6 +5,7 @@ import { Col, Row } from "reactstrap";
 import Button from "../../shared/core/Button";
 import Icon from "../../shared/core/Icon";
 import BgVideo from "../../assets/videos/home/section-4.mp4";
+import { openCalendlyWidget } from "../../../components/utils/calendly";
 
 class ScheduleCall extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class ScheduleCall extends Component {
                     <Col lg="12" sm="12" md="12">
                         <div className="mt-4 mb-5" align="center">
                             <Button
+                                onClick={() => openCalendlyWidget()}
                                 size="lg"
                                 className="ml-2 p-4 mt-2 border-radius-0 ScheduleCall-button"
                             >

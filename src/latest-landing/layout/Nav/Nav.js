@@ -15,6 +15,7 @@ import {
 
 import Button from "../Header/Header";
 import Logo from "../../assets/img/common/logo.png";
+import { openCalendlyWidget } from "../../../components/utils/calendly";
 
 
 class Nav extends Component {
@@ -74,7 +75,8 @@ class Nav extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <RNavLink className="ml-3 text-white btn btn-lg btn-primary p-4 border-radius-0">
+                                    <RNavLink className="ml-3 text-white btn btn-lg btn-primary p-4 border-radius-0"
+                                              onClick={() => openCalendlyWidget()}>
                                         Schedule a Call{" "}
                                     </RNavLink>
                                 </NavItem>

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Col, Row } from "reactstrap";
+import { openCalendlyWidget } from "../../../components/utils/calendly";
 import "./Header.scss";
 import Nav from "../Nav/Nav";
 import Button from "../../shared/core/Button";
-import { Col, Row } from "reactstrap";
 import BgVideo from "../../assets/videos/home/section-1.mp4";
 import BgVideoMobile from "../../assets/videos/home/section-1-mobile.mp4";
 
@@ -47,6 +48,7 @@ class Header extends Component {
                     <Col lg="12" sm="12" md="12">
                         <div className="mt-3 mb-5" align="center">
                             <Button
+                                onClick={() => openCalendlyWidget()}
                                 size="lg"
                                 className="ml-2 p-4 mt-2 border-radius-0 Header-button"
                             >
