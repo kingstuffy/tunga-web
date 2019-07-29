@@ -21,6 +21,7 @@ import Remo from "../../assets/img/our-team/team/Remo.jpg";
 import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Simon from "../../assets/img/our-team/team/Simon.jpg";
 import Footer from "../../layout/Footer/Footer";
+import PageScroll from "../../shared/PageScroll/PageScroll";
 
 const pages = [
     {
@@ -243,11 +244,6 @@ class OurTeam extends Component {
         };
     }
 
-
-    goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
-    }
-
     pageOnChange = (pageNumber) => {
         console.log("current page", pageNumber)
     }
@@ -259,7 +255,7 @@ class OurTeam extends Component {
 
         return (
             <section className="OurTeam">
-                <PageScroller pages={pages}>
+                <PageScroll pages={pages}>
                     <div id="OurTeam" className="OurTeam__core-team">
                         <div className="OurTeam__nav">
                             <Nav/>
@@ -273,7 +269,7 @@ class OurTeam extends Component {
                         <ScheduleCall/>
                     </div>
                     <Footer/>
-                </PageScroller>
+                </PageScroll>
             </section>
         );
     }

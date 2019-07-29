@@ -27,6 +27,7 @@ import Blog from "./Blog/Blog";
 import Routing from "../../constants/Routing";
 import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
+import PageScroll from "../../shared/PageScroll/PageScroll";
 
 const pages = [
     {
@@ -186,7 +187,7 @@ class News extends Component {
     render() {
         return (
             <section className="News">
-                <PageScroller pages={pages}>
+                <PageScroll pages={pages}>
                     <div id="NewsArticle" className="News__news-article">
                         <div className="News__nav">
                             <Nav/>
@@ -202,8 +203,8 @@ class News extends Component {
                     <div id="BLOGS" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>
                     </div>
-                    <Footer />
-                </PageScroller>
+                    <Footer/>
+                </PageScroll>
             </section>
         );
     }

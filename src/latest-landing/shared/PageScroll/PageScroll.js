@@ -71,7 +71,7 @@ class PageScroll extends Component {
                     // this.scroll({ direction: 'down' });
                 }
             }
-
+            console.log(window.scrollY, rect.top, offsetHeight, windowHeight);
             let currentPage = 0;
 
             if (offsetHeight <= windowHeight) {
@@ -95,6 +95,8 @@ class PageScroll extends Component {
                 this.pages[stepIndex] = currentPage;
             }
         });
+
+        console.log(this.steps);
     }
 
 

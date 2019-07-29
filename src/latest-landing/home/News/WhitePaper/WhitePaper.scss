@@ -17,16 +17,21 @@
 
         @media (min-width: 992px) {
             height: 60vh;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 
     &__body {
         padding: 43px 18px;
+        background-color: #fff;
 
         @media (min-width: 992px) {
             padding: 20px 70px;
             min-height: 40vh;
             bottom: 0;
+            position: absolute;
         }
     }
 

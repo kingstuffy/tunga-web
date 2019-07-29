@@ -2,11 +2,6 @@
 @import "../../assets/scss/variable";
 
 .OurTeam {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100vh;
-    scroll-behavior: smooth;
-
     .navbar-nav > li > a {
         color: #222;
     }
