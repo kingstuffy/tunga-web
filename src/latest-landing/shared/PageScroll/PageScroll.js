@@ -80,11 +80,15 @@ class PageScroll extends Component {
             } else {
                 this.steps.push({ y, el, page: stepIndex });
                 currentPage = this.steps.length - 1;
-                this.steps.push({
-                    el,
-                    y: (y + offsetHeight - windowHeight),
-                    page: stepIndex
-                });
+                const diff = Math.ceil((offsetHeight - windowHeight) / windowHeight);
+
+                for (let i = diff; i > 0; i--) {
+                    this.steps.push({
+                        el,
+                        y: (y + offsetHeight - (windowHeight * i)),
+                        page: stepIndex
+                    });
+                }
             }
 
             if (this.props.pages[stepIndex]) {
@@ -172,7 +176,6 @@ class PageScroll extends Component {
 
 
     findKeyDirection(event) {
-        console.log(parseInt(event.keyCode, 10));
         if (parseInt(event.keyCode, 10) === 38) {
             return 'up';
         } else if (parseInt(event.keyCode, 10) === 40) {
