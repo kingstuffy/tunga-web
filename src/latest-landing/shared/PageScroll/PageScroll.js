@@ -7,15 +7,17 @@ class PageScroll extends Component {
         super(props);
 
         this.isWheeling = false;
+        this.isScolling = false;
         this.state = { currentPage: 0 };
         this.currentStep = 0;
-
-        this.containerRef = React.createRef();
-        this.onWheel = this.onWheel.bind(this);
-        this.goToPage = this.goToPage.bind(this);
-        this.scroll = this.scroll.bind(this);
         this.steps = [];
         this.pages = [];
+        this.containerRef = React.createRef();
+
+        this.onWheel = this.onWheel.bind(this);
+        this.onKeydown = this.onKeydown.bind(this);
+        this.goToPage = this.goToPage.bind(this);
+        this.scroll = this.scroll.bind(this);
     }
 
 
@@ -28,6 +30,8 @@ class PageScroll extends Component {
                 this.computeSteps();
             }, 600);
         });
+
+        window.addEventListener('keydown', this.onKeydown);
     }
 
 
@@ -91,6 +95,10 @@ class PageScroll extends Component {
 
 
     goToPage(pageNumber) {
+        if (pageNumber && pageNumber === this.state.currentPage) {
+            return;
+        }
+
         const direction = this.currentStep > pageNumber ? 'up' : 'down';
         const currentPage = this.currentStep > pageNumber ? pageNumber + 1 : pageNumber - 1;
         this.currentStep = this.pages[currentPage];
@@ -112,6 +120,24 @@ class PageScroll extends Component {
 
         this.scroll({ direction });
         return false;
+    }
+
+
+    onKeydown(event) {
+        if (this.isScolling) {
+            return false;
+        }
+
+        window.setTimeout(() => {
+            this.isScolling = false;
+        }, 850);
+
+        this.isScolling = true;
+        const direction = this.findKeyDirection(event);
+
+        if (direction) {
+            this.scroll({ direction });
+        }
     }
 
 
@@ -145,8 +171,26 @@ class PageScroll extends Component {
     }
 
 
+    findKeyDirection(event) {
+        console.log(parseInt(event.keyCode, 10));
+        if (parseInt(event.keyCode, 10) === 38) {
+            return 'up';
+        } else if (parseInt(event.keyCode, 10) === 40) {
+            return 'down';
+        }
+
+        return false;
+    }
+
+
     render() {
         const self = this;
+        const { goToPage, onPageScrolled } = this.props;
+
+        if (typeof goToPage !== 'undefined' && goToPage !== false) {
+            // this.goToPage(goToPage);
+            // onPageScrolled && onPageScrolled();
+        }
 
         return (
             <div>

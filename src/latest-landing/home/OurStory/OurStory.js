@@ -114,7 +114,7 @@ class OurStory extends Component {
     render() {
         return (
             <section className="OurStory">
-                <PageScroll pages={pages}>
+                <PageScroll pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}>
                     { /* <PageScroller pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}> */}
                     <div id="OurStory" className="OurStory__header">
                         <div className="OurStory__nav">

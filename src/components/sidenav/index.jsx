@@ -84,7 +84,7 @@ class SideNav extends React.Component {
                 return { ...obj, isActive: false };
             });
             this.setState({ pages });
-        }, 1500);
+        }, 2500);
     }
 
     handleClick = (pageNumber) => (event) => {
