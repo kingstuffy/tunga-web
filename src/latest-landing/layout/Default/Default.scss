@@ -1,11 +1,14 @@
-html, body {
-    height: 100vh;
-    overflow: hidden;
-}
-
 .Default {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
     scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }

@@ -4,11 +4,7 @@
 .OurStory {
     color: #222829;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     font-size: 1rem;
 
     &__title {

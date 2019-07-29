@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Home.scss";
 import { Route } from "react-router-dom";
 import IconButton from "../shared/core/IconButton";
-import ChatWidget from "./ChatWidget/ChatWidget";
+import ChatWidget from "../shared/ChatWidget/ChatWidget";
 
 class Home extends Component {
     constructor(props) {

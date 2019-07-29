@@ -12,6 +12,7 @@ import Africa from "./Africa/Africa";
 import Approach from "./Approach/Approach";
 import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
+import PageScroll from "../../shared/PageScroll/PageScroll";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 import BgVideo from "../../assets/videos/our-story/bg-video.mp4";
@@ -113,7 +114,8 @@ class OurStory extends Component {
     render() {
         return (
             <section className="OurStory">
-                <PageScroller pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}>
+                <PageScroll pages={pages}>
+                    { /* <PageScroller pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}> */}
                     <div id="OurStory" className="OurStory__header">
                         <div className="OurStory__nav">
                             <Nav/>
@@ -158,7 +160,8 @@ class OurStory extends Component {
                         <Approach/>
                     </div>
                     <Footer/>
-                </PageScroller>
+                    {/* </PageScroller> */}
+                </PageScroll>
             </section>
         );
     }
