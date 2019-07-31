@@ -71,8 +71,8 @@ class TalentSearch extends Component {
                             </form>
                             :
                             <form className="TalentSearch__form" onSubmit={this.onEmailSubmit}>
-                                <div className="TalentSearch__icon-group">
-                                    <IconGroup style={{ width: "176%" }}>
+                                <div className="TalentSearch__icon-group-holder">
+                                    <IconGroup classname="TalentSearch__icon-group">
                                         <Icon className="Form__input-icon" name='lock-alt' size='card'/>
                                         <Input className="Form__input--has-icon" id="TalentSearch-input" type="email"
                                                name="email" value={this.state.email}

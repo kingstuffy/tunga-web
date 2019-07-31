@@ -3,12 +3,21 @@
 .TalentSearch {
     $root: &;
     text-align: left;
-    width: 290px;
+    width: 100%;
+    padding-right: 18px;
     display: inline-block;
+
+    @media (min-width: 992px) {
+        width: 290px;
+    }
 }
 
 .Form__input-icon-group {
     display: flex;
+
+    @media (min-width: 992px) {
+        width: 176%;
+    }
 }
 
 .TalentSearch-button {
