@@ -23,20 +23,24 @@ class PageScroll extends Component {
 
     componentWillMount() {
         this.isWheeling = false;
-        window.addEventListener('resize', () => {
-            this.currentStep = 0;
-            this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
-            window.setTimeout(() => {
-                this.computeSteps();
-            }, 600);
-        });
+        if (this.containerRef.current) {
+            window.addEventListener('resize', () => {
+                this.currentStep = 0;
+                this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
+                window.setTimeout(() => {
+                    this.computeSteps();
+                }, 600);
+            });
 
-        window.addEventListener('keydown', this.onKeydown);
+            window.addEventListener('keydown', this.onKeydown);
+        }
     }
 
 
     componentDidMount() {
-        this.computeSteps();
+        if (this.containerRef.current) {
+            this.computeSteps();
+        }
     }
 
 

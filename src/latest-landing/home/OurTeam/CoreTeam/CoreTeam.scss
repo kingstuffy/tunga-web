@@ -11,6 +11,8 @@
     }
 
     .float-right {
+        padding-right: 18px;
+
         @media (min-width: 992px) {
             padding-right: 63px;
           }
@@ -32,7 +34,7 @@
     }
 
     &__item {
-        width: 100%;
+        width: 46%;
         display: inline-block;
         white-space: nowrap;
 

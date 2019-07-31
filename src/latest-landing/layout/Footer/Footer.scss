@@ -4,6 +4,10 @@ $white-color: #fff;
 $font-color: #aed0ff;
 $font-fmily: hk grotesk;
 
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+
 // BODY ////////////////////////////////////////////
 * {
     margin: 0;
@@ -35,9 +39,9 @@ footer {
         margin-top: 60px;
         padding: 11px;
 
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 992px) {
             padding: 0;
-            margin-left: 48px;
+            margin-left: 70px;
         }
 
         h5 {
@@ -53,9 +57,8 @@ footer {
         font-family: sans-serif, HK Grotesk;
         margin: 44px 18px;
 
-        @media only screen and (min-width: 768px) {
-            margin: 44px;
-            margin-top: 55px;
+        @media only screen and (min-width: 992px) {
+            margin: 55px 44px 44px 70px;
         }
 
         h4 {
@@ -63,6 +66,7 @@ footer {
             font-size: 18px;
             line-height: 21px;
         }
+
         h5 {
             color: $white-color !important;
             font-size: 14px;
@@ -70,6 +74,7 @@ footer {
             padding-top: 15px;
             margin-bottom: 9px;
         }
+
         p {
             color: #D9E9FF;
             font-size: 16px;
@@ -82,24 +87,27 @@ footer {
     .connect {
         margin: 40px 18px;
 
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 992px) {
             margin: 40px;
         }
 
         font-family: sans-serif, HK Grotesk;
+
         h4 {
             color: $font-color !important;
             font-size: 18px;
             line-height: 21px;
             padding-bottom: 15px;
         }
+
         .hello-tunga a {
-            color:  #D9E9FF !important;
+            color: #D9E9FF !important;
             font-size: 16px;
             line-height: 19px;
             text-decoration: none;
             padding-top: 15px;
         }
+
         .social-networks {
             margin-top: 15px;
 
@@ -116,8 +124,6 @@ footer {
                 text-align: center;
                 font-size: px-to-rem(18);
                 color: $bg;
-                padding-top: 10px;
-                border: 1px solid get-color("white");
                 border-radius: 8%;
                 text-decoration: none;
                 margin-right: 22px;
@@ -162,21 +168,23 @@ footer {
 .explore {
     margin: 40px 18px;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 992px) {
         margin: 40px;
     }
 
     font-family: sans-serif, HK Grotesk;
+
     h4 {
         color: $font-color !important;
         font-size: 18px;
         line-height: 22px;
         margin-bottom: 20px;
     }
+
     li a {
         text-decoration: none;
 
-        color:  #D9E9FF !important;
+        color: #D9E9FF !important;
         font-size: 16px;
         line-height: 21px;
     }
@@ -192,8 +200,9 @@ footer {
 .latest-from-our-blog {
     margin: 40px 18px;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 992px) {
         margin: 40px;
+        margin-right: 70px;
     }
 
     font-family: sans-serif, HK Grotesk;
@@ -207,7 +216,7 @@ footer {
 
     a {
         text-decoration: none;
-        color:  #D9E9FF !important;
+        color: #D9E9FF !important;
         font-size: 16px;
         line-height: 24px;
     }
@@ -223,12 +232,21 @@ footer {
 .bottom-line {
     margin-top: 8px;
     margin-bottom: 20px;
-    margin-left: 42px;
-    margin-right: 42px;
+    margin-left: 18px;
+    margin-right: 18px;
+
+    @media (min-width: 992px) {
+        margin-left: 42px;
+        margin-right: 42px;
+
+        &--first {
+            margin-left: 70px;
+        }
+    }
 
     p {
         a {
-            color:  #D9E9FF !important;
+            color: #D9E9FF !important;
             text-decoration: none;
             font-size: 14px;
         }
@@ -241,9 +259,12 @@ footer {
     height: 1px;
     border: 0;
     border-top: 1px solid #aed0ff;
-    padding: 0;
-    width: 93.5%;
-    margin-left: 40px !important;
+    margin: 0 auto;
+    width: calc(100% - 36px);
+
+    @media (min-width: 992px) {
+        width: calc(100% - 140px);
+    }
 }
 
 // MEDIA QUERIES /////////////////////////////////
@@ -254,7 +275,7 @@ footer {
         width: auto;
     }
     // TABLETS /////////////////////
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    @media only screen and (min-device-width: 992px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
         .slick-slide img {
             width: auto;
         }
@@ -307,7 +328,7 @@ footer {
 }
 
 .slick-slide img {
-  margin: auto
+    margin: auto
 }
 
 .Footer {
@@ -321,11 +342,63 @@ footer {
             position: absolute;
         }
     }
+
+    @media (max-width: 992px) {
+        &__rights {
+            order: 4;
+        }
+
+        &__bottom-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: inherit;
+            margin-bottom: 30px;
+
+            .bottom-line {
+                margin-bottom: 0;
+            }
+
+            &--first {
+                padding-right: 0;
+
+                .bottom-line {
+                    margin-right: 0;
+                }
+            }
+
+            &--middle {
+                padding: 0;
+
+                .bottom-line {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+
+            &--last {
+                padding-left: 0;
+
+                .bottom-line {
+                    margin-left: 0;
+                }
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .slick-slide img {
+        @media (max-width: 992px) {
+            max-width: 100%;
+        }
+    }
 }
 
-@media (min-width: 768px) {
-  .col-md-3 {
-    align-self: baseline;
-  }
+@media (min-width: 992px) {
+    .col-md-3 {
+        align-self: baseline;
+    }
 }
-  

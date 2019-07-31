@@ -1,4 +1,18 @@
 .ChatWidget {
+
+    &.chat-widget {
+        @media (max-width: 992px) {
+            left: 20px;
+            top: 20px;
+        }
+    }
+
+    .message-box {
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
     &.cta-widget {
         background-color: transparent;
         box-shadow: none;

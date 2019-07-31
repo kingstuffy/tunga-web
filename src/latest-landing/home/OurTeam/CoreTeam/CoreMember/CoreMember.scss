@@ -2,17 +2,13 @@
 
 .CoreMember {
     $root: &;
-    height: 270px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 20px;
     white-space: nowrap;
     background-position: center;
-
-    @media (min-width: 992px) {
-        height: calc(50vh - 105px);
-    }
+    height: calc(50vh - 105px);
 
     &__info {
         color: #fff;

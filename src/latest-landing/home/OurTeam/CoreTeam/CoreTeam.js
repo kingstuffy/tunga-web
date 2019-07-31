@@ -18,7 +18,7 @@ class CoreTeam extends Component {
         return [
             {
                 breakpoint: 768,
-                perPage: 1,
+                perPage: 2,
             },
             {
                 breakpoint: 992,

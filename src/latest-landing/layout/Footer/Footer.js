@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import Slider from "react-slick";
 import Icon from "../../../components/core/Icon";
-import {Col, Container, Row} from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 
 import "../Footer/slick/slick/slick.css";
 import "../Footer/slick/slick/slick-theme.css";
@@ -56,14 +56,14 @@ class Footer extends Component {
             }, {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 5,
+                    slidesToScroll: 3,
                 }
             }, {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 5,
+                    slidesToScroll: 3,
                 }
             }]
         });
@@ -166,23 +166,23 @@ class Footer extends Component {
                 {/*------------------Our Offices------------------- */}
                 <Row>
                     <Col md="3" sm="6">
-                      <div className="tunga-offices">
-                        <h4>OFFICES</h4>
-                        <div className="tunga-kampala">
-                            
-                            <h5>KAMPALA</h5>
-                            <p>Design Hub Kampala</p>
-                            <p>5th Street, Industrial Area</p>
-                            <p>Kampala, Uganda</p>
-                        </div>
+                        <div className="tunga-offices">
+                            <h4>OFFICES</h4>
+                            <div className="tunga-kampala">
 
-                        <div className="tunga-amsterdam">
-                            <h5>AMSTERDAM</h5>
-                            <p>The Collab Wibautstraat 131</p>
-                            <p>1091 GL Amsterdam</p>
-                            <p>The Netherlands</p>
+                                <h5>KAMPALA</h5>
+                                <p>Design Hub Kampala</p>
+                                <p>5th Street, Industrial Area</p>
+                                <p>Kampala, Uganda</p>
+                            </div>
+
+                            <div className="tunga-amsterdam">
+                                <h5>AMSTERDAM</h5>
+                                <p>The Collab Wibautstraat 131</p>
+                                <p>1091 GL Amsterdam</p>
+                                <p>The Netherlands</p>
+                            </div>
                         </div>
-                      </div>
                     </Col>
 
                     {/*--------------------------Connect With Us---------------------- */}
@@ -309,29 +309,29 @@ class Footer extends Component {
                     <Row>
                         {/*-----------------------Footer Bottom-------------------------------- */}
 
-                        <Col md="6" sm="6">
-                            <div className="bottom-line">
+                        <Col md="6" sm="6" className="Footer__rights">
+                            <div className="bottom-line bottom-line--first">
                                 <p className="text-xs-left">
                                     {new Date().getFullYear()} Tunga Bv - All rights
                                     reserved
                                 </p>
                             </div>
                         </Col>
-                        <Col md="2" sm="4">
+                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--first">
                             <div className="bottom-line">
                                 <p className="text-xs-right">
                                     <a href="#">Privacy policy</a>
                                 </p>
                             </div>
                         </Col>
-                        <Col md="2" sm="4">
+                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--middle">
                             <div className="bottom-line">
                                 <p className="text-xs-right">
                                     <a href="#">User Agreement</a>
                                 </p>
                             </div>
                         </Col>
-                        <Col md="2" sm="4">
+                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--last">
                             <div className="bottom-line">
                                 <p className="text-xs-right">
                                     <a href="#">Code of conduct</a>
