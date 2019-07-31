@@ -120,7 +120,7 @@ class PageScroll extends Component {
 
         window.setTimeout(() => {
             this.isWheeling = false;
-        }, 2000);
+        }, 1400);
 
         this.isWheeling = true;
         const direction = this.findScrollDirection(e);
