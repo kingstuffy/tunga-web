@@ -20,8 +20,8 @@ class WhitePaper extends React.Component {
             company: '',
             country: '',
             email: '',
-            paper: 'best_african_countries_for_outsourcing',
             phone_number: '',
+            paper: 'best_african_countries_for_outsourcing',
             error: false
         }
     }
@@ -38,7 +38,7 @@ class WhitePaper extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const { first_name, last_name, email, phone_number, country, company } = this.state;
+        const { first_name, last_name, email, phone_number, country, company, paper } = this.state;
         if (isBusinessEmail(email)) {
             this.props.ProfileActions.createVisitor({
                 first_name,
@@ -46,7 +46,8 @@ class WhitePaper extends React.Component {
                 email,
                 phone_number,
                 country,
-                company
+                company,
+                paper
             });
         } else {
             this.setState({ error: true })
