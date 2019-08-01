@@ -19,11 +19,29 @@ class TalentPool extends Component {
 
         this.loadData = this.loadData.bind(this);
         this.onSearchQuery = this.onSearchQuery.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+        this.getMaxItemsNo = this.getMaxItemsNo.bind(this);
     }
 
 
     componentWillMount() {
         this.loadData(this.props.query);
+    }
+
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+
+    updateWindowDimensions() {
+        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
     }
 
 
@@ -56,10 +74,28 @@ class TalentPool extends Component {
     }
 
 
+    getMaxItemsNo({ dataPerPage }) {
+        const windowWith = this.state.windowWidth;
+        const perPage = dataPerPage.sort((a, b) => {
+            return a.breakpoint - b.breakpoint;
+        });
+
+        return perPage.reduce((dataPerPage, data) => {
+            if (dataPerPage) {
+                return dataPerPage;
+            }
+            return windowWith <= data.breakpoint ? data.perPage : 0;
+        }, 0);
+    }
+
+
     render() {
         const { talents, is, query } = this.props;
+        const dataPerPage = this.getDataPerPage();
+        const maxItemsNo = this.getMaxItemsNo({ dataPerPage });
+
         let talentsPerRow = parseInt(talents.length / 2, 10);
-        talentsPerRow = talentsPerRow < 5 ? 5 : talentsPerRow;
+        talentsPerRow = talentsPerRow < maxItemsNo ? maxItemsNo : talentsPerRow;
         const splitTalents = [
             talents.slice(0, talentsPerRow),
         ];
@@ -69,7 +105,7 @@ class TalentPool extends Component {
 
         const pagination = {
             total: talentsPerRow,
-            perPage: this.getDataPerPage()
+            perPage: dataPerPage,
         };
 
         return (
