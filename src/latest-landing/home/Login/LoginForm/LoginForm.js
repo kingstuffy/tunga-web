@@ -55,7 +55,7 @@ class LoginForm extends Component {
                                     }
                                 /> :
                             null }
-                            <Title>
+                            <Title className="LoginForm__title">
                                 Welcome back
                             </Title>
                             <Group>
@@ -73,7 +73,7 @@ class LoginForm extends Component {
                                 <Label>
                                     Password
                                 </Label>
-                                <Cta className="float-right">Forgot password?</Cta>
+                                <Cta className="LoginForm__cta float-right">Forgot password?</Cta>
                                 <IconGroup>
                                     <Icon className="Form__input-icon" name='lock-alt' size='card'/>
                                     <Input className="Form__input--has-icon" type="password"
