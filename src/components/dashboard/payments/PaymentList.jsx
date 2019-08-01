@@ -73,6 +73,18 @@ export default class PaymentList extends React.Component {
         });
     }
 
+    onGenerateInvoice(invoiceId) {
+        const {InvoiceActions} = this.props;
+        openConfirm(
+            <div className="font-weight-bold">Are you sure you want to generate an invoice for this payment?</div>, '',
+            true, {ok: 'Yes'}
+        ).then(response => {
+            InvoiceActions.generateInvoice(invoiceId, this.props.selectionKey);
+        }, error => {
+            // Nothing
+        });
+    }
+
     onApprovePayout(invoices) {
         const { InvoiceActions } = this.props;
         openConfirm(
@@ -189,11 +201,11 @@ export default class PaymentList extends React.Component {
                                                     </div>
                                                 );
                                             })
-                                        ):(
+                                        ):(invoice.number && (invoice.paid || invoice.finalized || invoice.last_sent_at))?(
                                             <a href={`${ENDPOINT_INVOICES}${invoice.id}/download/?format=pdf`} target="_blank">
                                                 {invoice.number}
                                             </a>
-                                        )}</td>
+                                        ):null}</td>
                                         {[PENDING_IN, PAID_IN].includes(filter)?(
                                             <td>
                                                 {invoice.total_amount === invoice.amount?(
@@ -258,7 +270,7 @@ export default class PaymentList extends React.Component {
                                                                 <Progress message="Processing"/>
                                                             ):(
                                                                 <div>
-                                                                    {isProjectClient(invoice.project) || isPayAdmin()?(
+                                                                    {(isProjectClient(invoice.project) || isPayAdmin()) && (invoice.finalized || invoice.last_sent_at)?(
                                                                         <React.Fragment>
                                                                             <StripeButton size="sm"
                                                                                           amount={invoice.total_amount}
@@ -269,12 +281,19 @@ export default class PaymentList extends React.Component {
                                                                             <Button size="sm" onClick={this.openPay.bind(this, invoice)}><Icon name="cash"/> Pay</Button>
                                                                         </React.Fragment>
                                                                     ):null}
-                                                                    {isPayAdmin()?(
+                                                                    {isPayAdmin() && !invoice.paid?(
                                                                         <React.Fragment>
-                                                                            <Button size="sm"
-                                                                                    onClick={this.onMarkPaid.bind(this, invoice.id)}>
-                                                                                Mark as paid
-                                                                            </Button>
+                                                                            {invoice.finalized || invoice.last_sent_at?(
+                                                                                <Button size="sm"
+                                                                                        onClick={this.onMarkPaid.bind(this, invoice.id)}>
+                                                                                    Mark as paid
+                                                                                </Button>
+                                                                            ):(
+                                                                                <Button size="sm"
+                                                                                        onClick={this.onGenerateInvoice.bind(this, invoice.id)}>
+                                                                                    Generate Invoice
+                                                                                </Button>
+                                                                            )}
                                                                             <Button size="sm"
                                                                                     onClick={this.onMarkArchived.bind(this, invoice.id)}>
                                                                                 Mark as archived
