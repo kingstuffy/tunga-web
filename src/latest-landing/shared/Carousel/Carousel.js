@@ -40,8 +40,12 @@ class Carousel extends Component {
     }
 
 
-    getLeftPosition({ perPage }) {
-        const leftPosition = `-${(100 / perPage * (this.state.current - 1))}%`;
+    getLeftPosition({ pagination, perPage }) {
+        const pageDetails = pagination.perPage.find((breakPoint) => breakPoint.perPage === perPage);
+        const fullWidth = pageDetails.width * perPage || 100;
+        const lastAdjuster = 0; // (this.state.current + perPage - 1) === pagination.total ? 100 - fullWidth : 0;
+
+        const leftPosition = `-${(fullWidth / perPage * (this.state.current - 1)) - lastAdjuster}%`;
         return leftPosition;
     }
 
@@ -69,7 +73,7 @@ class Carousel extends Component {
     render() {
         const { pagination, color, children, float } = this.props;
         const perPage = this.getDataPerPage({ pagination });
-        const leftPosition = this.getLeftPosition({ perPage });
+        const leftPosition = this.getLeftPosition({ pagination, perPage });
 
         const hasNext = this.hasNext({ pagination, perPage });
         const hasPrevious = this.state.current !== 1;

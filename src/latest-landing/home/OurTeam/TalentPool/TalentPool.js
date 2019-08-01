@@ -61,14 +61,17 @@ class TalentPool extends Component {
             {
                 breakpoint: 768,
                 perPage: 2,
+                width: 46,
             },
             {
                 breakpoint: 992,
                 perPage: 3,
+                width: 31.5,
             },
             {
                 breakpoint: 768000,
                 perPage: 5,
+                width: 19,
             },
         ];
     }

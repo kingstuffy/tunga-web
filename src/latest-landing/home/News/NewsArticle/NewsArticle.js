@@ -21,10 +21,12 @@ class NewsArticle extends Component {
             {
                 breakpoint: 992,
                 perPage: 1,
+                width: 88.5
             },
             {
                 breakpoint: 768000,
                 perPage: 2,
+                width: 45,
             },
         ];
     }
@@ -51,7 +53,7 @@ class NewsArticle extends Component {
                         <ul className="NewsArticle__list">
                             {
                                 articles.map((article, key) => (
-                                    <li className="NewsArticle__item" key={key}
+                                    <li className={`NewsArticle__item NewsArticle__item--${articles.length === key + 1 ? 'last' : ''}`} key={key}
                                         style={{ backgroundImage: `url(${article.imgUrl})`, height: "100vh" }}>
                                         <div className="NewsArticle__item-container">
                                             <div className="NewsArticle__title">

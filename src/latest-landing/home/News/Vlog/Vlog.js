@@ -48,10 +48,12 @@ class Vlog extends Component {
             {
                 breakpoint: 992,
                 perPage: 1,
+                width: 88,
             },
             {
                 breakpoint: 768000,
                 perPage: 2,
+                width: 47.8,
             },
         ];
     }
@@ -92,7 +94,7 @@ class Vlog extends Component {
                                             vlogs.map(
                                                 (vlog, j) => (
                                                     <div
-                                                        className="Vlog__item"
+                                                        className={`Vlog__item Vlog__item--${vlogs.length === j + 1 ? 'last' : ''}`}
                                                         key={j}
                                                         onClick={() => this.onVlogClick(vlog)}
                                                         style={{ backgroundImage: `url(${vlog.snippet.thumbnails.high.url})`}}>

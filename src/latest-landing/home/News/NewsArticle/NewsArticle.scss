@@ -50,7 +50,7 @@
     }
 
     &__item {
-        width: 100%;
+        width: 88.5%;
         display: inline-block;
         white-space: nowrap;
         position: relative;
@@ -59,11 +59,19 @@
         height: 70vh;
         color: #fff;
 
+        &--last {
+            width: 100%;
+        }
+
         @media (min-width: 992px) {
             width: 45%;
             height: 100vh;
             margin: 0;
             padding: 0;
+
+            &--last {
+                width: 50%;
+            }
         }
     }
 
