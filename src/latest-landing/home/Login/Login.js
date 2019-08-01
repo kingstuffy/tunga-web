@@ -24,7 +24,6 @@ class Login extends Component {
                         <LoginForm/>
                     </div>
                     <div className="Login__bg-mask">
-                        &nsbp;
                     </div>
                 </div>
             </section>

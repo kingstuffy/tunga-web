@@ -36,11 +36,16 @@ footer {
 
     // ALSO FEATURED IN ///////////////////////////////
     .also-featured {
-        margin-top: 60px;
-        padding: 11px;
+        padding: 40px 18px 0;
+        margin-bottom: 10px;
+
+        &--carousel {
+            padding: 0 18px;
+        }
 
         @media only screen and (min-width: 992px) {
             padding: 0;
+            margin-top: 60px;
             margin-left: 70px;
         }
 
@@ -55,7 +60,7 @@ footer {
     // TUNGA OFFICES /////////////////////////////////////
     .tunga-offices {
         font-family: sans-serif, HK Grotesk;
-        margin: 44px 18px;
+        margin: 30px 18px 33px;
 
         @media only screen and (min-width: 992px) {
             margin: 55px 44px 44px 70px;
@@ -85,7 +90,7 @@ footer {
 
     // CONNECT /////////////////////////////////////
     .connect {
-        margin: 40px 18px;
+        margin: 0 18px 58px;
 
         @media only screen and (min-width: 992px) {
             margin: 40px;
@@ -166,7 +171,7 @@ footer {
 
 // EXPLORE /////////////////////////////////////////
 .explore {
-    margin: 40px 18px;
+    margin: 0 18px 40px;
 
     @media only screen and (min-width: 992px) {
         margin: 40px;
@@ -198,7 +203,7 @@ footer {
 
 // LATEST FROM OUR BLOG ////////////////////////////
 .latest-from-our-blog {
-    margin: 40px 18px;
+    margin: 0 18px 40px;
 
     @media only screen and (min-width: 992px) {
         margin: 40px;
@@ -313,7 +318,7 @@ footer {
 
 .slick-slide {
     height: 50px;
-    margin: 0 10px;
+    padding: 0 10px;
     // background-color: lightblue;
     background-position: center;
     background-repeat: no-repeat;

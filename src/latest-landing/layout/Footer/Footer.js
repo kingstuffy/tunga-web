@@ -79,11 +79,9 @@ class Footer extends Component {
                     </Col>
 
                     <Col md="9" sm="6">
-                        <div className="also-featured">
+                        <div className="also-featured also-featured--carousel">
                             <Slider className="carousel" {...settings}>
                                 <div className="bbc">
-
-
                                     <a href="#">
                                         <img
 
@@ -95,13 +93,11 @@ class Footer extends Component {
                                 <div className="party">
                                     <a href="#">
                                         <img
-
                                             alt="CAMPUS PARTY"
                                             src={campusparty}
                                         />
                                     </a>
                                 </div>
-
                                 <div className="world">
                                     <a href="#">
                                         <img

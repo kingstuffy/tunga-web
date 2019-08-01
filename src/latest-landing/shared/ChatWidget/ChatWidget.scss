@@ -16,6 +16,14 @@
     &.cta-widget {
         background-color: transparent;
         box-shadow: none;
+        padding: 0;
+        right: 30px;
+        bottom: 30px;
+
+        @media (min-width: 992px) {
+            right: 70px;
+            bottom: 40px;
+        }
     }
 
     .icon-chat-bottom {
