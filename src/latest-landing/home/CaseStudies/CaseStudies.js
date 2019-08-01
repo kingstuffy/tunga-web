@@ -123,6 +123,7 @@ class CaseStudies extends Component {
                     }
                 }
             ],
+            currentIndex: 0
         };
 
         this.state.currentStudy = this.state.data[0];
@@ -141,8 +142,9 @@ class CaseStudies extends Component {
 
 
     onPageChange(current) {
-        const currentStudy = this.state.data[current - 1];
-        this.setState({ currentStudy });
+        const currentIndex = current - 1;
+        const currentStudy = this.state.data[currentIndex];
+        this.setState({ currentStudy, currentIndex });
     }
 
 
@@ -184,7 +186,7 @@ class CaseStudies extends Component {
                                         {this.state.data.map((data, i) => (
                                             <li
                                                 key={i}
-                                                className="CaseStudies__item"
+                                                className={`CaseStudies__item ${this.state.currentIndex === i ? 'CaseStudies__item--active' : ''}`}
                                             >
                                                 <CaseStudyCard caseStudy={data}/>
                                             </li>
