@@ -10,23 +10,23 @@
     @media (min-width: 992px) {
         width: 290px;
     }
-}
 
-.Form__input-icon-group {
-    display: flex;
+    .Form__input-icon-group {
+        display: flex;
 
-    @media (min-width: 992px) {
+        @media (min-width: 992px) {
+            width: 176%;
+        }
+    }
+
+    .TalentSearch-button {
+        min-width: 92px !important;
+        box-shadow: none;
+        height: 3.5rem !important;
+    }
+
+    #TalentSearch-input {
+        height: 57px !important;
         width: 176%;
     }
-}
-
-.TalentSearch-button {
-    min-width: 92px !important;
-    box-shadow: none;
-    height: 3.5rem !important;
-}
-
-#TalentSearch-input {
-    height: 57px !important;
-    width: 176%;
 }
