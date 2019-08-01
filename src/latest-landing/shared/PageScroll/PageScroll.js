@@ -8,32 +8,32 @@ class PageScroll extends Component {
 
         this.isWheeling = false;
         this.isScolling = false;
-        this.state = { currentPage: 0 };
         this.currentStep = 0;
         this.steps = [];
         this.pages = [];
         this.containerRef = React.createRef();
 
+        this.state = {
+            currentPage: 0,
+            windowWidth: 0,
+            windowHeight: 0,
+        };
+
         this.onWheel = this.onWheel.bind(this);
         this.onKeydown = this.onKeydown.bind(this);
         this.goToPage = this.goToPage.bind(this);
         this.scroll = this.scroll.bind(this);
+        this.isMobile = this.isMobile.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+        this.onWindowResize = this.onWindowResize.bind(this);
     }
 
 
     componentWillMount() {
         this.isWheeling = false;
-        if (this.containerRef.current) {
-            window.addEventListener('resize', () => {
-                this.currentStep = 0;
-                this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
-                window.setTimeout(() => {
-                    this.computeSteps();
-                }, 600);
-            });
-
-            window.addEventListener('keydown', this.onKeydown);
-        }
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.onWindowResize);
+        window.addEventListener('keydown', this.onKeydown);
     }
 
 
@@ -41,6 +41,36 @@ class PageScroll extends Component {
         if (this.containerRef.current) {
             this.computeSteps();
         }
+    }
+
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.onWindowResize);
+        window.removeEventListener('keydown', this.onKeydown);
+    }
+
+
+    onWindowResize() {
+        this.updateWindowDimensions();
+
+        if (this.containerRef.current) {
+            this.currentStep = 0;
+            this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
+
+            window.setTimeout(() => {
+                this.computeSteps();
+            }, 600);
+        }
+    }
+
+
+    updateWindowDimensions() {
+        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
+    }
+
+
+    isMobile() {
+        return this.state.windowWidth && this.state.windowWidth <= 992;
     }
 
 
@@ -63,16 +93,8 @@ class PageScroll extends Component {
             const rect = el.getBoundingClientRect();
             const y = window.scrollY + rect.top;
 
-            // console.log(this.currentStep, oldSteps[this.currentStep] && oldSteps[this.currentStep].el === el);
-            /*if (this.currentStep && oldSteps[this.currentStep].el === el) {
-                this.currentStep = stepIndex;
-            }*/
-
-            // console.log(rect.top, y, window.scrollY, offsetHeight );
             if (y <= window.scrollY && window.scrollY <= y + offsetHeight) {
-                // this.currentStep = stepIndex;
                 if (this.steps[this.currentStep]) {
-                    // this.scroll({ direction: 'down' });
                 }
             }
             let currentPage = 0;
@@ -114,6 +136,10 @@ class PageScroll extends Component {
 
 
     onWheel(e) {
+        if (this.isMobile()) {
+            return;
+        }
+
         if (this.isWheeling) {
             return false;
         }
@@ -131,6 +157,10 @@ class PageScroll extends Component {
 
 
     onKeydown(event) {
+        if (this.isMobile()) {
+            return;
+        }
+
         if (this.isScolling) {
             return false;
         }

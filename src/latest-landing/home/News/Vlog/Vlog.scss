@@ -2,7 +2,7 @@
 @import "../../../assets/scss/variable";
 
 .Vlog {
-    padding: 40px 18px;
+    padding: 40px 0 40px 18px;
 
     @media (min-width: 992px) {
         padding: 70px;
@@ -29,15 +29,20 @@
     &__container {
         overflow-x: hidden;
         margin-top: -24px;
-        width: 100vw;
+        width: 100%;
 
         @media (min-width: 992px) {
             margin-top: -24px;
+            width: 100vw;
         }
     }
 
     .v_pagination {
-        padding-right: 100px;
+        padding-right: 18px;
+
+        @media (min-width: 992px) {
+            padding-right: 100px;
+        }
     }
 
     &__row {
