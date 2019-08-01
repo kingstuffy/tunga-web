@@ -27,26 +27,26 @@ class CaseStudyCard extends Component {
                         </CardTitle>
                         <div className="CaseStudyCard__skills">
                             <div className="CaseStudyCard__skill CaseStudyCard__skill--first">
-                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
+                                <CardTitle className="CaseStudyCard__title text-blue font-weight-bold text-uppercase mt-2 mb-1">
                                     Technology
                                 </CardTitle>
-                                <CardText className="size-16">
+                                <CardText className="CaseStudyCard__desc">
                                     {caseStudy.tech}
                                 </CardText>
                             </div>
                             <div className="CaseStudyCard__skill">
-                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
+                                <CardTitle className="text-blue font-weight-bold text-uppercase CaseStudyCard__title mt-2 mb-1">
                                     Lead Time
                                 </CardTitle>
-                                <CardText className="size-16">
+                                <CardText className="CaseStudyCard__desc">
                                     {caseStudy.leadTime}
                                 </CardText>
                             </div>
                             <div className="CaseStudyCard__skill CaseStudyCard__skill--last">
-                                <CardTitle className="text-blue font-weight-bold text-uppercase size-14 mt-2 mb-1">
+                                <CardTitle className="text-blue font-weight-bold text-uppercase CaseStudyCard__title mt-2 mb-1">
                                     Production Time
                                 </CardTitle>
-                                <CardText className="size-16">
+                                <CardText className="CaseStudyCard__desc">
                                     {caseStudy.price}
                                 </CardText>
                             </div>
