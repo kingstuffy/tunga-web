@@ -36,6 +36,7 @@ class Carousel extends Component {
         const { pagination } = this.props;
         const perPage = this.getDataPerPage({ pagination });
         const isSlideBeforeLast = current === pagination.total - perPage;
+        const isLastSlide = current === pagination.total - 1;
         let nextLeft;
 
         // 45 is the width of news item set in css when window is larger than 992px
@@ -47,9 +48,11 @@ class Carousel extends Component {
             }
             nextLeft = leftPosition - slideWidth;
         } else {
+            if (isLastSlide && slideWidth < 100) {
+              slideWidth = slideWidth - 10;
+            }
             nextLeft = leftPosition + slideWidth;
         }
-
         this.setState({ current: nextPage, leftPosition: nextLeft });
 
         if (typeof this.props.onPageChange === 'function') {
