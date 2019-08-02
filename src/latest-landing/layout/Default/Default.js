@@ -81,6 +81,8 @@ class Default extends Component {
             <div className="Default">
                 <PageScroll
                     pages={pages}
+                    onPageScrolled={this.onPageScrolled}
+                    goToPage={this.state.gotToPage}
                 >
                     <div>
                         <Header/>
@@ -92,7 +94,7 @@ class Default extends Component {
                         <OurService onUseCaseClick={this.onUseCaseClick}/>
                     </div>
                     <div>
-                        <ScheduleCall showCaseStudies={true}/>
+                        <ScheduleCall showCaseStudies={true} onUseCaseClick={this.onUseCaseClick}/>
                     </div>
                     <div>
                         <CaseStudies/>

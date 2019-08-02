@@ -71,93 +71,88 @@ class Footer extends Component {
         return (
             <footer id="Footer" className="Footer">
                 {/*------------ Press------------- */}
-                <Row>
-                    <Col md="3" sm="6">
-                        <div className="also-featured">
-                            <h5>ALSO FEATURED IN</h5>
-                        </div>
-                    </Col>
+                <div className="Footer__featured">
+                    <div className="also-featured also-featured--label">
+                        <h5>ALSO FEATURED IN</h5>
+                    </div>
+                    <div className="also-featured also-featured--carousel">
+                        <Slider className="carousel" {...settings}>
+                            <div className="bbc">
+                                <a href="#">
+                                    <img
 
-                    <Col md="9" sm="6">
-                        <div className="also-featured also-featured--carousel">
-                            <Slider className="carousel" {...settings}>
-                                <div className="bbc">
-                                    <a href="#">
-                                        <img
+                                        alt="BBC NEWS"
+                                        src={BBC}
+                                    />
+                                </a>
+                            </div>
+                            <div className="party">
+                                <a href="#">
+                                    <img
+                                        alt="CAMPUS PARTY"
+                                        src={campusparty}
+                                    />
+                                </a>
+                            </div>
+                            <div className="world">
+                                <a href="#">
+                                    <img
 
-                                            alt="BBC NEWS"
-                                            src={BBC}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="party">
-                                    <a href="#">
-                                        <img
-                                            alt="CAMPUS PARTY"
-                                            src={campusparty}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="world">
-                                    <a href="#">
-                                        <img
+                                        alt="ONE WORLD"
+                                        src={oneworld}
+                                    />
+                                </a>
+                            </div>
 
-                                            alt="ONE WORLD"
-                                            src={oneworld}
-                                        />
-                                    </a>
-                                </div>
+                            <div className="trend">
+                                <a href="#">
+                                    <img
 
-                                <div className="trend">
-                                    <a href="#">
-                                        <img
+                                        alt="TREND WATCHING"
+                                        src={trendwatching}
+                                    />
+                                </a>
+                            </div>
+                            <div className="afn hide-on-mobile">
+                                <a href="#">
+                                    <img
 
-                                            alt="TREND WATCHING"
-                                            src={trendwatching}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="afn hide-on-mobile">
-                                    <a href="#">
-                                        <img
+                                        alt="AFRICAN TECH ROUND UP"
+                                        src={African}
+                                    />
+                                </a>
+                            </div>
+                            <div className="nabc">
+                                <a href="#">
+                                    <img
 
-                                            alt="AFRICAN TECH ROUND UP"
-                                            src={African}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="nabc">
-                                    <a href="#">
-                                        <img
+                                        alt="NABC"
+                                        src={NABC}
+                                    />
+                                </a>
+                            </div>
+                            <div className="bnr">
+                                <a href="#">
+                                    <img
 
-                                            alt="NABC"
-                                            src={NABC}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="bnr">
-                                    <a href="#">
-                                        <img
+                                        alt="BNR"
+                                        src={bnr1}
+                                    />
+                                </a>
+                            </div>
+                            <div className="graf hide-on-mobile">
+                                <a href="#">
+                                    <img
 
-                                            alt="BNR"
-                                            src={bnr1}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="graf hide-on-mobile">
-                                    <a href="#">
-                                        <img
-
-                                            alt="DE TELEGRAAF"
-                                            src={Detelegraph}
-                                        />
-                                    </a>
-                                </div>
-                            </Slider>
-                        </div>
-                    </Col>
-                </Row>
-
+                                        alt="DE TELEGRAAF"
+                                        src={Detelegraph}
+                                    />
+                                </a>
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
+                <div className="clearfix"></div>
                 <hr id="line"/>
                 {/*------------------Our Offices------------------- */}
                 <Row>

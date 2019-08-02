@@ -46,7 +46,18 @@ footer {
         @media only screen and (min-width: 992px) {
             padding: 0;
             margin-top: 60px;
-            margin-left: 70px;
+            float: left;
+
+            &--label {
+                width: 265px;
+                padding-left: 70px;
+                padding-top: 13px;
+            }
+
+            &--carousel {
+                width: calc(100% - 265px);
+                margin-bottom: 40px;
+            }
         }
 
         h5 {

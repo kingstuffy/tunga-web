@@ -57,7 +57,7 @@ class ScheduleCall extends Component {
                         md="12"
                         className="position-absolute notSure"
                     >
-                        <div className="" align="center">
+                        <div className="cursor-pointer" align="center" onClick={this.props.onUseCaseClick}>
                             <p className="">Not sure? See Case Studies</p>
                             <p>
                                 <Icon name="arrow-down" size="md"/>
