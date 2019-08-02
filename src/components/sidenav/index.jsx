@@ -18,7 +18,10 @@ class SideNav extends React.Component {
 
     componentDidMount() {
         this.observer = new IntersectionObserver(this.observerCallback, { threshold: 0.7 });
-        setTimeout(() => this.addObserverToTargets(), 1000);
+        setTimeout(() => {
+            this.addObserverToTargets();
+            this.showLabel();
+        }, 200);
     }
 
     componentWillUnmount() {
@@ -75,7 +78,7 @@ class SideNav extends React.Component {
             });
             this.setState({ pages });
             this.hideLabels();
-        }, 600);
+        }, 200);
     }
 
     hideLabels() {

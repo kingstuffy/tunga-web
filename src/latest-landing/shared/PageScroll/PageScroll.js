@@ -224,8 +224,8 @@ class PageScroll extends Component {
         const { goToPage, onPageScrolled } = this.props;
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
-            // this.goToPage(goToPage);
-            // onPageScrolled && onPageScrolled();
+            onPageScrolled && onPageScrolled();
+            this.goToPage(goToPage);
         }
 
         return (

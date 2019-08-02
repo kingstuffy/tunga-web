@@ -65,14 +65,14 @@ class Default extends Component {
         super(props);
         this.state = {};
         this.onUseCaseClick = this.onUseCaseClick.bind(this);
-        this.onPageScroll = this.onPageScroll.bind(this);
+        this.onPageScrolled = this.onPageScrolled.bind(this);
     }
 
     onUseCaseClick() {
         this.setState({ gotToPage: 4 });
     }
 
-    onPageScroll() {
+    onPageScrolled() {
         this.setState({ gotToPage: false });
     }
 
@@ -81,8 +81,6 @@ class Default extends Component {
             <div className="Default">
                 <PageScroll
                     pages={pages}
-                    onPageScroll={this.onPageScroll}
-                    goToPage={this.state.gotToPage}
                 >
                     <div>
                         <Header/>

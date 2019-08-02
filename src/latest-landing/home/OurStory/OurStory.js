@@ -100,22 +100,22 @@ class OurStory extends Component {
         };
 
         this.onLearnMore = this.onLearnMore.bind(this);
-        this.onPageScroll = this.onPageScroll.bind(this);
+        this.onPageScrolled = this.onPageScrolled.bind(this);
     }
 
     onLearnMore() {
         this.setState({ gotToPage: 1 });
     }
 
-    onPageScroll() {
+    onPageScrolled() {
         this.setState({ gotToPage: false });
     }
 
     render() {
         return (
             <section className="OurStory">
-                <PageScroll pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}>
-                    { /* <PageScroller pages={pages} onPageScroll={this.onPageScroll} goToPage={this.state.gotToPage}> */}
+                <PageScroll pages={pages} onPageScrolled={this.onPageScrolled} goToPage={this.state.gotToPage}>
+                    { /* <PageScroller pages={pages} onPageScrolled={this.onPageScrolled} goToPage={this.state.gotToPage}> */}
                     <div id="OurStory" className="OurStory__header">
                         <div className="OurStory__nav">
                             <Nav/>
