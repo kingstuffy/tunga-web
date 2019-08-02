@@ -31,8 +31,11 @@ class Carousel extends Component {
     }
 
 
-    updatePage(current) {
-        this.setState({ current });
+    updatePage(nextPage) {
+      const { leftPosition, current } = this.state;
+      const nextLeft = nextPage > current ? leftPosition - 45 : leftPosition + 45;
+
+        this.setState({ current, leftPosition: nextLeft });
 
         if (typeof this.props.onPageChange === 'function') {
             this.props.onPageChange(current);
@@ -40,8 +43,11 @@ class Carousel extends Component {
     }
 
 
-    getLeftPosition({ perPage }) {
-        const leftPosition = `-${(100 / perPage * (this.state.current - 1))}%`;
+    getLeftPosition() {
+        let { leftPosition, current } = this.state;
+
+        leftPosition = `${leftPosition}%`;
+        console.log(leftPosition, current);
         return leftPosition;
     }
 
