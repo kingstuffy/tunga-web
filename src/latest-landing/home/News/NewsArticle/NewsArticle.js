@@ -53,7 +53,11 @@ class NewsArticle extends Component {
                         <ul className="NewsArticle__list">
                             {
                                 articles.map((article, key) => (
-                                    <li className={`NewsArticle__item NewsArticle__item--${articles.length === key + 1 ? 'last' : ''}`} key={key}
+                                    <li className={
+                                        `NewsArticle__item 
+                                        ${articles.length === key + 1 ? 'NewsArticle__item--last' : ''}
+                                        ${articles.length === key + 2 ? 'NewsArticle__item--2-last' : ''}
+                                        `} key={key}
                                         style={{ backgroundImage: `url(${article.imgUrl})`, height: "100vh" }}>
                                         <div className="NewsArticle__item-container">
                                             <div className="NewsArticle__title">

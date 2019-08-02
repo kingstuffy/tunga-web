@@ -7,6 +7,7 @@ import CaseStudies from "../../home/CaseStudies/CaseStudies";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import PageScroller from "../../../components/pageScroller";
+import PageScroll from "../../shared/PageScroll/PageScroll";
 
 const pages = [
     {
@@ -78,18 +79,28 @@ class Default extends Component {
     render() {
         return (
             <div className="Default">
-                <PageScroller
+                <PageScroll
                     pages={pages}
                     onPageScroll={this.onPageScroll}
                     goToPage={this.state.gotToPage}
                 >
-                    <Header/>
-                    <AboutUs/>
-                    <OurService onUseCaseClick={this.onUseCaseClick}/>
-                    <ScheduleCall showCaseStudies={true}/>
-                    <CaseStudies/>
+                    <div>
+                        <Header/>
+                    </div>
+                    <div>
+                        <AboutUs/>
+                    </div>
+                    <div>
+                        <OurService onUseCaseClick={this.onUseCaseClick}/>
+                    </div>
+                    <div>
+                        <ScheduleCall showCaseStudies={true}/>
+                    </div>
+                    <div>
+                        <CaseStudies/>
+                    </div>
                     <Footer/>
-                </PageScroller>
+                </PageScroll>
             </div>
         );
     }
