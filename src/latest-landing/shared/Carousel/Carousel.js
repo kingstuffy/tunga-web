@@ -31,8 +31,26 @@ class Carousel extends Component {
     }
 
 
-    updatePage(current) {
-        this.setState({ current });
+    updatePage(nextPage) {
+        const { leftPosition, current } = this.state;
+        const { pagination } = this.props;
+        const perPage = this.getDataPerPage({ pagination });
+        const isSlideBeforeLast = current === pagination.total - perPage;
+        let nextLeft;
+
+        // 45 is the width of news item set in css when window is larger than 992px
+        let slideWidth = perPage > 1 ? 45 : 100;
+
+        if (nextPage > current) {
+            if (isSlideBeforeLast && slideWidth < 100) {
+                slideWidth = slideWidth - 10;
+            }
+            nextLeft = leftPosition - slideWidth;
+        } else {
+            nextLeft = leftPosition + slideWidth;
+        }
+
+        this.setState({ current: nextPage, leftPosition: nextLeft });
 
         if (typeof this.props.onPageChange === 'function') {
             this.props.onPageChange(current);
@@ -40,12 +58,10 @@ class Carousel extends Component {
     }
 
 
-    getLeftPosition({ pagination, perPage }) {
-        const pageDetails = pagination.perPage.find((breakPoint) => breakPoint.perPage === perPage);
-        const fullWidth = pageDetails.width * perPage || 100;
-        const lastAdjuster = 0; // (this.state.current + perPage - 1) === pagination.total ? 100 - fullWidth : 0;
+    getLeftPosition() {
+        let { leftPosition } = this.state;
 
-        const leftPosition = `-${(fullWidth / perPage * (this.state.current - 1)) - lastAdjuster}%`;
+        leftPosition = `${leftPosition}%`;
         return leftPosition;
     }
 
