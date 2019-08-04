@@ -153,7 +153,7 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div className="clearfix"></div>
-                <hr id="line"/>
+                <hr className="Footer__line"/>
                 {/*------------------Our Offices------------------- */}
                 <Row>
                     <Col md="3" sm="6">
@@ -296,7 +296,7 @@ class Footer extends Component {
                     </Col>
                 </Row>
                 <div className="Footer__bottom">
-                    <hr id="line"/>
+                    <hr className="Footer__line"/>
                     <Row>
                         {/*-----------------------Footer Bottom-------------------------------- */}
 

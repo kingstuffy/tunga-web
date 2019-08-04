@@ -99,6 +99,12 @@ footer {
         }
     }
 
+    .tunga-amsterdam {
+        h5 {
+            padding-top: 25px;
+        }
+    }
+
     // CONNECT /////////////////////////////////////
     .connect {
         margin: 0 18px 58px;
@@ -246,7 +252,7 @@ footer {
 
 // BOTTOM-SECTION FOOTER //////////////////////////
 .bottom-line {
-    margin-top: 8px;
+    margin-top: 0;
     margin-bottom: 20px;
     margin-left: 18px;
     margin-right: 18px;
@@ -266,20 +272,6 @@ footer {
             text-decoration: none;
             font-size: 14px;
         }
-    }
-}
-
-// HR LINES /////////////////////////////////////
-#line {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #aed0ff;
-    margin: 0 auto;
-    width: calc(100% - 36px);
-
-    @media (min-width: 992px) {
-        width: calc(100% - 140px);
     }
 }
 
@@ -350,12 +342,30 @@ footer {
 .Footer {
     position: relative;
 
+    @media (min-width: 992px) {
+        padding-bottom: 95px;
+    }
+
     &__bottom {
         bottom: 0;
         width: 100%;
 
         @media (min-width: 992px) {
             position: absolute;
+        }
+    }
+
+    &__line {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #aed0ff;
+        margin: 0 auto 30px;
+        width: calc(100% - 36px);
+
+        @media (min-width: 992px) {
+            width: calc(100% - 140px);
+            margin-bottom: 48px;
         }
     }
 
