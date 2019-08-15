@@ -31,13 +31,16 @@ class PageScroll extends Component {
 
     componentWillMount() {
         this.isWheeling = false;
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.onWindowResize);
-        window.addEventListener('keydown', this.onKeydown);
     }
 
 
     componentDidMount() {
+        document.querySelector('body').style.height = '100vh';
+        document.querySelector('body').style.overflowY = 'hidden';
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.onWindowResize);
+        window.addEventListener('keydown', this.onKeydown);
+
         if (this.containerRef.current) {
             this.computeSteps();
         }
@@ -47,6 +50,8 @@ class PageScroll extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.onWindowResize);
         window.removeEventListener('keydown', this.onKeydown);
+        document.querySelector('body').style.height = 'auto';
+        document.querySelector('body').style.overflowY = 'auto';
     }
 
 
