@@ -153,7 +153,7 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div className="clearfix"></div>
-                <hr className="Footer__line"/>
+                <hr className="Footer__line Footer__line--no-b"/>
                 {/*------------------Our Offices------------------- */}
                 <Row>
                     <Col md="3" sm="6">

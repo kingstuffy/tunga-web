@@ -74,7 +74,7 @@ footer {
         margin: 30px 18px 33px;
 
         @media only screen and (min-width: 992px) {
-            margin: 55px 44px 44px 70px;
+            margin: 60px 44px 44px 70px;
         }
 
         h4 {
@@ -111,6 +111,7 @@ footer {
 
         @media only screen and (min-width: 992px) {
             margin: 40px;
+            margin-top: 60px;
         }
 
         font-family: sans-serif, HK Grotesk;
@@ -192,6 +193,7 @@ footer {
 
     @media only screen and (min-width: 992px) {
         margin: 40px;
+        margin-bottom: 60px;
     }
 
     font-family: sans-serif, HK Grotesk;
@@ -225,6 +227,7 @@ footer {
     @media only screen and (min-width: 992px) {
         margin: 40px;
         margin-right: 70px;
+        margin-bottom: 60px;
     }
 
     font-family: sans-serif, HK Grotesk;
@@ -260,6 +263,7 @@ footer {
     @media (min-width: 992px) {
         margin-left: 42px;
         margin-right: 42px;
+        margin-bottom: 47px;
 
         &--first {
             margin-left: 70px;
@@ -366,6 +370,10 @@ footer {
         @media (min-width: 992px) {
             width: calc(100% - 140px);
             margin-bottom: 48px;
+
+            &--no-b {
+                margin-bottom: 0;
+            }
         }
     }
 
