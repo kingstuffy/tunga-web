@@ -90,8 +90,8 @@ class SideNav extends React.Component {
         }, 2500);
     }
 
+
     handleClick = (pageNumber) => (event) => {
-        console.log("page to navigate to", pageNumber)
         this.props.goToPage(pageNumber);
         event.preventDefault();
     }

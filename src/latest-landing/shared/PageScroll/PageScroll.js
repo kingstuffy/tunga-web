@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
+import { kebabCase } from 'lodash';
 import SideNav from "../../../components/sidenav";
 
 
@@ -26,6 +28,7 @@ class PageScroll extends Component {
         this.isMobile = this.isMobile.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.onWindowResize = this.onWindowResize.bind(this);
+        this.updatePageHash = this.updatePageHash.bind(this);
     }
 
 
@@ -44,6 +47,16 @@ class PageScroll extends Component {
         if (this.containerRef.current) {
             this.computeSteps();
         }
+
+        const currentIndex = this.props.pages.findIndex((page) => {
+            return `#${kebabCase(page.title)}` === this.props.location.hash;
+        });
+        const currentPage = this.props.pages[currentIndex || 0];
+
+        this.updatePageHash(currentPage);
+        if (currentIndex) {
+            this.goToPage(currentIndex);
+        }
     }
 
 
@@ -55,12 +68,23 @@ class PageScroll extends Component {
     }
 
 
+    updatePageHash(page) {
+        if (!page) {
+            return;
+        }
+
+        const slug = `#${kebabCase(page.title)}`;
+        this.props.history.push(slug);
+    }
+
+
     onWindowResize() {
         this.updateWindowDimensions();
 
         if (this.containerRef.current) {
             this.currentStep = 0;
             this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
+            this.updatePageHash(this.props.pages[0]);
 
             window.setTimeout(() => {
                 this.computeSteps();
@@ -193,6 +217,8 @@ class PageScroll extends Component {
         const { y, page } = this.steps[this.currentStep];
         this.setState({ currentPage: page });
         this.containerRef.current.style.transform = `translate3d(0, -${y}px, 0)`;
+
+        this.updatePageHash(this.props.pages[page]);
     }
 
 
@@ -245,4 +271,7 @@ class PageScroll extends Component {
     }
 }
 
-export default PageScroll;
+const PageScrollWithRouter = withRouter(PageScroll);
+
+
+export default PageScrollWithRouter;
