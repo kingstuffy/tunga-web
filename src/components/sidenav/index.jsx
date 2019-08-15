@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./sidenav.css";
+import "./sidenav.scss";
 
 class SideNav extends React.Component {
 
@@ -97,26 +97,24 @@ class SideNav extends React.Component {
     }
 
     render() {
+        const theme = this.state.pages[this.props.currentPage].theme;
         return (
-            <div className="side_bar">
+            <div className={`side-bar side-bar--${theme}`}>
                 <ul>
                     {
                         this.state.pages.map((anc, index) => (
-                            <li className="side_bar-item" key={anc.hash}>
-                                <div
-                                    style={anc.isActiveBar ? { backgroundColor: anc.bgColor } : { backgroundColor: "#333" }}
-                                    className={`side_bar-tab
-                  ${anc.isActiveBar ? "side_bar-tab-active"
-                                        : "side_bar-tab-hidden"
-                                        }`}>
+                            <li className="side-bar-item" key={anc.hash}>
+                                <div className={`side-bar-tab
+                                ${anc.isActiveBar ? "side-bar-tab-active"
+                                    : "side-bar-tab-hidden"
+                                    }`}>
                                 </div>
                                 <a
-                                    className={`side_bar-label font-weight-bold
-                ${anc.isActive ? "side_bar-label-active"
-                                        : "side_bar-label-hidden"}`}
+                                    className={`side-bar-label font-weight-bold
+                ${anc.isActive ? "side-bar-label-active"
+                                        : "side-bar-label-hidden"}`}
                                     href={`#${anc.hash}`}
                                     data-value={anc.hash}
-                                    style={{ color: anc.color }}
                                     onClick={this.handleClick(index)}
                                 >
                                     {anc.title}

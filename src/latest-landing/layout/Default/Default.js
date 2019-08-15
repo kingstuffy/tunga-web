@@ -16,7 +16,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "AboutUs",
@@ -24,7 +25,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "OurService",
@@ -32,7 +34,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "ScheduleCall",
@@ -40,7 +43,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "CaseStudies",
@@ -48,7 +52,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "Footer",
@@ -56,7 +61,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
 ];
 
