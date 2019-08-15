@@ -24,7 +24,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "OurDream",
@@ -32,7 +33,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "TheProblem",
@@ -40,7 +42,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "dark",
     },
     {
         hash: "OurMission",
@@ -48,7 +51,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "OurSolution",
@@ -56,7 +60,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "ImpactSourcing",
@@ -64,7 +69,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "Africa",
@@ -72,7 +78,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "Approach",
@@ -80,7 +87,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "Footer",
@@ -88,7 +96,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
 ];
 

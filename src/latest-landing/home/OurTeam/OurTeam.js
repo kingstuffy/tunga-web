@@ -30,7 +30,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "TalentPool",
@@ -38,7 +39,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
-        bgColor: "#062E64"
+        bgColor: "#062E64",
+        theme: "light",
     },
     {
         hash: "ScheduleCall",
@@ -46,7 +48,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
     {
         hash: "Footer",
@@ -54,7 +57,8 @@ const pages = [
         isActive: false,
         isActiveBar: false,
         color: "#fff",
-        bgColor: "#fff"
+        bgColor: "#fff",
+        theme: "dark",
     },
 ];
 
