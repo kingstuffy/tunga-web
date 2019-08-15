@@ -8,24 +8,48 @@ import arrow from "../../../assets/img/service/Vector-1.png";
 class ServiceCard extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showVideo: false,
+        };
+
+        this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onMouseLeave = this.onMouseLeave.bind(this);
     }
+
+
+    onMouseEnter() {
+        this.setState({ showVideo: true });
+    }
+
+
+    onMouseLeave() {
+        this.setState({ showVideo: false });
+    }
+
 
     render() {
         const { service, onServiceSelection } = this.props;
         return (
-            <div className="ServiceCard">
+            <div className="ServiceCard" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
                 <Card className="border-0">
                     <div className="ServiceCard__video-card">
-                        <video
-                            className="ServiceCard__video"
-                            autoPlay
-                            loop
-                            muted>
-                            <source
-                                src={service.videoMain}
-                                type="video/mp4"
-                            />
-                        </video>
+                        {
+                            this.state.showVideo
+                                ?
+                                <video
+                                    className="ServiceCard__video"
+                                    autoPlay
+                                    loop
+                                    muted>
+                                    <source
+                                        src={service.videoMain}
+                                        type="video/mp4"
+                                    />
+                                </video>
+                                :
+                                <div className="ServiceCard__img"
+                                     style={{ backgroundImage: `url('${service.imgUrl}')` }}></div>
+                        }
                     </div>
                     <CardBody className="">
                         <CardTitle className="text-blue font-weight-bold">
@@ -46,7 +70,7 @@ class ServiceCard extends Component {
                            }}
                         >
                             <span className="ServiceCard__cta-text">Learn more</span>
-                                <img src={arrow} />
+                            <img src={arrow}/>
                         </a>
                     </CardBody>
                 </Card>
