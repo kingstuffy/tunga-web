@@ -110,7 +110,7 @@ class SideNav extends React.Component {
                                     : "side-bar-tab-hidden"
                                     }`}>
                                 </div>
-                                <a
+                                <a  style={{width: `${anc.title.length * 8}px`}}
                                     className={`side-bar-label font-weight-bold
                 ${anc.isActive ? "side-bar-label-active"
                                         : "side-bar-label-hidden"}`}
