@@ -6,6 +6,7 @@ import Icon from "../../../shared/core/Icon";
 import VlogVideo from './VlogVideo/VlogVideo';
 
 import { fetchVlogsRequest } from '../../../../services/vlogs/actions';
+import PlayIcon from "../../../assets/img/common/icons/icon-play.png";
 
 
 class Vlog extends Component {
@@ -103,11 +104,7 @@ class Vlog extends Component {
                                                                 {vlog.snippet.title}
                                                             </div>
                                                             <a className="Vlog__cta">
-                                                                <Icon
-                                                                    name="youtube-play"
-                                                                    size="card"
-                                                                    className="Vlog__icon"
-                                                                />
+                                                                <img src={PlayIcon}/>
                                                             </a>
                                                         </div>
                                                         <div className="Vlog__bg-mask"></div>
