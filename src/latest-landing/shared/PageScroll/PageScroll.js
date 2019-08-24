@@ -34,10 +34,15 @@ class PageScroll extends Component {
 
     componentWillMount() {
         this.isWheeling = false;
+        this.updateWindowDimensions();
     }
 
 
     componentDidMount() {
+        if (this.isMobile()) {
+            return;
+        }
+
         document.querySelector('body').style.height = '100vh';
         document.querySelector('body').style.overflowY = 'hidden';
         this.updateWindowDimensions();
@@ -99,7 +104,7 @@ class PageScroll extends Component {
 
 
     isMobile() {
-        return this.state.windowWidth && this.state.windowWidth <= 992;
+        return typeof this.state.windowWidth !== 'undefined' && this.state.windowWidth <= 992;
     }
 
 
