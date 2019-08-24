@@ -68,8 +68,6 @@ class PageScroll extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.onWindowResize);
         window.removeEventListener('keydown', this.onKeydown);
-        document.querySelector('body').style.height = 'auto';
-        document.querySelector('body').style.overflowY = 'auto';
     }
 
 
@@ -85,6 +83,11 @@ class PageScroll extends Component {
 
     onWindowResize() {
         this.updateWindowDimensions();
+        if (this.isMobile()) {
+            document.querySelector('body').style.height = 'auto';
+            document.querySelector('body').style.overflowY = 'auto';
+            return;
+        }
 
         if (this.containerRef.current) {
             this.currentStep = 0;
