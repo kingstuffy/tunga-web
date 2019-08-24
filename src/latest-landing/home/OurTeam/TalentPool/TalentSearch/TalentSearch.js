@@ -51,7 +51,6 @@ class TalentSearch extends Component {
 
     render() {
         const { auth } = this.props;
-        console.log(this.state.emailError);
 
         return (
             <div className="TalentSearch">

@@ -13,48 +13,43 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
+            formSubmitted: false,
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    // componentDidUpdate(prevProps, currentProps) {
-    //   if (prevProps !== currentProps) {
-    //      console.log()
-    //   }
-    // }
-
     onFormSubmit(e) {
         e.preventDefault();
-        // alert(JSON.stringify(this.spagetate));
-        this.props.authenticate(this.state).then(response => {
-            // console.log("response", response);
-            if (response) {
-                location.assign("/dashboard");
-            }
-        });
+        this.setState({ formSubmitted: true });
+        if (!this.state.username || !this.state.password) {
+            return;
+        }
+
+        this.props.authenticate(this.state);
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({ [event.target.name]: event.target.value, formSubmitted: false });
     }
 
     render() {
+        const { auth } = this.props;
 
         return (
             <div className="LoginForm">
                 <div className="LoginForm__card">
                     <Form onSubmit={this.onFormSubmit}>
                         <React.Fragment>
-                            { this.props.auth.isAuthenticating.isLoginFail ?
-                             <Error
+                            {auth.errors && auth.errors.auth && auth.errors.auth.non_field_errors ?
+                                <Error
                                     message={
-                                        this.props.auth.isAuthenticating.loginError ||
+                                        auth.errors.auth.non_field_errors.join(', ') ||
                                         "Sorry, we couldn't log you in. Please try again."
                                     }
                                 /> :
-                            null }
+                                null}
                             <Title className="LoginForm__title">
                                 Welcome back
                             </Title>
@@ -68,6 +63,12 @@ class LoginForm extends Component {
                                            name="username" value={this.state.username} onChange={this.handleChange}
                                            placeholder="Enter email address or username"/>
                                 </IconGroup>
+                                {
+                                    this.state.formSubmitted && !this.state.username &&
+                                    <div className="Form__group text-danger mt-2">
+                                        Please enter a username or email
+                                    </div>
+                                }
                             </Group>
                             <Group>
                                 <Label>
@@ -80,6 +81,12 @@ class LoginForm extends Component {
                                            name="password" value={this.state.password} onChange={this.handleChange}
                                            placeholder="Enter password"/>
                                 </IconGroup>
+                                {
+                                    this.state.formSubmitted && !this.state.password &&
+                                    <div className="Form__group text-danger mt-2">
+                                        Please enter a password
+                                    </div>
+                                }
                             </Group>
                             <div className="text-center">
                                 <Button type="submit">
@@ -102,7 +109,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        authenticate: (credentials) => authenticate(credentials)(dispatch),
+        authenticate: (credentials) => dispatch(authenticate(credentials)),
     };
 };
 
