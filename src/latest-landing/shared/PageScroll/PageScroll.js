@@ -159,7 +159,8 @@ class PageScroll extends Component {
 
         const direction = this.state.currentPage > pageNumber ? 'up' : 'down';
         const currentPage = this.state.currentPage > pageNumber ? pageNumber + 1 : pageNumber - 1;
-        this.currentStep = this.steps.map(({ page }) => page === currentPage).lastIndexOf(true);
+        const stepsMap = this.steps.map(({ page }) => page === currentPage);
+        this.currentStep = direction === 'down' ? stepsMap.lastIndexOf(true) : stepsMap.indexOf(true);
         this.scroll({ direction });
     }
 
