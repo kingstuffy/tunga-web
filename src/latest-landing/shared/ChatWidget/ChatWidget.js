@@ -19,6 +19,8 @@ import { getChatStep, getLastChatAutoOpenAt, setChatStep } from "../../../compon
 import { CHANNEL_TYPES } from "../../../actions/utils/api";
 import { openCalendlyWidget } from "../../../components/utils/calendly";
 
+import ChatIcon from "../../assets/img/common/icons/icon-chat.png";
+
 const CHAT_SCREEN_CHOOSE = 'choose',
     CHAT_SCREEN_DEVELOPER = 'developer',
     CHAT_SCREEN_CHAT = 'chat';
@@ -487,11 +489,7 @@ class ChatWidget extends React.Component {
                 ) : (
                     <div className="ChatWidget cta-widget">
                         <div onClick={this.startChat} className="icon-chat-bottom bg-primary">
-                            <IconButton
-                                name="chat-alt"
-                                size="md"
-                                className="text-white"
-                            />
+                           <img src={ChatIcon}/>
                         </div>
                     </div>
                 )}
