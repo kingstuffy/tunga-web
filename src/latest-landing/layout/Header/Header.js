@@ -57,9 +57,7 @@ class Header extends Component {
                                 Schedule a Call
                             </Button>
                             <Button
-                                onClick={() => {
-                                    onTalentPoolRequest();
-                                }}
+                                onClick={onTalentPoolRequest}
                                 size="lg"
                                 className="ml-2 p-4 mt-2 border-radius-0 bg-transparent border-color-white Header-button"
                             >

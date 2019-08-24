@@ -75,10 +75,15 @@ class Default extends Component {
         this.onUseCaseClick = this.onUseCaseClick.bind(this);
         this.onPageScrolled = this.onPageScrolled.bind(this);
         this.onTalentPoolRequest = this.onTalentPoolRequest.bind(this);
+        this.goToServices = this.goToServices.bind(this);
     }
 
     onUseCaseClick() {
         this.setState({ gotToPage: 4 });
+    }
+
+    goToServices() {
+        this.setState({ gotToPage: 2 });
     }
 
     onPageScrolled() {
@@ -112,7 +117,7 @@ class Default extends Component {
                     <div>
                         <CaseStudies/>
                     </div>
-                    <Footer/>
+                    <Footer goToServices={this.goToServices}/>
                 </PageScroll>
             </div>
         );

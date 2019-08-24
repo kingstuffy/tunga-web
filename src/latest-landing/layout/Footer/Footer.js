@@ -19,13 +19,62 @@ import Detelegraph from "./../../../latest-landing/assets/img/footer/Detelegraph
 import "../Footer/slick/slick/slick.css";
 import "../Footer/slick/slick/slick-theme.css";
 import "./Footer.scss";
+import { fetchBlogsRequest } from "../../../services/blogs/actions";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import Routing from "../../constants/Routing";
+import { NavLink } from "react-router-dom";
+
+
+const ServiceLinks = withRouter(({ history, goToServices }) => {
+    const titles = [
+        'Effortless software projects',
+        'Dedicated developers',
+        'Recruitment services',
+        'iOS developers',
+        'Android developers',
+        'Remote teams',
+    ];
+
+    const navToServices = () => {
+        return goToServices ? goToServices() : history.push('/#our-service');
+    };
+
+    return titles.map((title, i) => (
+        <li key={i}>
+            <a onClick={() => navToServices()}>
+                {title}
+            </a>
+        </li>
+    ));
+});
+
 
 class Footer extends Component {
     constructor(props) {
         super(props);
+        this.goToServices = this.goToServices.bind(this);
     }
 
+
+    componentWillMount() {
+        this.loadData(this.props.query);
+    }
+
+
+    loadData(search) {
+        this.props.fetchBlogsRequest({ search, limit: 5 });
+    }
+
+    goToServices() {
+        this.props.history.push('/#services');
+    }
+
+
     render() {
+        const { blogs, goToServices } = this.props;
+        const firstBlogs = blogs.slice(0, 5);
+
         var settings = ({
             dots: false,
             swipeToSlide: true,
@@ -239,32 +288,15 @@ class Footer extends Component {
                             <h4>EXPLORE</h4>
                             <ul>
                                 <li>
-                                    <a href="#">Our Team</a>
+                                    <NavLink to={Routing.ourTeam.path}>Our Team</NavLink>
                                 </li>
                                 <li>
-                                    <a href="#">Our Story</a>
+                                    <NavLink to={Routing.ourStory.path}>Our Story</NavLink>
                                 </li>
                                 <li>
-                                    <a href="#">News</a>
+                                    <NavLink to={Routing.news.path}>News</NavLink>
                                 </li>
-                                <li>
-                                    <a href="#">Effortless software projects</a>
-                                </li>
-                                <li>
-                                    <a href="#">Dedicated Developers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Recruitment Services</a>
-                                </li>
-                                <li>
-                                    <a href="#">iOS Developers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Android developers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Remote teams</a>
-                                </li>
+                                <ServiceLinks goToServices={goToServices}/>
                             </ul>
                         </div>
                     </Col>
@@ -274,24 +306,14 @@ class Footer extends Component {
                     <Col md="3" sm="6">
                         <div className="latest-from-our-blog">
                             <h4>LATEST FROM OUR BLOG</h4>
-                            <li>
-                                <a href="#">
-                                    Reknown newspaper Het Parool interviews
-                                    Ernesto Spruyt and David Semakula.
-                                </a>{" "}
-                            </li>
-                            <li>
-                                <a href="#">Women in tech courses.</a>{" "}
-                            </li>
-                            <li>
-                                <a href="#">Quality time in Nigeria.</a>{" "}
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Best African countries for sourcing software
-                                    developers in 2019.
-                                </a>{" "}
-                            </li>
+                            {firstBlogs.map(
+                                (blog, i) => (
+                                    <li key={i}>
+                                        <a href={blog.url} target="_blank">
+                                            {blog.title}
+                                        </a>{" "}
+                                    </li>
+                                ))}
                         </div>
                     </Col>
                 </Row>
@@ -338,4 +360,16 @@ class Footer extends Component {
 
 Footer.propTypes = {};
 
-export default Footer;
+
+const mapStateToProps = state => ({
+    is: state.app.blogs.blogs.is,
+    blogs: state.app.blogs.blogs.blogList,
+});
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchBlogsRequest: (params) => dispatch(fetchBlogsRequest(params))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
