@@ -49,6 +49,10 @@
         bottom: px-to-rem(12);
         width: 100%;
         left: 0;
+
+        @media (min-width: 992px) {
+            bottom: px-to-rem(88);
+        }
     }
 
 
