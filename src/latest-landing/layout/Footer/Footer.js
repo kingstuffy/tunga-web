@@ -330,25 +330,29 @@ class Footer extends Component {
                                 </p>
                             </div>
                         </Col>
-                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--first">
-                            <div className="bottom-line">
-                                <p className="text-xs-right">
-                                    <a href="#">Privacy policy</a>
-                                </p>
-                            </div>
-                        </Col>
-                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--middle">
-                            <div className="bottom-line">
-                                <p className="text-xs-right">
-                                    <a href="#">User Agreement</a>
-                                </p>
-                            </div>
-                        </Col>
-                        <Col xs="4" md="2" sm="4" className="Footer__bottom-links Footer__bottom-links--last">
-                            <div className="bottom-line">
-                                <p className="text-xs-right">
-                                    <a href="#">Code of conduct</a>
-                                </p>
+                        <Col md="6" sm="6" className="Footer__bottom-right">
+                            <div className="Footer__bottom-right-row">
+                                <div className="Footer__bottom-links Footer__bottom-links--first">
+                                    <div className="bottom-line">
+                                        <p className="text-xs-right">
+                                            <a href="#">Privacy policy</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="Footer__bottom-links Footer__bottom-links--middle">
+                                    <div className="bottom-line">
+                                        <p className="text-xs-right">
+                                            <a href="#">User Agreement</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="Footer__bottom-links Footer__bottom-links--last">
+                                    <div className="bottom-line">
+                                        <p className="text-xs-right">
+                                            <a href="#">Code of conduct</a>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </Col>
                     </Row>
