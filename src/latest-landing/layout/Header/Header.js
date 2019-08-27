@@ -14,6 +14,8 @@ class Header extends Component {
     }
 
     render() {
+        const { onTalentPoolRequest } = this.props;
+
         return (
             <div className="Header text-white position-relative" id="Header">
                 <div className="Header__video-bg">
@@ -55,6 +57,7 @@ class Header extends Component {
                                 Schedule a Call
                             </Button>
                             <Button
+                                onClick={onTalentPoolRequest}
                                 size="lg"
                                 className="ml-2 p-4 mt-2 border-radius-0 bg-transparent border-color-white Header-button"
                             >

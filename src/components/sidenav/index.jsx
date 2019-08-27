@@ -1,4 +1,5 @@
 import React from 'react';
+import { kebabCase } from 'lodash';
 
 import "./sidenav.scss";
 
@@ -103,18 +104,18 @@ class SideNav extends React.Component {
                 <ul>
                     {
                         this.state.pages.map((anc, index) => (
-                            <li className="side-bar-item" key={anc.hash}>
+                            <li className="side-bar-item" key={kebabCase(anc.title)}>
                                 <div className={`side-bar-tab
                                 ${anc.isActiveBar ? "side-bar-tab-active"
                                     : "side-bar-tab-hidden"
                                     }`}>
                                 </div>
-                                <a
+                                <a  style={{width: `${anc.title.length * 8}px`}}
                                     className={`side-bar-label font-weight-bold
                 ${anc.isActive ? "side-bar-label-active"
                                         : "side-bar-label-hidden"}`}
-                                    href={`#${anc.hash}`}
-                                    data-value={anc.hash}
+                                    href={`#${kebabCase(anc.title)}`}
+                                    data-value={kebabCase(anc.title)}
                                     onClick={this.handleClick(index)}
                                 >
                                     {anc.title}

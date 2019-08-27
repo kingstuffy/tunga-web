@@ -34,10 +34,15 @@ class PageScroll extends Component {
 
     componentWillMount() {
         this.isWheeling = false;
+        this.updateWindowDimensions();
     }
 
 
     componentDidMount() {
+        if (this.isMobile()) {
+            return;
+        }
+
         document.querySelector('body').style.height = '100vh';
         document.querySelector('body').style.overflowY = 'hidden';
         this.updateWindowDimensions();
@@ -63,8 +68,6 @@ class PageScroll extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.onWindowResize);
         window.removeEventListener('keydown', this.onKeydown);
-        document.querySelector('body').style.height = 'auto';
-        document.querySelector('body').style.overflowY = 'auto';
     }
 
 
@@ -80,6 +83,11 @@ class PageScroll extends Component {
 
     onWindowResize() {
         this.updateWindowDimensions();
+        if (this.isMobile()) {
+            document.querySelector('body').style.height = 'auto';
+            document.querySelector('body').style.overflowY = 'auto';
+            return;
+        }
 
         if (this.containerRef.current) {
             this.currentStep = 0;
@@ -99,7 +107,7 @@ class PageScroll extends Component {
 
 
     isMobile() {
-        return this.state.windowWidth && this.state.windowWidth <= 992;
+        return typeof this.state.windowWidth !== 'undefined' && this.state.windowWidth <= 992;
     }
 
 
@@ -159,7 +167,8 @@ class PageScroll extends Component {
 
         const direction = this.state.currentPage > pageNumber ? 'up' : 'down';
         const currentPage = this.state.currentPage > pageNumber ? pageNumber + 1 : pageNumber - 1;
-        this.currentStep = this.steps.map(({ page }) => page === currentPage).lastIndexOf(true);
+        const stepsMap = this.steps.map(({ page }) => page === currentPage);
+        this.currentStep = direction === 'down' ? stepsMap.lastIndexOf(true) : stepsMap.indexOf(true);
         this.scroll({ direction });
     }
 

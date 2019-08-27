@@ -8,6 +8,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import PageScroller from "../../../components/pageScroller";
 import PageScroll from "../../shared/PageScroll/PageScroll";
+import { withRouter } from "react-router";
+import { kebabCase } from "lodash";
 
 const pages = [
     {
@@ -72,14 +74,24 @@ class Default extends Component {
         this.state = {};
         this.onUseCaseClick = this.onUseCaseClick.bind(this);
         this.onPageScrolled = this.onPageScrolled.bind(this);
+        this.onTalentPoolRequest = this.onTalentPoolRequest.bind(this);
+        this.goToServices = this.goToServices.bind(this);
     }
 
     onUseCaseClick() {
         this.setState({ gotToPage: 4 });
     }
 
+    goToServices() {
+        this.setState({ gotToPage: 2 });
+    }
+
     onPageScrolled() {
         this.setState({ gotToPage: false });
+    }
+
+    onTalentPoolRequest() {
+        this.props.history.push('/our-team#talent-pool');
     }
 
     render() {
@@ -91,7 +103,7 @@ class Default extends Component {
                     goToPage={this.state.gotToPage}
                 >
                     <div>
-                        <Header/>
+                        <Header onTalentPoolRequest={this.onTalentPoolRequest}/>
                     </div>
                     <div>
                         <AboutUs/>
@@ -105,7 +117,7 @@ class Default extends Component {
                     <div>
                         <CaseStudies/>
                     </div>
-                    <Footer/>
+                    <Footer goToServices={this.goToServices}/>
                 </PageScroll>
             </div>
         );
@@ -113,5 +125,6 @@ class Default extends Component {
 }
 
 Default.propTypes = {};
+const DefaultWithRouter = withRouter(Default);
 
-export default Default;
+export default DefaultWithRouter;

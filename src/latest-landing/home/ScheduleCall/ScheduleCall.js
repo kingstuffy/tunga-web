@@ -5,6 +5,7 @@ import { Col, Row } from "reactstrap";
 import Button from "../../shared/core/Button";
 import Icon from "../../shared/core/Icon";
 import BgVideo from "../../assets/videos/home/section-4.mp4";
+import ArrowDownIcon from "../../assets/img/common/icons/icon-arrow-down.png";
 import { openCalendlyWidget } from "../../../components/utils/calendly";
 
 class ScheduleCall extends Component {
@@ -60,7 +61,7 @@ class ScheduleCall extends Component {
                         <div className="cursor-pointer" align="center" onClick={this.props.onUseCaseClick}>
                             <p className="">Not sure? See Case Studies</p>
                             <p>
-                                <Icon name="arrow-down" size="md"/>
+                                <img src={ArrowDownIcon}/>
                             </p>
                         </div>
                     </Col>
