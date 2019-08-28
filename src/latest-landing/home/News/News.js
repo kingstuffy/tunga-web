@@ -22,7 +22,7 @@ import VlogImg from "../../assets/img/blog/vlog.png";
 import VlogVideo from "../../assets/videos/home/section-1.mp4";
 import NewsArticle from "./NewsArticle/NewsArticle";
 import Vlog from "./Vlog/Vlog";
-import WhitePaper from "./WhitePaper/WhitePaper";
+import Publications from "./Publications/Publications";
 import Blog from "./Blog/Blog";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
@@ -200,8 +200,8 @@ class News extends Component {
                     <div id="VLOGS" className="News__vlog">
                         <Vlog vlogs={this.state.vlogs}/>
                     </div>
-                    <div id="WhitePaper" className="News__white-paper">
-                        <WhitePaper/>
+                    <div id="Publications" className="News__white-paper">
+                        <Publications/>
                     </div>
                     <div id="BLOGS" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>
