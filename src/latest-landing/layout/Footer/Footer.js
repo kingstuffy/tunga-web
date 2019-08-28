@@ -237,7 +237,7 @@ class Footer extends Component {
                                     </a>
                                 </p>
                                 <p>
-                                    <a href="tel:+31615955194">+31615955194</a>
+                                    <a href="tel:++31 20 220 2157">+31 20 220 2157</a>
                                 </p>
                             </div>
 
