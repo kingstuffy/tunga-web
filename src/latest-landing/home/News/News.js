@@ -67,8 +67,8 @@ const pages = [
         theme: "dark",
     },
     {
-        hash: "Footer",
-        title: "Footer",
+        hash: "Contact",
+        title: "Contact",
         isActive: false,
         isActiveBar: false,
         color: "#fff",
