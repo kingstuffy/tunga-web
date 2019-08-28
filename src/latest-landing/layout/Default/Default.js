@@ -58,8 +58,8 @@ const pages = [
         theme: "light",
     },
     {
-        hash: "Footer",
-        title: "Footer",
+        hash: "Contact",
+        title: "Contact",
         isActive: false,
         isActiveBar: false,
         color: "#fff",

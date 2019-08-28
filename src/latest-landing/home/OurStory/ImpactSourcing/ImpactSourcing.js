@@ -8,6 +8,10 @@ import ImpactSourcingBg from "../../../assets/img/our-story/impact-sourcing.png"
 class ImpactSourcing extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            impactLink: 'https://blog.tunga.io/tech-for-good-will-impact-sourcing-be-the-new-fair-trade-61e8c8d3dcce',
+        };
     }
 
     render() {
@@ -31,6 +35,7 @@ class ImpactSourcing extends Component {
                                 size="md"
                                 className="btn Hero__cta-btn btn-inverted"
                                 variant=""
+                                onClick={() => window.open(this.state.impactLink, '_blank')}
                             >
                                 Learn more
                             </Button>
