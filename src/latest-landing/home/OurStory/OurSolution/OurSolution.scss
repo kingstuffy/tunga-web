@@ -3,18 +3,18 @@
 .OurSolution {
     display: flex;
     flex-wrap: wrap;
+    padding: 30px 18px;
 
     @media only screen and (min-width: 992px) {
         height: 100vh;
         flex-wrap: nowrap;
+        padding: 0 70px;
     }
 
     &__content {
-        padding: 30px 18px;
 
         @media (min-width: 992px) {
             padding: 0;
-            padding-left: 70px;
             padding-right: 33px;
         }
     }
