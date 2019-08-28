@@ -39,7 +39,7 @@ class AboutUs extends Component {
                             </div>
                         </Col>
                         <Col sm="12" lg="5" md="5">
-                            <div className="">
+                            <div className="AboutUs__features">
                                 <ListGroup className="p-0">
                                     <ListGroupItem className="border-0 pl-0">
                                         <Icon
