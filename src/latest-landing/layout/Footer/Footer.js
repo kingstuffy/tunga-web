@@ -26,28 +26,13 @@ import Routing from "../../constants/Routing";
 import { NavLink } from "react-router-dom";
 
 
-const ServiceLinks = withRouter(({ history, goToServices }) => {
-    const titles = [
-        'Effortless software projects',
-        'Dedicated developers',
-        'Recruitment services',
-        'iOS developers',
-        'Android developers',
-        'Remote teams',
-    ];
-
-    const navToServices = () => {
-        return goToServices ? goToServices() : history.push('/#our-service');
-    };
-
-    return titles.map((title, i) => (
-        <li key={i}>
-            <a onClick={() => navToServices()}>
-                {title}
-            </a>
-        </li>
-    ));
-});
+const SectionLink = ({ title, goToUrl, url }) => {
+    return (
+        <a onClick={() => goToUrl(url)}>
+            {title}
+        </a>
+    );
+};
 
 
 class Footer extends Component {
@@ -72,7 +57,7 @@ class Footer extends Component {
 
 
     render() {
-        const { blogs, goToServices } = this.props;
+        const { blogs, goToUrl } = this.props;
         const firstBlogs = blogs.slice(0, 5);
 
         var settings = ({
@@ -127,7 +112,7 @@ class Footer extends Component {
                     <div className="also-featured also-featured--carousel">
                         <Slider className="carousel" {...settings}>
                             <div className="bbc">
-                                <a href="#">
+                                <a href="http://www.bbc.co.uk/news/world-africa-38294998" target="_blank">
                                     <img
 
                                         alt="BBC NEWS"
@@ -136,7 +121,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="party">
-                                <a href="#">
+                                <a href="https://www.youtube.com/watch?v=v9uRtYpZDQs" target="_blank">
                                     <img
                                         alt="CAMPUS PARTY"
                                         src={campusparty}
@@ -144,7 +129,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="world">
-                                <a href="#">
+                                <a href="https://www.oneworld.nl/startup-tunga-lanceert-pilot-programma-voor-nieuw-soort-freelance-platform" target="_blank">
                                     <img
 
                                         alt="ONE WORLD"
@@ -154,7 +139,7 @@ class Footer extends Component {
                             </div>
 
                             <div className="trend">
-                                <a href="#">
+                                <a href="http://trendwatching.com/blog/featured-innovator-tunga/" target="_blank">
                                     <img
 
                                         alt="TREND WATCHING"
@@ -163,7 +148,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="afn hide-on-mobile">
-                                <a href="#">
+                                <a href="https://soundcloud.com/african-tech-round-up/a-chat-with-ernesto-spruyt-of-tungaio?in=african-tech-round-up/sets/quick-chats" target="_blank">
                                     <img
 
                                         alt="AFRICAN TECH ROUND UP"
@@ -172,7 +157,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="nabc">
-                                <a href="#">
+                                <a href="https://www.nabc.nl/africa-business-news/5/technology/377/tunga-founder-ernesto-spruyt-we-create-21st-century-jobs-in-africa" target="_blank">
                                     <img
 
                                         alt="NABC"
@@ -181,7 +166,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="bnr">
-                                <a href="#">
+                                <a href="https://blog.tunga.io/our-developers-dont-want-aid-they-want-to-be-productive-4aba9173211e" target="_blank">
                                     <img
 
                                         alt="BNR"
@@ -190,7 +175,7 @@ class Footer extends Component {
                                 </a>
                             </div>
                             <div className="graf hide-on-mobile">
-                                <a href="#">
+                                <a href="https://www.telegraaf.nl/nieuws/1876342/podium-voor-afrikaans-it-talent">
                                     <img
 
                                         alt="DE TELEGRAAF"
@@ -288,15 +273,29 @@ class Footer extends Component {
                             <h4>EXPLORE</h4>
                             <ul>
                                 <li>
-                                    <NavLink to={Routing.ourTeam.path}>Our Team</NavLink>
+                                    <NavLink to="/#case-studies">Case studies</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={Routing.ourStory.path}>Our Story</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={Routing.news.path}>News</NavLink>
+                                    <NavLink to={`${Routing.ourTeam.path}#talent-pool`}>Browse Talent</NavLink>
                                 </li>
-                                <ServiceLinks goToServices={goToServices}/>
+                                <li>
+                                    <NavLink to={`${Routing.news.path}#news-article`}>Latest articles</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={`${Routing.news.path}#vlogs`}>Vlogs</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={`${Routing.news.path}#publications`}>Publications</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={`${Routing.news.path}#blog`}>Blog</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/#our-services">Our Services</NavLink>
+                                </li>
                             </ul>
                         </div>
                     </Col>

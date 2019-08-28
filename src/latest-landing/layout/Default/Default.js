@@ -32,7 +32,7 @@ const pages = [
     },
     {
         hash: "OurService",
-        title: "Our Service",
+        title: "Our Services",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",

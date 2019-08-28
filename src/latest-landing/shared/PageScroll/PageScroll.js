@@ -71,6 +71,16 @@ class PageScroll extends Component {
     }
 
 
+    componentDidUpdate() {
+        const currentIndex = this.props.pages.findIndex((page) => {
+            return `#${kebabCase(page.title)}` === this.props.location.hash;
+        });
+        if (currentIndex) {
+            this.goToPage(currentIndex);
+        }
+    }
+
+
     updatePageHash(page) {
         if (!page) {
             return;
@@ -157,6 +167,11 @@ class PageScroll extends Component {
                 this.pages[stepIndex] = currentPage;
             }
         });
+    }
+
+
+    goToUrl(url) {
+        this.props.history.push(url);
     }
 
 
@@ -268,11 +283,15 @@ class PageScroll extends Component {
             this.goToPage(goToPage);
         }
 
+        const sections = React.Children.map(self.props.children, child =>
+            React.cloneElement(child, { goToUrl: this.goToUrl })
+        );
+
         return (
             <div>
                 <div style={{ transition: 'transform 800ms', height: '100vh' }} ref={self.containerRef}
                      onWheel={self.onWheel}>
-                    {self.props.children}
+                    {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
             </div>

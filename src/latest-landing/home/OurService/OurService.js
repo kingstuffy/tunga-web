@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./OurService.scss";
 import { CardBody, Col, Media, Row } from "reactstrap";
 import ServiceCard from "./ServiceCard/ServiceCard";
-import Service1 from "../../assets/img/service/service1.png";
-import Service2 from "../../assets/img/service/service2.png";
-import Service3 from "../../assets/img/service/service3.png";
-import Service4 from "../../assets/img/service/service4.png";
+import Service1 from "../../assets/img/service/dedicated-developers.jpg";
+import Service2 from "../../assets/img/service/project-outsourcing.jpg";
+import Service3 from "../../assets/img/service/design-and-scoping.jpg";
+import Service4 from "../../assets/img/service/developer-on-demand.jpg";
+import Service5 from "../../assets/img/service/recruitement.jpg";
+import Service6 from "../../assets/img/service/software-maintenance.jpg";
 
 import DedicatedDevelopers from "../../assets/videos/home/our-services/Dedicated developers - vid.mp4";
 import DedicatedDevelopersDetail from "../../assets/videos/home/our-services/Dedicated developers - big page.mp4";
@@ -116,7 +118,7 @@ class OurService extends Component {
                     title: "Recruitment",
                     description:
                         "Quick access to a developer for incidental needs - Product improvements, additional func",
-                    imgUrl: Service4,
+                    imgUrl: Service5,
                     videoMain: Recruitment,
                     videoDetails: RecruitmentDetail,
                     leadTime: "< 1 week",
@@ -126,7 +128,7 @@ class OurService extends Component {
                     title: "Software Maintenance",
                     description:
                         "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
-                    imgUrl: Service3,
+                    imgUrl: Service6,
                     videoMain: SoftwareMaintenance,
                     videoDetails: SoftwareMaintenanceDetail,
                     leadTime: "1 - 2 weeks",

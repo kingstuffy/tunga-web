@@ -49,8 +49,8 @@ const pages = [
         theme: "light",
     },
     {
-        hash: "WhitePaper",
-        title: "White Paper",
+        hash: "Publications",
+        title: "Publications",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
@@ -59,7 +59,7 @@ const pages = [
     },
     {
         hash: "BLOGS",
-        title: "BLOGS",
+        title: "Blog",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
