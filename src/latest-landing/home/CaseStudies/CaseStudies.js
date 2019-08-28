@@ -149,6 +149,8 @@ class CaseStudies extends Component {
 
 
     render() {
+        const { activeUseCase = 1 } = this.props;
+
         const pagination = {
             total: this.state.data.length,
             perPage: this.getDataPerPage()
@@ -178,6 +180,7 @@ class CaseStudies extends Component {
                             <Carousel
                                 pagination={pagination}
                                 onPageChange={this.onPageChange}
+                                activePage={ activeUseCase }
                                 float="float-right"
                                 color="text-primary"
                             >

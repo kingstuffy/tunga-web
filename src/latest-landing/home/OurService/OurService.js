@@ -61,6 +61,7 @@ class OurService extends Component {
                             imgUrl: case2
                         }
                     ],
+                    useCase: 3,
                     tag: 'dedicated-developers'
                 },
                 {
@@ -84,6 +85,7 @@ class OurService extends Component {
                             imgUrl: case2
                         }
                     ],
+                    useCase: 1,
                     tag: 'project-outsourcing',
                 },
                 {
@@ -102,6 +104,7 @@ class OurService extends Component {
                             imgUrl: case1
                         }
                     ],
+                    useCase: 2,
                     tag: 'scoping',
                 },
                 {

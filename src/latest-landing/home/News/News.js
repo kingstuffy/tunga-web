@@ -24,8 +24,6 @@ import NewsArticle from "./NewsArticle/NewsArticle";
 import Vlog from "./Vlog/Vlog";
 import WhitePaper from "./WhitePaper/WhitePaper";
 import Blog from "./Blog/Blog";
-import Routing from "../../constants/Routing";
-import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
 

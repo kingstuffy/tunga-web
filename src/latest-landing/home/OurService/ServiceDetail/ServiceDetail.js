@@ -50,7 +50,7 @@ class ServiceDetail extends Component {
                             </CardText>
                             <div className="ServiceDetail__use-case">
                                 <UseCase onUseCaseClick={() => {
-                                    onUseCaseClick();
+                                    onUseCaseClick(service.useCase);
                                     onCloseServiceDetail();
                                 }} useCases={service.useCases || []}/>
                             </div>
