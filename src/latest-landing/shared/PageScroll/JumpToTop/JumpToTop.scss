@@ -1,0 +1,17 @@
+.JumpToTop {
+    position: fixed;
+    z-index: 100000000;
+    width: 40px;
+    right: 40px;
+    bottom: 100px;
+    cursor: pointer;
+
+    @media (min-width: 992px) {
+        bottom: 49px;
+        right: 13px;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}

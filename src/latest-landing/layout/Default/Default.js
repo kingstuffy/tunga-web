@@ -32,7 +32,7 @@ const pages = [
     },
     {
         hash: "OurService",
-        title: "Our Service",
+        title: "Our Services",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
@@ -58,8 +58,8 @@ const pages = [
         theme: "light",
     },
     {
-        hash: "Footer",
-        title: "Footer",
+        hash: "Contact",
+        title: "Contact",
         isActive: false,
         isActiveBar: false,
         color: "#fff",
@@ -71,15 +71,15 @@ const pages = [
 class Default extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { activeUseCase: 1 };
         this.onUseCaseClick = this.onUseCaseClick.bind(this);
         this.onPageScrolled = this.onPageScrolled.bind(this);
         this.onTalentPoolRequest = this.onTalentPoolRequest.bind(this);
         this.goToServices = this.goToServices.bind(this);
     }
 
-    onUseCaseClick() {
-        this.setState({ gotToPage: 4 });
+    onUseCaseClick(activeUseCase) {
+        this.setState({ gotToPage: 4, activeUseCase });
     }
 
     goToServices() {
@@ -115,7 +115,7 @@ class Default extends Component {
                         <ScheduleCall showCaseStudies={true} onUseCaseClick={this.onUseCaseClick}/>
                     </div>
                     <div>
-                        <CaseStudies/>
+                        <CaseStudies activeUseCase={this.state.activeUseCase}/>
                     </div>
                     <Footer goToServices={this.goToServices}/>
                 </PageScroll>

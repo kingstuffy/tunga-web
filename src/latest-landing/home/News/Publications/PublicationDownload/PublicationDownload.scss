@@ -1,12 +1,13 @@
 @import "../../../../assets/scss/util";
 @import "../../../../assets/scss/variable";
 
-.WpDownload {
+.PublicationDownload {
     background: linear-gradient(0deg, #062E64, #062E64);
     position: absolute;
     z-index: 1000;
     top: 0;
     left: 0;
+    white-space: normal;
 
     @media (min-width: 992px) {
         height: 100vh;

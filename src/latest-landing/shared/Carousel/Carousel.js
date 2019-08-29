@@ -10,8 +10,21 @@ class Carousel extends Component {
             windowWidth: 0,
             windowHeight: 0,
             leftPosition: 0,
+            lastPropChange: props.activePage,
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+
+    static getDerivedStateFromProps(props, currentState) {
+        if (currentState.lastPropChange !== props.activePage) {
+            return {
+                current: props.activePage,
+                lastPropChange: props.activePage,
+            };
+        }
+
+        return null;
     }
 
 

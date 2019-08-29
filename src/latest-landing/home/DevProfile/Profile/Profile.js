@@ -18,37 +18,43 @@ class Profile extends Component {
     }
 
     render() {
+        const { talent } = this.props;
+
         return (
             <div className="Profile">
                 <Row>
                     <Col sm="4">
-                        <Info/>
+                        <Info talent={talent}/>
                     </Col>
                     <Col sm="8">
-                        <Row className="Profile__badges-ratings">
-                            <Col md="5" sm="12">
-                                <Badges/>
-                            </Col>
-                            <Col md="7" sm="12">
-                                <Ratings/>
-                            </Col>
-                        </Row>
+                        {
+                            !!(talent.badges || talent.ratings.details.length)
+                            &&
+                            <Row className="Profile__badges-ratings">
+                                {
+                                    !!talent.badges
+                                    &&
+                                    <Col md="5" sm="12">
+                                        <Badges/>
+                                    </Col>
+                                }
+                                {
+                                    !!talent.ratings.details.length
+                                    &&
+                                    <Col md="7" sm="12">
+                                        <Ratings talent={talent}/>
+                                    </Col>
+                                }
+                            </Row>
+                        }
                         <Row className="Profile__map-skill-set">
+                            <Col md="7" sm="12">
+                                <SkillSet talent={talent}/>
+                            </Col>
                             <Col md="5" sm="12">
                                 <Map/>
                             </Col>
-                            <Col md="7" sm="12">
-                                <SkillSet/>
-                            </Col>
                         </Row>
-                    </Col>
-                </Row>
-                <Row className="Profile__experience">
-                    <Col md="6" sm="12">
-                        <Experience/>
-                    </Col>
-                    <Col md="6" sm="12">
-                        <Interest/>
                     </Col>
                 </Row>
             </div>

@@ -22,10 +22,8 @@ import VlogImg from "../../assets/img/blog/vlog.png";
 import VlogVideo from "../../assets/videos/home/section-1.mp4";
 import NewsArticle from "./NewsArticle/NewsArticle";
 import Vlog from "./Vlog/Vlog";
-import WhitePaper from "./WhitePaper/WhitePaper";
+import Publications from "./Publications/Publications";
 import Blog from "./Blog/Blog";
-import Routing from "../../constants/Routing";
-import PageScroller from "../../../components/pageScroller";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
 
@@ -49,8 +47,8 @@ const pages = [
         theme: "light",
     },
     {
-        hash: "WhitePaper",
-        title: "White Paper",
+        hash: "Publications",
+        title: "Publications",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
@@ -59,7 +57,7 @@ const pages = [
     },
     {
         hash: "BLOGS",
-        title: "BLOGS",
+        title: "Blog",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
@@ -67,8 +65,8 @@ const pages = [
         theme: "dark",
     },
     {
-        hash: "Footer",
-        title: "Footer",
+        hash: "Contact",
+        title: "Contact",
         isActive: false,
         isActiveBar: false,
         color: "#fff",
@@ -202,8 +200,8 @@ class News extends Component {
                     <div id="VLOGS" className="News__vlog">
                         <Vlog vlogs={this.state.vlogs}/>
                     </div>
-                    <div id="WhitePaper" className="News__white-paper">
-                        <WhitePaper/>
+                    <div id="Publications" className="News__white-paper">
+                        <Publications/>
                     </div>
                     <div id="BLOGS" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>

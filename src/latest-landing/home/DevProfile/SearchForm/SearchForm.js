@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import "./SearchForm.scss";
 import Icon from "../../../shared/core/Icon";
 import { Input, IconGroup } from "../../../shared/Form/Form";
+import { Redirect } from "react-router-dom";
+import Routing from "../../../constants/Routing";
 
 
 class SearchForm extends Component {
@@ -10,7 +12,8 @@ class SearchForm extends Component {
         super(props);
 
         this.state = {
-            query: ''
+            query: '',
+            onSearch: false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,7 +23,11 @@ class SearchForm extends Component {
 
     onFormSubmit(e) {
         e.preventDefault();
-        alert(JSON.stringify(this.state));
+        if (this.state.query) {
+            this.setState({
+                onSearch: true,
+            });
+        }
     }
 
 
@@ -30,6 +37,10 @@ class SearchForm extends Component {
 
 
     render() {
+        if (this.state.onSearch) {
+            return <Redirect to={{ pathname: Routing.ourTeam.path, search: `?query=${this.state.query}` }}/>;
+        }
+
         return (
             <div className="SearchForm">
                 <div className="SearchForm__container">

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { kebabCase } from 'lodash';
 import SideNav from "../../../components/sidenav";
+import JumpToTop from "./JumpToTop/JumpToTop";
 
 
 class PageScroll extends Component {
@@ -68,6 +69,16 @@ class PageScroll extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.onWindowResize);
         window.removeEventListener('keydown', this.onKeydown);
+    }
+
+
+    componentDidUpdate() {
+        const currentIndex = this.props.pages.findIndex((page) => {
+            return `#${kebabCase(page.title)}` === this.props.location.hash;
+        });
+        if (currentIndex) {
+            this.goToPage(currentIndex);
+        }
     }
 
 
@@ -160,7 +171,21 @@ class PageScroll extends Component {
     }
 
 
+    goToUrl(url) {
+        this.props.history.push(url);
+    }
+
+
     goToPage(pageNumber) {
+        if (this.isMobile()) {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+
         if (pageNumber && pageNumber === this.state.currentPage) {
             return;
         }
@@ -262,19 +287,25 @@ class PageScroll extends Component {
     render() {
         const self = this;
         const { goToPage, onPageScrolled } = this.props;
+        const isMobile = this.isMobile();
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
             onPageScrolled && onPageScrolled();
             this.goToPage(goToPage);
         }
 
+        const sections = React.Children.map(self.props.children, child =>
+            React.cloneElement(child, { goToUrl: this.goToUrl })
+        );
+
         return (
             <div>
                 <div style={{ transition: 'transform 800ms', height: '100vh' }} ref={self.containerRef}
                      onWheel={self.onWheel}>
-                    {self.props.children}
+                    {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
+                <JumpToTop isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
             </div>
         );
     }

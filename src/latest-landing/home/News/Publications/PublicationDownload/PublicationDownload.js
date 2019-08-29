@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./WpDownload.scss";
+import "./PublicationDownload.scss";
 import { Col, Row } from "reactstrap";
 import SideImg from "../../../../assets/img/blog/white-paper-download.png";
 import { Form, Title, Button, Input, Group, Select, IconGroup, Cta } from "../../../../shared/Form/Form";
 import Icon from "../../../../shared/core/Icon";
 
-class WpDownload extends Component {
+class PublicationDownload extends Component {
     constructor(props) {
         super(props);
 
@@ -34,24 +34,27 @@ class WpDownload extends Component {
 
 
     render() {
+        const { downloadTitle } = this.props;
+
         return (
-            <div className="WpDownload">
+            <div className="PublicationDownload">
                 <Row>
                     <Col
                         sm="0"
                         md="6">
-                        <div className="WpDownload__bg-container">
-                            <div className="WpDownload__bg" style={{ backgroundImage: `url(${SideImg})` }}></div>
+                        <div className="PublicationDownload__bg-container">
+                            <div className="PublicationDownload__bg"
+                                 style={{ backgroundImage: `url(${SideImg})` }}></div>
                         </div>
                     </Col>
                     <Col
                         sm="12"
                         md="6">
-                        <div className="WpDownload__form-container">
-                            <Form onSubmit={this.onFormSubmit} className="WpDownload__form">
+                        <div className="PublicationDownload__form-container">
+                            <Form onSubmit={this.onFormSubmit} className="PublicationDownload__form">
                                 <React.Fragment>
-                                    <div className="WpDownload__title">
-                                        Please fill in this form to download the whitepaper
+                                    <div className="PublicationDownload__title">
+                                        {downloadTitle}
                                     </div>
                                     <Group>
                                         <Input className="Form__input--light Form__input--transparent" type="text"
@@ -94,24 +97,25 @@ class WpDownload extends Component {
                                     </div>
                                 </React.Fragment>
                             </Form>
-                            <div className="WpDownload__disclaimer">
+                            <div className="PublicationDownload__disclaimer">
                                 By submitting this form, you agree that we may contact you by mail, phone or otherwise
                                 with information related to this report and the relevant Tunga services. If you already
                                 have an account at Tunga, you can control the messages you receive from us in your
                                 settings. If you are a guest visitor, you can unsubscribe from Tunga marketing messages
                                 any time by clicking the unsubscribe button in the e-mail or by sending us an e-mail to
-                                <b>hello@tunga.io</b> with the word “Unsubscribe” in the subject. To learn more, please visit
+                                <b>hello@tunga.io</b> with the word “Unsubscribe” in the subject. To learn more, please
+                                visit
                                 Tunga’s <b>Privacy Policy</b> page.
                             </div>
                         </div>
                     </Col>
                 </Row>
-                <a className="WpDownload__dismiss"
+                <a className="PublicationDownload__dismiss"
                    onClick={this.props.onDownloadClose}>
                     <Icon
                         name="times-circle-o"
                         size="topbar"
-                        className="WpDownload__icon"
+                        className="PublicationDownload__icon"
                     />
                 </a>
             </div>
@@ -119,7 +123,7 @@ class WpDownload extends Component {
     }
 }
 
-WpDownload.propTypes = {};
+PublicationDownload.propTypes = {};
 
-export default WpDownload;
+export default PublicationDownload;
 
