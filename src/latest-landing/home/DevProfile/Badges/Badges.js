@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Badges.scss";
 import Icon from "../../../shared/core/Icon";
-import BadgeA from "../../../assets/img/dev-profile/badge-a.png";
-import BadgeB from "../../../assets/img/dev-profile/badge-b.png";
-import BadgeC from "../../../assets/img/dev-profile/badge-c.png";
+import ProfileImg from "../../../assets/img/our-story/hero-bg.png";
 import Button from "../../../shared/core/Button";
 
 
@@ -27,15 +25,15 @@ class Badges extends Component {
         this.state = {
             badges: [
                 {
-                    imgUrl: BadgeA,
+                    imgUrl: ProfileImg,
                     title: "Badge A"
                 },
                 {
-                    imgUrl: BadgeB,
+                    imgUrl: ProfileImg,
                     title: "Badge B"
                 },
                 {
-                    imgUrl: BadgeC,
+                    imgUrl: ProfileImg,
                     title: "Badge C"
                 }
             ]

@@ -46,7 +46,7 @@ class Vlog extends Component {
                                 width="100%" height="100%" allowtransparency="true" frameBorder="0">
                         </iframe>
                     </div>
-                    <div className="VlogVideo__height-mask">&nsbp;</div>
+                    <div className="VlogVideo__height-mask"></div>
                 </div>
             </div>
         );

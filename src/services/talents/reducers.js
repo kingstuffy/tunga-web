@@ -9,7 +9,10 @@ const initialState = {
         error: false,
     },
     talentList: [],
-    talent: {},
+    talent: {
+        projects: [],
+        work: [],
+    },
     message: '',
     messages: {},
 };
