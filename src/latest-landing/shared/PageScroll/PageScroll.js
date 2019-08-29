@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { kebabCase } from 'lodash';
 import SideNav from "../../../components/sidenav";
+import JumpToTop from "./JumpToTop/JumpToTop";
 
 
 class PageScroll extends Component {
@@ -176,6 +177,15 @@ class PageScroll extends Component {
 
 
     goToPage(pageNumber) {
+        if (this.isMobile()) {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+
         if (pageNumber && pageNumber === this.state.currentPage) {
             return;
         }
@@ -277,6 +287,7 @@ class PageScroll extends Component {
     render() {
         const self = this;
         const { goToPage, onPageScrolled } = this.props;
+        const isMobile = this.isMobile();
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
             onPageScrolled && onPageScrolled();
@@ -294,6 +305,7 @@ class PageScroll extends Component {
                     {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
+                <JumpToTop isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
             </div>
         );
     }
