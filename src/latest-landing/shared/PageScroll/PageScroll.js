@@ -11,6 +11,7 @@ class PageScroll extends Component {
 
         this.isWheeling = false;
         this.isScolling = false;
+        this.resizing = false;
         this.currentStep = 0;
         this.steps = [];
         this.pages = [];
@@ -93,22 +94,30 @@ class PageScroll extends Component {
 
 
     onWindowResize() {
-        this.updateWindowDimensions();
-        if (this.isMobile()) {
-            document.querySelector('body').style.height = 'auto';
-            document.querySelector('body').style.overflowY = 'auto';
-            return;
-        }
+        const date = new Date;
+        const resizeTime = date.getTime();
+        this.lastResizeTime = resizeTime;
 
-        if (this.containerRef.current) {
-            this.currentStep = 0;
-            this.containerRef.current.style.transform = `translate3d(0, 0, 0)`;
-            this.updatePageHash(this.props.pages[0]);
+        window.setTimeout(() => {
+            if (this.lastResizeTime !== resizeTime) {
+                return;
+            }
 
-            window.setTimeout(() => {
-                this.computeSteps();
-            }, 600);
-        }
+            this.updateWindowDimensions();
+            if (this.isMobile()) {
+                document.querySelector('body').style.height = 'auto';
+                document.querySelector('body').style.overflowY = 'auto';
+                return;
+            }
+
+            if (this.containerRef.current) {
+                const yOffset = this.steps[this.currentStep].y;
+                this.computeSteps({ yOffset });
+                const currentStep = this.steps.map(({ page }) => page === this.state.currentPage).indexOf(true);
+                this.currentStep = currentStep;
+                this.goToPage(this.state.currentPage, true);
+            }
+        }, 400);
     }
 
 
@@ -122,7 +131,8 @@ class PageScroll extends Component {
     }
 
 
-    computeSteps() {
+    computeSteps({ yOffset } = { yOffset: 0 }) {
+        const offsetY = this.steps.length ? this.steps[0].y : 0;
         this.steps = [];
         this.pages = [];
 
@@ -139,12 +149,7 @@ class PageScroll extends Component {
         this.containerRef.current.childNodes.forEach((el, stepIndex) => {
             const { offsetHeight } = el;
             const rect = el.getBoundingClientRect();
-            const y = window.scrollY + rect.top;
-
-            if (y <= window.scrollY && window.scrollY <= y + offsetHeight) {
-                if (this.steps[this.currentStep]) {
-                }
-            }
+            const y = window.scrollY + rect.top + yOffset;
             let currentPage = 0;
 
             if (offsetHeight <= windowHeight) {
@@ -176,7 +181,7 @@ class PageScroll extends Component {
     }
 
 
-    goToPage(pageNumber) {
+    goToPage(pageNumber, reload) {
         if (this.isMobile()) {
             window.scrollTo({
                 top: 0,
@@ -186,7 +191,7 @@ class PageScroll extends Component {
             return;
         }
 
-        if (pageNumber && pageNumber === this.state.currentPage) {
+        if (pageNumber && pageNumber === this.state.currentPage && !reload) {
             return;
         }
 
