@@ -25,7 +25,12 @@ class TalentPool extends Component {
 
 
     componentWillMount() {
-        this.loadData(this.props.query);
+        const { auth, query } = this.props;
+        if (auth.isEmailVisitor || auth.isAuthenticated) {
+            return this.loadData(query);
+        }
+
+        this.loadData();
     }
 
 
@@ -111,19 +116,21 @@ class TalentPool extends Component {
             perPage: dataPerPage,
         };
 
+        const lastQuery = this.state.lastQuery || query;
+
         return (
             <section className="TalentPool">
                 <h4 className="text-primary size-16 text-uppercase font-weight-bold">
                     TALENT POOL
                 </h4>
                 <div className="TalentPool__search-form">
-                    <TalentSearch onSearchQuery={this.onSearchQuery}/>
+                    <TalentSearch query={lastQuery} onSearchQuery={this.onSearchQuery}/>
                 </div>
                 <div className="TalentPool__container">
                     {
                         !talents.length && !is.fetching &&
                         <div className="TalentPool__empty-state text-danger">
-                            No results found for '{query || this.state.lastQuery}'
+                            No results found for '{lastQuery || this.state.lastQuery}'
                             <Icon className="text-primary mt-3" name="search-alt" size='lg'/>
                         </div>
                     }
@@ -169,6 +176,7 @@ class TalentPool extends Component {
 }
 
 TalentPool.propTypes = {};
+
 
 
 const mapStateToProps = state => ({

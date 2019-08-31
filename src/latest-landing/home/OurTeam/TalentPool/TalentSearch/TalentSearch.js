@@ -14,7 +14,7 @@ class TalentSearch extends Component {
         super(props);
 
         this.state = {
-            query: '',
+            query: props.query || '',
             email: '',
         };
 
@@ -50,7 +50,7 @@ class TalentSearch extends Component {
 
 
     render() {
-        const { auth } = this.props;
+        const { auth, query } = this.props;
 
         return (
             <div className="TalentSearch">
@@ -88,6 +88,12 @@ class TalentSearch extends Component {
                                     this.state.emailError &&
                                     <div className="Form__group text-danger mt-2">
                                         Please enter a valid business email
+                                    </div>
+                                }
+                                {
+                                    query &&
+                                    <div className="Form__group text-danger mt-2">
+                                        You need to enter a business email to search
                                     </div>
                                 }
                             </form>

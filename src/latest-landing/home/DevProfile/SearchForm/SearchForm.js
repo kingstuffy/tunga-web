@@ -38,7 +38,7 @@ class SearchForm extends Component {
 
     render() {
         if (this.state.onSearch) {
-            return <Redirect to={{ pathname: Routing.ourTeam.path, search: `?query=${this.state.query}` }}/>;
+            return <Redirect to={{ pathname: `${Routing.ourTeam.path}`, search: `?query=${this.state.query}`, hash: 'talent-pool' }}/>;
         }
 
         return (
