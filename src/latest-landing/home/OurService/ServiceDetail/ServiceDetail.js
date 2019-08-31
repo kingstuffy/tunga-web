@@ -49,8 +49,8 @@ class ServiceDetail extends Component {
                                 {service.price}
                             </CardText>
                             <div className="ServiceDetail__use-case">
-                                <UseCase onUseCaseClick={() => {
-                                    onUseCaseClick(service.useCase);
+                                <UseCase onUseCaseClick={(useCase) => {
+                                    onUseCaseClick(useCase);
                                     onCloseServiceDetail();
                                 }} useCases={service.useCases || []}/>
                             </div>
