@@ -7,10 +7,17 @@ import Icon from "../../shared/core/Icon";
 import BgVideo from "../../assets/videos/home/section-4.mp4";
 import ArrowDownIcon from "../../assets/img/common/icons/icon-arrow-down.png";
 import { openCalendlyWidget } from "../../../components/utils/calendly";
+import { NavLink } from "react-router-dom";
 
 class ScheduleCall extends Component {
     constructor(props) {
         super(props);
+
+        this.onUseCaseClick = this.onUseCaseClick.bind(this);
+    }
+
+    onUseCaseClick() {
+        console.log(this.props);
     }
 
     render() {
@@ -58,12 +65,12 @@ class ScheduleCall extends Component {
                         md="12"
                         className="position-absolute notSure"
                     >
-                        <div className="cursor-pointer" align="center" onClick={this.props.onUseCaseClick}>
+                        <NavLink className="ScheduleCall__case-link" align="center" to="/#case-studies">
                             <p className="">Not sure? See Case Studies</p>
                             <p>
                                 <img src={ArrowDownIcon}/>
                             </p>
-                        </div>
+                        </NavLink>
                     </Col>
                     }
                 </Row>

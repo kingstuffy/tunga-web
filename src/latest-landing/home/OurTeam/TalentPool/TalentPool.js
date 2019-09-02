@@ -7,6 +7,11 @@ import Loader from "../../../shared/Loader/Loader";
 import Talent from "./Talent/Talent";
 import TalentSearch from "./TalentSearch/TalentSearch";
 import Icon from "../../../shared/core/Icon";
+import algoliaUtils from "../../../../components/utils/algolia";
+import _ from "lodash";
+import axios from "axios";
+import { ENDPOINT_LOG_SEARCH } from "../../../../actions/utils/api";
+import { getNumSearches } from "../../../../components/utils/search";
 
 class TalentPool extends Component {
     constructor(props) {
@@ -15,6 +20,12 @@ class TalentPool extends Component {
             windowWidth: 0,
             windowHeight: 0,
             leftPosition: 0,
+            search: props.query || '',
+            hasLoaded: false, isLoading: false,
+            results: [], resultsFor: '', total: 0, currentPage: 0, maxPages: 0,
+            emailUnlock: '', emailMore: '',
+            shouldLoadMore: false,
+            hasSearched: false
         };
 
         this.loadData = this.loadData.bind(this);
@@ -27,10 +38,11 @@ class TalentPool extends Component {
     componentWillMount() {
         const { auth, query } = this.props;
         if (auth.isEmailVisitor || auth.isAuthenticated) {
-            return this.loadData(query);
+            return this.getPeople();
         }
 
-        this.loadData();
+        // this.loadData();
+        this.getPeople();
     }
 
 
@@ -51,13 +63,99 @@ class TalentPool extends Component {
 
 
     onSearchQuery(query) {
-        this.loadData(query);
+        this.setState({
+            lastQuery: query,
+            search: query,
+        });
+        this.getPeople();
         this.setState({ lastQuery: query });
     }
 
 
     loadData(search) {
         this.props.fetchTalentsRequest({ search, limit: 12 });
+    }
+
+    isLockable() {
+        const { auth: { isAuthenticated, isEmailVisitor } } = this.props;
+        return !isAuthenticated && !isEmailVisitor;
+    }
+
+    isLocked() {
+        return getNumSearches() && this.isLockable();
+    }
+
+
+    logSearch(page = 1) {
+        const { auth: { isAuthenticated, isEmailVisitor } } = this.props;
+        const { search } = this.state;
+        if (search && (isAuthenticated || isEmailVisitor)) {
+            axios.post(ENDPOINT_LOG_SEARCH, { search, page }).then(res => {
+            }).catch(err => {
+                console.error(`Failed to log search: ${search}`);
+            });
+        }
+    }
+
+
+    getPeople() {
+        const nextPage = this.state.hasLoaded && this.state.search === this.state.resultsFor ? (this.state.currentPage + 1) : 0;
+        if (this.state.search) {
+            this.logSearch(nextPage + 1); // Add 1 because Algolia pages are zero indexed
+        }
+
+        let self = this;
+        self.setState({
+            isLoading: true,
+            hasLoaded: this.state.search === this.state.resultsFor ? this.state.hasLoaded : false,
+            shouldLoadMore: false, hasSearched: this.state.hasSearched || !!this.state.search
+        });
+
+        const resultsPerPage = this.isLockable() ? 12 : 50;
+
+        algoliaUtils.index.search(
+            {
+                query: this.state.search,
+                hitsPerPage: resultsPerPage,
+                page: nextPage,
+            },
+            (err, content) => {
+                if (err) {
+                    self.setState({
+                        isLoading: false,
+                        hasLoaded: this.state.search === this.state.resultsFor ? this.state.hasLoaded : false
+                    });
+                } else {
+                    if (content.query === self.state.search) {
+                        self.setState({
+                            results: [...(content.query === this.state.resultsFor ? this.state.results : []), ...(content.hits || [])].map(item => {
+                                return item.profile && item.profile.skills ? {
+                                    ...item,
+                                    profile: {
+                                        ...item.profile,
+                                        skills: _.orderBy(
+                                            (item.profile.skills || []).map((skill, idx) => {
+                                                return {
+                                                    ...skill,
+                                                    rank: item._highlightResult.profile.skills[idx].name.matchedWords.length
+                                                };
+                                            }),
+                                            ['rank', 'name'], ['desc', 'asc']
+                                        )
+                                    }
+                                } : item;
+                            }),
+                            resultsFor: content.query,
+                            isLoading: false,
+                            hasLoaded: true,
+                            total: content.nbHits,
+                            maxPages: content.nbPages,
+                            currentPage: content.page
+                        });
+                    }
+                }
+            }
+        );
     }
 
 
@@ -98,7 +196,9 @@ class TalentPool extends Component {
 
 
     render() {
-        const { talents, is, query } = this.props;
+        const { results, total, isLoading, hasLoaded, currentPage, maxPages } = this.state;
+        const talents = results || [];
+        const { is, query } = this.props;
         const dataPerPage = this.getDataPerPage();
         const maxItemsNo = this.getMaxItemsNo({ dataPerPage });
 
@@ -128,14 +228,14 @@ class TalentPool extends Component {
                 </div>
                 <div className="TalentPool__container">
                     {
-                        !talents.length && !is.fetching &&
+                        !talents.length && hasLoaded &&
                         <div className="TalentPool__empty-state text-danger">
                             No results found for '{lastQuery || this.state.lastQuery}'
                             <Icon className="text-primary mt-3" name="search-alt" size='lg'/>
                         </div>
                     }
                     {
-                        is.fetching
+                        !hasLoaded
                             ?
                             <div className="TalentPool__loader">
                                 <Loader/>
@@ -149,7 +249,7 @@ class TalentPool extends Component {
                                 <ul className="TalentPool__list" style={{ left: this.state.leftPosition }}>
                                     {splitTalents.map(
                                         (members, i) => (
-                                            <div
+                                            <li
                                                 key={i}
                                                 className="TalentPool__row"
                                             >
@@ -163,20 +263,22 @@ class TalentPool extends Component {
                                                             </div>
                                                         )
                                                     )}
-                                            </div>
+                                            </li>
                                         )
                                     )}
+                                    <li className="clearfix"></li>
                                 </ul>
                             </Carousel>
                     }
+                    <div className="clearfix"></div>
                 </div>
+                <div className="clearfix"></div>
             </section>
         );
     }
 }
 
 TalentPool.propTypes = {};
-
 
 
 const mapStateToProps = state => ({
