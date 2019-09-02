@@ -30,7 +30,7 @@ import PageScroll from "../../shared/PageScroll/PageScroll";
 const pages = [
     {
         hash: "NewsArticle",
-        title: "News Article",
+        title: "News Articles",
         isActive: false,
         isActiveBar: false,
         color: "#fff",
