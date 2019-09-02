@@ -266,13 +266,10 @@ class TalentPool extends Component {
                                             </li>
                                         )
                                     )}
-                                    <li className="clearfix"></li>
                                 </ul>
                             </Carousel>
                     }
-                    <div className="clearfix"></div>
                 </div>
-                <div className="clearfix"></div>
             </section>
         );
     }
