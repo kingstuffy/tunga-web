@@ -110,20 +110,25 @@ class Experience extends Component {
 
     render() {
         const { talent } = this.props;
-        const items = [
-            {
+        let items = [];
+        if (talent.projects && talent.projects.length) {
+            items.push({
                 header: true,
                 title: 'Tunga projects',
                 icon: TungaIcon,
-            },
-            ...talent.projects,
-            {
+            });
+            items = items.concat([], talent.projects);
+        }
+
+        if (talent.work && talent.work.length) {
+            items.push({
                 header: true,
                 title: 'Work experience',
                 icon: WorkIcon,
-            },
-            ...talent.work,
-        ];
+            });
+            items = items.concat([], talent.work);
+        }
+
         const keyedItems = items.map((item, index) => ({ ...item, index }))
 
 
@@ -152,7 +157,8 @@ class Experience extends Component {
                             {
                                 rows.map((row, key) => (
                                     <li className={`Experience__row Experience__row--${key}`} key={key}>
-                                        <div className={`Experience__item-container Experience__item-container--${key}`}>
+                                        <div
+                                            className={`Experience__item-container Experience__item-container--${key}`}>
                                             <ul className="Experience__list">
                                                 {
                                                     row.map((experience, j) => (

@@ -28,7 +28,7 @@ class Profile extends Component {
                     </Col>
                     <Col sm="8">
                         {
-                            !!(talent.badges || talent.ratings.details.length)
+                            !!(talent.badges || (talent.ratings && talent.ratings.details.length))
                             &&
                             <Row className="Profile__badges-ratings">
                                 {
@@ -39,7 +39,7 @@ class Profile extends Component {
                                     </Col>
                                 }
                                 {
-                                    !!talent.ratings.details.length
+                                    !!(talent.ratings && talent.ratings.details.length)
                                     &&
                                     <Col md="7" sm="12">
                                         <Ratings talent={talent}/>

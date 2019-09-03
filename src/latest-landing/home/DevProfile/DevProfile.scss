@@ -3,7 +3,9 @@
 
 .DevProfile {
     color: #222829;
-    max-width: 100vw;
+    position: relative;
+    width: 100%;
+    // max-width: 100vw;
 
     &__header {
         min-height: 330px;
@@ -41,7 +43,8 @@
 
     &__profile {
         @media (min-width: 992px) {
-            height: 100vh;
+            min-height: 100vh;
+            position: relative;
         }
     }
 }
