@@ -15,19 +15,23 @@ class SideNav extends React.Component {
         this.state = {
             pages: this.props.pages
         }
+
+        this.addObservers = this.addObservers.bind(this);
     }
 
     componentDidMount() {
         this.observer = new IntersectionObserver(this.observerCallback, { threshold: 0.7 });
-        setTimeout(() => {
-            this.addObserverToTargets();
-            this.showLabel();
-        }, 200);
+        setTimeout(this.addObservers, 200);
     }
 
     componentWillUnmount() {
-        clearTimeout(this.showLabel);
+        clearTimeout(this.addObservers);
         clearTimeout(this.hideLabelsTimer);
+    }
+
+    addObservers() {
+        this.addObserverToTargets();
+        this.showLabel();
     }
 
     observerCallback = (entries, _observer) => {
@@ -110,13 +114,13 @@ class SideNav extends React.Component {
                                     : "side-bar-tab-hidden"
                                     }`}>
                                 </div>
-                                <a  style={{width: `${anc.title.length * 8}px`}}
-                                    className={`side-bar-label font-weight-bold
+                                <a style={{ width: `${anc.title.length * 8}px` }}
+                                   className={`side-bar-label font-weight-bold
                 ${anc.isActive ? "side-bar-label-active"
-                                        : "side-bar-label-hidden"}`}
-                                    href={`#${kebabCase(anc.title)}`}
-                                    data-value={kebabCase(anc.title)}
-                                    onClick={this.handleClick(index)}
+                                       : "side-bar-label-hidden"}`}
+                                   href={`#${kebabCase(anc.title)}`}
+                                   data-value={kebabCase(anc.title)}
+                                   onClick={this.handleClick(index)}
                                 >
                                     {anc.title}
                                 </a>

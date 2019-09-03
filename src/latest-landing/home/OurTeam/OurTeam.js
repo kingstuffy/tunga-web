@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
-// import queryString from "query-string";
+import qs from "qs";
 import PageScroller from "../../../components/pageScroller";
 
 import "./OurTeam.scss";
@@ -248,14 +248,11 @@ class OurTeam extends Component {
         };
     }
 
-    pageOnChange = (pageNumber) => {
-        console.log("current page", pageNumber)
-    }
-
     render() {
         const { location } = this.props;
         // replace with another lib;; build issues with query-string
-        const query = location.search.replace('?query=', '');
+        const urlQuery = location.search || (location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '');
+        const { query } = qs.parse(urlQuery);
 
         return (
             <section className="OurTeam">

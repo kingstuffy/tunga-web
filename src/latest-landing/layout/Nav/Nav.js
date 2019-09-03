@@ -16,6 +16,8 @@ import {
 import Button from "../Header/Header";
 import Logo from "../../assets/img/common/logo.png";
 import { openCalendlyWidget } from "../../../components/utils/calendly";
+import { authenticate } from "../../../actions/AuthActions";
+import { connect } from "react-redux";
 
 
 class Nav extends Component {
@@ -33,6 +35,8 @@ class Nav extends Component {
     };
 
     render() {
+        const { auth } = this.props;
+
         return (
             <div className="Nav">
                 <div className="">
@@ -70,9 +74,19 @@ class Nav extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to={Routing.login.path} activeClassName="font-weight-bold text-black">
-                                        {Routing.login.name}
-                                    </NavLink>
+                                    {
+                                        auth.isAuthenticated
+                                            ?
+                                            <NavLink to={Routing.login.path}
+                                                     activeClassName="font-weight-bold text-black">
+                                                {Routing.login.name}
+                                            </NavLink>
+                                            :
+                                            <NavLink to={Routing.dashboard.path}
+                                                     activeClassName="font-weight-bold text-black">
+                                                {Routing.dashboard.name}
+                                            </NavLink>
+                                    }
                                 </NavItem>
                                 <NavItem>
                                     <RNavLink className="ml-3 text-white btn btn-lg btn-primary p-4 border-radius-0"
@@ -91,4 +105,11 @@ class Nav extends Component {
 
 Nav.propTypes = {};
 
-export default Nav;
+
+const mapStateToProps = store => ({
+    auth: store.app.Auth
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

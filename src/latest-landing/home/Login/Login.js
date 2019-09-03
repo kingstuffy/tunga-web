@@ -10,6 +10,12 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+
+        this.isAuthenticated = this.isAuthenticated.bind(this);
+    }
+
+    isAuthenticated() {
+        this.props.history.push('/dashboard');
     }
 
     render() {
@@ -21,7 +27,7 @@ class Login extends Component {
                         <Nav/>
                     </div>
                     <div className="Login__form">
-                        <LoginForm/>
+                        <LoginForm isAuthenticated={this.isAuthenticated}/>
                     </div>
                     <div className="Login__bg-mask">
                     </div>

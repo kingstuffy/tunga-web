@@ -18,7 +18,7 @@ class Talent extends Component {
 
         return (
             <div className="Talent"
-                 style={{ backgroundImage: `url(${talent.image})` }}>
+                 style={{ backgroundImage: `url(http://www.tunga.io${talent.avatar_url})` }}>
                 <div className="Talent__info">
                     <div className="Talent__name">
                         {talent.display_name}

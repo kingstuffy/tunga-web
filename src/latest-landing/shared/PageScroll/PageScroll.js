@@ -75,7 +75,7 @@ class PageScroll extends Component {
 
     componentDidUpdate() {
         const currentIndex = this.props.pages.findIndex((page) => {
-            return `#${kebabCase(page.title)}` === this.props.location.hash;
+            return `#${kebabCase(page.title)}` === this.props.location.hash.split('?')[0];
         });
         if (currentIndex) {
             this.goToPage(currentIndex);
@@ -89,7 +89,8 @@ class PageScroll extends Component {
         }
 
         const slug = `#${kebabCase(page.title)}`;
-        this.props.history.push(slug);
+        const search = this.props.location.search || '';
+        this.props.history.push(`${slug}${search}`);
     }
 
 

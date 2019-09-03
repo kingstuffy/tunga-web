@@ -1,11 +1,12 @@
 @import "../../assets/scss/variable";
+
 .ScheduleCall {
     background: linear-gradient(
             0deg,
             get-color("t-light-blue"),
             get-color("t-light-blue")
-        ),
-        url("../../assets/img/maintenance.jpg") no-repeat center;
+    ),
+    url("../../assets/img/maintenance.jpg") no-repeat center;
     background-size: cover;
     min-width: 100%;
     min-height: 100vh;
@@ -15,7 +16,7 @@
 
     @media (min-width: 992px) {
         padding: 15%;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .ScheduleCall-Text {
@@ -68,5 +69,15 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    &__case-link {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+            opacity: 0.9;
+        }
     }
 }

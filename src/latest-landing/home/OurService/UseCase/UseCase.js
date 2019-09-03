@@ -28,7 +28,7 @@ class UseCase extends Component {
                         </div>
                         <div className="UseCase__cta">
                             <Button
-                                onClick={onUseCaseClick}
+                                onClick={() => onUseCaseClick(info.useCase)}
                                 size="md"
                                 className="btn UseCase__btn"
                                 variant=""

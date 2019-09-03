@@ -53,12 +53,14 @@ class OurService extends Component {
                         {
                             title: "Cuurios",
                             description: "This is where case two title goes",
-                            imgUrl: case1
+                            imgUrl: case1,
+                            useCase: 3,
                         },
                         {
                             title: "Provolve IT",
                             description: "This is where case two title goes",
-                            imgUrl: case2
+                            imgUrl: case2,
+                            useCase: 4,
                         }
                     ],
                     useCase: 3,
@@ -77,12 +79,14 @@ class OurService extends Component {
                         {
                             title: "Impulse",
                             description: "This is where case two title goes",
-                            imgUrl: case1
+                            imgUrl: case1,
+                            useCase: 1,
                         },
                         {
                             title: "CWZ",
                             description: "This is where case two title goes",
-                            imgUrl: case2
+                            imgUrl: case2,
+                            useCase: 5,
                         }
                     ],
                     useCase: 1,
@@ -117,7 +121,7 @@ class OurService extends Component {
                     leadTime: "< 1 week",
                     price: "23 - 26 EUR per hour"
                 },
-                {
+                /*{
                     title: "Recruitment",
                     description:
                         "Quick access to a developer for incidental needs - Product improvements, additional func",
@@ -126,7 +130,7 @@ class OurService extends Component {
                     videoDetails: RecruitmentDetail,
                     leadTime: "< 1 week",
                     price: "23 - 26 EUR per hour"
-                },
+                },*/
                 {
                     title: "Software Maintenance",
                     description:

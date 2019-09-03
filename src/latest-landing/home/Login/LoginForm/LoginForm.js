@@ -6,6 +6,8 @@ import Icon from "../../../shared/core/Icon";
 import { Form, Title, Button, Input, Group, Label, IconGroup, Cta } from "../../../shared/Form/Form";
 import Error from "../../../../components/core/Error";
 import { authenticate } from "../../../../actions/AuthActions";
+import { Redirect } from "react-router";
+import Routing from "../../../constants/Routing";
 
 class LoginForm extends Component {
     constructor(props) {
@@ -36,6 +38,9 @@ class LoginForm extends Component {
 
     render() {
         const { auth } = this.props;
+        if (auth.isAuthenticated) {
+            this.props.isAuthenticated();
+        }
 
         return (
             <div className="LoginForm">

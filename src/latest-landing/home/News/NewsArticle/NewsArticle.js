@@ -42,7 +42,7 @@ class NewsArticle extends Component {
         return (
             <section className="NewsArticle">
                 <h4 className="NewsArticle__heading font-weight-bold">
-                    News Article
+                    News Articles
                 </h4>
                 <div className="NewsArticle__container">
                     <Carousel
