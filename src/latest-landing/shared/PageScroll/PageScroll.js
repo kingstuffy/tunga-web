@@ -31,6 +31,7 @@ class PageScroll extends Component {
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.onWindowResize = this.onWindowResize.bind(this);
         this.updatePageHash = this.updatePageHash.bind(this);
+        this.onPageLoad = this.onPageLoad.bind(this);
     }
 
 
@@ -91,6 +92,11 @@ class PageScroll extends Component {
         const slug = `#${kebabCase(page.title)}`;
         const search = this.props.location.search || '';
         this.props.history.push(`${slug}${search}`);
+    }
+
+
+    onPageLoad() {
+        this.onWindowResize();
     }
 
 
@@ -301,7 +307,7 @@ class PageScroll extends Component {
         }
 
         const sections = React.Children.map(self.props.children, child =>
-            React.cloneElement(child, { goToUrl: this.goToUrl })
+            React.cloneElement(child, { goToUrl: this.goToUrl, onPageLoad: this.onPageLoad })
         );
 
         return (

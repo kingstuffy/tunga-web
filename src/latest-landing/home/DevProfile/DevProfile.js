@@ -97,9 +97,7 @@ class DevProfile extends Component {
                             }
                         </div>
                     </div>
-                    <div className="DevProfile__experience">
-                        <Experience talent={talent}/>
-                    </div>
+                    <Experience talent={talent}/>
                     <Footer/>
                 </PageScroll>
             </section>
