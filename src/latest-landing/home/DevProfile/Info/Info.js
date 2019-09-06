@@ -4,6 +4,7 @@ import "./Info.scss";
 import Icon from "../../../shared/core/Icon";
 import ProfileImg from "../../../assets/img/our-story/hero-bg.png";
 import { Button } from "../../../shared/Form/Form";
+import { openCalendlyWidget } from "../../../../components/utils/calendly";
 
 
 class Info extends Component {
@@ -50,7 +51,7 @@ class Info extends Component {
                     <li className="clearfix"></li>
                 </ul>
                 <div className="Info__cta">
-                    <Button type="submit">
+                    <Button onClick={() => openCalendlyWidget()}>
                         Hire {talent.first_name}
                     </Button>
                 </div>
