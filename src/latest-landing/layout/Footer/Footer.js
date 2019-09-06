@@ -334,21 +334,21 @@ class Footer extends Component {
                                 <div className="Footer__bottom-links Footer__bottom-links--first">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">Privacy policy</a>
+                                            <NavLink to="/privacy">Privacy policy</NavLink>
                                         </p>
                                     </div>
                                 </div>
                                 <div className="Footer__bottom-links Footer__bottom-links--middle">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">User Agreement</a>
+                                            <NavLink to="/agreement">User Agreement</NavLink>
                                         </p>
                                     </div>
                                 </div>
                                 <div className="Footer__bottom-links Footer__bottom-links--last">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">Code of conduct</a>
+                                            <NavLink to="/code-of-conduct">Code of conduct</NavLink>
                                         </p>
                                     </div>
                                 </div>
