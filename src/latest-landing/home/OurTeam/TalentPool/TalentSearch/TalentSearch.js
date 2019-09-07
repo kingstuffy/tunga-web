@@ -7,6 +7,7 @@ import { Group, Input, IconGroup, Button } from "../../../../shared/Form/Form";
 import { connect } from "react-redux";
 import { isBusinessEmail } from "../../../../../components/utils/search";
 import { authenticateEmailVisitor } from "../../../../../actions/AuthActions";
+import _ from "lodash";
 
 
 class TalentSearch extends Component {
@@ -21,6 +22,14 @@ class TalentSearch extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.onEmailSubmit = this.onEmailSubmit.bind(this);
         this.onSearchQuery = this.onSearchQuery.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!prevProps.auth.isEmailVisitor && !prevProps.authisAuthenticated
+            && (this.props.auth.isEmailVisitor || this.props.auth.isAuthenticated)
+            && this.state.search) {
+            this.props.onSearchQuery(this.state.query);
+        }
     }
 
 
