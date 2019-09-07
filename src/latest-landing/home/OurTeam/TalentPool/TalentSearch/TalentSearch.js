@@ -25,9 +25,9 @@ class TalentSearch extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (!prevProps.auth.isEmailVisitor && !prevProps.authisAuthenticated
+        if (!prevProps.auth.isEmailVisitor && !prevProps.auth.isAuthenticated
             && (this.props.auth.isEmailVisitor || this.props.auth.isAuthenticated)
-            && this.state.search) {
+            && this.state.query) {
             this.props.onSearchQuery(this.state.query);
         }
     }

@@ -16,11 +16,12 @@ import { getNumSearches } from "../../../../components/utils/search";
 class TalentPool extends Component {
     constructor(props) {
         super(props);
+        const { auth: { isAuthenticated, isEmailVisitor } } = props;
         this.state = {
             windowWidth: 0,
             windowHeight: 0,
             leftPosition: 0,
-            search: props.query || '',
+            search: (isAuthenticated || isEmailVisitor) ? props.query || '' : '',
             hasLoaded: false, isLoading: false,
             results: [], resultsFor: '', total: 0, currentPage: 0, maxPages: 0,
             emailUnlock: '', emailMore: '',
@@ -66,7 +67,7 @@ class TalentPool extends Component {
             lastQuery: query,
             search: query,
         });
-        this.getPeople();
+        this.getPeople(query);
         this.setState({ lastQuery: query });
     }
 
@@ -97,25 +98,25 @@ class TalentPool extends Component {
     }
 
 
-    getPeople() {
-        const nextPage = this.state.hasLoaded && this.state.search === this.state.resultsFor ? (this.state.currentPage + 1) : 0;
-        if (this.state.search) {
+    getPeople(query) {
+        const searchQuery = query || this.state.search;
+        const nextPage = this.state.hasLoaded && searchQuery === this.state.resultsFor ? (this.state.currentPage + 1) : 0;
+        if (searchQuery) {
             this.logSearch(nextPage + 1); // Add 1 because Algolia pages are zero indexed
         }
-        console.log('***', this.state.search);
 
         let self = this;
         self.setState({
             isLoading: true,
-            hasLoaded: this.state.search === this.state.resultsFor ? this.state.hasLoaded : false,
-            shouldLoadMore: false, hasSearched: this.state.hasSearched || !!this.state.search
+            hasLoaded: searchQuery === this.state.resultsFor ? this.state.hasLoaded : false,
+            shouldLoadMore: false, hasSearched: this.state.hasSearched || !!searchQuery
         });
 
         const resultsPerPage = this.isLockable() ? 12 : 50;
 
         algoliaUtils.index.search(
             {
-                query: this.state.search,
+                query: searchQuery,
                 hitsPerPage: resultsPerPage,
                 page: nextPage,
             },
@@ -123,7 +124,7 @@ class TalentPool extends Component {
                 if (err) {
                     self.setState({
                         isLoading: false,
-                        hasLoaded: this.state.search === this.state.resultsFor ? this.state.hasLoaded : false
+                        hasLoaded: searchQuery === this.state.resultsFor ? this.state.hasLoaded : false
                     });
                 } else {
                     if (content.query === self.state.search) {
