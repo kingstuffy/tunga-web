@@ -26,9 +26,9 @@ import Routing from "../../constants/Routing";
 import { NavLink } from "react-router-dom";
 
 
-const SectionLink = ({ title, goToUrl, url }) => {
+const SectionLink = ({ title, onUrlNav, url }) => {
     return (
-        <a onClick={() => goToUrl(url)}>
+        <a onClick={() => onUrlNav(url)}>
             {title}
         </a>
     );
@@ -57,7 +57,7 @@ class Footer extends Component {
 
 
     render() {
-        const { blogs, goToUrl } = this.props;
+        const { blogs, onUrlNav } = this.props;
         const firstBlogs = blogs.slice(0, 5);
 
         var settings = ({

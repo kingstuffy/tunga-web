@@ -183,7 +183,7 @@ class PageScroll extends Component {
     }
 
 
-    goToUrl(url) {
+    onUrlNav(url) {
         this.props.history.push(url);
     }
 
@@ -307,7 +307,7 @@ class PageScroll extends Component {
         }
 
         const sections = React.Children.map(self.props.children, child =>
-            React.cloneElement(child, { goToUrl: this.goToUrl, onPageLoad: this.onPageLoad })
+            React.cloneElement(child, { onUrlNav: this.onUrlNav, onPageLoad: this.onPageLoad })
         );
 
         return (
