@@ -41,4 +41,24 @@
         color: #062E64;
         padding: 10px 2px;
     }
+
+    &__bio-box {
+        position: relative;
+    }
+
+    &__bio-full {
+        position: absolute;
+        z-index: 100;
+        background-color: #fff;
+        width: 150%;
+        border: 1px solid #fdf6f6;
+        box-shadow: 0 0 8px 0 rgba(17, 22, 26, 0.16), 0 4px 8px 0 rgba(17, 22, 26, 0.08), 0 8px 16px 0 rgba(17, 22, 26, 0.08);
+        padding: 15px;
+        text-align: center;
+    }
+
+    &__bio-link {
+        color: #DA3451 !important;
+        margin-left: 3px;
+    }
 }
