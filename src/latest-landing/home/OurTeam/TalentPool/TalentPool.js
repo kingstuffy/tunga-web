@@ -36,12 +36,11 @@ class TalentPool extends Component {
 
 
     componentWillMount() {
-        const { auth, query } = this.props;
+        const { auth } = this.props;
         if (auth.isEmailVisitor || auth.isAuthenticated) {
             return this.getPeople();
         }
 
-        // this.loadData();
         this.getPeople();
     }
 
@@ -103,6 +102,7 @@ class TalentPool extends Component {
         if (this.state.search) {
             this.logSearch(nextPage + 1); // Add 1 because Algolia pages are zero indexed
         }
+        console.log('***', this.state.search);
 
         let self = this;
         self.setState({

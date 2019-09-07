@@ -251,7 +251,7 @@ class OurTeam extends Component {
     render() {
         const { location } = this.props;
         // replace with another lib;; build issues with query-string
-        const urlQuery = location.search || (location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '');
+        const urlQuery = location.search ? location.search.replace('?', '') : (location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '');
         const { query } = qs.parse(urlQuery);
 
         return (
