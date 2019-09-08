@@ -153,7 +153,7 @@ class Experience extends Component {
 
 
         return (
-            <div className="Experience">
+            <div id="Experience" className="Experience">
                 <div className="Experience__heading">
                     EXPERIENCE
                 </div>

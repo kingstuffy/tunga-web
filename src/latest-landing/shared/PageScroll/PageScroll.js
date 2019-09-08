@@ -300,6 +300,7 @@ class PageScroll extends Component {
         const self = this;
         const { goToPage, onPageScrolled } = this.props;
         const isMobile = this.isMobile();
+        console.log(this.state.currentPage);
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
             onPageScrolled && onPageScrolled();
