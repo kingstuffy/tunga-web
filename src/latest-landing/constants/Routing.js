@@ -10,6 +10,7 @@ export default {
     news: { path: "/news", name: "News" },
     blog: { path: "/blog", name: "Blog", loc: 'blog' },
     login: { path: "/login", name: "Log in", loc: 'login' },
+    forgotPassword: { path: "/forgot-password", name: "Forgot Password" },
     devProfile: { path: "/dev-profile/:id", basePath: "/dev-profile", name: "Developer Profile" },
     dashboard: { path: "/dashboard", name: "Log in", loc: 'dashboard' },
 };

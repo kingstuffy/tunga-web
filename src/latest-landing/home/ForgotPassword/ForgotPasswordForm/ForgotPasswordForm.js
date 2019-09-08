@@ -4,16 +4,17 @@ import PropTypes from "prop-types";
 import Icon from "../../../shared/core/Icon";
 import { Form, Title, Button, Input, Group, Label, IconGroup, Cta } from "../../../shared/Form/Form";
 import Error from "../../../../components/core/Error";
-import { authenticate } from "../../../../actions/AuthActions";
+import { resetPassword } from "../../../../actions/AuthActions";
 import { Redirect } from "react-router";
 import Routing from "../../../constants/Routing";
+import Progress from "../../../../components/core/Progress";
+import Success from "../../../../components/core/Success";
 
 class AuthForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
+            email: '',
             formSubmitted: false,
         };
 
@@ -24,11 +25,12 @@ class AuthForm extends Component {
     onFormSubmit(e) {
         e.preventDefault();
         this.setState({ formSubmitted: true });
-        if (!this.state.username || !this.state.password) {
+        const email = this.state.email.trim();
+        if (!email) {
             return;
         }
 
-        this.props.authenticate(this.state);
+        this.props.resetPassword({ email });
     }
 
     handleChange(event) {
@@ -44,55 +46,45 @@ class AuthForm extends Component {
         return (
             <Form onSubmit={this.onFormSubmit}>
                 <React.Fragment>
-                    {auth.errors && auth.errors.auth && auth.errors.auth.non_field_errors ?
+                    {auth.errors && auth.errors.reset && auth.errors.reset.non_field_errors ?
                         <Error
                             message={
-                                auth.errors.auth.non_field_errors.join(', ') ||
-                                "Sorry, we couldn't log you in. Please try again."
+                                auth.errors.reset.non_field_errors.join(', ') ||
+                                "Sorry, we couldn't reset your password"
                             }
                         /> :
                         null}
                     <Title className="AuthForm__title">
-                        Welcome back
+                        Reset Password
                     </Title>
+                    {auth.isResetting ? <Progress/> : null}
+
+                    {auth.isReset ? (
+                        <Success message="Instructions for resetting your password have been sent to your email."/>
+                    ) : null}
                     <Group>
                         <Label>
-                            Email address or username
+                            Email address
                         </Label>
                         <IconGroup className="Form__input-icon-group">
                             <Icon className="Form__input-icon" name='envelope-o' size='card'/>
                             <Input className="Form__input--has-icon" type="text"
-                                   name="username" value={this.state.username} onChange={this.handleChange}
-                                   placeholder="Enter email address or username"/>
+                                   name="email" value={this.state.email} onChange={this.handleChange}
+                                   placeholder="Enter your email address"/>
                         </IconGroup>
                         {
-                            this.state.formSubmitted && !this.state.username &&
+                            this.state.formSubmitted && !this.state.email &&
                             <div className="Form__group text-danger mt-2">
-                                Please enter a username or email
+                                Please enter an email address
                             </div>
                         }
+                        <Cta href="/login" className="AuthForm__cta float-right mt-2">Have an account? Login</Cta>
                     </Group>
-                    <Group>
-                        <Label>
-                            Password
-                        </Label>
-                        <Cta href="/forgot-password" className="AuthForm__cta float-right">Forgot password?</Cta>
-                        <IconGroup>
-                            <Icon className="Form__input-icon" name='lock-alt' size='card'/>
-                            <Input className="Form__input--has-icon" type="password"
-                                   name="password" value={this.state.password} onChange={this.handleChange}
-                                   placeholder="Enter password"/>
-                        </IconGroup>
-                        {
-                            this.state.formSubmitted && !this.state.password &&
-                            <div className="Form__group text-danger mt-2">
-                                Please enter a password
-                            </div>
-                        }
-                    </Group>
-                    <div className="text-center">
-                        <Button type="submit">
-                            Login
+                    <div className="clearfix"></div>
+                    <div className="text-center pt-4">
+                        <Button type="submit"
+                                disabled={auth.isResetting}>
+                            Reset password
                         </Button>
                     </div>
                 </React.Fragment>
@@ -109,7 +101,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        authenticate: (credentials) => dispatch(authenticate(credentials)),
+        resetPassword: (credentials) => dispatch(resetPassword(credentials)),
     };
 };
 

@@ -9,6 +9,7 @@ import Routing from "../constants/Routing";
 import BlogPage from "../home/BlogPage/BlogPage";
 import DevProfile from "../home/DevProfile/DevProfile";
 import Dashboard from '../../components/App';
+import ForgotPassword from "../home/ForgotPassword/ForgotPassword";
 
 export default [
     {
@@ -46,6 +47,12 @@ export default [
                 name: Routing.login.name,
                 exact: false,
                 component: Login
+            },
+            {
+                path: Routing.forgotPassword.path,
+                name: Routing.forgotPassword.name,
+                exact: false,
+                component: ForgotPassword
             },
             {
                 path: Routing.blog.path,
