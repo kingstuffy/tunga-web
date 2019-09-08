@@ -7,6 +7,7 @@ import Error from "../../../../components/core/Error";
 import { authenticate } from "../../../../actions/AuthActions";
 import { Redirect } from "react-router";
 import Routing from "../../../constants/Routing";
+import Progress from "../../../../components/core/Progress";
 
 class AuthForm extends Component {
     constructor(props) {
@@ -55,6 +56,7 @@ class AuthForm extends Component {
                     <Title className="AuthForm__title">
                         Welcome back
                     </Title>
+                    {auth.isAuthenticating.isLoginStart ? <Progress/> : ''}
                     <Group>
                         <Label>
                             Email address or username
@@ -91,7 +93,8 @@ class AuthForm extends Component {
                         }
                     </Group>
                     <div className="text-center">
-                        <Button type="submit">
+                        <Button type="submit"
+                                disabled={auth.isAuthenticating.isLoginStart}>
                             Login
                         </Button>
                     </div>
