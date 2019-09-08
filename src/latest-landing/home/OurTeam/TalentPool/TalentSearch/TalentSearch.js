@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { isBusinessEmail } from "../../../../../components/utils/search";
 import { authenticateEmailVisitor } from "../../../../../actions/AuthActions";
 import _ from "lodash";
+import Progress from "../../../../../components/core/Progress";
 
 
 class TalentSearch extends Component {
@@ -87,10 +88,12 @@ class TalentSearch extends Component {
                                                onChange={this.handleChange}
                                                placeholder="Enter Business Email to unlock search"/>
                                         <Button type="submit"
+                                                disabled={auth.isAuthenticating === true}
                                                 className="p-4 border-radius-0 TalentSearch-button"
                                         >
                                             Go
                                         </Button>
+                                        <span className="ml-3">{auth.isAuthenticating === true ? <Progress/> : ''}</span>
                                     </IconGroup>
                                 </div>
                                 {
