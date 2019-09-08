@@ -1,0 +1,43 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.CodeOfConduct {
+    width: 100%;
+    font-size: 1rem;
+
+    .navbar-nav > li > a {
+        color: #222;
+    }
+
+    &__nav {
+        position: relative;
+        z-index: 10;
+    }
+
+
+    .agreement-page {
+        .container {
+            max-width: 1100px;
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        .info-list {
+
+            .row {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .tag {
+                color: #888 !important;
+                background-color: #eee;
+                padding: 5px 8px;
+                margin: 2px;
+            }
+        }
+    }
+}

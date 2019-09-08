@@ -12,6 +12,8 @@ import Dashboard from '../../components/App';
 import ForgotPassword from "../home/ForgotPassword/ForgotPassword";
 import ResetPassword from "../home/ResetPassword/ResetPassword";
 import Privacy from "../home/Privacy/Privacy";
+import UserAgreement from "../home/UserAgreement/UserAgreement";
+import CodeOfConduct from "../home/CodeOfConduct/CodeOfConduct";
 
 export default [
     {
@@ -73,6 +75,18 @@ export default [
                 name: Routing.privacy.name,
                 exact: false,
                 component: Privacy
+            },
+            {
+                path: Routing.userAgreement.path,
+                name: Routing.userAgreement.name,
+                exact: false,
+                component: UserAgreement
+            },
+            {
+                path: Routing.codeOfConduct.path,
+                name: Routing.codeOfConduct.name,
+                exact: false,
+                component: CodeOfConduct
             },
             {
                 path: Routing.devProfile.path,

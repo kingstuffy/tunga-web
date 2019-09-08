@@ -299,7 +299,6 @@ class PageScroll extends Component {
     render() {
         const self = this;
         const { goToPage, onPageScrolled, forceJumpToTop } = this.props;
-        console.log(forceJumpToTop);
         const isMobile = this.isMobile();
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {

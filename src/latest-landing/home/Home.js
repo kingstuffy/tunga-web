@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./Home.scss";
 import { Route } from "react-router-dom";
-import IconButton from "../shared/core/IconButton";
 import ChatWidget from "../shared/ChatWidget/ChatWidget";
-import ShowcaseLayout from "../../components/showcase/ShowcaseLayout";
-import App from "../../components/App";
 
 class Home extends Component {
     constructor(props) {
@@ -30,7 +27,6 @@ class Home extends Component {
                             />
                         );
                     })}
-                    <Route path="/(agreement|code-of-conduct)" component={App} />
                 </div>
                 <ChatWidget autoOpen={true}/>
             </div>

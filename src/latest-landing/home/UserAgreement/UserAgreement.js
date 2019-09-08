@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Privacy.scss";
+import "./UserAgreement.scss";
 
 import Nav from "../../layout/Nav/Nav";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
-import PrivacyContent from "../../../components/showcase/Privacy";
+import UserAgreementContent from "../../../components/showcase/Agreement";
 
 const pages = [
     {
@@ -27,7 +27,7 @@ const pages = [
     },
 ];
 
-class Privacy extends Component {
+class UserAgreement extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -35,13 +35,13 @@ class Privacy extends Component {
 
     render() {
         return (
-            <section className="Privacy">
+            <section className="UserAgreement">
                 <PageScroll pages={pages} forceJumpToTop={true}>
-                    <div id="Content" className="Privacy__content agreement-page">
+                    <div id="Content" className="UserAgreement__content agreement-page">
                         <div className="DevProfile__nav">
                             <Nav/>
                         </div>
-                        <PrivacyContent/>
+                        <UserAgreementContent/>
                     </div>
                     <Footer/>
                 </PageScroll>
@@ -50,6 +50,6 @@ class Privacy extends Component {
     }
 }
 
-Privacy.propTypes = {};
+UserAgreement.propTypes = {};
 
-export default Privacy;
+export default UserAgreement;

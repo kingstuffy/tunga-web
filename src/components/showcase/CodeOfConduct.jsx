@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Footer from "./elements/Footer";
 import MetaTags from "../MetaTags";
 
 export default () => {
@@ -97,8 +96,6 @@ export default () => {
                     <a href="mailto:admin@tunga.com">admin@tunga.com</a>
                 </p>
             </div>
-
-            <Footer/>
         </div>
     );
 }
