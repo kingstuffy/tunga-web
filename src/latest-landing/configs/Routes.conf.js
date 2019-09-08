@@ -10,6 +10,7 @@ import BlogPage from "../home/BlogPage/BlogPage";
 import DevProfile from "../home/DevProfile/DevProfile";
 import Dashboard from '../../components/App';
 import ForgotPassword from "../home/ForgotPassword/ForgotPassword";
+import ResetPassword from "../home/ResetPassword/ResetPassword";
 
 export default [
     {
@@ -53,6 +54,12 @@ export default [
                 name: Routing.forgotPassword.name,
                 exact: false,
                 component: ForgotPassword
+            },
+            {
+                path: Routing.resetPassword.path,
+                name: Routing.resetPassword.name,
+                exact: false,
+                component: ResetPassword
             },
             {
                 path: Routing.blog.path,

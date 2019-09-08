@@ -11,6 +11,7 @@ export default {
     blog: { path: "/blog", name: "Blog", loc: 'blog' },
     login: { path: "/login", name: "Log in", loc: 'login' },
     forgotPassword: { path: "/forgot-password", name: "Forgot Password" },
+    resetPassword: { path: "/password/:uid/:token", name: "Reset Password" },
     devProfile: { path: "/dev-profile/:id", basePath: "/dev-profile", name: "Developer Profile" },
     dashboard: { path: "/dashboard", name: "Log in", loc: 'dashboard' },
 };
