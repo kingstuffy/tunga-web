@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Info.scss";
-import Icon from "../../../shared/core/Icon";
-import ProfileImg from "../../../assets/img/our-story/hero-bg.png";
 import { Button } from "../../../shared/Form/Form";
 import { openCalendlyWidget } from "../../../../components/utils/calendly";
 
@@ -18,21 +16,40 @@ const ShortBio = (({ bio, onBioOpen }) => {
     );
 });
 
+const SkillBox = ({ talent, all }) => {
+    const skills = all ? talent.profile.skills : talent.profile.skills.slice(0, 5);
+
+    return skills.map((skill) => (
+        <li className="Info__skill-item" key={skill.id}>
+            <div className="Info__skill">
+                {skill.name}
+            </div>
+        </li>
+    ));
+};
+
 
 class Info extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isBioOpen: false
+            isBioOpen: false,
+            isSkillBoxOpen: false
         };
 
         this.onBioToggle = this.onBioToggle.bind(this);
+        this.onSkillBoxToggle = this.onSkillBoxToggle.bind(this);
     }
 
 
     onBioToggle() {
         this.setState({ isBioOpen: !this.state.isBioOpen });
+    }
+
+
+    onSkillBoxToggle() {
+        this.setState({ isSkillBoxOpen: !this.state.isSkillBoxOpen });
     }
 
     render() {
@@ -74,13 +91,22 @@ class Info extends Component {
                 </div>
                 <ul className="Info__skills mb-3">
                     {
-                        talent.profile.skills.map((skill) => (
-                            <li className="Info__skill-item" key={skill.id}>
-                                <div className="Info__skill">
-                                    {skill.name}
-                                </div>
-                            </li>
-                        ))
+                        this.state.isSkillBoxOpen
+                        &&
+                        <div className="Info__bio-full Info__bio-full--skill">
+                            <SkillBox talent={talent} all={true}/>
+                            <div>
+                                <a className="Info__bio-link" onClick={this.onSkillBoxToggle}>Close skills</a>
+                            </div>
+                        </div>
+                    }
+                    <SkillBox talent={talent}/>
+                    {
+                        talent.profile.skills.length > 5
+                        &&
+                        <div>
+                            <a className="Info__bio-link" onClick={this.onSkillBoxToggle}>...See more skills</a>
+                        </div>
                     }
                     <li className="clearfix"></li>
                 </ul>
