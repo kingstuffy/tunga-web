@@ -30,7 +30,7 @@ class Home extends Component {
                             />
                         );
                     })}
-                    <Route path="/(privacy|agreement|code-of-conduct)" component={App} />
+                    <Route path="/(agreement|code-of-conduct)" component={App} />
                 </div>
                 <ChatWidget autoOpen={true}/>
             </div>

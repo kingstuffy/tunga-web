@@ -8,6 +8,7 @@ export default {
     ourTeam: { path: "/our-team", name: "Our Team" },
     ourStory: { path: "/our-story", name: "Our Story" },
     news: { path: "/news", name: "News" },
+    privacy: { path: "/privacy", name: "Privacy" },
     blog: { path: "/blog", name: "Blog", loc: 'blog' },
     login: { path: "/login", name: "Log in", loc: 'login' },
     forgotPassword: { path: "/forgot-password", name: "Forgot Password" },

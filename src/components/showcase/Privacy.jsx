@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-import Footer from "./elements/Footer";
 import MetaTags from "../MetaTags";
 import {COOKIE_OPTIONS, openCookieConsentPopUp} from "../utils/consent";
 import Button from "../core/Button";
@@ -453,8 +452,6 @@ export default () => {
                     us at <a href="mailto:admin@tunga.com">admin@tunga.com</a>
                 </p>
             </div>
-
-            <Footer/>
         </div>
     );
 }

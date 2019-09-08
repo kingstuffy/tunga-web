@@ -298,9 +298,9 @@ class PageScroll extends Component {
 
     render() {
         const self = this;
-        const { goToPage, onPageScrolled } = this.props;
+        const { goToPage, onPageScrolled, forceJumpToTop } = this.props;
+        console.log(forceJumpToTop);
         const isMobile = this.isMobile();
-        console.log(this.state.currentPage);
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
             onPageScrolled && onPageScrolled();
@@ -318,7 +318,7 @@ class PageScroll extends Component {
                     {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
-                <JumpToTop isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
+                <JumpToTop force={forceJumpToTop} isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
             </div>
         );
     }

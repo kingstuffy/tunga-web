@@ -11,6 +11,7 @@ import DevProfile from "../home/DevProfile/DevProfile";
 import Dashboard from '../../components/App';
 import ForgotPassword from "../home/ForgotPassword/ForgotPassword";
 import ResetPassword from "../home/ResetPassword/ResetPassword";
+import Privacy from "../home/Privacy/Privacy";
 
 export default [
     {
@@ -66,6 +67,12 @@ export default [
                 name: Routing.blog.name,
                 exact: false,
                 component: BlogPage
+            },
+            {
+                path: Routing.privacy.path,
+                name: Routing.privacy.name,
+                exact: false,
+                component: Privacy
             },
             {
                 path: Routing.devProfile.path,
