@@ -324,7 +324,7 @@ class Footer extends Component {
                         <Col md="6" sm="6" className="Footer__rights">
                             <div className="bottom-line bottom-line--first">
                                 <p className="text-xs-left">
-                                    {new Date().getFullYear()} Tunga Bv - All rights
+                                    {new Date().getFullYear()} Tunga BV - All rights
                                     reserved
                                 </p>
                             </div>
