@@ -17,7 +17,6 @@ class ScheduleCall extends Component {
     }
 
     onUseCaseClick() {
-        console.log(this.props);
     }
 
     render() {

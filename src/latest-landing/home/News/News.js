@@ -183,10 +183,6 @@ class News extends Component {
         return this.reactPageScroller.goToPage(pageNumber)
     }
 
-    pageOnChange = (pageNumber) => {
-        console.log("current page", pageNumber)
-    }
-
     render() {
         return (
             <section className="News">

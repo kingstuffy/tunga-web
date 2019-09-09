@@ -26,9 +26,9 @@ import Routing from "../../constants/Routing";
 import { NavLink } from "react-router-dom";
 
 
-const SectionLink = ({ title, goToUrl, url }) => {
+const SectionLink = ({ title, onUrlNav, url }) => {
     return (
-        <a onClick={() => goToUrl(url)}>
+        <a onClick={() => onUrlNav(url)}>
             {title}
         </a>
     );
@@ -57,7 +57,7 @@ class Footer extends Component {
 
 
     render() {
-        const { blogs, goToUrl } = this.props;
+        const { blogs, onUrlNav } = this.props;
         const firstBlogs = blogs.slice(0, 5);
 
         var settings = ({
@@ -324,7 +324,7 @@ class Footer extends Component {
                         <Col md="6" sm="6" className="Footer__rights">
                             <div className="bottom-line bottom-line--first">
                                 <p className="text-xs-left">
-                                    {new Date().getFullYear()} Tunga Bv - All rights
+                                    {new Date().getFullYear()} Tunga BV - All rights
                                     reserved
                                 </p>
                             </div>
@@ -334,21 +334,21 @@ class Footer extends Component {
                                 <div className="Footer__bottom-links Footer__bottom-links--first">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">Privacy policy</a>
+                                            <NavLink to="/privacy">Privacy policy</NavLink>
                                         </p>
                                     </div>
                                 </div>
                                 <div className="Footer__bottom-links Footer__bottom-links--middle">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">User Agreement</a>
+                                            <NavLink to="/agreement">User Agreement</NavLink>
                                         </p>
                                     </div>
                                 </div>
                                 <div className="Footer__bottom-links Footer__bottom-links--last">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <a href="#">Code of conduct</a>
+                                            <NavLink to="/code-of-conduct">Code of conduct</NavLink>
                                         </p>
                                     </div>
                                 </div>

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-import LoginForm from "./LoginForm/LoginForm";
+import ResetPasswordForm from "./ResetPasswordForm/ResetPasswordForm";
 
 import AuthPage from "../../shared/AuthPage/AuthForm";
 import "../../shared/AuthPage/AuthPage.scss";
+import qs from "qs";
 
-class Login extends Component {
+class ResetPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -18,12 +19,13 @@ class Login extends Component {
     }
 
     render() {
+        const query = this.props.match.params;
         return (
-            <AuthPage form={LoginForm} isAuthenticated={this.isAuthenticated}/>
+            <AuthPage query={query} form={ResetPasswordForm} isAuthenticated={this.isAuthenticated}/>
         );
     }
 }
 
-Login.propTypes = {};
+ResetPassword.propTypes = {};
 
-export default Login;
+export default ResetPassword;

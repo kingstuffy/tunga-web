@@ -52,7 +52,7 @@ class Profile extends Component {
                                 <SkillSet talent={talent}/>
                             </Col>
                             <Col md="5" sm="12">
-                                <Map/>
+                                <Map user={talent}/>
                             </Col>
                         </Row>
                     </Col>

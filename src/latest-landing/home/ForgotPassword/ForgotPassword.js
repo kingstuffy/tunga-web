@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import LoginForm from "./LoginForm/LoginForm";
+import ForgotPasswordForm from "./ForgotPasswordForm/ForgotPasswordForm";
 
 import AuthPage from "../../shared/AuthPage/AuthForm";
 import "../../shared/AuthPage/AuthPage.scss";
 
-class Login extends Component {
+class ForgotPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -19,11 +19,11 @@ class Login extends Component {
 
     render() {
         return (
-            <AuthPage form={LoginForm} isAuthenticated={this.isAuthenticated}/>
+            <AuthPage form={ForgotPasswordForm} isAuthenticated={this.isAuthenticated}/>
         );
     }
 }
 
-Login.propTypes = {};
+ForgotPassword.propTypes = {};
 
-export default Login;
+export default ForgotPassword;

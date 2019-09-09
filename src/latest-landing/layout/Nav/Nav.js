@@ -77,14 +77,14 @@ class Nav extends Component {
                                     {
                                         auth.isAuthenticated
                                             ?
-                                            <NavLink to={Routing.login.path}
-                                                     activeClassName="font-weight-bold text-black">
-                                                {Routing.login.name}
-                                            </NavLink>
-                                            :
                                             <NavLink to={Routing.dashboard.path}
                                                      activeClassName="font-weight-bold text-black">
                                                 {Routing.dashboard.name}
+                                            </NavLink>
+                                            :
+                                            <NavLink to={Routing.login.path}
+                                                     activeClassName="font-weight-bold text-black">
+                                                {Routing.login.name}
                                             </NavLink>
                                     }
                                 </NavItem>

@@ -31,6 +31,7 @@ class PageScroll extends Component {
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.onWindowResize = this.onWindowResize.bind(this);
         this.updatePageHash = this.updatePageHash.bind(this);
+        this.onPageLoad = this.onPageLoad.bind(this);
     }
 
 
@@ -91,6 +92,11 @@ class PageScroll extends Component {
         const slug = `#${kebabCase(page.title)}`;
         const search = this.props.location.search || '';
         this.props.history.push(`${slug}${search}`);
+    }
+
+
+    onPageLoad() {
+        this.onWindowResize();
     }
 
 
@@ -177,7 +183,7 @@ class PageScroll extends Component {
     }
 
 
-    goToUrl(url) {
+    onUrlNav(url) {
         this.props.history.push(url);
     }
 
@@ -292,7 +298,7 @@ class PageScroll extends Component {
 
     render() {
         const self = this;
-        const { goToPage, onPageScrolled } = this.props;
+        const { goToPage, onPageScrolled, forceJumpToTop } = this.props;
         const isMobile = this.isMobile();
 
         if (typeof goToPage !== 'undefined' && goToPage !== false) {
@@ -301,7 +307,7 @@ class PageScroll extends Component {
         }
 
         const sections = React.Children.map(self.props.children, child =>
-            React.cloneElement(child, { goToUrl: this.goToUrl })
+            React.cloneElement(child, { onUrlNav: this.onUrlNav, onPageLoad: this.onPageLoad })
         );
 
         return (
@@ -311,7 +317,7 @@ class PageScroll extends Component {
                     {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
-                <JumpToTop isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
+                <JumpToTop force={forceJumpToTop} isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
             </div>
         );
     }

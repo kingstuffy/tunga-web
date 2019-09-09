@@ -33,7 +33,6 @@ function* viewTalent(action) {
             method: 'get',
             url: `/users/${action.id}/`,
         });
-        console.log(response.data);
         yield put(actions.viewTalentSuccess(response.data));
     } catch (error) {
         if (has(error, 'response.data.message')) {

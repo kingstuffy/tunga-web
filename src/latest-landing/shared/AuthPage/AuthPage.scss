@@ -1,0 +1,34 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.AuthPage {
+    color: #222829;
+    width: 100%;
+    overflow-x: hidden;
+
+    &__header {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: bottom;
+        position: relative;
+    }
+
+    &__nav {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__form {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__bg-mask {
+        background: rgba(6, 46, 100, 0.8);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1;
+    }
+}

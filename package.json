@@ -74,6 +74,8 @@
         "redux": "^3.5.2",
         "redux-saga": "^1.0.2",
         "redux-thunk": "^2.3.0",
+        "slate": "^0.47.8",
+        "slate-react": "^0.22.8",
         "slick-carousel": "^1.8.1",
         "striptags": "^2.2.1"
     },

@@ -9,6 +9,11 @@ import Routing from "../constants/Routing";
 import BlogPage from "../home/BlogPage/BlogPage";
 import DevProfile from "../home/DevProfile/DevProfile";
 import Dashboard from '../../components/App';
+import ForgotPassword from "../home/ForgotPassword/ForgotPassword";
+import ResetPassword from "../home/ResetPassword/ResetPassword";
+import Privacy from "../home/Privacy/Privacy";
+import UserAgreement from "../home/UserAgreement/UserAgreement";
+import CodeOfConduct from "../home/CodeOfConduct/CodeOfConduct";
 
 export default [
     {
@@ -48,10 +53,40 @@ export default [
                 component: Login
             },
             {
+                path: Routing.forgotPassword.path,
+                name: Routing.forgotPassword.name,
+                exact: false,
+                component: ForgotPassword
+            },
+            {
+                path: Routing.resetPassword.path,
+                name: Routing.resetPassword.name,
+                exact: false,
+                component: ResetPassword
+            },
+            {
                 path: Routing.blog.path,
                 name: Routing.blog.name,
                 exact: false,
                 component: BlogPage
+            },
+            {
+                path: Routing.privacy.path,
+                name: Routing.privacy.name,
+                exact: false,
+                component: Privacy
+            },
+            {
+                path: Routing.userAgreement.path,
+                name: Routing.userAgreement.name,
+                exact: false,
+                component: UserAgreement
+            },
+            {
+                path: Routing.codeOfConduct.path,
+                name: Routing.codeOfConduct.name,
+                exact: false,
+                component: CodeOfConduct
             },
             {
                 path: Routing.devProfile.path,

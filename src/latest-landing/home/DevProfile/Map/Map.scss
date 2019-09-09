@@ -3,6 +3,13 @@
 .Map {
     $root: &;
     width: 100%;
-    height: 340px;
-    background-color: #ddd;
+    height: 366px;
+    padding: 26px 0 10px;
+
+    &__container {
+        position: relative;
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+    }
 }

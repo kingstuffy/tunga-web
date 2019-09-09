@@ -1,25 +1,21 @@
 import React, { Component } from "react";
-import ReactPageScroller from "react-page-scroller";
 import "./DevProfile.scss";
 
 import { viewTalentRequest } from '../../../services/talents/actions';
 import Nav from "../../layout/Nav/Nav";
 import SearchForm from "./SearchForm/SearchForm";
 import Profile from "./Profile/Profile";
-import SideNav from "../../../components/sidenav";
 
 import SearchFormBg from "../../assets/img/our-story/hero-bg.png";
 import { connect } from "react-redux";
 
 import PageScroll from "../../shared/PageScroll/PageScroll";
-import { Col, Row } from "reactstrap";
 import Experience from "./Experience/Experience";
-import Interest from "./Interest/Interest";
 import Footer from "../../layout/Footer/Footer";
 
 const pages = [
     {
-        hash: "",
+        hash: "Profile",
         title: "Profile",
         isActive: false,
         isActiveBar: false,
@@ -28,7 +24,7 @@ const pages = [
         theme: "dark",
     },
     {
-        hash: "",
+        hash: "Experience",
         title: "Experience",
         isActive: false,
         isActiveBar: false,
@@ -37,13 +33,13 @@ const pages = [
         theme: "light",
     },
     {
-        hash: "",
+        hash: "Contact",
         title: "Contact",
         isActive: false,
         isActiveBar: false,
         color: "#062E64",
         bgColor: "#062E64",
-        theme: "light",
+        theme: "dark",
     },
 ];
 
@@ -65,11 +61,6 @@ class DevProfile extends Component {
     }
 
 
-    goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
-    }
-
-
     render() {
         const { talent } = this.props;
         talent.profile = talent.profile || { skills: [], skills_details: {} };
@@ -77,7 +68,7 @@ class DevProfile extends Component {
         return (
             <section className="DevProfile">
                 <PageScroll pages={pages}>
-                    <div className="DevProfile__profile">
+                    <div id="Profile" className="DevProfile__profile">
                         <div className="DevProfile__header"
                              style={{ backgroundImage: `url(${SearchFormBg})` }}>
                             <div className="DevProfile__nav">
@@ -97,9 +88,7 @@ class DevProfile extends Component {
                             }
                         </div>
                     </div>
-                    <div className="DevProfile__experience">
-                        <Experience talent={talent}/>
-                    </div>
+                    <Experience talent={talent}/>
                     <Footer/>
                 </PageScroll>
             </section>

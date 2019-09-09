@@ -68,6 +68,7 @@ class Experience extends Component {
         super(props);
 
         this.state = {
+            talentId: false,
             experiences: [
                 {
                     project: "Company/Project",
@@ -92,6 +93,14 @@ class Experience extends Component {
     }
 
 
+    componentDidUpdate() {
+        if (!this.state.talentId && this.props.talent.id) {
+            this.setState({ talentId: this.props.talent.id });
+            this.props.onPageLoad && this.props.onPageLoad();
+        }
+    }
+
+
     getDataPerPage() {
         return [
             {
@@ -110,6 +119,7 @@ class Experience extends Component {
 
     render() {
         const { talent } = this.props;
+
         let items = [];
         if (talent.projects && talent.projects.length) {
             items.push({
@@ -143,7 +153,7 @@ class Experience extends Component {
 
 
         return (
-            <div className="Experience">
+            <div id="Experience" className="Experience">
                 <div className="Experience__heading">
                     EXPERIENCE
                 </div>
