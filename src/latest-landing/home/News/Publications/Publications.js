@@ -6,12 +6,15 @@ import WhitePaperImg from "../../../assets/img/news/publications/white-paper.jpg
 import { Button } from "../../../shared/Form/Form";
 import PublicationDownload from "./PublicationDownload/PublicationDownload";
 import Carousel from "../../../shared/Carousel/Carousel";
+import { isEqual, kebabCase } from "lodash";
+import qs from "qs";
 
 class Publications extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isDownloadOpen: false,
+            activePage: 1,
             publications: [
                 {
                     title: 'WHITEPAPER',
@@ -45,9 +48,10 @@ class Publications extends Component {
                     ],
                     downloadTitle: 'Please fill in this form to download the whitepaper',
                     imgUrl: WhitePaperImg,
+                    slug: 'white-paper',
                 },
                 {
-                    title: 'Research Paper',
+                    title: 'RESEARCH PAPER',
                     intro: 'From startup to scaleup: How to use remote workers for scaling your software development team',
                     description: `Nowadays, scaling your business almost always requires using IT. Without software development no growth. Which explains why there is such a big shortage: 83% of companies have trouble finding tech talent. So what to do?`,
                     downloadCta: `Tech companies increasingly choose to mobilize remote workers and work with distributed teams. In this research report, we explore what are the best ways for startups and scaleups to deal with the shortage of tech talent:`,
@@ -62,12 +66,24 @@ class Publications extends Component {
                     ],
                     downloadTitle: 'Please fill in this form to download the research paper',
                     imgUrl: ResearchImg,
+                    slug: 'research-paper',
                 },
             ]
         };
 
+        this.onPageChange = this.onPageChange.bind(this);
         this.onDownloadOpen = this.onDownloadOpen.bind(this);
         this.onDownloadClose = this.onDownloadClose.bind(this);
+    }
+
+
+    componentDidMount() {
+        if (this.props.publicationQuery) {
+            const page = this.state.publications.findIndex(({ slug }) => slug === this.props.publicationQuery) + 1;
+            if (page) {
+                this.setState({ activePage: page });
+            }
+        }
     }
 
 
@@ -78,6 +94,15 @@ class Publications extends Component {
                 perPage: 1,
             },
         ];
+    }
+
+
+    onPageChange(page) {
+        this.setState({ activePage: page });
+        const slug = this.state.publications[page - 1].slug;
+        const { hash, pathname } = this.props.history.location;
+        const parsedHash = hash.split('?')[0];
+        this.props.history.push(`${pathname}${parsedHash}?publication=${slug}`);
     }
 
 
@@ -102,7 +127,9 @@ class Publications extends Component {
 
                 <div className="Publications__container">
                     <Carousel
+                        onPageChange={this.onPageChange}
                         pagination={pagination}
+                        activePage={this.state.activePage}
                         float="float-right"
                         color="text-primary"
                     >

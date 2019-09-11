@@ -26,6 +26,8 @@ import Publications from "./Publications/Publications";
 import Blog from "./Blog/Blog";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
+import { withRouter } from "react-router";
+import qs from "qs";
 
 const pages = [
     {
@@ -179,11 +181,11 @@ class News extends Component {
         };
     }
 
-    goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
-    }
-
     render() {
+        const splitHash = this.props.history.location.hash.split('?');
+        const urlQuery = splitHash.length > 1 ? splitHash[1] : '';
+        const { publication } = qs.parse(urlQuery);
+
         return (
             <section className="News">
                 <PageScroll pages={pages}>
@@ -197,7 +199,7 @@ class News extends Component {
                         <Vlog vlogs={this.state.vlogs}/>
                     </div>
                     <div id="Publications" className="News__white-paper">
-                        <Publications/>
+                        <Publications history={this.props.history} publicationQuery={publication}/>
                     </div>
                     <div id="BLOGS" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>
@@ -211,4 +213,7 @@ class News extends Component {
 
 News.propTypes = {};
 
-export default News;
+const NewsWithRouter = withRouter(News);
+
+
+export default NewsWithRouter;
