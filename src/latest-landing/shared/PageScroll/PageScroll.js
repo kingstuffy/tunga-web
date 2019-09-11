@@ -42,18 +42,16 @@ class PageScroll extends Component {
 
 
     componentDidMount() {
-        if (this.isMobile()) {
-            return;
-        }
+        if (!this.isMobile()) {
+            document.querySelector('body').style.height = '100vh';
+            document.querySelector('body').style.overflowY = 'hidden';
+            this.updateWindowDimensions();
+            window.addEventListener('resize', this.onWindowResize);
+            window.addEventListener('keydown', this.onKeydown);
 
-        document.querySelector('body').style.height = '100vh';
-        document.querySelector('body').style.overflowY = 'hidden';
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.onWindowResize);
-        window.addEventListener('keydown', this.onKeydown);
-
-        if (this.containerRef.current) {
-            this.computeSteps();
+            if (this.containerRef.current) {
+                this.computeSteps();
+            }
         }
 
         const currentIndex = this.props.pages.findIndex((page) => {
@@ -63,7 +61,7 @@ class PageScroll extends Component {
 
         this.updatePageHash(currentPage);
         if (currentIndex) {
-            this.goToPage(currentIndex);
+            this.goToPage(currentIndex, false, true);
         }
     }
 
@@ -78,6 +76,7 @@ class PageScroll extends Component {
         const currentIndex = this.props.pages.findIndex((page) => {
             return `#${kebabCase(page.title)}` === this.props.location.hash.split('?')[0];
         });
+
         if (currentIndex) {
             this.goToPage(currentIndex);
         }
@@ -188,12 +187,24 @@ class PageScroll extends Component {
     }
 
 
-    goToPage(pageNumber, reload) {
+    goToPage(pageNumber, reload, newPage) {
         if (this.isMobile()) {
+            console.log(pageNumber, this.containerRef.current.childNodes[pageNumber]);
+            if (this.containerRef.current.childNodes[pageNumber]) {
+                if (newPage) {
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                    });
+                }
+
+                this.containerRef.current.childNodes[pageNumber].scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
             window.scrollTo({
                 top: 0,
-                left: 0,
-                behavior: 'smooth'
+                left: 0
             });
             return;
         }
@@ -317,7 +328,8 @@ class PageScroll extends Component {
                     {sections}
                 </div>
                 <SideNav currentPage={this.state.currentPage} pages={this.props.pages} goToPage={this.goToPage}/>
-                <JumpToTop force={forceJumpToTop} isMobile={isMobile} currentPage={this.state.currentPage} goToPage={this.goToPage}/>
+                <JumpToTop force={forceJumpToTop} isMobile={isMobile} currentPage={this.state.currentPage}
+                           goToPage={this.goToPage}/>
             </div>
         );
     }

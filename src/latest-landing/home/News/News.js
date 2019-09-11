@@ -189,19 +189,19 @@ class News extends Component {
         return (
             <section className="News">
                 <PageScroll pages={pages}>
-                    <div id="NewsArticle" className="News__news-article">
+                    <div id="news-articles" className="News__news-article">
                         <div className="News__nav">
                             <Nav/>
                         </div>
                         <NewsArticle articles={this.state.articles}/>
                     </div>
-                    <div id="VLOGS" className="News__vlog">
+                    <div id="vlogs" className="News__vlog">
                         <Vlog vlogs={this.state.vlogs}/>
                     </div>
-                    <div id="Publications" className="News__white-paper">
+                    <div id="publications" className="News__white-paper">
                         <Publications history={this.props.history} publicationQuery={publication}/>
                     </div>
-                    <div id="BLOGS" className="News__blog">
+                    <div id="blogs" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>
                     </div>
                     <Footer/>
