@@ -9,6 +9,7 @@
     white-space: nowrap;
     background-position: center;
     height: calc(50vh - 105px);
+    min-height: 240px;
 
     &__info {
         color: #fff;
