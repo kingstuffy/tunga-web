@@ -10,6 +10,7 @@ class ServiceCard extends Component {
         super(props);
         this.state = {
             showVideo: false,
+            videos: {}
         };
 
         this.onMouseEnter = this.onMouseEnter.bind(this);
@@ -17,18 +18,30 @@ class ServiceCard extends Component {
     }
 
 
+    onVideoLoad(url) {
+        const videos = this.state.videos;
+        videos[url] = true;
+        setTimeout(() => {
+            this.setState({ videos });
+        }, 200);
+    }
+
     onMouseEnter() {
         this.setState({ showVideo: true });
     }
 
 
     onMouseLeave() {
-        this.setState({ showVideo: false });
+        const videos = this.state.videos;
+        videos[this.props.service.videoMain] = false;
+        this.setState({ showVideo: false, videos });
     }
 
 
     render() {
         const { service, onServiceSelection } = this.props;
+        const videoLoaded = this.state.videos[service.videoMain];
+
         return (
             <div className="ServiceCard" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
                 <Card className="border-0">
@@ -37,6 +50,7 @@ class ServiceCard extends Component {
                             this.state.showVideo
                                 ?
                                 <video
+                                    onLoadedData={() => this.onVideoLoad(service.videoMain)}
                                     className="ServiceCard__video"
                                     autoPlay
                                     loop
@@ -49,6 +63,12 @@ class ServiceCard extends Component {
                                 :
                                 <div className="ServiceCard__img"
                                      style={{ backgroundImage: `url('${service.imgUrl}')` }}></div>
+                        }
+                        {
+                            this.state.showVideo && !videoLoaded
+                            &&
+                            <div className="ServiceCard__img ServiceCard__img--bg"
+                                 style={{ backgroundImage: `url('${service.imgUrl}')` }}></div>
                         }
                     </div>
                     <CardBody className="">
