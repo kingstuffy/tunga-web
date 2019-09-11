@@ -313,7 +313,7 @@ class OurTeam extends Component {
                 <PageScroll pages={pages}>
                     <div id="OurTeam" className="OurTeam__core-team">
                         <div className="OurTeam__nav">
-                            <Nav/>
+                            <Nav onNavToggle={this.onNavToggle}/>
                         </div>
                         <CoreTeam team={this.state.team}/>
                     </div>

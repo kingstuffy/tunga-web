@@ -29,6 +29,10 @@ class Nav extends Component {
     }
 
     toggle = () => {
+        if (this.props.onNavToggle) {
+            this.props.onNavToggle(!this.state.isOpen);
+        }
+
         this.setState({
             isOpen: !this.state.isOpen
         });

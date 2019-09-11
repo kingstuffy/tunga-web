@@ -81,6 +81,7 @@ class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isNavOpen: false,
             articles: [
                 {
                     title: 'Podium voor Afrikaans it-talent (Dutch)',
@@ -179,6 +180,12 @@ class News extends Component {
             ],
             blogArticles,
         };
+
+        this.onNavToggle = this.onNavToggle.bind(this);
+    }
+
+    onNavToggle(isNavOpen) {
+        this.setState({ isNavOpen });
     }
 
     render() {
@@ -190,8 +197,8 @@ class News extends Component {
             <section className="News">
                 <PageScroll pages={pages}>
                     <div id="news-articles" className="News__news-article">
-                        <div className="News__nav">
-                            <Nav/>
+                        <div className={`News__nav ${this.state.isNavOpen ? 'News__nav--open' : ''}`}>
+                            <Nav onNavToggle={this.onNavToggle}/>
                         </div>
                         <NewsArticle articles={this.state.articles}/>
                     </div>
