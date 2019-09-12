@@ -106,7 +106,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Remo Samuel Paul",
-                    designation: "Backend specialist",
+                    designation: "Backend architect",
                     imgUrl: Remo,
                     social: [
                         {
@@ -186,7 +186,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Enock Mudde",
-                    designation: "Architect specialist",
+                    designation: "Solutions architect",
                     imgUrl: Enock,
                     social: [
                         {
@@ -249,7 +249,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Prossy Mugeni",
-                    designation: "Intern, Front End Developer",
+                    designation: "Intern, Frontend Developer",
                     imgUrl: Prossy,
                     social: [
                         {
@@ -266,7 +266,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Iryn Mbabali",
-                    designation: "Intern, Back End Developer",
+                    designation: "Intern, Backend Developer",
                     imgUrl: Iryn,
                     social: [
                         {
@@ -283,7 +283,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Joel Katuula",
-                    designation: "Frontend Specialist",
+                    designation: "Frontend architect",
                     imgUrl: Joel,
                     social: [
                         {
