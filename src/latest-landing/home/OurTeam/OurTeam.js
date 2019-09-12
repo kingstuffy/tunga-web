@@ -21,7 +21,7 @@ import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Iryn from "../../assets/img/our-team/team/Iryn.jpg";
 import Viola from "../../assets/img/our-team/team/Viola.jpg";
 import Prossy from "../../assets/img/our-team/team/Prossy.jpg";
-import Joel from "../../assets/img/our-team/team/Joel";
+import Joel from "../../assets/img/our-team/team/joel.jpg";
 
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
@@ -106,7 +106,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Remo Samuel Paul",
-                    designation: "Backend specialist",
+                    designation: "Backend architect",
                     imgUrl: Remo,
                     social: [
                         {
@@ -186,7 +186,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Enock Mudde",
-                    designation: "Architect specialist",
+                    designation: "Solutions architect",
                     imgUrl: Enock,
                     social: [
                         {
@@ -249,7 +249,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Prossy Mugeni",
-                    designation: "Intern, Front End Developer",
+                    designation: "Intern, Frontend Developer",
                     imgUrl: Prossy,
                     social: [
                         {
@@ -266,7 +266,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Iryn Mbabali",
-                    designation: "Intern, Back End Developer",
+                    designation: "Intern, Backend Developer",
                     imgUrl: Iryn,
                     social: [
                         {
@@ -283,7 +283,7 @@ class OurTeam extends Component {
                 },
                 {
                     name: "Joel Katuula",
-                    designation: "Frontend Specialist",
+                    designation: "Frontend architect",
                     imgUrl: Joel,
                     social: [
                         {
@@ -303,7 +303,7 @@ class OurTeam extends Component {
     }
 
     render() {
-        const { location } = this.props;
+        const { location, isMobile } = this.props;
         // replace with another lib;; build issues with query-string
         const urlQuery = location.search ? location.search.replace('?', '') : (location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '');
         const { query } = qs.parse(urlQuery);
@@ -321,7 +321,7 @@ class OurTeam extends Component {
                         <TalentPool query={query} talents={this.state.talents}/>
                     </div>
                     <div className="OurTeam__schedule-call">
-                        <ScheduleCall/>
+                        <ScheduleCall isMobile={isMobile}/>
                     </div>
                     <Footer/>
                 </PageScroll>

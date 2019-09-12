@@ -20,21 +20,25 @@ class ScheduleCall extends Component {
     }
 
     render() {
-        const { showCaseStudies } = this.props;
+        const { showCaseStudies, isMobile } = this.props;
 
         return (
             <div className="ScheduleCall text-white position-relative" id="ScheduleCall">
                 <div className="ScheduleCall__video-bg">
-                    <video
-                        className="ScheduleCall__video"
-                        autoPlay
-                        loop
-                        muted>
-                        <source
-                            src={BgVideo}
-                            type="video/mp4"
-                        />
-                    </video>
+                    {
+                        !isMobile
+                        &&
+                        <video
+                            className="ScheduleCall__video"
+                            autoPlay
+                            loop
+                            muted>
+                            <source
+                                src={BgVideo}
+                                type="video/mp4"
+                            />
+                        </video>
+                    }
                 </div>
                 <Row>
                     <Col lg="12" sm="12" md="12">

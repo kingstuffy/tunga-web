@@ -12,20 +12,25 @@ class ServiceDetail extends Component {
     }
 
     render() {
-        const { service, nextService, onServiceSelection, onCloseServiceDetail, onUseCaseClick } = this.props;
+        const { isMobile, service, nextService, onServiceSelection, onCloseServiceDetail, onUseCaseClick } = this.props;
         return (
             <section className="ServiceDetail">
-                <div className="ServiceDetail__left-bg">
-                    <video
-                        className="ServiceCard__video"
-                        autoPlay
-                        loop
-                        muted>
-                        <source
-                            src={service.videoDetails}
-                            type="video/mp4"
-                        />
-                    </video>
+                <div className="ServiceDetail__left-bg"
+                style={{backgroundImage: `url(${service.imgUrl})`}}>
+                    {
+                        !isMobile
+                        &&
+                        <video
+                            className="ServiceCard__video"
+                            autoPlay
+                            loop
+                            muted>
+                            <source
+                                src={service.videoDetails}
+                                type="video/mp4"
+                            />
+                        </video>
+                    }
                 </div>
                 <div className="ServiceDetail__card">
                     <Card className="border-0">

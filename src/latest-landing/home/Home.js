@@ -6,7 +6,42 @@ import ChatWidget from "../shared/ChatWidget/ChatWidget";
 class Home extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            windowWidth: 0,
+            windowHeight: 0,
+            isMobile: false,
+        };
+
+        this.isMobile = this.isMobile.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
+
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+
+    updateWindowDimensions() {
+        this.setState({
+            windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight,
+            isMobile: this.isMobile(window.innerWidth),
+        });
+    }
+
+
+    isMobile(windowWidth) {
+        return typeof windowWidth !== 'undefined' && windowWidth <= 992;
+    }
+
 
     render() {
         return (
@@ -20,7 +55,7 @@ class Home extends Component {
                                 render={props => (
                                     <route.component
                                         name={route.name}
-                                        {...props}
+                                        {...{ isMobile: this.state.isMobile, ...props }}
                                     />
                                 )}
                                 path={route.path}

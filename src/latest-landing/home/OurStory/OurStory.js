@@ -16,6 +16,7 @@ import PageScroll from "../../shared/PageScroll/PageScroll";
 
 import HeroBg from "../../assets/img/our-story/hero-bg.png";
 import BgVideo from "../../assets/videos/our-story/bg-video.mp4";
+import ScheduleCall from "../ScheduleCall/ScheduleCall";
 
 const pages = [
     {
@@ -116,6 +117,8 @@ class OurStory extends Component {
     }
 
     render() {
+        const { isMobile } = this.props;
+
         return (
             <section className="OurStory">
                 <PageScroll pages={pages}>
@@ -129,16 +132,20 @@ class OurStory extends Component {
                         <div className="OurStory__hero-mask">
                         </div>
                         <div className="OurStory__video-bg">
-                            <video
-                                className="OurStory__video"
-                                autoPlay
-                                loop
-                                muted>
-                                <source
-                                    src={BgVideo}
-                                    type="video/mp4"
-                                />
-                            </video>
+                            {
+                                !isMobile
+                                &&
+                                <video
+                                    className="OurStory__video"
+                                    autoPlay
+                                    loop
+                                    muted>
+                                    <source
+                                        src={BgVideo}
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            }
                         </div>
                     </div>
                     <div id="OurDream" className="OurStory__our-dream">

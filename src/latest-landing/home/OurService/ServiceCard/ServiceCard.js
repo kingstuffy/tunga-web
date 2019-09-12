@@ -27,7 +27,7 @@ class ServiceCard extends Component {
     }
 
     onMouseEnter() {
-        this.setState({ showVideo: true });
+        this.setState({ showVideo: !this.props.isMobile });
     }
 
 
