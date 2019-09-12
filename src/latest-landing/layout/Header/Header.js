@@ -14,26 +14,30 @@ class Header extends Component {
     }
 
     render() {
-        const { onTalentPoolRequest } = this.props;
+        const { onTalentPoolRequest, isMobile } = this.props;
 
         return (
             <div className="Header text-white position-relative" id="Header">
                 <div className="Header__video-bg">
-                    <video
-                        className="Header__video"
-                        autoPlay
-                        loop
-                        muted>
-                        <source
-                            src={BgVideo}
-                            type="video/mp4"
-                        />
-                        <source
-                            src={BgVideoMobile}
-                            type="video/mp4"
-                            media="all and (max-width: 768px)"
-                        />
-                    </video>
+                    {
+                        !isMobile
+                        &&
+                        <video
+                            className="Header__video"
+                            autoPlay
+                            loop
+                            muted>
+                            <source
+                                src={BgVideo}
+                                type="video/mp4"
+                            />
+                            <source
+                                src={BgVideoMobile}
+                                type="video/mp4"
+                                media="all and (max-width: 768px)"
+                            />
+                        </video>
+                    }
                 </div>
                 <Nav/>
                 <Row>

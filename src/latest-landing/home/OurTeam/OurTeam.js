@@ -303,7 +303,7 @@ class OurTeam extends Component {
     }
 
     render() {
-        const { location } = this.props;
+        const { location, isMobile } = this.props;
         // replace with another lib;; build issues with query-string
         const urlQuery = location.search ? location.search.replace('?', '') : (location.hash.split('?').length > 1 ? location.hash.split('?')[1] : '');
         const { query } = qs.parse(urlQuery);
@@ -321,7 +321,7 @@ class OurTeam extends Component {
                         <TalentPool query={query} talents={this.state.talents}/>
                     </div>
                     <div className="OurTeam__schedule-call">
-                        <ScheduleCall/>
+                        <ScheduleCall isMobile={isMobile}/>
                     </div>
                     <Footer/>
                 </PageScroll>

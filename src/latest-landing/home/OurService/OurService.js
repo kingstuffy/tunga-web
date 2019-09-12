@@ -228,7 +228,7 @@ class OurService extends Component {
 
 
     render() {
-        const { onUseCaseClick } = this.props;
+        const { onUseCaseClick, isMobile } = this.props;
 
         return (
             <section className="OurService" id="OurService">
@@ -249,6 +249,7 @@ class OurService extends Component {
                                     className="OurService__item"
                                 >
                                     <ServiceCard
+                                        isMobile={isMobile}
                                         service={
                                             service
                                         }
@@ -263,6 +264,7 @@ class OurService extends Component {
                     this.state.selectedService &&
                     <div className="OurService__detail">
                         <ServiceDetail
+                            isMobile={isMobile}
                             service={this.state.selectedService}
                             nextService={this.state.nextService}
                             onServiceSelection={this.onServiceSelection}

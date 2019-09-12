@@ -12,7 +12,6 @@ class Hero extends Component {
 
     render() {
         const { onLearnMore } = this.props;
-        console.log(this.props);
 
         return (
             <div className="Hero">

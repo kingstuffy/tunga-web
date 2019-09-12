@@ -72,6 +72,7 @@ class Default extends Component {
     constructor(props) {
         super(props);
         this.state = { activeUseCase: 1 };
+
         this.onUseCaseClick = this.onUseCaseClick.bind(this);
         this.onPageScrolled = this.onPageScrolled.bind(this);
         this.onTalentPoolRequest = this.onTalentPoolRequest.bind(this);
@@ -94,7 +95,10 @@ class Default extends Component {
         this.props.history.push('/our-team#talent-pool');
     }
 
+
     render() {
+        const { isMobile } = this.props;
+
         return (
             <div className="Default">
                 <PageScroll
@@ -103,16 +107,16 @@ class Default extends Component {
                     goToPage={this.state.gotToPage}
                 >
                     <div>
-                        <Header onTalentPoolRequest={this.onTalentPoolRequest}/>
+                        <Header isMobile={isMobile} onTalentPoolRequest={this.onTalentPoolRequest}/>
                     </div>
                     <div>
                         <AboutUs/>
                     </div>
                     <div>
-                        <OurService onUseCaseClick={this.onUseCaseClick}/>
+                        <OurService isMobile={isMobile} onUseCaseClick={this.onUseCaseClick}/>
                     </div>
                     <div>
-                        <ScheduleCall showCaseStudies={true} onUseCaseClick={this.onUseCaseClick}/>
+                        <ScheduleCall isMobile={isMobile} showCaseStudies={true} onUseCaseClick={this.onUseCaseClick}/>
                     </div>
                     <div>
                         <CaseStudies activeUseCase={this.state.activeUseCase}/>
