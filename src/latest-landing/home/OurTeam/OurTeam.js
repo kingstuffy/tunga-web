@@ -21,7 +21,7 @@ import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
 import Iryn from "../../assets/img/our-team/team/Iryn.jpg";
 import Viola from "../../assets/img/our-team/team/Viola.jpg";
 import Prossy from "../../assets/img/our-team/team/Prossy.jpg";
-import Joel from "../../assets/img/our-team/team/Joel";
+import Joel from "../../assets/img/our-team/team/joel.jpg";
 
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
