@@ -189,8 +189,12 @@ class PageScroll extends Component {
 
     goToPage(pageNumber, reload, newPage) {
         if (this.isMobile()) {
-            console.log(pageNumber, this.containerRef.current.childNodes[pageNumber]);
             if (this.containerRef.current.childNodes[pageNumber]) {
+                if (pageNumber && pageNumber === this.state.currentPage && !reload) {
+                    return;
+                }
+
+                this.setState({ currentPage: pageNumber });
                 if (newPage) {
                     window.scrollTo({
                         top: 0,
