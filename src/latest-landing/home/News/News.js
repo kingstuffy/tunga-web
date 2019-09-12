@@ -26,6 +26,8 @@ import Publications from "./Publications/Publications";
 import Blog from "./Blog/Blog";
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
+import { withRouter } from "react-router";
+import qs from "qs";
 
 const pages = [
     {
@@ -79,6 +81,7 @@ class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isNavOpen: false,
             articles: [
                 {
                     title: 'Podium voor Afrikaans it-talent (Dutch)',
@@ -177,29 +180,35 @@ class News extends Component {
             ],
             blogArticles,
         };
+
+        this.onNavToggle = this.onNavToggle.bind(this);
     }
 
-    goToPage = (pageNumber) => {
-        return this.reactPageScroller.goToPage(pageNumber)
+    onNavToggle(isNavOpen) {
+        this.setState({ isNavOpen });
     }
 
     render() {
+        const splitHash = this.props.history.location.hash.split('?');
+        const urlQuery = splitHash.length > 1 ? splitHash[1] : '';
+        const { publication } = qs.parse(urlQuery);
+
         return (
             <section className="News">
                 <PageScroll pages={pages}>
-                    <div id="NewsArticle" className="News__news-article">
-                        <div className="News__nav">
-                            <Nav/>
+                    <div id="news-articles" className="News__news-article">
+                        <div className={`News__nav ${this.state.isNavOpen ? 'News__nav--open' : ''}`}>
+                            <Nav onNavToggle={this.onNavToggle}/>
                         </div>
                         <NewsArticle articles={this.state.articles}/>
                     </div>
-                    <div id="VLOGS" className="News__vlog">
+                    <div id="vlogs" className="News__vlog">
                         <Vlog vlogs={this.state.vlogs}/>
                     </div>
-                    <div id="Publications" className="News__white-paper">
-                        <Publications/>
+                    <div id="publications" className="News__white-paper">
+                        <Publications history={this.props.history} publicationQuery={publication}/>
                     </div>
-                    <div id="BLOGS" className="News__blog">
+                    <div id="blogs" className="News__blog">
                         <Blog articles={this.state.blogArticles}/>
                     </div>
                     <Footer/>
@@ -211,4 +220,7 @@ class News extends Component {
 
 News.propTypes = {};
 
-export default News;
+const NewsWithRouter = withRouter(News);
+
+
+export default NewsWithRouter;

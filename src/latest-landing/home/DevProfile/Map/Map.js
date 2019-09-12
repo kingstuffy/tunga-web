@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Map.scss";
-import _ from "lodash";
+import { isEqual } from "lodash";
 
 class Map extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Map extends Component {
     }
 
     componentDidUpdate(prevProps, prevState,) {
-        if (!_.isEqual(prevProps.user, this.props.user)) {
+        if (isEqual(prevProps.user, this.props.user)) {
             this.initMap();
         }
     }

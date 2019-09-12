@@ -129,7 +129,11 @@
         display: inline-block;
         white-space: nowrap;
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
+
+        @media (min-width: 992px) {
+            height: 100vh;
+        }
     }
 
     &__item-container {

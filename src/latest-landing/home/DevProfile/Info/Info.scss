@@ -50,7 +50,7 @@
         position: absolute;
         z-index: 100;
         background-color: #fff;
-        width: 150%;
+        width: 100%;
         border: 1px solid #fdf6f6;
         box-shadow: 0 0 8px 0 rgba(17, 22, 26, 0.16), 0 4px 8px 0 rgba(17, 22, 26, 0.08), 0 8px 16px 0 rgba(17, 22, 26, 0.08);
         padding: 15px;
@@ -58,6 +58,10 @@
 
         &--skill {
             bottom: 0;
+        }
+
+        @media (min-width: 992px) {
+            width: 150%;
         }
     }
 

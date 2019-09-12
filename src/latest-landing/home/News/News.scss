@@ -9,6 +9,16 @@
         position: absolute;
         z-index: 100;
         width: 100%;
+
+        &--open {
+            @media (max-width: 992px) {
+                position: relative;
+
+                .navbar-nav > li > a {
+                    color: #222;
+                }
+            }
+        }
     }
 
     &__news-article {
@@ -34,5 +44,9 @@
     &__blog {
         width: 100vw;
         position: relative;
+    }
+
+    .side-bar {
+        top: 185px;
     }
 }

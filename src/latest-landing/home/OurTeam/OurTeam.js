@@ -8,7 +8,6 @@ import CoreTeam from "./CoreTeam/CoreTeam";
 import TalentPool from "./TalentPool/TalentPool";
 import ScheduleCall from "../ScheduleCall/ScheduleCall";
 import Nav from "../../layout/Nav/Nav";
-import TeamImg from "../../assets/img/our-team/user.png";
 import Bart from "../../assets/img/our-team/team/Bart.jpg";
 import David from "../../assets/img/our-team/team/David.jpg";
 import Elijah from "../../assets/img/our-team/team/Elijah.jpg";
@@ -19,7 +18,11 @@ import Lawrence from "../../assets/img/our-team/team/Lawrence.jpg";
 import Reinier from "../../assets/img/our-team/team/Reinier.jpg";
 import Remo from "../../assets/img/our-team/team/Remo.jpg";
 import Ronald from "../../assets/img/our-team/team/Ronald.jpg";
-import Simon from "../../assets/img/our-team/team/Simon.jpg";
+import Iryn from "../../assets/img/our-team/team/Iryn.jpg";
+import Viola from "../../assets/img/our-team/team/Viola.jpg";
+import Prossy from "../../assets/img/our-team/team/Prossy.jpg";
+import Joel from "../../assets/img/our-team/team/Joel";
+
 import Footer from "../../layout/Footer/Footer";
 import PageScroll from "../../shared/PageScroll/PageScroll";
 
@@ -113,23 +116,6 @@ class OurTeam extends Component {
                         },
                         {
                             url: "mailto:remo@tunga.io",
-                            network: "email",
-                            icon: "envelope"
-                        }
-                    ]
-                },
-                {
-                    name: "Simon Capanna",
-                    designation: "Business developer Africa",
-                    imgUrl: Simon,
-                    social: [
-                        {
-                            url: "https://www.linkedin.com/in/simon-walter-capanna-19b56994",
-                            network: "linkedIn",
-                            icon: "linkedin"
-                        },
-                        {
-                            url: "mailto:simon@tunga.io",
                             network: "email",
                             icon: "envelope"
                         }
@@ -244,6 +230,74 @@ class OurTeam extends Component {
                         },
                     ]
                 },
+                {
+                    name: "Viola Nuwaha",
+                    designation: "Project manager",
+                    imgUrl: Viola,
+                    social: [
+                        {
+                            url: "https://linkedin.com/in/viola-nuwaha",
+                            network: "linkedIn",
+                            icon: "linkedin"
+                        },
+                        {
+                            url: "mailto:viola@tunga.io",
+                            network: "email",
+                            icon: "envelope"
+                        },
+                    ]
+                },
+                {
+                    name: "Prossy Mugeni",
+                    designation: "Intern, Front End Developer",
+                    imgUrl: Prossy,
+                    social: [
+                        {
+                            url: "https://www.linkedin.com/in/mugeni-prossy-145843187",
+                            network: "linkedIn",
+                            icon: "linkedin"
+                        },
+                        {
+                            url: "mailto:mugeniprossy53@gmail.com",
+                            network: "email",
+                            icon: "envelope"
+                        },
+                    ]
+                },
+                {
+                    name: "Iryn Mbabali",
+                    designation: "Intern, Back End Developer",
+                    imgUrl: Iryn,
+                    social: [
+                        {
+                            url: "https://www.linkedin.com/in/mbabali-iryn-206177177",
+                            network: "linkedIn",
+                            icon: "linkedin"
+                        },
+                        {
+                            url: "mailto:mbabaliiryn@gmail.com",
+                            network: "email",
+                            icon: "envelope"
+                        },
+                    ]
+                },
+                {
+                    name: "Joel Katuula",
+                    designation: "Frontend Specialist",
+                    imgUrl: Joel,
+                    social: [
+                        {
+                            url: "https://www.linkedin.com/in/gerald-odur-10b95116",
+                            network: "linkedIn",
+                            icon: "linkedin"
+                        },
+                        {
+                            url: "mailto:katuula-joel-456764116",
+                            network: "email",
+                            icon: "envelope"
+                        },
+                    ]
+                },
             ],
         };
     }
@@ -259,7 +313,7 @@ class OurTeam extends Component {
                 <PageScroll pages={pages}>
                     <div id="OurTeam" className="OurTeam__core-team">
                         <div className="OurTeam__nav">
-                            <Nav/>
+                            <Nav onNavToggle={this.onNavToggle}/>
                         </div>
                         <CoreTeam team={this.state.team}/>
                     </div>
