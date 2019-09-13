@@ -10,6 +10,7 @@ export default {
     news: { path: "/news", name: "News" },
     privacy: { path: "/privacy", name: "Privacy" },
     userAgreement: { path: "/agreement", name: "User Agreement" },
+    join: { path: "/join", name: "Join" },
     codeOfConduct: { path: "/code-of-conduct", name: "Code Of Conduct" },
     blog: { path: "/blog", name: "Blog", loc: 'blog' },
     login: { path: "/login", name: "Log in", loc: 'login' },

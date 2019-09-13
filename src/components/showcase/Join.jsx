@@ -3,7 +3,6 @@ import {FormGroup} from 'reactstrap';
 
 import Title from './elements/Title';
 import Header from "./elements/Header";
-import Footer from "./elements/Footer";
 import Success from '../core/Success';
 import Error from '../core/Error';
 import FieldError from '../core/FieldError';
@@ -195,8 +194,6 @@ class Join extends React.Component {
                         </div>
                     </div>
                 </section>
-
-                <Footer/>
             </div>
         );
     }
