@@ -1,0 +1,87 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.OurService {
+    background: #fff;
+    scroll-behavior: smooth;
+    position: relative;
+    min-height: 100vh;
+
+    @media (min-width: 992px) {
+        padding: 92px 70px 40px;
+        background: #fefbfb;
+        padding-bottom: 0;
+    }
+
+    &__header {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 18px;
+        text-transform: uppercase;
+
+        @media (min-width: 992px) {
+            margin-bottom: 30px;
+            margin-top: -19px;
+        }
+    }
+
+    .card-center {
+        @extend %vertical-align;
+    }
+
+    &__container {
+        // padding: 3.2% 0;
+        overflow: hidden;
+        width: 100vw;
+
+        @media (min-width: 992px) {
+            &::after {
+                content: '';
+                height: 60vh;
+                width: 100%;
+                display: block;
+                z-index: -1;
+                background-color: #fefbfb;
+                position: absolute;
+            }
+        }
+    }
+
+    &__list {
+        position: relative;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        transition: left ease 0.4s, right ease 0.4s;
+    }
+
+    &__item {
+        width: 100%;
+        display: inline-block;
+        white-space: normal;
+
+        @media (min-width: 768px) {
+            margin-right: 23px;
+            width: 29%;
+            padding-bottom: 99999px;
+            margin-bottom: -99999px;
+        }
+
+        @media (min-width: 992px) {
+            margin-right: 23px;
+            width: 29%;
+            padding-bottom: 99999px;
+            margin-bottom: -99999px;
+            background-color: #fff;
+        }
+    }
+
+    &__detail {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+}

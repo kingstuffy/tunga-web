@@ -1,28 +1,38 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import {browserHistory} from 'react-router';
-import {routerMiddleware} from 'react-router-redux';
-import thunk from 'redux-thunk';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import createLogger from 'redux-logger';
-import TungaApp from './reducers/index';
+import createSagaMiddleware from 'redux-saga';
+import reduxThunk from "redux-thunk";
+import appReducer from './rootReducer';
+import rootSaga from './rootSaga';
+import startsWith from 'lodash/startsWith';
 
-let enabled_middleware = [thunk, routerMiddleware(browserHistory)];
-let compose_args = [];
+
+const middlewares = [];
+
+const sagaMiddleware = createSagaMiddleware();
+middlewares.push(sagaMiddleware);
 
 if (!__PRODUCTION__) {
     const logger = createLogger({
         collapsed: true,
-        level: 'info',
-        duration: true,
+        predicate: (getState, action) => !startsWith(action.type, '@@redux-form'),
     });
-    enabled_middleware.push(logger);
-    compose_args.push(
-        window.devToolsExtension ? window.devToolsExtension() : f => f,
-    );
+    middlewares.push(logger);
 }
 
-let store = createStore(
-    TungaApp,
-    compose(applyMiddleware(...enabled_middleware), ...compose_args),
-);
+const configureStore = () => {
+    const rootReducer = combineReducers({
+        app: appReducer,
+    });
+    middlewares.push(reduxThunk)
+    const store = createStore(
+        rootReducer,
+        applyMiddleware(...middlewares),
+    );
 
+    sagaMiddleware.run(rootSaga);
+    return store;
+};
+
+const store = configureStore();
 export default store;

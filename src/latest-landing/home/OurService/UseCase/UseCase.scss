@@ -1,0 +1,46 @@
+@import "../../../assets/scss/variable";
+
+.UseCase {
+    position: relative;
+    width: 100%;
+
+    &__header {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    &__img {
+        height: 175px;
+    }
+
+    &__item {
+        float: left;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            float: left;
+            width: 48%;
+
+            &--1 {
+                float: right;
+            }
+        }
+    }
+
+    &__btn {
+        border: 1px solid rgba(6, 46, 100, 0.25);
+        padding: 4px 20px;
+        border-radius: 0;
+        color: #062E64;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    &__title {
+        color: #222829;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+    }
+}

@@ -7,7 +7,7 @@ import * as ProfileActions from "../actions/ProfileActions";
 
 function mapStateToProps(state) {
     return {
-        Auth: state.Auth
+        Auth: state.app.Auth
     };
 }
 
@@ -21,5 +21,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default function connectToStore(component) {
-    return withRouter(connect(mapStateToProps, mapDispatchToProps)(component))
-};
+    return withRouter(connect(mapStateToProps, mapDispatchToProps)(component));
+}

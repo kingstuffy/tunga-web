@@ -1,0 +1,41 @@
+@import "../../assets/scss/variable";
+
+NavLink,
+RNavLink {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold !important;
+    color: get-color("white");
+}
+
+.Nav .navbar {
+    box-shadow: none !important;
+}
+
+.Nav {
+    .navbar .navbar-nav > li > a {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__bar {
+        padding: 30px 18px;
+
+        @media (min-width: 992px) {
+            padding: 25px 70px;
+        }
+    }
+
+    .btn-primary {
+        box-shadow: none !important;
+    }
+
+    .nav-item {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .nav-item .active {
+        font-weight: 600;
+    }
+}

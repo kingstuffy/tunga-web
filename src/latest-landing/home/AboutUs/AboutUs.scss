@@ -1,0 +1,86 @@
+@import "../../assets/scss/util";
+
+.AboutUs {
+    // border: 2px solid green;
+    display: block;
+    width: 100%;
+    position: relative;
+
+    @media (min-width: 992px) {
+        height: 100vh;
+    }
+
+    &__bg {
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: top;
+        height: 55vh;
+        width: 100%;
+        z-index: 1;
+
+        @media (max-width: 992px) {
+            // scroll-snap-align: start;
+        }
+
+        @media (min-width: 992px) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 70vh;
+        }
+    }
+
+    &__content {
+        // @extend %vertical-align;
+        padding: 31px 18px;
+        min-height: 30vh;
+        z-index: 10;
+        background-color: #fff;
+        position: relative;
+
+        @media (max-width: 992px) {
+            // scroll-snap-align: start;
+        }
+
+        @media (min-width: 992px) {
+            padding: 50px 70px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .abt-title {
+            font-size: 14px !important;
+            line-height: 17px;
+            font-weight: 700;
+        }
+
+        .abt-summary {
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 600;
+
+            @media (min-width: 992px) {
+                width: 95%;
+            }
+        }
+
+        .abt-content {
+            font-size: 16px !important;
+            line-height: 28px;
+
+            @media (min-width: 992px) {
+                width: 85%;
+            }
+        }
+    }
+
+    &__features {
+        margin-top: -10px;
+    }
+
+    &__feature {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

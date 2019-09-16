@@ -31,7 +31,7 @@ module.exports = {
             { test: /\.css$/, loader: 'style-loader!css-loader' },
             { test: /\.(png|jpg|gif)(\?.*)?$/, loader: 'url-loader?limit=8192&name=images/[hash].[ext]?v='+ common_config.hash+'!image-maxsize?max-width=1600'},
             { test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/, loader: "url-loader?mimetype=application/font-woff&name=fonts/[hash].[ext]" },
-            { test: /\.(ttf|eot|svg)(\?v=[0-9].[0-9].[0-9])?$/, loader: "file-loader?name=fonts/[hash].[ext]" },
+            { test: /\.(otf|ttf|eot|svg)(\?v=[0-9].[0-9].[0-9])?$/, loader: "file-loader?name=fonts/[hash].[ext]" },
             { test: /\.ejs$/, loader: 'ejs-compiled?htmlmin' },
             { test: /\.mp4$/, loader: 'file-loader?name=videos/[hash].[ext]?v='+ common_config.hash},
             { test: /\.(mp3|wav)$/, loader: 'file-loader?name=audio/[hash].[ext]?v='+ common_config.hash},

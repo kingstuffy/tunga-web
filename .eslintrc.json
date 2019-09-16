@@ -15,9 +15,10 @@
         "react"
     ],
     "rules": {
+        "no-console": "off",
         "indent": [
             "warn",
-            2
+            4
         ],
         "linebreak-style": [
             "error",

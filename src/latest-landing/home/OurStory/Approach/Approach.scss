@@ -1,0 +1,48 @@
+@import "../../../../scss/variables";
+
+.Approach {
+    // padding: 50px;
+    width: 100vw;
+
+    @media (min-width: 992px) {
+        height: 100vh;
+    }
+
+    &__section {
+        @media (min-width: 992px) {
+            height: 50vh;
+            display: flex;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        order: 1;
+        padding: 30px 18px;
+
+        @media (min-width: 992px) {
+            width: 50%;
+            padding: 0 60px;
+        }
+    }
+
+    &__bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        height: 250px;
+        min-height: 50vh;
+        order: 1;
+
+        @media (min-width: 992px) {
+            height: 100%;
+            width: 50%;
+
+            &--top {
+                order: 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.OurTeam {
+    .navbar-nav > li > a {
+        color: #222;
+    }
+
+    &__core-team {
+        // padding: 2% 0;
+        // min-height: 100vh;
+        // position: relative;
+        // scroll-snap-align: start;
+    }
+
+    &__talent-pool {
+        position: relative;
+        padding: 50px 0 50px 18px;
+
+        @media (min-width: 992px) {
+            padding: 50px 0 48px 70px;
+        }
+    }
+
+    &__schedule-call {
+        // position: relative;
+        // scroll-snap-align: start;
+    }
+}

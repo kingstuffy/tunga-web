@@ -1,0 +1,52 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.News {
+    // overflow-x: hidden;
+    max-width: 100vw;
+
+    &__nav {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+
+        &--open {
+            @media (max-width: 992px) {
+                position: relative;
+
+                .navbar-nav > li > a {
+                    color: #222;
+                }
+            }
+        }
+    }
+
+    &__news-article {
+        position: relative;
+        // scroll-snap-align: start;
+        width: 100vw;
+        overflow-x: hidden;
+        // height: 100vh;
+    }
+
+    &__vlog {
+        width: 100vw;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    &__white-paper {
+        width: 100vw;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    &__blog {
+        width: 100vw;
+        position: relative;
+    }
+
+    .side-bar {
+        top: 185px;
+    }
+}

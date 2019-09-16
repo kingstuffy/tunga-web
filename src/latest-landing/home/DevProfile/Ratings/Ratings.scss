@@ -1,0 +1,31 @@
+@import "../../../../scss/variables";
+
+.Ratings {
+    $root: &;
+    position: relative;
+    padding-top: 10px;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__item {
+        width: 33.3%;
+        float: left;
+        text-align: center;
+    }
+
+    &__rating {
+        font-size: 20px;
+        line-height: 24px;
+        color: #DA3451;
+        margin-bottom: 11px;
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: 17px;
+        color: #3D4851;
+    }
+}

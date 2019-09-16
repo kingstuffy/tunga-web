@@ -1,0 +1,55 @@
+@import "../../../../scss/variables";
+
+.SkillSet {
+    $root: &;
+    width: 100%;
+    padding: 26px 10px 40px 10px;
+
+    &__title {
+        font-size: 16px;
+        line-height: 19px;
+        color: #DA3451;
+        margin-bottom: 10px;
+        font-weight: 400;
+        text-align: center;
+
+        @media (min-width: 992px) {
+            text-align: left;
+        }
+    }
+
+    &__types,
+    &__skills {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__item-type {
+        width: 48%;
+        display: inline-block;
+        margin-bottom: 25px;
+        vertical-align: top;
+        padding-left: 37px;
+
+        @media (min-width: 992px) {
+            width: 33%;
+            padding-left: 0;
+        }
+    }
+
+    &__type {
+        font-size: 14px;
+        line-height: 17px;
+        color: #062E64;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+
+    &__skill {
+        font-size: 14px;
+        line-height: 17px;
+        color: #222829;
+        margin-bottom: 10px;
+    }
+}
