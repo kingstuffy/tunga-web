@@ -429,7 +429,7 @@ export function payInvoice(id, payment, target) {
         let headers = {};
 
         axios
-            .post(`${ENDPOINT_INVOICES}${id}/pay/`, payment, {headers})
+            .post(`${ENDPOINT_INVOICES}${id}/pay${payment.object === 'payment_intent'?'-intent-complete':''}/`, payment, {headers})
             .then(function (response) {
                 dispatch(payInvoiceSuccess(response.data, id, payment, target));
             })

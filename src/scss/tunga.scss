@@ -2389,7 +2389,15 @@ textarea {
     }
 }
 
-// Showcase
+.checkout {
+    .StripeElement {
+        iframe {
+            height: 37px !important;
+        }
+    }
+}
+
+    // Showcase
 .showcase {
     header {
         display: flex;

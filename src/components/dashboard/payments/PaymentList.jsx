@@ -7,6 +7,7 @@ import Button from "../../core/Button";
 import Progress from "../../core/Progress";
 import Icon from "../../core/Icon";
 import StripeButton from "../../core/StripeButton";
+import StripeForm from "../../core/StripeForm";
 import PaymentOptions from "./PaymentOptions";
 import InvoiceDetails from "./InvoiceDetails";
 
@@ -100,9 +101,15 @@ export default class PaymentList extends React.Component {
     }
 
     openPay(invoice) {
+        const {InvoiceActions, selectionKey} = this.props;
+
         openModal(<PaymentOptions/>, 'Payment options', true, {className: 'modal-pay'}).then(type => {
             if(type === 'card') {
-                $(`.pay_stripe_${invoice.id}`).click();
+                //$(`.pay_stripe_${invoice.id}`).click();
+                openModal(
+                    <StripeForm invoice={invoice} email={getUser().email} InvoiceActions={InvoiceActions} selectionKey={selectionKey}/>,
+                    'Pay with Card', true, {className: 'modal-pay'}
+                );
             } else {
                 openModal(
                     <InvoiceDetails invoice={invoice}/>,
@@ -272,12 +279,14 @@ export default class PaymentList extends React.Component {
                                                                 <div>
                                                                     {(isProjectClient(invoice.project) || isPayAdmin()) && (invoice.finalized || invoice.last_sent_at)?(
                                                                         <React.Fragment>
+                                                                            {/*
                                                                             <StripeButton size="sm"
                                                                                           amount={invoice.total_amount}
                                                                                           email={getUser().email}
                                                                                           description={invoice.title}
                                                                                           onPay={this.onPay.bind(this, invoice)}
                                                                                           className={`pay_stripe_${invoice.id}`}/>
+                                                                                          */}
                                                                             <Button size="sm" onClick={this.openPay.bind(this, invoice)}><Icon name="cash"/> Pay</Button>
                                                                         </React.Fragment>
                                                                     ):null}
