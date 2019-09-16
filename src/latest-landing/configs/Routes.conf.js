@@ -14,6 +14,7 @@ import ResetPassword from "../home/ResetPassword/ResetPassword";
 import Privacy from "../home/Privacy/Privacy";
 import UserAgreement from "../home/UserAgreement/UserAgreement";
 import CodeOfConduct from "../home/CodeOfConduct/CodeOfConduct";
+import Join from "../home/Join/Join";
 
 export default [
     {
@@ -87,6 +88,12 @@ export default [
                 name: Routing.codeOfConduct.name,
                 exact: false,
                 component: CodeOfConduct
+            },
+            {
+                path: Routing.join.path,
+                name: Routing.join.name,
+                exact: false,
+                component: Join
             },
             {
                 path: Routing.devProfile.path,

@@ -1,0 +1,143 @@
+@import "../../assets/scss/util";
+@import "../../assets/scss/variable";
+
+.Join {
+    width: 100%;
+    font-size: 1rem;
+
+    .navbar-nav > li > a {
+        color: #222;
+    }
+
+    &__nav {
+        position: relative;
+        z-index: 10;
+    }
+
+
+    .agreement-page {
+        .container {
+            max-width: 1100px;
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        .info-list {
+
+            .row {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .tag {
+                color: #888 !important;
+                background-color: #eee;
+                padding: 5px 8px;
+                margin: 2px;
+            }
+        }
+    }
+
+    .developer-invite-page {
+
+        header {
+            background-image: url('../../../assets/images/showcase/QualityTungadevelopersmeeting.jpg');
+            position: absolute;
+            width: 100%;
+            top: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 180px;
+            padding-bottom: 15px;
+            color: #ffff;
+            font-weight: bolder;
+        }
+
+        #contact-us {
+            .section-heading {
+                margin-bottom: 80px;
+
+                .border {
+                    max-width: 410px;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .btn-icon {
+                .action-text {
+                    display: inline-block;
+                    color: get-color('black');
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+
+    #contact-us {
+        text-align: center;
+        padding: 0 18px;
+        padding-top: 190px;
+        padding-bottom: 30px;
+
+        form {
+            margin-top: 0;
+        }
+
+        .contact-info {
+            margin-bottom: 70px;
+        }
+
+        .contact-sections {
+            text-align: center;
+            display: inline-block;
+
+            @media (min-width: 992px) {
+
+                .section {
+                    float: left;
+                    text-align: left;
+
+                    &:first-child {
+                        max-width: 470px;
+                        margin-right: 50px;
+                    }
+
+                    &:last-child {
+                        width: 410px;
+                    }
+                }
+            }
+        }
+
+        .float-right {
+            @media (max-width: 992px) {
+                float: none!important;
+            }
+        }
+    }
+
+    .section-heading {
+        text-align: center;
+        font-size: px-to-rem(24);
+        font-weight: 500;
+        color: get-color('black');
+        padding-top: 80px;
+        margin-bottom: 50px;
+
+        .border {
+            display: block;
+            max-width: 200px;
+            margin: 28px auto 0;
+            height: 3px;
+            background-color: $brand-color;
+            border-width: 0 !important;
+        }
+    }
+}
