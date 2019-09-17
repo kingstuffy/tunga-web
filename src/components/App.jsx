@@ -8,7 +8,7 @@ import connect from '../connectors/AuthConnector';
 import store from '../store';
 
 import DashboardLayout from './dashboard/DashboardLayout';
-import ChatWidget from "./chat/ChatWidget";
+//import ChatWidget from "./chat/ChatWidget";
 //import LegacyRedirect from './showcase/LegacyRedirect';
 import BootLogo from "./core/BootLogo";
 //import ShowcaseLayout from "./showcase/ShowcaseLayout";
@@ -113,14 +113,14 @@ class App extends React.Component {
 
                             {isStillLoading?null:(
                                 <React.Fragment>
-                                    {user && (user.is_admin || user.is_project_manager)?null:(
+                                    {/*user && (user.is_admin || user.is_project_manager)?null:(
                                         <Switch>
                                             <Route exact path='/customer/help/:channelId' render={props =>
                                                 <ChatWidget channelId={props.match.params.channelId} autoOpen={true}/>}/>
                                             <Route path="/join" render={props => {return null}} />
                                             <Route path="*" component={ChatWidget} />
                                         </Switch>
-                                    )}
+                                    )*/}
 
                                     {this.state.showConsentAlert?(
                                         <div id="cookie-consent" className="clearfix">

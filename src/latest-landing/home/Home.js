@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Home.scss";
 import { Route } from "react-router-dom";
-import ChatWidget from "../shared/ChatWidget/ChatWidget";
+//import ChatWidget from "../shared/ChatWidget/ChatWidget";
 
 class Home extends Component {
     constructor(props) {
@@ -63,7 +63,7 @@ class Home extends Component {
                         );
                     })}
                 </div>
-                <ChatWidget autoOpen={true}/>
+                {/*<ChatWidget autoOpen={true}/>*/}
             </div>
         );
     }
