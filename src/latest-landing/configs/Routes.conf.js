@@ -104,49 +104,49 @@ export default [
             {
                 path: "/dashboard",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "dashboard"
             },
             {
                 path: "/projects",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "projects"
             },
             {
                 path: "/network",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "network"
             },
             {
                 path: "/payments",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "payments"
             },
             {
                 path: "/settings",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "settings"
             },
             {
                 path: "/onboard",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "onboard"
             },
             {
                 path: "/work",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "work"
             },
             {
                 path: "/proposal",
                 component: Dashboard,
-                exact: true,
+                exact: false,
                 name: "proposal"
             },
         ]

@@ -46,7 +46,7 @@ module.exports = {
     plugins: [
         common_config.plugins.chunkVendorPlugin,
         common_config.plugins.HTMLInjectPlugin,
-        common_config.plugins.LegacyHTMLInjectPlugin,
+        //common_config.plugins.LegacyHTMLInjectPlugin,
         common_config.plugins.StyleGuideInjectPlugin,
         common_config.plugins.noErrorsPlugin,
         new OpenBrowserPlugin({}),

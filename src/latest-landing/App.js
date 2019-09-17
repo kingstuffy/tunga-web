@@ -1,10 +1,10 @@
 import React, { Component, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import Routes from "./configs/Routes.conf";
+import BootLogo from "../components/core/BootLogo";
 
-// console.log = () => null;
 class App extends Component {
-    loading = () => <div>Loading...</div>;
+    loading = () => <BootLogo/>;
 
     render() {
         return (

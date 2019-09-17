@@ -33,6 +33,7 @@ module.exports = {
     plugins: {
         chunkVendorPlugin: new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js?v='+ unixTimestamp),
         HTMLInjectPlugin: new HtmlWebpackPlugin(siteSettings),
+        /*
         LegacyHTMLInjectPlugin: new HtmlWebpackPlugin({
             ...siteSettings,
             inject: false,
@@ -40,6 +41,7 @@ module.exports = {
             template: 'src/legacy/index.ejs',
             filename: 'welcome/index.html'
         }),
+        */
         StyleGuideInjectPlugin: new HtmlWebpackPlugin({
             ...siteSettings,
             chunks: ['vendor', 'guide'],

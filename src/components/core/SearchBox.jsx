@@ -240,7 +240,6 @@ class SearchBox extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log("redux state", state);
     return {
         User: state.app.User,
         Project: state.app.Project,

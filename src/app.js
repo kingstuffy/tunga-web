@@ -27,10 +27,10 @@ import store from './store';
  * to the new app.js will be done but for the sake of backward compatibility
  * to enable easy development. this is used.
  * File folder have underscore as prefix are screens for template_1
- */
 import App from "./latest-landing/App";
+ */
 
-
+import App from './components/App';
 
 ReactDOM.render(
     <Provider store={store}>

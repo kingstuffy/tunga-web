@@ -12,6 +12,7 @@ class ProjectOutput extends React.Component {
     };
 
     render() {
+        console.log('ProjectOutput => ', this.props);
         const {Project: {projects}, id, field} = this.props;
 
         return (
@@ -24,7 +25,7 @@ class ProjectOutput extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        Project: state.Project
+        Project: state.app.Project
     };
 }
 

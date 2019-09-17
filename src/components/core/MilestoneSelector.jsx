@@ -163,7 +163,7 @@ class MilestoneSelector extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        ProgressEvent: state.ProgressEvent,
+        ProgressEvent: state.app.ProgressEvent,
     };
 }
 
