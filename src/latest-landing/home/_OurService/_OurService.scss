@@ -1,0 +1,15 @@
+@import "../../assets/scss/util";
+
+.OurService {
+    background: rgba(251, 234, 237, 0.2);
+    padding-top: 8% !important;
+    padding-bottom: 8% !important;
+    min-height: 100vh;
+    .card-center {
+        @extend %vertical-align;
+    }
+
+    .card-min-height {
+        min-height: 600px;
+    }
+}

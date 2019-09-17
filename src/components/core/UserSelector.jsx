@@ -159,7 +159,7 @@ class UserSelector extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        User: state.User,
+        User: state.app.User,
     };
 }
 

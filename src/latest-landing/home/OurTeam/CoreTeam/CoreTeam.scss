@@ -1,0 +1,49 @@
+@import "../../../assets/scss/util";
+@import "../../../assets/scss/variable";
+
+.CoreTeam {
+    padding-left: 18px;
+    padding-top: 26px;
+    // margin-bottom: 4px;
+
+    @media (min-width: 992px) {
+        padding-left: 70px;
+    }
+
+    .float-right {
+        padding-right: 18px;
+
+        @media (min-width: 992px) {
+            padding-right: 63px;
+          }
+        margin-bottom: 4px;
+    }
+
+    &__container {
+        overflow: hidden;
+        margin-top: -30px;
+    }
+
+    &__list {
+        position: relative;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        padding-top: 14px;
+    }
+
+    &__item {
+        width: 46%;
+        display: inline-block;
+        white-space: nowrap;
+
+        @media (min-width: 768px) {
+            width: 31.5%;
+        }
+
+        @media (min-width: 992px) {
+            width: 19%;
+        }
+    }
+}

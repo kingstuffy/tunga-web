@@ -79,7 +79,7 @@ class CountrySelector extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        countries: state.Profile.countries
+        countries: state.app.Profile.countries
     };
 }
 

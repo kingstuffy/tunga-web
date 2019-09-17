@@ -10,7 +10,7 @@ import * as MessageActions from "../actions/MessageActions";
 
 function mapStateToProps(state) {
     return {
-        Activity: state.Activity
+        Activity: state.app.Activity
     };
 }
 

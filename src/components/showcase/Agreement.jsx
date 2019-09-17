@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Footer from "./elements/Footer";
 import MetaTags from "../MetaTags";
 
 export default () => {
@@ -897,8 +896,6 @@ export default () => {
                     contact us by e-mail us to this e-mail address.
                 </p>
             </div>
-
-            <Footer/>
         </div>
     );
 }

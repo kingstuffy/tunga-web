@@ -5,8 +5,7 @@ axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 axios.defaults.withCredentials = true;
 
-let BACKEND_PATH =
-    __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : '/') : 'http://sandbox.tunga.io/');
+let BACKEND_PATH = __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : '/') : 'https://sandbox.tunga.io/');
 let API_PATH = 'api/';
 let SOCIAL_LOGIN_PATH = 'accounts/social/';
 

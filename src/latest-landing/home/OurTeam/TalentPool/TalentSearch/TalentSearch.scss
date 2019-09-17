@@ -1,0 +1,32 @@
+@import "../../../../../scss/variables";
+
+.TalentSearch {
+    $root: &;
+    text-align: left;
+    width: 100%;
+    padding-right: 18px;
+    display: inline-block;
+
+    @media (min-width: 992px) {
+        width: 290px;
+    }
+
+    .Form__input-icon-group {
+        display: flex;
+
+        @media (min-width: 992px) {
+            width: 176%;
+        }
+    }
+
+    .TalentSearch-button {
+        min-width: 92px !important;
+        box-shadow: none;
+        height: 3.5rem !important;
+    }
+
+    #TalentSearch-input {
+        height: 57px !important;
+        width: 176%;
+    }
+}

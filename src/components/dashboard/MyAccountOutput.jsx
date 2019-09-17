@@ -23,7 +23,7 @@ class MyAccountOutput extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        Auth: state.Auth
+        Auth: state.app.Auth
     };
 }
 

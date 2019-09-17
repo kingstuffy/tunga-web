@@ -8,10 +8,11 @@ import connect from '../connectors/AuthConnector';
 import store from '../store';
 
 import DashboardLayout from './dashboard/DashboardLayout';
-import ChatWidget from "./chat/ChatWidget";
-import LegacyRedirect from './showcase/LegacyRedirect';
+//import ChatWidget from "./chat/ChatWidget";
+//import LegacyRedirect from './showcase/LegacyRedirect';
 import BootLogo from "./core/BootLogo";
-import ShowcaseLayout from "./showcase/ShowcaseLayout";
+//import ShowcaseLayout from "./showcase/ShowcaseLayout";
+import ShowcaseLayout from "../latest-landing/App";
 import Button from "./core/Button";
 
 import {getCookieConsent, getCookieConsentCloseAt, openCookieConsentPopUp, setCookieConsentCloseAt} from "./utils/consent";
@@ -33,7 +34,8 @@ class App extends React.Component {
 
     componentDidMount() {
         const {Auth} = this.props;
-        if (!this.state.hasVerified && !Auth.isAuthenticating && !this.props.Auth.isVerifying) {
+        if (!this.state.hasVerified && !Auth.isVerifying) {
+            console.log("component did mount: verify is starting");
             this.props.AuthActions.verify();
         }
 
@@ -46,11 +48,11 @@ class App extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState, snapShot) {
-        const {Auth, history} = this.props;
+    componentDidUpdate(prevProps) {
+        const {Auth} = this.props;
+        // TODO: add condition to check props equality
         if (
-            prevProps.Auth.isAuthenticating && !Auth.isAuthenticating ||
-            (prevProps.Auth.isVerifying && !Auth.isVerifying)
+            prevProps.Auth.isVerifying && !Auth.isVerifying
         ) {
             this.setState({hasVerified: true});
         }
@@ -74,10 +76,12 @@ class App extends React.Component {
 
     render() {
         const {Auth: {user}, AuthActions, match} = this.props,
-            {logout} = AuthActions;
+            {logout} = AuthActions,
+            isDashboardPage = /^\/(dashboard|home|projects|task|estimate|network|people|member|payments|profile|settings|onboard|work|proposal)([/?#].*)*/i.test(window.location.pathname),
+            isStillLoading = !this.state.hasVerified || this.state.showProgress;
 
         return (
-            !this.state.hasVerified || this.state.showProgress?(
+            isDashboardPage && isStillLoading?(
                 <BootLogo/>
             ):(
                 <Media query="(min-width: 992px)">
@@ -85,7 +89,9 @@ class App extends React.Component {
                         <div>
                             <Switch>
                                 {'dashboard|projects|network|payments|settings|onboard|work|proposal'.split('|').map(path => {
-                                    return user && user.id?(
+                                    return isStillLoading?(
+                                        <BootLogo/>
+                                    ):user && user.id?(
                                         <Route key={`app-path--${path}`} path={`/${path}`} render={props => <DashboardLayout {...props} user={user} logout={logout} AuthActions={AuthActions} isLargeDevice={isLargeDevice}/>}/>
                                     ):(
                                         <Redirect key={`app-path--${path}`} from={`/${path}`} to="/"/>
@@ -97,7 +103,7 @@ class App extends React.Component {
                                 <Redirect from="/member*" to="/network*"/>
                                 <Redirect from="/task*" to="/work*"/>
                                 <Redirect from="/estimate*" to="/proposal*"/>
-                                <Route path="/legacy" component={LegacyRedirect} />
+                                {/*<Route path="/legacy" component={LegacyRedirect} />*/}
                                 {['/tunga', '*'].map(path => {
                                     return (
                                         <Route key={`app-path--${path}`} path={path} render={props => <ShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
@@ -105,33 +111,37 @@ class App extends React.Component {
                                 })}
                             </Switch>
 
-                            {user && (user.is_admin || user.is_project_manager)?null:(
-                                <Switch>
-                                    <Route exact path='/customer/help/:channelId' render={props =>
-                                        <ChatWidget channelId={props.match.params.channelId} autoOpen={true}/>}/>
-                                    <Route path="/join" render={props => {return null}} />
-                                    <Route path="*" component={ChatWidget} />
-                                </Switch>
-                            )}
+                            {isStillLoading?null:(
+                                <React.Fragment>
+                                    {/*user && (user.is_admin || user.is_project_manager)?null:(
+                                        <Switch>
+                                            <Route exact path='/customer/help/:channelId' render={props =>
+                                                <ChatWidget channelId={props.match.params.channelId} autoOpen={true}/>}/>
+                                            <Route path="/join" render={props => {return null}} />
+                                            <Route path="*" component={ChatWidget} />
+                                        </Switch>
+                                    )*/}
 
-                            {this.state.showConsentAlert?(
-                                <div id="cookie-consent" className="clearfix">
-                                    <div className="consent-actions float-right">
-                                        <Button variant="link" className="btn" onClick={this.onCookieSettings.bind(this)}>Cookie Settings</Button>
-                                        <Button onClick={this.onCloseCookieConsent.bind(this)}>Got it!</Button>
-                                    </div>
-                                    <div>
-                                        We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, assist with our promotional and marketing efforts and and provide content from third parties.
-                                        Read about how we use cookies and how you can control them by clicking "Cookie Settings."
-                                        If you continue to use this site, you consent to our use of cookies.
-                                    </div>
-                                </div>
-                            ):null}
+                                    {this.state.showConsentAlert?(
+                                        <div id="cookie-consent" className="clearfix">
+                                            <div className="consent-actions float-right">
+                                                <Button variant="link" className="btn" onClick={this.onCookieSettings.bind(this)}>Cookie Settings</Button>
+                                                <Button onClick={this.onCloseCookieConsent.bind(this)}>Got it!</Button>
+                                            </div>
+                                            <div>
+                                                We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, assist with our promotional and marketing efforts and and provide content from third parties.
+                                                Read about how we use cookies and how you can control them by clicking "Cookie Settings."
+                                                If you continue to use this site, you consent to our use of cookies.
+                                            </div>
+                                        </div>
+                                    ):null}
+                                </React.Fragment>
+                            )}
                         </div>
                     )}
                 </Media>
             )
-        )
+        );
     }
 }
 

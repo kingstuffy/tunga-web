@@ -1,0 +1,31 @@
+@import "../../../../scss/variables";
+
+.AuthForm {
+    $root: &;
+    text-align: center;
+    color: #222829;
+    padding: 24% 6% 1%;
+
+    @media (min-width: 992px) {
+        padding: 7% 2% 1%;
+    }
+
+    &__card {
+        max-width: 470px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px 18px;
+
+        @media (min-width: 992px) {
+            padding: 30px;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__cta {
+        font-weight: bold;
+    }
+}

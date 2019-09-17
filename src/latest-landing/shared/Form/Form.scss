@@ -1,0 +1,110 @@
+.Form {
+    $root: &;
+    text-align: left;
+
+    &__title {
+        font-size: 20px;
+        line-height: 42px;
+        text-align: center;
+        color: #062E64;
+        margin-bottom: 32px;
+    }
+
+    &__group {
+        margin-bottom: 30px;
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 19px;
+        color: #222829;
+        margin-bottom: 10px;
+    }
+
+    &__input-icon-group {
+        position: relative;
+    }
+
+    &__input {
+        position: relative;
+        height: 52px;
+        width: 100%;
+        border: 1px solid #C2C6C8;
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 17px;
+        font-size: 14px;
+        line-height: 17px;
+
+        &--light {
+            color: #D9E9FF;
+
+            &::placeholder {
+                color: #D9E9FF;
+            }
+
+            &:-ms-input-placeholder {
+                color: #D9E9FF;
+            }
+
+            &::-ms-input-placeholder {
+                color: #D9E9FF;
+            }
+        }
+
+        &--transparent {
+            background-color: transparent;
+        }
+
+        &--b-b {
+            border: 0;
+            border-bottom: 2px solid #FAFAFA;
+            background-color: transparent;
+        }
+
+        &--has-icon {
+            padding-left: 44px;
+
+            @media (min-width: 992px) {
+                padding-left: 50px;
+            }
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        width: 16px;
+        z-index: 10;
+        color: #8D8E90;
+        font-size: 20px;
+        line-height: 16px;
+
+        &--light {
+            color: #D9E9FF;
+        }
+    }
+
+    a#{$root}__cta {
+        font-size: 14px;
+        line-height: 17px;
+        color: #DA3451;
+    }
+
+    &__btn {
+        border-radius: 0;
+        min-width: 160px;
+        padding: 15px;
+        box-shadow: none;
+
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &--full-w {
+            width: 100%;
+        }
+    }
+}

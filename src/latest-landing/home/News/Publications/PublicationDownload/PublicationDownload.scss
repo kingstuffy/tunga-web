@@ -1,0 +1,89 @@
+@import "../../../../assets/scss/util";
+@import "../../../../assets/scss/variable";
+
+.PublicationDownload {
+    background: linear-gradient(0deg, #062E64, #062E64);
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    white-space: normal;
+
+    @media (min-width: 992px) {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    &__title {
+        font-size: 16px;
+        line-height: 28px;
+        color: #fff;
+        margin-bottom: 18px;
+    }
+
+    &__bg-container {
+        padding: 40px 70px;
+
+        @media (min-width: 992px) {
+            padding: 0;
+            padding-left: 98px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+    }
+
+    &__bg {
+        height: 261px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @media (min-width: 992px) {
+            height: 542px;
+        }
+    }
+
+    &__form-container {
+        padding: 18px;
+
+        @media (min-width: 992px) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 18px;
+            height: 100vh;
+            padding-right: 148px;
+        }
+    }
+
+    &__form {
+        margin-bottom: 32px;
+
+        @media (min-width: 992px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__disclaimer {
+        font-size: 12px;
+        line-height: 24px;
+        color: #fff;
+    }
+
+    &__dismiss {
+        position: absolute;
+        top: 22.5px;
+        right: 22.5px;
+
+        @media (min-width: 992px) {
+            top: 52.5px;
+            right: 52.5px;
+        }
+    }
+
+    &__icon {
+        color: #fff;
+    }
+}

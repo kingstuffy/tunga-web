@@ -1,0 +1,43 @@
+@import "../../../../scss/variables";
+
+.Hero {
+    $root: &;
+    text-align: center;
+    color: #fff;
+    padding: 35% 8% 1%;
+
+    @media (min-width: 992px) {
+        padding: 14% 2% 1%;
+    }
+
+    &__title {
+        max-width: 500px;
+        font-size: 24px;
+        line-height: 36px;
+        margin: 0 auto 25px;
+        font-weight: 400;
+
+        @media (min-width: 992px) {
+            font-size: 32px;
+            line-height: 42px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 27px;
+    }
+
+    &__cta-btn {
+        margin-bottom: 30px;
+
+        @media (min-width: 992px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__icon-holder {
+        display: block;
+    }
+}

@@ -83,7 +83,7 @@ export default class NavBar extends React.Component {
         return (
             <nav className={`navbar navbar-expand-${breakpoint || 'md'} fixed-top navbar-dark ${className || ''} ${variant?`navbar-${variant}`:''}`} >
                 <Link to={`/${variant === 'dashboard'?'dashboard':''}`} className="navbar-brand">
-                    <img src={require('../assets/images/logo.png')} />
+                    <img src={require('../assets/images/logo_new_color.png')} />
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <i className="tg-ic-bars"/>
@@ -107,8 +107,8 @@ export default class NavBar extends React.Component {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={proxySafeUrl("/researchpapers/how-to-use-remote-workers-for-scaling-your-software-development-team/")} activeClassName="active">
-                                    Research Paper
+                                <NavLink to={proxySafeUrl("/whitepapers/best-african-countries-for-sourcing-software-developers-in-2019")} activeClassName="active">
+                                    Whitepaper
                                 </NavLink>
                             </li>
                             <li>

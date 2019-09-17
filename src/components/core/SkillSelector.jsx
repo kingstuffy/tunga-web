@@ -172,7 +172,7 @@ class SkillSelector extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        Skill: state.Skill
+        Skill: state.app.Skill
     };
 }
 

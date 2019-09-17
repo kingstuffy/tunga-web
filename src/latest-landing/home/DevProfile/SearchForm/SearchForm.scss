@@ -1,0 +1,39 @@
+@import "../../../../scss/variables";
+
+.SearchForm {
+    $root: &;
+    text-align: center;
+    color: #fff;
+    padding: 10% 8% 1%;
+
+    @media (min-width: 992px) {
+        padding: 5% 2% 11%;
+    }
+
+
+    &__container {
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+
+    &__icon {
+        width: 17px;
+    }
+
+    &__input {
+        outline: 0;
+        border: 0;
+        border-bottom: 2px solid #FAFAFA;
+        width: 100%;
+        background-color: transparent;
+        padding: 10px 17px;
+        font-size: 16px;
+        line-height: 19px;
+        color: #D9E9FF;
+
+        &--has-icon {
+            padding-left: 44px;
+        }
+    }
+}
