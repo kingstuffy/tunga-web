@@ -23,6 +23,9 @@ body {
 
     &.is-dashboard {
         background-color: get-color('light-grey');
+        // Hard fix scrolling
+        overflow-y: scroll !important;
+        height: auto !important;
     }
 }
 
