@@ -1,40 +1,81 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./PublicationDownload.scss";
-import { Col, Row } from "reactstrap";
+import {Col, FormGroup, Row} from "reactstrap";
 import SideImg from "../../../../assets/img/blog/white-paper-download.png";
-import { Form, Title, Button, Input, Group, Select, IconGroup, Cta } from "../../../../shared/Form/Form";
+import {
+    Form,
+    Title,
+    Button,
+    Input,
+    Group,
+    Select,
+    IconGroup,
+    Cta
+} from "../../../../shared/Form/Form";
 import Icon from "../../../../shared/core/Icon";
+import {isBusinessEmail} from "../../../../../components/utils/search";
+import CountrySelector from "../../../../../components/core/CountrySelector";
+import FieldError from "../../../../../components/core/FieldError";
+import connect from '../../../../../connectors/ProfileConnector';
 
-class PublicationDownload extends Component {
+class PublicationDownload extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            fullName: '',
+            first_name: '',
+            last_name: '',
             company: '',
-            email: '',
-            phoneNumber: '',
             country: '',
+            email: '',
+            phone_number: '',
+            paper: 'best_african_countries_for_outsourcing',
+            error: false
         };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.Profile && nextProps.Profile.isSaved.visitors) {
+            const downloadLink = nextProps.Profile.isSaved.visitors.download_url;
 
-    onFormSubmit(e) {
+            window.open(downloadLink);
+
+
+
+        }
+    }
+
+    handleSubmit = (e) => {
         e.preventDefault();
-        alert(JSON.stringify(this.state));
-    }
+        const {first_name, last_name, email, phone_number, country, company, paper} = this.state;
+        if (isBusinessEmail(email)) {
+            this.props.ProfileActions.createVisitor({
+                first_name,
+                last_name,
+                email,
+                phone_number,
+                country,
+                company,
+                paper
+            });
+        } else {
+            this.setState({error: true});
+        }
+    };
 
-
-    handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+    onChangeField(key, e) {
+        let newState = {};
+        if (key === 'country') {
+            newState[key] = e;
+        } else {
+            newState[key] = e.target.value;
+        }
+        this.setState(newState);
     }
 
 
     render() {
-        const { downloadTitle } = this.props;
+        const {downloadTitle} = this.props;
+        const {first_name, last_name, company, email, country, phone_number} = this.state;
 
         return (
             <div className="PublicationDownload">
@@ -44,66 +85,93 @@ class PublicationDownload extends Component {
                         md="6">
                         <div className="PublicationDownload__bg-container">
                             <div className="PublicationDownload__bg"
-                                 style={{ backgroundImage: `url(${SideImg})` }}></div>
+                                 style={{backgroundImage: `url(${SideImg})`}}></div>
                         </div>
                     </Col>
                     <Col
                         sm="12"
                         md="6">
                         <div className="PublicationDownload__form-container">
-                            <Form onSubmit={this.onFormSubmit} className="PublicationDownload__form">
+                            <Form onSubmit={this.handleSubmit}>
+                                className="PublicationDownload__form">
                                 <React.Fragment>
                                     <div className="PublicationDownload__title">
                                         {downloadTitle}
                                     </div>
                                     <Group>
-                                        <Input className="Form__input--light Form__input--transparent" type="text"
-                                               name="fullName" value={this.state.fullName}
-                                               onChange={this.handleChange}
-                                               placeholder="Full name"/>
+                                        <Input placeholder="First name"
+                                               className="Form__input--light Form__input--transparent"
+                                               required
+                                               value={first_name}
+                                               onChange={this.onChangeField.bind(this, 'first_name')}
+                                        />
                                     </Group>
                                     <Group>
-                                        <Input className="Form__input--light Form__input--transparent" type="text"
-                                               name="company" value={this.state.company}
-                                               onChange={this.handleChange}
-                                               placeholder="Company/Organization"/>
+                                        <Input placeholder="Last name"
+                                               className="Form__input--light Form__input--transparent"
+                                               required
+                                               value={last_name}
+                                               onChange={this.onChangeField.bind(this, 'last_name')}
+                                        />
                                     </Group>
                                     <Group>
-                                        <Input className="Form__input--light Form__input--transparent" type="email"
-                                               name="email" value={this.state.email}
-                                               onChange={this.handleChange}
-                                               placeholder="Business email"/>
+                                        <Input
+                                            placeholder="Company/Organization"
+                                            className="Form__input--light Form__input--transparent"
+                                            required
+                                            value={company}
+                                            onChange={this.onChangeField.bind(this, 'company')}
+                                        />
                                     </Group>
                                     <Group>
-                                        <Input className="Form__input--light Form__input--transparent" type="text"
-                                               name="phoneNumber" value={this.state.phoneNumber}
-                                               onChange={this.handleChange}
-                                               placeholder="Phone number"/>
+                                        {this.state.error && <FieldError
+                                            message="Please fill in valid business email"/>}
+                                        <Input placeholder="Business email"
+                                               className="Form__input--light Form__input--transparent"
+                                               required
+                                               type="email"
+                                               value={email}
+                                               onChange={this.onChangeField.bind(this, 'email')}
+                                        />
                                     </Group>
                                     <Group>
-                                        <Select className="Form__input--light Form__input--transparent" type="text"
-                                                name="country" value={this.state.country}
-                                                onChange={this.handleChange}>
-                                            <React.Fragment>
-                                                <option>--Select a country--</option>
-                                            </React.Fragment>
-                                        </Select>
+                                        <Input placeholder="Phone number"
+                                               className="Form__input--light Form__input--transparent"
+                                               required
+                                               value={phone_number}
+                                               onChange={this.onChangeField.bind(this, 'phone_number')}
+                                        />
+                                    </Group>
+                                    <Group>
+                                        <CountrySelector
+                                            value={country}
+                                            className="Form__input--light Form__input--transparent"
+                                            onChange={this.onChangeField.bind(this, 'country')}
+                                            required/>
                                     </Group>
                                     <div className="text-center">
-                                        <Button type="submit"
-                                                className="Form__btn--full-w">
-                                            Download
+
+                                        <Button className="Form__btn--full-w"
+                                                type="submit"
+                                                disabled={this.props.Profile.isSaving.visitors}>Download
                                         </Button>
                                     </div>
                                 </React.Fragment>
                             </Form>
                             <div className="PublicationDownload__disclaimer">
-                                By submitting this form, you agree that we may contact you by mail, phone or otherwise
-                                with information related to this report and the relevant Tunga services. If you already
-                                have an account at Tunga, you can control the messages you receive from us in your
-                                settings. If you are a guest visitor, you can unsubscribe from Tunga marketing messages
-                                any time by clicking the unsubscribe button in the e-mail or by sending us an e-mail to
-                                <b>hello@tunga.io</b> with the word “Unsubscribe” in the subject. To learn more, please
+                                By submitting this form, you agree that we may
+                                contact you by mail, phone or otherwise
+                                with information related to this report and the
+                                relevant Tunga services. If you already
+                                have an account at Tunga, you can control the
+                                messages you receive from us in your
+                                settings. If you are a guest visitor, you can
+                                unsubscribe from Tunga marketing messages
+                                any time by clicking the unsubscribe button in
+                                the e-mail or by sending us an e-mail to
+                                <b>hello@tunga.io</b> with the word
+                                “Unsubscribe” in the subject. To learn more,
+                                please
                                 visit
                                 Tunga’s <b>Privacy Policy</b> page.
                             </div>
@@ -125,5 +193,5 @@ class PublicationDownload extends Component {
 
 PublicationDownload.propTypes = {};
 
-export default PublicationDownload;
+export default connect(PublicationDownload);
 
