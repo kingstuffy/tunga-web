@@ -16,139 +16,143 @@ import UserAgreement from "../home/UserAgreement/UserAgreement";
 import CodeOfConduct from "../home/CodeOfConduct/CodeOfConduct";
 import Join from "../home/Join/Join";
 
-export default [
+export const childRoutes = [
+    {
+        path: Routing.home.path,
+        component: DefaultBody,
+        exact: true,
+        name: Routing.home.name
+    },
+    {
+        path: Routing.ourStory.path,
+        name: Routing.ourStory.name,
+        exact: false,
+        component: OurStory
+    },
+    {
+        path: Routing.ourTeam.path,
+        name: Routing.ourTeam.name,
+        exact: false,
+        component: OurTeam
+    },
+    {
+        path: Routing.news.path,
+        name: Routing.news.name,
+        exact: false,
+        component: News
+    },
+    {
+        path: Routing.login.path,
+        name: Routing.login.name,
+        exact: false,
+        component: Login
+    },
+    {
+        path: Routing.forgotPassword.path,
+        name: Routing.forgotPassword.name,
+        exact: false,
+        component: ForgotPassword
+    },
+    {
+        path: Routing.resetPassword.path,
+        name: Routing.resetPassword.name,
+        exact: false,
+        component: ResetPassword
+    },
+    {
+        path: Routing.blog.path,
+        name: Routing.blog.name,
+        exact: false,
+        component: BlogPage
+    },
+    {
+        path: Routing.privacy.path,
+        name: Routing.privacy.name,
+        exact: false,
+        component: Privacy
+    },
+    {
+        path: Routing.userAgreement.path,
+        name: Routing.userAgreement.name,
+        exact: false,
+        component: UserAgreement
+    },
+    {
+        path: Routing.codeOfConduct.path,
+        name: Routing.codeOfConduct.name,
+        exact: false,
+        component: CodeOfConduct
+    },
+    {
+        path: Routing.join.path,
+        name: Routing.join.name,
+        exact: false,
+        component: Join
+    },
+    {
+        path: Routing.devProfile.path,
+        name: Routing.devProfile.name,
+        exact: false,
+        component: DevProfile
+    },
+    {
+        path: "/dashboard",
+        component: Dashboard,
+        exact: false,
+        name: "dashboard"
+    },
+    {
+        path: "/projects",
+        component: Dashboard,
+        exact: false,
+        name: "projects"
+    },
+    {
+        path: "/network",
+        component: Dashboard,
+        exact: false,
+        name: "network"
+    },
+    {
+        path: "/payments",
+        component: Dashboard,
+        exact: false,
+        name: "payments"
+    },
+    {
+        path: "/settings",
+        component: Dashboard,
+        exact: false,
+        name: "settings"
+    },
+    {
+        path: "/onboard",
+        component: Dashboard,
+        exact: false,
+        name: "onboard"
+    },
+    {
+        path: "/work",
+        component: Dashboard,
+        exact: false,
+        name: "work"
+    },
+    {
+        path: "/proposal",
+        component: Dashboard,
+        exact: false,
+        name: "proposal"
+    },
+];
+
+const Routes = [
     {
         path: "",
         component: Home,
         exact: true,
         name: Routing.home.name,
-        childRoutes: [
-            {
-                path: Routing.home.path,
-                component: DefaultBody,
-                exact: true,
-                name: Routing.home.name
-            },
-            {
-                path: Routing.ourStory.path,
-                name: Routing.ourStory.name,
-                exact: false,
-                component: OurStory
-            },
-            {
-                path: Routing.ourTeam.path,
-                name: Routing.ourTeam.name,
-                exact: false,
-                component: OurTeam
-            },
-            {
-                path: Routing.news.path,
-                name: Routing.news.name,
-                exact: false,
-                component: News
-            },
-            {
-                path: Routing.login.path,
-                name: Routing.login.name,
-                exact: false,
-                component: Login
-            },
-            {
-                path: Routing.forgotPassword.path,
-                name: Routing.forgotPassword.name,
-                exact: false,
-                component: ForgotPassword
-            },
-            {
-                path: Routing.resetPassword.path,
-                name: Routing.resetPassword.name,
-                exact: false,
-                component: ResetPassword
-            },
-            {
-                path: Routing.blog.path,
-                name: Routing.blog.name,
-                exact: false,
-                component: BlogPage
-            },
-            {
-                path: Routing.privacy.path,
-                name: Routing.privacy.name,
-                exact: false,
-                component: Privacy
-            },
-            {
-                path: Routing.userAgreement.path,
-                name: Routing.userAgreement.name,
-                exact: false,
-                component: UserAgreement
-            },
-            {
-                path: Routing.codeOfConduct.path,
-                name: Routing.codeOfConduct.name,
-                exact: false,
-                component: CodeOfConduct
-            },
-            {
-                path: Routing.join.path,
-                name: Routing.join.name,
-                exact: false,
-                component: Join
-            },
-            {
-                path: Routing.devProfile.path,
-                name: Routing.devProfile.name,
-                exact: false,
-                component: DevProfile
-            },
-            {
-                path: "/dashboard",
-                component: Dashboard,
-                exact: false,
-                name: "dashboard"
-            },
-            {
-                path: "/projects",
-                component: Dashboard,
-                exact: false,
-                name: "projects"
-            },
-            {
-                path: "/network",
-                component: Dashboard,
-                exact: false,
-                name: "network"
-            },
-            {
-                path: "/payments",
-                component: Dashboard,
-                exact: false,
-                name: "payments"
-            },
-            {
-                path: "/settings",
-                component: Dashboard,
-                exact: false,
-                name: "settings"
-            },
-            {
-                path: "/onboard",
-                component: Dashboard,
-                exact: false,
-                name: "onboard"
-            },
-            {
-                path: "/work",
-                component: Dashboard,
-                exact: false,
-                name: "work"
-            },
-            {
-                path: "/proposal",
-                component: Dashboard,
-                exact: false,
-                name: "proposal"
-            },
-        ]
+        childRoutes
     }
 ];
+
+export default Routes;

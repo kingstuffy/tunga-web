@@ -12,7 +12,7 @@ import DashboardLayout from './dashboard/DashboardLayout';
 //import LegacyRedirect from './showcase/LegacyRedirect';
 import BootLogo from "./core/BootLogo";
 //import ShowcaseLayout from "./showcase/ShowcaseLayout";
-import ShowcaseLayout from "../latest-landing/App";
+import NewShowcaseLayout from "../latest-landing/App";
 import Button from "./core/Button";
 
 import {getCookieConsent, getCookieConsentCloseAt, openCookieConsentPopUp, setCookieConsentCloseAt} from "./utils/consent";
@@ -77,11 +77,11 @@ class App extends React.Component {
     render() {
         const {Auth: {user}, AuthActions, match} = this.props,
             {logout} = AuthActions,
-            isDashboardPage = /^\/(dashboard|home|projects|task|estimate|network|people|member|payments|profile|settings|onboard|work|proposal)([/?#].*)*/i.test(window.location.pathname),
+            isAuthAwarePage = /^\/(signin|dashboard|home|projects|task|estimate|network|people|member|payments|profile|settings|onboard|work|proposal)([/?#].*)*/i.test(window.location.pathname),
             isStillLoading = !this.state.hasVerified || this.state.showProgress;
 
         return (
-            isDashboardPage && isStillLoading?(
+            isAuthAwarePage && isStillLoading?(
                 <BootLogo/>
             ):(
                 <Media query="(min-width: 992px)">
@@ -103,10 +103,19 @@ class App extends React.Component {
                                 <Redirect from="/member*" to="/network*"/>
                                 <Redirect from="/task*" to="/work*"/>
                                 <Redirect from="/estimate*" to="/proposal*"/>
+                                {'signin|signup|reset-password|start|start-welcome|start-outsource|quiz|customer|join'.split('|').map(path => {
+                                    return isStillLoading?(
+                                        <BootLogo/>
+                                    ):user && user.id?(
+                                        <Redirect key={`app-path--${path}`} from={`/${path}`} to="/dashboard"/>
+                                    ):(
+                                        <Route key={`app-path--${path}`} path={path} render={props => <NewShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
+                                    );
+                                })}
                                 {/*<Route path="/legacy" component={LegacyRedirect} />*/}
                                 {['/tunga', '*'].map(path => {
                                     return (
-                                        <Route key={`app-path--${path}`} path={path} render={props => <ShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
+                                        <Route key={`app-path--${path}`} path={path} render={props => <NewShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
                                     );
                                 })}
                             </Switch>

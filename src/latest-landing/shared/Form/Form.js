@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Form.scss";
 import CoreButton from "../core/Button";
 
@@ -18,9 +19,9 @@ export const IconGroup = ({ children, ...props }) => (
 );
 
 export const Cta = ({ children, ...props }) => (
-    <a {...props} className={`${props.className || ''} Form__cta`}>
+    <Link {...props} to={props.href} className={`${props.className || ''} Form__cta`}>
         {children}
-    </a>
+    </Link>
 );
 
 export const Select = ({ children, ...props }) => (
