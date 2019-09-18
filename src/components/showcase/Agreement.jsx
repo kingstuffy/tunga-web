@@ -172,7 +172,7 @@ export default () => {
                     <strong>Website:</strong> the website operated by Tunga,
                     which is hosted at{' '}
                     <a href="/" target="_blank">
-                        https://www.tunga.io
+                        https://tunga.io
                     </a>, and all the services, tools and applications offered
                     there;
                 </p>
