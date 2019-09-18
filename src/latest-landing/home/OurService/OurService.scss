@@ -33,8 +33,11 @@
         // padding: 3.2% 0;
         overflow: hidden;
         width: 100vw;
+        margin-top: -35px;
 
         @media (min-width: 992px) {
+            margin-top: -65px;
+
             &::after {
                 content: '';
                 height: 60vh;
@@ -44,6 +47,16 @@
                 background-color: #fefbfb;
                 position: absolute;
             }
+        }
+    }
+
+    .Carousel__pagination {
+        margin-bottom: 30px;
+        padding-right: 18px;
+
+        @media (min-width: 992px) {
+            margin-bottom: 50px;
+            padding-right: 140px;
         }
     }
 
