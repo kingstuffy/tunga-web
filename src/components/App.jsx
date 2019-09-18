@@ -77,7 +77,7 @@ class App extends React.Component {
     render() {
         const {Auth: {user}, AuthActions, match} = this.props,
             {logout} = AuthActions,
-            isAuthAwarePage = /^\/(signin|dashboard|home|projects|task|estimate|network|people|member|payments|profile|settings|onboard|work|proposal)([/?#].*)*/i.test(window.location.pathname),
+            isAuthAwarePage = /^\/(login|signin|signup|reset-password|start|start-welcome|start-outsource|quiz|customer|join|dashboard|home|projects|task|estimate|network|people|member|payments|profile|settings|onboard|work|proposal)([/?#].*)*/i.test(window.location.pathname),
             isStillLoading = !this.state.hasVerified || this.state.showProgress;
 
         return (
@@ -89,9 +89,7 @@ class App extends React.Component {
                         <div>
                             <Switch>
                                 {'dashboard|projects|network|payments|settings|onboard|work|proposal'.split('|').map(path => {
-                                    return isStillLoading?(
-                                        <BootLogo/>
-                                    ):user && user.id?(
+                                    return user && user.id?(
                                         <Route key={`app-path--${path}`} path={`/${path}`} render={props => <DashboardLayout {...props} user={user} logout={logout} AuthActions={AuthActions} isLargeDevice={isLargeDevice}/>}/>
                                     ):(
                                         <Redirect key={`app-path--${path}`} from={`/${path}`} to="/"/>
@@ -103,10 +101,8 @@ class App extends React.Component {
                                 <Redirect from="/member*" to="/network*"/>
                                 <Redirect from="/task*" to="/work*"/>
                                 <Redirect from="/estimate*" to="/proposal*"/>
-                                {'signin|signup|reset-password|start|start-welcome|start-outsource|quiz|customer|join'.split('|').map(path => {
-                                    return isStillLoading?(
-                                        <BootLogo/>
-                                    ):user && user.id?(
+                                {'login|signin|signup|reset-password|start|start-welcome|start-outsource|quiz|customer|join'.split('|').map(path => {
+                                    return user && user.id?(
                                         <Redirect key={`app-path--${path}`} from={`/${path}`} to="/dashboard"/>
                                     ):(
                                         <Route key={`app-path--${path}`} path={path} render={props => <NewShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
