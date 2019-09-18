@@ -44,6 +44,18 @@ class PublicationDownload extends React.Component {
         }
     }
 
+    componentDidMount() {
+        if (this.props.location.hash.includes("?")){
+            const answer_array = this.props.location.hash.split('?');
+            if (answer_array[1].includes('research')){
+                this.setState({
+                    paper: 'scaling_your_team_with_remote_developers'
+                });
+            }
+        }
+
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         const {first_name, last_name, email, phone_number, country, company, paper} = this.state;
@@ -85,7 +97,8 @@ class PublicationDownload extends React.Component {
                         md="6">
                         <div className="PublicationDownload__bg-container">
                             <div className="PublicationDownload__bg"
-                                 style={{backgroundImage: `url(${SideImg})`}}></div>
+                                 style={{backgroundImage: `url(${SideImg})`}}>
+                            </div>
                         </div>
                     </Col>
                     <Col
@@ -93,7 +106,6 @@ class PublicationDownload extends React.Component {
                         md="6">
                         <div className="PublicationDownload__form-container">
                             <Form onSubmit={this.handleSubmit}>
-                                className="PublicationDownload__form">
                                 <React.Fragment>
                                     <div className="PublicationDownload__title">
                                         {downloadTitle}
