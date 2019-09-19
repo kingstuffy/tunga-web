@@ -2,13 +2,13 @@
     position: fixed;
     z-index: 100000000;
     width: 40px;
-    right: 40px;
+    right: 35px;
     bottom: 100px;
     cursor: pointer;
 
     @media (min-width: 992px) {
-        bottom: 49px;
-        right: 13px;
+        bottom: 85px;
+        right: 35px;
     }
 
     &__img {
