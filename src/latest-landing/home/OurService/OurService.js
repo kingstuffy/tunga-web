@@ -29,6 +29,8 @@ import Icon from "../../shared/core/Icon";
 import { paging } from "../../Utils/Utils";
 import PaginateArrow from "../../shared/PaginateArrow/PaginateArrow";
 import ServiceDetail from "./ServiceDetail/ServiceDetail";
+import Carousel from "../../shared/Carousel/Carousel";
+
 
 class OurService extends Component {
     constructor(props) {
@@ -207,58 +209,61 @@ class OurService extends Component {
         this.setState({ selectedService: null, nextService: null });
     }
 
-
     getDataPerPage() {
-        let perPage = 0;
-        const windowWith = this.state.windowWidth;
-
-        switch (true) {
-            case windowWith <= 768:
-                perPage = 1;
-                break;
-            case windowWith <= 992:
-                perPage = 2;
-                break;
-            default:
-                perPage = 3.22;
-        }
-
-        return perPage;
+        return [
+            {
+                breakpoint: 768,
+                perPage: 1,
+            },
+            {
+                breakpoint: 992,
+                perPage: 2,
+            },
+            {
+                breakpoint: 768000,
+                perPage: 3,
+            },
+        ];
     }
 
 
     render() {
         const { onUseCaseClick, isMobile } = this.props;
+        const pagination = {
+            total: this.state.data.length,
+            perPage: this.getDataPerPage()
+        };
 
         return (
             <section className="OurService" id="OurService">
                 <div className="text-primary OurService__header font-weight-bold">
                     Our Services
-                    <PaginateArrow
-                        This={this}
-                        float="float-right"
-                        color="text-primary"
-                    />
                 </div>
                 <div className="OurService__container">
-                    <ul className="OurService__list" style={{ left: this.state.leftPosition }}>
-                        {this.state.data.map(
-                            (service, i) => (
-                                <li
-                                    key={i}
-                                    className="OurService__item"
-                                >
-                                    <ServiceCard
-                                        isMobile={isMobile}
-                                        service={
-                                            service
-                                        }
-                                        onServiceSelection={this.onServiceSelection}
-                                    />
-                                </li>
-                            )
-                        )}
-                    </ul>
+                    <Carousel
+                        pagination={pagination}
+                        float="float-right"
+                        color="text-primary"
+                    >
+                        <ul className="OurService__list" style={{ left: this.state.leftPosition }}>
+                            {this.state.data.map(
+                                (service, i) => (
+                                    <li
+                                        key={i}
+                                        className="OurService__item"
+                                    >
+                                        <ServiceCard
+                                            isMobile={isMobile}
+                                            service={
+                                                service
+                                            }
+                                            onServiceSelection={this.onServiceSelection}
+                                        />
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                    </Carousel>
                 </div>
                 {
                     this.state.selectedService &&
