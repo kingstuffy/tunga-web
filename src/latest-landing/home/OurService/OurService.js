@@ -50,7 +50,7 @@ class OurService extends Component {
                     videoMain: DedicatedDevelopers,
                     videoDetails: DedicatedDevelopersDetail,
                     leadTime: "1 - 2 weeks",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     useCases: [
                         {
                             title: "Cuurios",
@@ -121,7 +121,7 @@ class OurService extends Component {
                     videoMain: DeveloperDemand,
                     videoDetails: DeveloperDemandDetail,
                     leadTime: "< 1 week",
-                    price: "23 - 26 EUR per hour"
+                    price: "26 - 29 EUR per hour"
                 },
                 /*{
                     title: "Recruitment",
@@ -131,7 +131,7 @@ class OurService extends Component {
                     videoMain: Recruitment,
                     videoDetails: RecruitmentDetail,
                     leadTime: "< 1 week",
-                    price: "23 - 26 EUR per hour"
+                    price: "26 - 29 EUR per hour"
                 },*/
                 {
                     title: "Software Maintenance",
