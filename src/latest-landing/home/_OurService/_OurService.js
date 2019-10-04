@@ -42,7 +42,7 @@ class _OurService extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service4,
                     leadTime: "< 1 week",
                     price: "26 - 29 EUR per hour"
@@ -50,7 +50,7 @@ class _OurService extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service4,
                     leadTime: "< 1 week",
                     price: "26 - 29 EUR per hour"

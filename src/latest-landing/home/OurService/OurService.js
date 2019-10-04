@@ -116,7 +116,7 @@ class OurService extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service4,
                     videoMain: DeveloperDemand,
                     videoDetails: DeveloperDemandDetail,
@@ -126,7 +126,7 @@ class OurService extends Component {
                 /*{
                     title: "Recruitment",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service5,
                     videoMain: Recruitment,
                     videoDetails: RecruitmentDetail,
