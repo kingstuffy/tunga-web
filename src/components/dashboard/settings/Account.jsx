@@ -7,6 +7,7 @@ import CustomInputGroup from "../../core/CustomInputGroup";
 import Button from "../../core/Button";
 import FieldError from "../../core/FieldError";
 import Success from "../../core/Success";
+import {openConfirm} from "../../core/utils/modals";
 
 export default class Account extends React.Component {
     static propTypes = {
@@ -34,7 +35,6 @@ export default class Account extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapShot) {
         if (!_.isEqual(this.props.isSaved, prevProps.isSaved)) {
-            console.log('changed');
             let stateChanges = {};
             [
                 ['account', {password: ''}],
@@ -71,6 +71,24 @@ export default class Account extends React.Component {
                 break;
             case 'password':
                 ProfileActions.updatePassword({old_password: this.state.old_password, new_password1: this.state.new_password1, new_password2: this.state.new_password2});
+                break;
+            case 'deactivate':
+                const self = this;
+                openConfirm(
+                    <div>
+                        <p>Your user account will be disabled immediately and you will be logged out of Tunga.</p>
+                        <p>Additionally, all data that's non-essential to compliance will be deleted from Tunga's systems within 7 days.</p>
+                    </div>,
+                    'Confirm account deactivation.', false,
+                    {
+                        ok: 'Ok',
+                        cancel: 'Cancel'
+                    }
+                ).then(response => {
+                    ProfileActions.deactivateAccount();
+                }, error => {
+                    self.setState({saving: '', isSaved: ''});
+                });
                 break;
             default:
                 break;
@@ -206,7 +224,7 @@ export default class Account extends React.Component {
                 <form onSubmit={this.onSave.bind(this, 'deactivate')}>
                     <div className="section-title">Deactivate account</div>
                     <div>
-                        <Button type="submit" disabled>Deactivate my account</Button>
+                        <Button type="submit" disabled={this.state.saving === 'deactivate'}>{this.state.saving === 'deactivate'?'Deactivating your account ...':'Deactivate my account'}</Button>
                     </div>
                 </form>
             </div>

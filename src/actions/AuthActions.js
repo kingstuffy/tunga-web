@@ -64,7 +64,6 @@ export const RETRIEVE_INVITE_FAILED = 'RETRIEVE_INVITE_FAILED';
 export function authenticate(credentials) {
     return dispatch => {
         dispatch(authStart(credentials));
-        console.log("credentials", credentials)
         return axios
             .post(ENDPOINT_LOGIN, credentials)
             .then(function(response) {

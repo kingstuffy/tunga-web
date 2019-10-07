@@ -58,6 +58,7 @@ function user(state = defaultUser, action) {
         case SettingsActions.UPDATE_SETTINGS_SUCCESS:
             return {...state, settings: action.settings};
         case AuthActions.LOGOUT_SUCCESS:
+        case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
             return defaultUser;
         default:
             return state;
@@ -70,6 +71,7 @@ function visitor(state = {}, action) {
     case AuthActions.EMAIL_VISITOR_VERIFY_SUCCESS:
         return action.visitor;
     case AuthActions.LOGOUT_SUCCESS:
+    case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
         return {};
     default:
         return state;
@@ -124,6 +126,7 @@ function isAuthenticated(state = false, action) {
     case AuthActions.VERIFY_SUCCESS:
         return true;
     case AuthActions.LOGOUT_SUCCESS:
+    case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
         return false;
     default:
         return state;
@@ -136,6 +139,7 @@ function isEmailVisitor(state = false, action) {
     case AuthActions.EMAIL_VISITOR_VERIFY_SUCCESS:
         return true;
     case AuthActions.LOGOUT_SUCCESS:
+    case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
         return false;
     default:
         return state;
@@ -339,6 +343,8 @@ function next(state = null, action) {
         return action.path;
     case AuthActions.LOGOUT_SUCCESS:
         return null;
+    case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
+        return '/login?deactivated=true';
     default:
         return state;
     }

@@ -8,6 +8,7 @@ import { authenticate } from "../../../../actions/AuthActions";
 import { Redirect } from "react-router";
 import Routing from "../../../constants/Routing";
 import Progress from "../../../../components/core/Progress";
+import querystring from 'querystring';
 
 class AuthForm extends Component {
     constructor(props) {
@@ -42,6 +43,8 @@ class AuthForm extends Component {
             this.props.isAuthenticated();
         }
 
+        const queryParams = querystring.parse((window.location.search || '').replace('?', ''));
+
         return (
             <Form onSubmit={this.onFormSubmit}>
                 <React.Fragment>
@@ -54,7 +57,9 @@ class AuthForm extends Component {
                         /> :
                         null}
                     <Title className="AuthForm__title">
-                        Welcome back
+                        {queryParams && queryParams.deactivated?(
+                            <div class="alert alert-danger">Your account has been deactivated</div>
+                        ):'Welcome back'}
                     </Title>
                     {auth.isAuthenticating.isLoginStart ? <Progress/> : ''}
                     <Group>

@@ -35,7 +35,6 @@ class App extends React.Component {
     componentDidMount() {
         const {Auth} = this.props;
         if (!this.state.hasVerified && !Auth.isVerifying) {
-            console.log("component did mount: verify is starting");
             this.props.AuthActions.verify();
         }
 
@@ -55,6 +54,11 @@ class App extends React.Component {
             prevProps.Auth.isVerifying && !Auth.isVerifying
         ) {
             this.setState({hasVerified: true});
+        }
+
+        if(!Auth.isVerifying && prevProps.Auth.isAuthenticated && !Auth.isAuthenticated && Auth.next) {
+            window.location.href = Auth.next;
+            return;
         }
 
         if (this.props.location !== prevProps.location) {

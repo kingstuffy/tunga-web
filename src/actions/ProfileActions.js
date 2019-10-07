@@ -19,6 +19,9 @@ import * as AuthActions from './AuthActions';
 export const UPDATE_ACCOUNT_INFO_START = 'UPDATE_ACCOUNT_INFO_START';
 export const UPDATE_ACCOUNT_INFO_SUCCESS = 'UPDATE_ACCOUNT_INFO_SUCCESS';
 export const UPDATE_ACCOUNT_INFO_FAILED = 'UPDATE_ACCOUNT_INFO_FAILED';
+export const DEACTIVATE_ACCOUNT_START = 'DEACTIVATE_ACCOUNT_START';
+export const DEACTIVATE_ACCOUNT_SUCCESS = 'DEACTIVATE_ACCOUNT_SUCCESS';
+export const DEACTIVATE_ACCOUNT_FAILED = 'DEACTIVATE_ACCOUNT_FAILED';
 export const UPDATE_AUTH_USER_START = 'UPDATE_AUTH_USER_START';
 export const UPDATE_AUTH_USER_SUCCESS = 'UPDATE_AUTH_USER_SUCCESS';
 export const UPDATE_AUTH_USER_FAILED = 'UPDATE_AUTH_USER_FAILED';
@@ -94,6 +97,44 @@ export function updateAccountInfoSuccess(user) {
 export function updateAccountInfoFailed(error) {
     return {
         type: UPDATE_ACCOUNT_INFO_FAILED,
+        error,
+    };
+}
+
+export function deactivateAccount() {
+    return dispatch => {
+        dispatch(deactivateAccountStart());
+        axios
+            .post(`${ENDPOINT_ACCOUNT_INFO}deactivate/`, {})
+            .then(function(response) {
+                dispatch(deactivateAccountSuccess(response.data));
+            })
+            .catch(function(error) {
+                dispatch(
+                    deactivateAccountFailed(
+                        error.response ? error.response.data : null,
+                    ),
+                );
+            });
+    };
+}
+
+export function deactivateAccountStart() {
+    return {
+        type: DEACTIVATE_ACCOUNT_START,
+    };
+}
+
+export function deactivateAccountSuccess(user) {
+    return {
+        type: DEACTIVATE_ACCOUNT_SUCCESS,
+        user,
+    };
+}
+
+export function deactivateAccountFailed(error) {
+    return {
+        type: DEACTIVATE_ACCOUNT_FAILED,
         error,
     };
 }

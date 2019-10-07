@@ -81,6 +81,11 @@ function isSaving(state = defaultIsRetrieving, action) {
         case ProfileActions.UPDATE_ACCOUNT_INFO_SUCCESS:
         case ProfileActions.UPDATE_ACCOUNT_INFO_FAILED:
             return {...state, account: false};
+        case ProfileActions.DEACTIVATE_ACCOUNT_START:
+            return {...state, deactivate: true};
+        case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
+        case ProfileActions.DEACTIVATE_ACCOUNT_FAILED:
+            return {...state, deactivate: false};
         case ProfileActions.UPDATE_PASSWORD_START:
             return {...state, security: true};
         case ProfileActions.UPDATE_PASSWORD_SUCCESS:
@@ -139,6 +144,11 @@ function isSaved(state = defaultIsRetrieving, action) {
         case ProfileActions.UPDATE_ACCOUNT_INFO_START:
         case ProfileActions.UPDATE_ACCOUNT_INFO_FAILED:
             return {...state, account: false};
+        case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
+            return {...state, deactivate: true};
+        case ProfileActions.DEACTIVATE_ACCOUNT_START:
+        case ProfileActions.DEACTIVATE_ACCOUNT_FAILED:
+            return {...state, deactivate: false};
         case ProfileActions.UPDATE_PASSWORD_SUCCESS:
             return {...state, security: true};
         case ProfileActions.UPDATE_PASSWORD_START:
@@ -168,7 +178,7 @@ function isSaved(state = defaultIsRetrieving, action) {
         case ProfileActions.CREATE_VISITORS_SUCCESS:
             return {...state, visitors: action.data};
         case ProfileActions.CREATE_VISITORS_START:
-        case ProfileActions.CREATE_VISITORS_SUCCESS:
+        case ProfileActions.CREATE_VISITORS_FAILED:
             return {...state, visitors: false};
         case SettingsActions.UPDATE_SETTINGS_SUCCESS:
             return {...state, settings: true};
@@ -200,6 +210,11 @@ function errors(state = {}, action) {
         case ProfileActions.UPDATE_ACCOUNT_INFO_START:
         case ProfileActions.UPDATE_ACCOUNT_INFO_SUCCESS:
             return {...state, account: null};
+        case ProfileActions.DEACTIVATE_ACCOUNT_FAILED:
+            return {...state, deactivate: action.error};
+        case ProfileActions.DEACTIVATE_ACCOUNT_START:
+        case ProfileActions.DEACTIVATE_ACCOUNT_SUCCESS:
+            return {...state, deactivate: null};
         case ProfileActions.UPDATE_PASSWORD_FAILED:
             return {...state, security: action.error};
         case ProfileActions.UPDATE_PASSWORD_START:
