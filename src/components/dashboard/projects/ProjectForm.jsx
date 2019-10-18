@@ -137,6 +137,29 @@ export default class ProjectForm extends React.Component {
                                     size="sm"
                                 />
                             </FormGroup>
+
+                            <FormGroup>
+                                <Label for="projectCategory">
+                                    Which service category are you looking for?*
+                                </Label>
+                                {errors.category ? (
+                                    <FieldError message={errors.category} />
+                                ) : null}
+                                <div className="text text-sm font-weight-thin">
+                                    Please select one of the options below
+                                </div>
+                                <ChoiceGroup
+                                    id="projectCategory"
+                                    onChange={(category) => { this.onChangeValue('category', category) }}
+                                    choices={[
+                                        ["project", "Managed Project"],
+                                        ["dedicated", "Dedicated Developer(s)"],
+                                        ["other", "Other"]
+                                    ]}
+                                    size="sm"
+                                />
+                            </FormGroup>
+
                             <FormGroup>
                                 <Label for="projectTechnology">
                                     {isOpportunity?'Which skill tags are relevant for this opportunity?':'Which technology do you want to use? (Optional)'}
