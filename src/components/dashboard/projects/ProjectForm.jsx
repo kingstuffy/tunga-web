@@ -15,7 +15,8 @@ import {
     cleanSkills, DOCUMENT_TYPES_CLIENTS, PROJECT_STAGE_ACTIVE,
     PROJECT_STAGE_OPPORTUNITY
 } from "../../../actions/utils/api";
-import {isAdminOrPM} from "../../utils/auth";
+import {isAdminOrPM, isAdminOrPMOrClient} from "../../utils/auth";
+import Warning from "../../core/Warning";
 
 export default class ProjectForm extends React.Component {
     static propTypes = {
@@ -56,6 +57,12 @@ export default class ProjectForm extends React.Component {
     render() {
         const {errors} = this.props,
             isOpportunity = this.state.project.stage === PROJECT_STAGE_OPPORTUNITY;
+
+        if(!isAdminOrPMOrClient()) {
+            return (
+                <Warning message="You don't have permission to create projects"/>
+            );
+        }
 
         return (
             <div className="content-card project-form-card">
