@@ -24,7 +24,7 @@ class _CaseStudies extends Component {
                         "Reinforce your team with remote developers - full time or part time; temporary or permanent",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     icon: Icon1,
                     tech: "Nodejs, Angular",
                     user: {
@@ -69,10 +69,10 @@ class _CaseStudies extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Case2,
                     leadTime: "1 week",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     icon: Icon1,
                     tech: "Nodejs, Angular",
                     user: {
@@ -85,10 +85,10 @@ class _CaseStudies extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Case2,
                     leadTime: "1 week",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     icon: Icon1,
                     tech: "Nodejs, Angular",
                     user: {
@@ -120,7 +120,7 @@ class _CaseStudies extends Component {
                         "Reinforce your team with remote developers - full time or part time; temporary or permanent",
                     imgUrl: Case1,
                     leadTime: "2 weeks",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     icon: Icon1,
                     tech: "Nodejs, Angular",
                     user: {

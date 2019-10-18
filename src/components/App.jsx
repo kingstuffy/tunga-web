@@ -135,7 +135,7 @@ class App extends React.Component {
                                         <div id="cookie-consent" className="clearfix">
                                             <div className="consent-actions float-right">
                                                 <Button variant="link" className="btn" onClick={this.onCookieSettings.bind(this)}>Cookie Settings</Button>
-                                                <Button onClick={this.onCloseCookieConsent.bind(this)}>Got it!</Button>
+                                                <Button className="got-it-btn" onClick={this.onCloseCookieConsent.bind(this)}>Got it!</Button>
                                             </div>
                                             <div>
                                                 We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, assist with our promotional and marketing efforts and and provide content from third parties.

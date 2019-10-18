@@ -36,7 +36,7 @@ export default () => {
                         and long-time social entrepreneur Ernesto
                         Spruyt, who together with his colleague Bart
                         Leijssenaar (CMO) and Michiel Huisman (Board
-                        Advisor) not only is a tech person, but also has
+                        Advisor) is not only a tech person, but also has
                         a background in hospitality management. In
                         short: Tunga is founded by ‘people-people’. We
                         think that what you make of your life is your

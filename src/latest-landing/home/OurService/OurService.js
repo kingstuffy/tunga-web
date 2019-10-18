@@ -50,7 +50,7 @@ class OurService extends Component {
                     videoMain: DedicatedDevelopers,
                     videoDetails: DedicatedDevelopersDetail,
                     leadTime: "1 - 2 weeks",
-                    price: "23 - 26 EUR per hour",
+                    price: "26 - 29 EUR per hour",
                     useCases: [
                         {
                             title: "Cuurios",
@@ -116,22 +116,22 @@ class OurService extends Component {
                 {
                     title: "Developers on-demand",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service4,
                     videoMain: DeveloperDemand,
                     videoDetails: DeveloperDemandDetail,
                     leadTime: "< 1 week",
-                    price: "23 - 26 EUR per hour"
+                    price: "26 - 29 EUR per hour"
                 },
                 /*{
                     title: "Recruitment",
                     description:
-                        "Quick access to a developer for incidental needs - Product improvements, additional func",
+                        "Quick access to a developer for incidental needs - Product improvements, additional functions",
                     imgUrl: Service5,
                     videoMain: Recruitment,
                     videoDetails: RecruitmentDetail,
                     leadTime: "< 1 week",
-                    price: "23 - 26 EUR per hour"
+                    price: "26 - 29 EUR per hour"
                 },*/
                 {
                     title: "Software Maintenance",
