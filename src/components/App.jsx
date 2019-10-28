@@ -15,7 +15,12 @@ import BootLogo from "./core/BootLogo";
 import NewShowcaseLayout from "../latest-landing/App";
 import Button from "./core/Button";
 
-import {getCookieConsent, getCookieConsentCloseAt, openCookieConsentPopUp, setCookieConsentCloseAt} from "./utils/consent";
+import {
+    getCookieConsent,
+    getCookieConsentCloseAt,
+    openCookieConsentPopUp,
+    setCookieConsentCloseAt
+} from "./utils/consent";
 
 
 class App extends React.Component {
@@ -25,7 +30,7 @@ class App extends React.Component {
 
         const {Auth: {user}} = this.props;
 
-        this.state= {
+        this.state = {
             hasVerified: user && user.id,
             showProgress: !user || !user.id, // Used to prevent flickering
             showConsentAlert: !getCookieConsentCloseAt() && !getCookieConsent()
@@ -38,7 +43,7 @@ class App extends React.Component {
             this.props.AuthActions.verify();
         }
 
-        if(this.state.showProgress) {
+        if (this.state.showProgress) {
             // Wait one second to prevent flickering
             let self = this;
             setTimeout(() => {
@@ -56,7 +61,7 @@ class App extends React.Component {
             this.setState({hasVerified: true});
         }
 
-        if(!Auth.isVerifying && prevProps.Auth.isAuthenticated && !Auth.isAuthenticated && Auth.next) {
+        if (!Auth.isVerifying && prevProps.Auth.isAuthenticated && !Auth.isAuthenticated && Auth.next) {
             window.location.href = Auth.next;
             return;
         }
@@ -85,18 +90,26 @@ class App extends React.Component {
             isStillLoading = !this.state.hasVerified || this.state.showProgress;
 
         return (
-            isAuthAwarePage && isStillLoading?(
+            isAuthAwarePage && isStillLoading ? (
                 <BootLogo/>
-            ):(
+            ) : (
                 <Media query="(min-width: 992px)">
                     {isLargeDevice => (
                         <div>
                             <Switch>
                                 {'dashboard|projects|network|payments|settings|onboard|work|proposal'.split('|').map(path => {
-                                    return user && user.id?(
-                                        <Route key={`app-path--${path}`} path={`/${path}`} render={props => <DashboardLayout {...props} user={user} logout={logout} AuthActions={AuthActions} isLargeDevice={isLargeDevice}/>}/>
-                                    ):(
-                                        <Redirect key={`app-path--${path}`} from={`/${path}`} to="/"/>
+                                    return user && user.id ? (
+                                        <Route key={`app-path--${path}`}
+                                               path={`/${path}`}
+                                               render={props =>
+                                                   <DashboardLayout {...props}
+                                                                    user={user}
+                                                                    logout={logout}
+                                                                    AuthActions={AuthActions}
+                                                                    isLargeDevice={isLargeDevice}/>}/>
+                                    ) : (
+                                        <Redirect key={`app-path--${path}`}
+                                                  from={`/${path}`} to="/"/>
                                     );
                                 })}
                                 <Redirect from="/home" to="'/dashboard'"/>
@@ -106,21 +119,33 @@ class App extends React.Component {
                                 <Redirect from="/task*" to="/work*"/>
                                 <Redirect from="/estimate*" to="/proposal*"/>
                                 {'login|signin|signup|reset-password|start|start-welcome|start-outsource|quiz|customer|join'.split('|').map(path => {
-                                    return user && user.id?(
-                                        <Redirect key={`app-path--${path}`} from={`/${path}`} to="/dashboard"/>
-                                    ):(
-                                        <Route key={`app-path--${path}`} path={path} render={props => <NewShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
+                                    return user && user.id ? (
+                                        <Redirect key={`app-path--${path}`}
+                                                  from={`/${path}`}
+                                                  to="/dashboard"/>
+                                    ) : (
+                                        <Route key={`app-path--${path}`}
+                                               path={path} render={props =>
+                                            <NewShowcaseLayout {...props}
+                                                               user={user}
+                                                               logout={logout}
+                                                               isLargeDevice={isLargeDevice}/>}/>
                                     );
                                 })}
                                 {/*<Route path="/legacy" component={LegacyRedirect} />*/}
                                 {['/tunga', '*'].map(path => {
                                     return (
-                                        <Route key={`app-path--${path}`} path={path} render={props => <NewShowcaseLayout {...props} user={user} logout={logout} isLargeDevice={isLargeDevice}/>} />
+                                        <Route key={`app-path--${path}`}
+                                               path={path} render={props =>
+                                            <NewShowcaseLayout {...props}
+                                                               user={user}
+                                                               logout={logout}
+                                                               isLargeDevice={isLargeDevice}/>}/>
                                     );
                                 })}
                             </Switch>
 
-                            {isStillLoading?null:(
+                            {isStillLoading ? null : (
                                 <React.Fragment>
                                     {/*user && (user.is_admin || user.is_project_manager)?null:(
                                         <Switch>
@@ -131,19 +156,37 @@ class App extends React.Component {
                                         </Switch>
                                     )*/}
 
-                                    {this.state.showConsentAlert?(
-                                        <div id="cookie-consent" className="clearfix">
-                                            <div className="consent-actions float-right">
-                                                <Button variant="link" className="btn" onClick={this.onCookieSettings.bind(this)}>Cookie Settings</Button>
-                                                <Button className="got-it-btn" onClick={this.onCloseCookieConsent.bind(this)}>Got it!</Button>
+                                    {this.state.showConsentAlert ? (
+                                        <div id="cookie-consent"
+                                             className="clearfix">
+
+                                            <div className="cookie-consent-text">
+                                                We use cookies to offer you a
+                                                better browsing experience,
+                                                analyze site traffic,
+                                                personalize content, assist with
+                                                our promotional and marketing
+                                                efforts and and provide content
+                                                from third parties.
+                                                Read about how we use cookies
+                                                and how you can control them by
+                                                clicking "Cookie Settings."
+                                                If you continue to use this
+                                                site, you consent to our use of
+                                                cookies.
                                             </div>
-                                            <div>
-                                                We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, assist with our promotional and marketing efforts and and provide content from third parties.
-                                                Read about how we use cookies and how you can control them by clicking "Cookie Settings."
-                                                If you continue to use this site, you consent to our use of cookies.
+                                            <div
+                                                className="consent-actions text-center">
+                                                <Button variant="link"
+                                                        className="btn"
+                                                        onClick={this.onCookieSettings.bind(this)}>Cookie
+                                                    Settings</Button>
+                                                <Button className="got-it-btn"
+                                                        onClick={this.onCloseCookieConsent.bind(this)}>Got
+                                                    it!</Button>
                                             </div>
                                         </div>
-                                    ):null}
+                                    ) : null}
                                 </React.Fragment>
                             )}
                         </div>
