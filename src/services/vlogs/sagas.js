@@ -9,7 +9,7 @@ function* fetchVlogs(action) {
     try {
         const response = yield call(api, {
             method: 'get',
-            url: 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCePHjoNDwzgmdqeb_qXPXOOYpJCUYsbOk&channelId=UC_Pl6wmR-t9Zv9z7_s1aWNg&part=snippet,id&order=date&maxResults=20',
+            url: 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyAuIXqeLrUkyZhsau0WpAVzWlyuv_P9YE8&channelId=UC_Pl6wmR-t9Zv9z7_s1aWNg&part=snippet,id&order=date&maxResults=20',
             params: {
             },
         });
