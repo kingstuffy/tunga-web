@@ -160,20 +160,23 @@ class App extends React.Component {
                                         <div id="cookie-consent"
                                              className="clearfix">
 
-                                            <div className="cookie-consent-text">
-                                                We use cookies to offer you a
-                                                better browsing experience,
-                                                analyze site traffic,
-                                                personalize content, assist with
-                                                our promotional and marketing
-                                                efforts and and provide content
-                                                from third parties.
-                                                Read about how we use cookies
-                                                and how you can control them by
-                                                clicking "Cookie Settings."
-                                                If you continue to use this
-                                                site, you consent to our use of
-                                                cookies.
+                                            <div>
+                                                <p id="cookie-consent-text">
+                                                    We use cookies to offer you a
+                                                    better browsing experience,
+                                                    analyze site traffic,
+                                                    personalize content, assist with
+                                                    our promotional and marketing
+                                                    efforts and and provide content
+                                                    from third parties.
+                                                    Read about how we use cookies
+                                                    and how you can control them by
+                                                    clicking "Cookie Settings."
+                                                    If you continue to use this
+                                                    site, you consent to our use of
+                                                    cookies.
+                                                </p>
+
                                             </div>
                                             <div
                                                 className="consent-actions text-center">
