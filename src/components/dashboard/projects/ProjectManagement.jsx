@@ -10,6 +10,7 @@ import Activity from './Activity';
 import Docs from './Docs';
 import Team from './Team';
 import Plan from './Plan';
+import Survey from './Survey';
 import PayContainer from './PayContainer';
 import Settings from './Settings';
 import ProgressEventsContainer from './ProgressEventsContainer';
@@ -104,6 +105,7 @@ export default class ProjectManagement extends React.Component {
                                                     ['docs', <Docs {...projectProps}/>],
                                                     ['team', <Team {...projectProps}/>],
                                                     ['plan', <Plan {...projectProps}/>],
+                                                    ['survey', <Survey {...projectProps}/>],
                                                     ['pay', <PayContainer {...projectProps}/>],
                                                 ]:[])
                                             ].map(path => {
