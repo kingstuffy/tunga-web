@@ -136,11 +136,11 @@ class OurService extends Component {
                 {
                     title: "Software Maintenance",
                     description:
-                        "Rough idea? We help you work out the details - Architecture, UI/UX design, Detailed project plan",
+                        "Keep your product up to date. Bug-fixing, version upgrades, Server maintenance",
                     imgUrl: Service6,
                     videoMain: SoftwareMaintenance,
                     videoDetails: SoftwareMaintenanceDetail,
-                    leadTime: "1 - 2 weeks",
+                    leadTime: "Service contract",
                     price: "1,000 - 3,000 EUR"
                 },
             ],
