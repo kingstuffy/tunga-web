@@ -207,6 +207,12 @@ class Footer extends Component {
                                 <p>1091 GL Amsterdam</p>
                                 <p>The Netherlands</p>
                             </div>
+                            <div className="tunga-amsterdam">
+                                <h5>LAGOS</h5>
+                                <p>The Village, Yaba</p>
+                                <p>Borno Way Spencer 371</p>
+                                <p>Lagos, Nigeria</p>
+                            </div>
                         </div>
                     </Col>
 
