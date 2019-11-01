@@ -68,7 +68,7 @@ export default class ProjectManagement extends React.Component {
     }
 
     render() {
-        const {project, isSaving, isSaved, ProjectActions, match} = this.props;
+        const {project, isSaving, isSaved, ProjectActions, match, location} = this.props;
         const projectProps = {project, isSaving, isSaved, ProjectActions};
 
         return (
@@ -105,7 +105,7 @@ export default class ProjectManagement extends React.Component {
                                                     ['docs', <Docs {...projectProps}/>],
                                                     ['team', <Team {...projectProps}/>],
                                                     ['plan', <Plan {...projectProps}/>],
-                                                    ['survey', <Survey {...projectProps}/>],
+                                                    ['survey', <Survey location={location} {...projectProps}/>],
                                                     ['pay', <PayContainer {...projectProps}/>],
                                                 ]:[])
                                             ].map(path => {

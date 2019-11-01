@@ -9,6 +9,7 @@ import MilestoneForm from "./modals/MilestoneForm";
 import PlanningForm from "./modals/PlanningForm";
 import ProjectDateForm from "./modals/ProjectDateForm";
 
+
 import { openModal } from '../../core/utils/modals';
 import { isAdmin, isAdminOrPMOrClient, isDevOrClient } from '../../utils/auth';
 
@@ -19,6 +20,7 @@ import Smiley_4 from '../../../assets/images/icons/4_5_smiley.svg';
 import Smiley_5 from '../../../assets/images/icons/5_5_smiley.svg';
 import CaseStudyCard from "../../../latest-landing/home/CaseStudies/CaseStudyCard/CaseStudyCard";
 import Button from "../../core/Button";
+import SurveyIcon from "./common/SurveyIcon";
 
 
 export default class Survey extends React.Component {
@@ -60,7 +62,23 @@ export default class Survey extends React.Component {
 
 
     render() {
-        const { project } = this.props;
+        const { project, location } = this.props;
+        const splitPaths = location.pathname.split('/');
+        const type = splitPaths[splitPaths.length - 1];
+        const developers = project.participation
+            .filter(({ user }) => user.is_developer)
+            .map(({ user }) => ({ name: user.display_name }));
+
+        const types = {
+            developers,
+            team: [
+                {
+                    name: 'Tunga'
+                }
+            ]
+        };
+
+        const members = types[type] || [];
 
         return (
             <div className="survey">
@@ -69,26 +87,19 @@ export default class Survey extends React.Component {
                         Client survey
                     </div>
                     <div>
-                        Due date 14th, October 2019
+                        Due date: {moment.utc(project.deadline).local().format('lll')}
                     </div>
                 </div>
-                <div className="survey__cta">
-                    How would you rate the collaboration with Tunga for [Project_name]?
-                </div>
-                <ul className="survey__icon-list">
-                    {
-                        this.state.icons.map((icon, i) => (
-                            <li
-                                key={i}
-                                className="survey__icon-item"
-                            >
-                                <a className="survey__icon-btn">
-                                    <img className="survey__icon" src={icon.img}/>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
+                {
+                    members.map((member, i) => (
+                        <div className="survey__block" key={i}>
+                            <div className="survey__cta">
+                                How would you rate the collaboration with {member.name} for {project.description}?
+                            </div>
+                            <SurveyIcon/>
+                        </div>
+                    ))
+                }
                 <div className="survey__btn-wrapper">
                     <Button>
                         Submit Report

@@ -4060,24 +4060,28 @@ textarea {
         margin-bottom: 30px;
     }
 
-    &__icon-list {
-        list-style: none;
-        margin-bottom: 40px;
-    }
-
-    &__icon-item {
-        display: inline-block;
-        margin-right: 11px;
-    }
-
     &__cta {
         font-size: 14px;
         font-weight: bold;
         color: #444;
         margin-bottom: 14px;
     }
+}
 
-    &__icon-btn {
+.survey-icon {
+    $root: &;
+
+    &__list {
+        list-style: none;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 11px;
+    }
+
+    &__btn {
         cursor: pointer;
 
         &:hover {
