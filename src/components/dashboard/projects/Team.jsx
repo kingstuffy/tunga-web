@@ -112,6 +112,13 @@ export default class Team extends React.Component {
                                     onClick={this.onAddUsers.bind(this, 'dev', 'Add team members', 0)} />
                     ):null}
                 </div>
+                <a href={`/projects/${project.id}/survey/team`}>
+                    Go to survey tunga (temp)
+                </a>
+                <br/>
+                <a href={`/projects/${project.id}/survey/developers`}>
+                    Go to survey developers (temp)
+                </a>
             </div>
         );
     }
