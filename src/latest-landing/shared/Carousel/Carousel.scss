@@ -11,4 +11,18 @@
     &__prev {
         margin-right: 23.5px;
     }
+
+    &__icon {
+        // border: 2px solid;
+        border-radius: 100%;
+        box-shadow: 0 4px 25px rgba(218, 52, 81, 0.05);
+        background-color: #fff;
+        display: inline-block;
+        padding: 10px 12px;
+
+        svg {
+            line-height: 16px;
+        }
+    }
 }
+

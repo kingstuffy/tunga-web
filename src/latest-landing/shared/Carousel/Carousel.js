@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Carousel.scss";
 import Icon from "../core/Icon";
+import LeftArrow from "./icons/LeftArrow";
+import RightArrow from "./icons/RightArrow";
 
 class Carousel extends Component {
     constructor(props) {
@@ -84,7 +86,8 @@ class Carousel extends Component {
 
 
     render() {
-        const { pagination, color, children, float } = this.props;
+        const { pagination, children, float } = this.props;
+        const color = '#DA3451';
         const perPage = this.getDataPerPage({ pagination });
         const leftPosition = this.getLeftPosition({ pagination, perPage });
 
@@ -94,18 +97,20 @@ class Carousel extends Component {
         return (
             <div className="Carousel">
                 <div className={`${float} Carousel__pagination`}>
-                    <Icon
+                    <a
                         onClick={() => hasPrevious && this.updatePage(this.state.current - 1)}
-                        className={`${hasPrevious ? color : "text-gray"} Carousel__prev`}
-                        name="previous"
-                        size="md"
-                    />
-                    <Icon
+                        className="Carousel__icon Carousel__prev"
+                        style={{ borderColor: hasPrevious ? color : '#E8E9E9' }}
+                    >
+                        <LeftArrow stroke={hasPrevious ? color : '#E8E9E9'}/>
+                    </a>
+                    <a
                         onClick={() => hasNext && this.updatePage(this.state.current + 1)}
-                        className={hasNext ? color : 'text-gray'}
-                        name="next"
-                        size="md"
-                    />
+                        className="Carousel__icon"
+                        style={{ borderColor: hasNext ? color : '#E8E9E9' }}
+                    >
+                        <RightArrow stroke={hasNext ? color : '#E8E9E9'}/>
+                    </a>
                 </div>
                 <span className="clearfix"/>
                 <div className="Carousel__container" style={{ left: leftPosition }}>
