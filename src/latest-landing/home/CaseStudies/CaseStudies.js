@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import "./CaseStudies.scss";
+
 import Case1Img from "../../assets/img/case-study/Casestudy1.jpg";
 import Case2Img from "../../assets/img/case-study/Casestudy2.jpg";
 import Case3Img from "../../assets/img/case-study/Casestudy3.jpg";
 import Case4Img from "../../assets/img/case-study/Casestudy4.jpg";
+import Case1ImgPreloader from "../../assets/img/case-study/Casestudy1-preloader.jpg";
+import Case2ImgPreloader from "../../assets/img/case-study/Casestudy2-preloader.jpg";
+import Case3ImgPreloader from "../../assets/img/case-study/Casestudy3-preloader.jpg";
+import Case4ImgPreloader from "../../assets/img/case-study/Casestudy4-preloader.jpg";
+
 import Icon1 from "../../assets/img/case-study/impulse.png";
 import Icon2 from "../../assets/img/case-study/tree.png";
 import Icon3 from "../../assets/img/case-study/cuurios-logo.png";
@@ -31,6 +37,7 @@ class CaseStudies extends Component {
                     description:
                         "As a startup with a technical proposition but not being developers ourselves, we needed a reliable partner to develop our product with. Tunga has consulted us to figure out the best technical approach and developed our product in clear sprints ever since ",
                     imgUrl: Case1Img,
+                    preloader: Case1ImgPreloader,
                     leadTime: "1 week",
                     price: "Ongoing development",
                     icon: Icon1,
@@ -47,6 +54,7 @@ class CaseStudies extends Component {
                     description:
                         "We've been developing several mobile applications with the guys from Tunga. What I like about working with them is that they are communicating clearly, and are very knowledgeable and proactive. Via the Tunga platform and its daily progress report, I am always in control over the progress of the projects that are running for our company. The Tunga people have a great customer mindset: they make things work for no matter what happens or changes.",
                     imgUrl: Case2Img,
+                    preloader: Case2ImgPreloader,
                     leadTime: "2 weeks",
                     price: "3 - 4 months ",
                     icon: Icon2,
@@ -63,6 +71,7 @@ class CaseStudies extends Component {
                     description:
                         "Tunga was able to provide us very good candidates at short notice. Within two weeks from the initial contact Michael joined the team as a dedicated front-end developer. This was exactly the kickstart we'd hoped for! After a few months, we expanded the team with another dedicated developer.",
                     imgUrl: Case3Img,
+                    preloader: Case3ImgPreloader,
                     leadTime: "2 weeks",
                     price: "3 - 4 months",
                     icon: Icon3,
@@ -79,6 +88,7 @@ class CaseStudies extends Component {
                     description:
                         "We didn't have any experience of outsourcing work to another country. From second hand experiences I can say things can go terribly wrong. But we took the plunge as an experiment and were quickly delighted by their way of working. Communication is top notch either in writing (we use Slack as a main communication channel) but also when talking on audio or in a video session. We initially started with Tunga on just one walled off project for expansion of our product. We wanted to see if this was feasible and doable. Luckily it was! Tunga managed this perfectly.",
                     imgUrl: Case4Img,
+                    preloader: Case4ImgPreloader,
                     leadTime: "2 weeks",
                     price: "Ongoing development",
                     icon: Icon4,
@@ -95,6 +105,7 @@ class CaseStudies extends Component {
                     description:
                         "Tunga is a great development partner. After finishing a first app, we are currently developing a second mobile application for our elderly care company with a team of Tunga developers. I am not a techy person myself, so it is great that Tunga offers project managers that take care of planning, scoping and managing the team. Having a single point of contact at Tunga that effectively keeps me in the loop, gives me the freedom to work on the growth of my company.",
                     imgUrl: Case1Img,
+                    preloader: Case1ImgPreloader,
                     leadTime: "2 weeks",
                     price: "5 months",
                     icon: Icon5,
@@ -111,6 +122,7 @@ class CaseStudies extends Component {
                     description:
                         "Tunga's African teal talents have the technical knowledge and experience and they immediately said they loved working Niluk because of our social goals. The collaboration is very professional, with respect and appreciation from both sides. If deadlines are not met, the team indicated this in time, which is very nice. I trust them 100% and can recommend Tunga to anyone.",
                     imgUrl: Case3Img,
+                    preloader: Case3ImgPreloader,
                     leadTime: "1 week",
                     price: "5 months",
                     icon: Icon6,
@@ -128,6 +140,14 @@ class CaseStudies extends Component {
 
         this.state.currentStudy = this.state.data[0];
         this.onPageChange = this.onPageChange.bind(this);
+    }
+
+
+    componentDidMount() {
+        this.state.data.forEach(({ preloader }) => {
+            const img = new Image();
+            img.src = preloader;
+        });
     }
 
 
@@ -158,7 +178,7 @@ class CaseStudies extends Component {
 
         return (
             <section id="CaseStudies" className="CaseStudies"
-                     style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl})` }}>
+                     style={{ backgroundImage: `url(${this.state.currentStudy.imgUrl}), url(${this.state.currentStudy.preloader})` }}>
                 {/*<div className="position-absolute" style={{ bottom: 0 }}>*/}
                 <div className="CaseStudies__content bg-transparent case-top">
                     <div className="case-content bg-white">
@@ -180,7 +200,7 @@ class CaseStudies extends Component {
                             <Carousel
                                 pagination={pagination}
                                 onPageChange={this.onPageChange}
-                                activePage={ activeUseCase }
+                                activePage={activeUseCase}
                                 float="float-right"
                                 color="text-primary"
                             >
