@@ -231,7 +231,7 @@ class TalentPool extends Component {
                     {
                         !talents.length && hasLoaded &&
                         <div className="TalentPool__empty-state text-danger">
-                            No results found for '{lastQuery || this.state.lastQuery}'
+                            No results found for '{lastQuery}'
                             <Icon className="text-primary mt-3" name="search-alt" size='lg'/>
                         </div>
                     }
@@ -260,7 +260,7 @@ class TalentPool extends Component {
                                                             <div
                                                                 className="TalentPool__item"
                                                                 key={j}>
-                                                                <Talent talent={member}/>
+                                                                <Talent query={lastQuery} talent={member}/>
                                                             </div>
                                                         )
                                                     )}
