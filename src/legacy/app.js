@@ -35,11 +35,10 @@ history.listen(location => {
     }
 });
 
+
 if (__PRODUCTION__) {
     // Configure raven
-    Raven.config(
-        'https://3b4b870154ce496c9d3dd9673a529bb9@sentry.io/121717',
-    ).install();
+    Sentry.init({dsn: "https://8cd3a4f7109d4830b770c5752960624c@sentry.io/1806596"});
 }
 
 // Control overlay pop up on landing pages
@@ -130,6 +129,7 @@ import BlogDetail from './components/BlogDetail';
 import FriendOfTungaPage from './routes/FriendsOfTunga';
 import FriendOfTungaRulesPage from './routes/FriendsOfTungaRules';
 import SkillPage from './routes/SkillPage';
+import * as Sentry from "@sentry/browser";
 
 let all_routes = (
     <Route>
