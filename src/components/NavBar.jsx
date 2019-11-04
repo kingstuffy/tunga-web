@@ -158,13 +158,13 @@ export default class NavBar extends React.Component {
                                             <Icon name="calendar"/>&nbsp;&nbsp;&nbsp;Schedule a call
                                         </Button>
                                         {/*
-                                        <CopyToClipboard text="+31 20 220 2157">
+                                        <CopyToClipboard text="+31 6 15 955 194">
                                             <OverlayTooltip placement="left"
                                                             overlay={
                                                                 <strong>Cop{this.state.copied?'ied':'y'}</strong>
                                                             }>
                                                 <Button className="btn-call" onClick={this.setCopied} onMouseOut={this.clearCopied}>
-                                                    <Icon name="phone"/> +31 20 220 2157
+                                                    <Icon name="phone"/> +31 6 15 955 194
                                                 </Button>
                                             </OverlayTooltip>
                                         </CopyToClipboard>

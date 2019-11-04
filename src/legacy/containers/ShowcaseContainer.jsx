@@ -124,7 +124,7 @@ class ShowcaseContainer extends React.Component {
                                         <li>
                                             <span>
                                                 <button type="button" className="call">
-                                                    <i className="fa fa-phone"/> <span>+31 20 220 2157</span>
+                                                    <i className="fa fa-phone"/> <span>+31 6 15 955 194</span>
                                                 </button>
 
                                             </span>
