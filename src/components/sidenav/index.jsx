@@ -110,7 +110,7 @@ class SideNav extends React.Component {
                         this.state.pages.map((anc, index) => (
                             <li className="side-bar-item" key={kebabCase(anc.title)}>
                                 <div className={`side-bar-tab
-                                ${anc.isActiveBar ? "side-bar-tab-active"
+                                ${this.props.currentPage === index ? "side-bar-tab-active"
                                     : "side-bar-tab-hidden"
                                     }`}>
                                 </div>

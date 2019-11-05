@@ -18,11 +18,13 @@ class TalentSearch extends Component {
         this.state = {
             query: props.query || '',
             email: '',
+            searched: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.onEmailSubmit = this.onEmailSubmit.bind(this);
         this.onSearchQuery = this.onSearchQuery.bind(this);
+        this.clearSearch = this.clearSearch.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -50,12 +52,20 @@ class TalentSearch extends Component {
 
     onSearchQuery(e) {
         e.preventDefault();
+        this.setState({ searched: true });
         this.props.onSearchQuery(this.state.query);
     }
 
 
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
+    }
+
+
+    clearSearch(e) {
+        e.preventDefault();
+        this.setState({ query: '', searched: false });
+        this.props.onSearchQuery('');
     }
 
 
@@ -75,6 +85,12 @@ class TalentSearch extends Component {
                                         <Input className="Form__input--has-icon Form__input--b-b" type="text"
                                                name="query" value={this.state.query} onChange={this.handleChange}
                                                placeholder="Search by skills or technology"/>
+                                        {
+                                            this.state.searched
+                                            &&
+                                            <Icon className="Form__input-icon Form__input-icon--right" name='close'
+                                                  size='sm' onClick={this.clearSearch}/>
+                                        }
                                     </IconGroup>
                                 </div>
                             </form>
@@ -93,7 +109,8 @@ class TalentSearch extends Component {
                                         >
                                             Go
                                         </Button>
-                                        <span className="ml-3">{auth.isAuthenticating === true ? <Progress/> : ''}</span>
+                                        <span className="ml-3">{auth.isAuthenticating === true ?
+                                            <Progress/> : ''}</span>
                                     </IconGroup>
                                 </div>
                                 {

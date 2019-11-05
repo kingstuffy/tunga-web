@@ -84,6 +84,11 @@
         &--light {
             color: #D9E9FF;
         }
+
+        &--right {
+            left: initial;
+            right: 17px;
+        }
     }
 
     a#{$root}__cta {

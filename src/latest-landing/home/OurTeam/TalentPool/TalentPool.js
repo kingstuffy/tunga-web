@@ -67,7 +67,10 @@ class TalentPool extends Component {
             lastQuery: query,
             search: query,
         });
-        this.getPeople(query);
+        this.getPeople({
+            query,
+            ignoreEmptySearch: true
+        });
         this.setState({ lastQuery: query });
     }
 
@@ -98,8 +101,8 @@ class TalentPool extends Component {
     }
 
 
-    getPeople(query) {
-        const searchQuery = query || this.state.search;
+    getPeople({ query, ignoreEmptySearch = false } = {}) {
+        const searchQuery = ignoreEmptySearch ? query : query || this.state.search;
         const nextPage = this.state.hasLoaded && searchQuery === this.state.resultsFor ? (this.state.currentPage + 1) : 0;
         if (searchQuery) {
             this.logSearch(nextPage + 1); // Add 1 because Algolia pages are zero indexed
