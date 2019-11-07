@@ -114,13 +114,19 @@ export default class Team extends React.Component {
                                     onClick={this.onAddUsers.bind(this, 'dev', 'Add team members', 0)}/>
                     ) : null}
                 </div>
-                <Link to={`/projects/${project.id}/survey/team`}>
-                    Go to survey tunga (temp)
-                </Link>
-                <br/>
-                <Link to={`/projects/${project.id}/survey/developers`}>
-                    Go to survey developers (temp)
-                </Link>
+                {
+                    false
+                    &&
+                    <div>
+                        <Link to={`/projects/${project.id}/survey/team`}>
+                            Go to survey tunga (temp)
+                        </Link>
+                        < br/>
+                        <Link to={`/projects/${project.id}/survey/developers`}>
+                            Go to survey developers (temp)
+                        </Link>
+                    </div>
+                }
             </div>
         );
     }
