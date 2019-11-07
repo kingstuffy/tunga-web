@@ -8,14 +8,20 @@
     display: inline-block;
 
     @media (min-width: 992px) {
-        width: 290px;
+        // width: 290px;
     }
 
-    .Form__input-icon-group {
+    &__icon-group {
         display: flex;
 
         @media (min-width: 992px) {
-            width: 176%;
+            display: inline-block;
+            width: 400px;
+
+            &--locked {
+                display: flex !important;
+                width: 460px !important;
+            }
         }
     }
 
@@ -25,8 +31,25 @@
         height: 3.5rem !important;
     }
 
+    &__cancel-btn {
+        padding: 16px;
+        background: rgba(251, 234, 237, 0.5);
+        border-radius: 2px;
+        border: 0;
+        color: #DA3451;
+        margin-left: 24px;
+        height: 48px;
+    }
+
     #TalentSearch-input {
         height: 57px !important;
         width: 176%;
+    }
+
+    &__input {
+        border: 1px solid #C2C6C8;
+        border-radius: 2px;
+        height: 48px;
+        vertical-align: middle;
     }
 }

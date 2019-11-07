@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./TalentSearch.scss";
 // import Button from "../../../../shared/core/Button";
 import Icon from "../../../../shared/core/Icon";
 import { Group, Input, IconGroup, Button } from "../../../../shared/Form/Form";
+import "./TalentSearch.scss";
 import { connect } from "react-redux";
 import { isBusinessEmail } from "../../../../../components/utils/search";
 import { authenticateEmailVisitor } from "../../../../../actions/AuthActions";
@@ -79,10 +79,10 @@ class TalentSearch extends Component {
                         auth.isEmailVisitor || auth.isAuthenticated
                             ?
                             <form className="TalentSearch__form" onSubmit={this.onSearchQuery}>
-                                <div className="TalentSearch__icon-group">
-                                    <IconGroup>
+                                <div>
+                                    <IconGroup className="TalentSearch__icon-group">
                                         <Icon className="Form__input-icon" name='search' size='card'/>
-                                        <Input className="Form__input--has-icon Form__input--b-b" type="text"
+                                        <Input className="Form__input--has-icon TalentSearch__input" type="text"
                                                name="query" value={this.state.query} onChange={this.handleChange}
                                                placeholder="Search by skills or technology"/>
                                         {
@@ -92,12 +92,20 @@ class TalentSearch extends Component {
                                                   size='sm' onClick={this.clearSearch}/>
                                         }
                                     </IconGroup>
+                                    {
+                                        this.state.searched
+                                        &&
+                                        <Button type="submit" className="TalentSearch__cancel-btn"
+                                                onClick={this.clearSearch}>
+                                            Cancel
+                                        </Button>
+                                    }
                                 </div>
                             </form>
                             :
                             <form className="TalentSearch__form" onSubmit={this.onEmailSubmit}>
                                 <div className="TalentSearch__icon-group-holder">
-                                    <IconGroup className="TalentSearch__icon-group">
+                                    <IconGroup className="TalentSearch__icon-group TalentSearch__icon-group--locked">
                                         <Icon className="Form__input-icon" name='lock-alt' size='card'/>
                                         <Input className="Form__input--has-icon" id="TalentSearch-input" type="email"
                                                name="email" value={this.state.email}
