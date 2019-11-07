@@ -53,6 +53,9 @@
         background: rgba(6, 46, 100, 0.5);
         margin: 3px;
         width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
 
         @media (min-width: 992px) {
             width: 45%;
