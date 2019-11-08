@@ -132,6 +132,7 @@ class Publications extends Component {
                         activePage={this.state.activePage}
                         float="float-right"
                         color="text-primary"
+                        transparent={true}
                     >
                         <ul className="Publications__list">
                             {

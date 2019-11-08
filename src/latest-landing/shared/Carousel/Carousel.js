@@ -86,7 +86,7 @@ class Carousel extends Component {
 
 
     render() {
-        const { pagination, children, float } = this.props;
+        const { pagination, children, float, transparent } = this.props;
         const color = '#DA3451';
         const perPage = this.getDataPerPage({ pagination });
         const leftPosition = this.getLeftPosition({ pagination, perPage });
@@ -99,14 +99,14 @@ class Carousel extends Component {
                 <div className={`${float} Carousel__pagination`}>
                     <a
                         onClick={() => hasPrevious && this.updatePage(this.state.current - 1)}
-                        className="Carousel__icon Carousel__prev"
+                        className={`Carousel__icon Carousel__prev ${transparent ? 'Carousel__icon--transparent' : ''}`}
                         style={{ borderColor: hasPrevious ? color : '#E8E9E9' }}
                     >
                         <LeftArrow stroke={hasPrevious ? color : '#E8E9E9'}/>
                     </a>
                     <a
                         onClick={() => hasNext && this.updatePage(this.state.current + 1)}
-                        className="Carousel__icon"
+                        className={`Carousel__icon Carousel__next ${transparent ? 'Carousel__icon--transparent' : ''}`}
                         style={{ borderColor: hasNext ? color : '#E8E9E9' }}
                     >
                         <RightArrow stroke={hasNext ? color : '#E8E9E9'}/>

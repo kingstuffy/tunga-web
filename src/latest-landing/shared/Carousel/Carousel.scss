@@ -24,6 +24,11 @@
         display: inline-block;
         padding: 10px 12px;
 
+        &--transparent {
+            border: 2px solid #ddd;
+            background-color: transparent;
+        }
+
         svg {
             line-height: 16px;
         }

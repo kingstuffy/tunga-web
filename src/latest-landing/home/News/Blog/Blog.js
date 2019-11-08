@@ -74,6 +74,7 @@ class Blog extends Component {
                             pagination={pagination}
                             float="float-right"
                             color="text-white"
+                            transparent={true}
                         >
                             <ul className="Blog__list" style={{ left: this.state.leftPosition }}>
                                 {splitArticles.map(

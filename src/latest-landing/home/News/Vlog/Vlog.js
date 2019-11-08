@@ -83,6 +83,7 @@ class Vlog extends Component {
                         pagination={pagination}
                         float="float-right v_pagination"
                         color="text-primary"
+                        transparent={true}
                     >
                         <ul className="Vlog__list" style={{ left: this.state.leftPosition }}>
                             {splitVlogs.map(
