@@ -15,24 +15,24 @@ export default class SurveyIcon extends React.Component {
         this.state = {
             icons: [
                 {
-                    rating: 1,
-                    img: Smiley_1,
-                },
-                {
-                    rating: 2,
-                    img: Smiley_2,
-                },
-                {
-                    rating: 3,
-                    img: Smiley_3,
+                    rating: 5,
+                    img: Smiley_5,
                 },
                 {
                     rating: 4,
                     img: Smiley_4,
                 },
                 {
-                    rating: 5,
-                    img: Smiley_5,
+                    rating: 3,
+                    img: Smiley_3,
+                },
+                {
+                    rating: 2,
+                    img: Smiley_2,
+                },
+                {
+                    rating: 1,
+                    img: Smiley_1,
                 },
             ]
         };
