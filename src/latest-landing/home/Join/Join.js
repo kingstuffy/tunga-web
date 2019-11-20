@@ -36,15 +36,13 @@ class Join extends Component {
     render() {
         return (
             <section className="Join">
-                <PageScroll pages={pages} forceJumpToTop={true}>
-                    <div id="Content" className="Join__content agreement-page">
-                        <div className="DevProfile__nav">
-                            <Nav/>
-                        </div>
-                        <JoinContent/>
+                <div id="Content" className="Join__content agreement-page">
+                    <div className="DevProfile__nav">
+                        <Nav/>
                     </div>
-                    <Footer/>
-                </PageScroll>
+                    <JoinContent/>
+                </div>
+                <Footer/>
             </section>
         );
     }

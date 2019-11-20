@@ -12,7 +12,6 @@ class ProjectOutput extends React.Component {
     };
 
     render() {
-        console.log('ProjectOutput => ', this.props);
         const {Project: {projects}, id, field} = this.props;
 
         return (

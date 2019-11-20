@@ -10,6 +10,7 @@
     background-color: #0f233d;
     height: 50vh;
     min-height: 280px;
+    background-position: center;
 
     @media (max-width: 992px) and (min-height: 650px) {
         height: 36vh;
@@ -52,6 +53,9 @@
         background: rgba(6, 46, 100, 0.5);
         margin: 3px;
         width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
 
         @media (min-width: 992px) {
             width: 45%;

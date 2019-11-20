@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import IconButton from '../../core/IconButton'
-import {openConfirm, openModal} from '../../core/utils/modals';
+import { openConfirm, openModal } from '../../core/utils/modals';
 import ProjectMemberForm from './modals/ProjectMemberForm';
 import Avatar from '../../core/Avatar';
+import { Link } from 'react-router-dom';
 
-import {isAdminOrClient, isAdminOrPM, isAdminOrPMOrClient, isDev} from '../../utils/auth';
+import { isAdminOrClient, isAdminOrPM, isAdminOrPMOrClient, isDev } from '../../utils/auth';
 
 
 export default class Team extends React.Component {
@@ -23,18 +24,18 @@ export default class Team extends React.Component {
         };
 
         openModal(
-            <ProjectMemberForm type={typeMap[type]} max={max} />, title, true, {size: 'sm'}
+            <ProjectMemberForm type={typeMap[type]} max={max}/>, title, true, { size: 'sm' }
         ).then(users => {
-            if(users && users.length) {
-                const {project, ProjectActions} = this.props,
+            if (users && users.length) {
+                const { project, ProjectActions } = this.props,
                     reqData = {};
 
                 if (type === 'dev') {
                     reqData.participation = users.map(user => {
-                        return {user: {id: user.id}};
+                        return { user: { id: user.id } };
                     });
                 } else {
-                    reqData[type] = {id: users[0].id};
+                    reqData[type] = { id: users[0].id };
                 }
 
                 ProjectActions.updateProject(project.id, reqData);
@@ -44,17 +45,18 @@ export default class Team extends React.Component {
         });
     }
 
-    onDeleteUser(user, type, participation){
+    onDeleteUser(user, type, participation) {
         openConfirm(
-            <div className="font-weight-medium">Are you sure you want to delete<br/>{user.display_name} from the project?</div>,
-            '', false, {ok: 'Delete user'}
+            <div className="font-weight-medium">Are you sure you want to delete<br/>{user.display_name} from the
+                project?</div>,
+            '', false, { ok: 'Delete user' }
         ).then(response => {
-            const {project, ProjectActions} = this.props;
+            const { project, ProjectActions } = this.props;
             if (['pm', 'owner'].includes(type)) {
                 let reqData = {};
                 reqData[type] = null;
                 ProjectActions.updateProject(project.id, reqData);
-            } else if(participation) {
+            } else if (participation) {
                 ProjectActions.deleteParticipation(participation.id);
             }
         }, error => {
@@ -73,12 +75,12 @@ export default class Team extends React.Component {
                                 title={project.owner.display_name}
                                 onRemove={this.onDeleteUser.bind(this, project.owner, 'owner')}
                                 remove={isAdminOrPM() && !project.archived}/>
-                    ) : null }
-                    {isAdminOrPM() && !project.archived?(
+                    ) : null}
+                    {isAdminOrPM() && !project.archived ? (
                         <IconButton name="add"
                                     size="main"
-                                    onClick={this.onAddUsers.bind(this, 'owner', 'Add project Owner', 1)} />
-                    ):null}
+                                    onClick={this.onAddUsers.bind(this, 'owner', 'Add project Owner', 1)}/>
+                    ) : null}
                 </div>
                 <div className="project-member">
                     <div className="font-weight-normal">Project Manager</div>
@@ -86,13 +88,13 @@ export default class Team extends React.Component {
                         <Avatar image={project.pm.avatar_url}
                                 title={project.pm.display_name}
                                 onRemove={this.onDeleteUser.bind(this, project.pm, 'pm')}
-                                remove={isAdminOrClient() && !project.archived} />
-                    ) : null }
-                    {isAdminOrClient() && !project.archived?(
+                                remove={isAdminOrClient() && !project.archived}/>
+                    ) : null}
+                    {isAdminOrClient() && !project.archived ? (
                         <IconButton name="add"
                                     size="main"
-                                    onClick={this.onAddUsers.bind(this, 'pm', 'Add project Manager', 1)} />
-                    ):null}
+                                    onClick={this.onAddUsers.bind(this, 'pm', 'Add project Manager', 1)}/>
+                    ) : null}
                 </div>
                 <div className="project-member">
                     <div className="font-weight-normal">Team</div>
@@ -106,12 +108,25 @@ export default class Team extends React.Component {
                                     verified={isDev() && participation.status === 'accepted'}/>
                         )
                     })}
-                    {isAdminOrPMOrClient() && !project.archived?(
+                    {isAdminOrPMOrClient() && !project.archived ? (
                         <IconButton name="add"
                                     size="main"
-                                    onClick={this.onAddUsers.bind(this, 'dev', 'Add team members', 0)} />
-                    ):null}
+                                    onClick={this.onAddUsers.bind(this, 'dev', 'Add team members', 0)}/>
+                    ) : null}
                 </div>
+                {
+                    false
+                    &&
+                    <div>
+                        <Link to={`/projects/${project.id}/survey/team`}>
+                            Go to survey tunga (temp)
+                        </Link>
+                        < br/>
+                        <Link to={`/projects/${project.id}/survey/developers`}>
+                            Go to survey developers (temp)
+                        </Link>
+                    </div>
+                }
             </div>
         );
     }

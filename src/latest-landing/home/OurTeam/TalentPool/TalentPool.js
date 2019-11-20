@@ -67,7 +67,10 @@ class TalentPool extends Component {
             lastQuery: query,
             search: query,
         });
-        this.getPeople(query);
+        this.getPeople({
+            query,
+            ignoreEmptySearch: true
+        });
         this.setState({ lastQuery: query });
     }
 
@@ -98,8 +101,8 @@ class TalentPool extends Component {
     }
 
 
-    getPeople(query) {
-        const searchQuery = query || this.state.search;
+    getPeople({ query, ignoreEmptySearch = false } = {}) {
+        const searchQuery = ignoreEmptySearch ? query : query || this.state.search;
         const nextPage = this.state.hasLoaded && searchQuery === this.state.resultsFor ? (this.state.currentPage + 1) : 0;
         if (searchQuery) {
             this.logSearch(nextPage + 1); // Add 1 because Algolia pages are zero indexed
@@ -231,7 +234,7 @@ class TalentPool extends Component {
                     {
                         !talents.length && hasLoaded &&
                         <div className="TalentPool__empty-state text-danger">
-                            No results found for '{lastQuery || this.state.lastQuery}'
+                            No results found for '{lastQuery}'
                             <Icon className="text-primary mt-3" name="search-alt" size='lg'/>
                         </div>
                     }
@@ -260,7 +263,7 @@ class TalentPool extends Component {
                                                             <div
                                                                 className="TalentPool__item"
                                                                 key={j}>
-                                                                <Talent talent={member}/>
+                                                                <Talent query={lastQuery} talent={member}/>
                                                             </div>
                                                         )
                                                     )}

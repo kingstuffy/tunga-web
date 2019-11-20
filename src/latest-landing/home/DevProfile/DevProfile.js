@@ -56,6 +56,19 @@ class DevProfile extends Component {
     }
 
 
+    componentDidMount() {
+        const queryKey = '?query=';
+        let talentPoolUrl = '/our-team#talent-pool';
+
+        if (this.props.location.search.includes(queryKey)) {
+            const query = this.props.location.search.replace(queryKey, '');
+            talentPoolUrl = `${talentPoolUrl}${queryKey}${query}`;
+        }
+
+        this.setState({ talentPoolUrl });
+    }
+
+
     loadData(id) {
         this.props.viewTalentRequest(id);
     }
@@ -63,6 +76,7 @@ class DevProfile extends Component {
 
     render() {
         const { talent } = this.props;
+        const talentPoolUrl = this.state.talentPoolUrl;
         talent.profile = talent.profile || { skills: [], skills_details: {} };
 
         return (

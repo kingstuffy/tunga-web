@@ -78,6 +78,11 @@ class Nav extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
+                                    <NavLink to={Routing.join.path} activeClassName="font-weight-bold text-black">
+                                        For developers
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
                                     {
                                         auth.isAuthenticated
                                             ?

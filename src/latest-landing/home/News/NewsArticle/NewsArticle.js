@@ -49,6 +49,7 @@ class NewsArticle extends Component {
                         pagination={pagination}
                         float="float-right"
                         color="text-primary"
+                        transparent={true}
                     >
                         <ul className="NewsArticle__list">
                             {

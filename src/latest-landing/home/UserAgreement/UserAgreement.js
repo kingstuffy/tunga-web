@@ -36,15 +36,13 @@ class UserAgreement extends Component {
     render() {
         return (
             <section className="UserAgreement">
-                <PageScroll pages={pages} forceJumpToTop={true}>
-                    <div id="Content" className="UserAgreement__content agreement-page">
-                        <div className="DevProfile__nav">
-                            <Nav/>
-                        </div>
-                        <UserAgreementContent/>
+                <div id="Content" className="UserAgreement__content agreement-page">
+                    <div className="DevProfile__nav">
+                        <Nav/>
                     </div>
-                    <Footer/>
-                </PageScroll>
+                    <UserAgreementContent/>
+                </div>
+                <Footer/>
             </section>
         );
     }

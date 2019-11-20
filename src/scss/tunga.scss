@@ -2,7 +2,6 @@
 @import "variables";
 @import "functions";
 @import "mixins";
-
 // Bootstrap and its default variables
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -1827,8 +1826,9 @@ table {
             margin-bottom: 10px;
         }
 
-        .payment-list  {
+        .payment-list {
             display: initial;
+
             table {
                 &.table th, &.table td {
                     padding: 5px 15px;
@@ -2326,7 +2326,7 @@ textarea {
     min-height: 100px;
 }
 
-.documents-row-bottom-margin{
+.documents-row-bottom-margin {
     margin-bottom: 15px;
 }
 
@@ -2338,11 +2338,11 @@ textarea {
 
 .project-team-member-icon-button {
     background-color: transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;
+    outline: none;
     margin-right: 10px;
 }
 
@@ -2410,7 +2410,7 @@ textarea {
     }
 }
 
-    // Showcase
+// Showcase
 .showcase {
     header {
         display: flex;
@@ -2652,6 +2652,7 @@ textarea {
 
                 &.footer-info {
                     text-align: left;
+
                     h4 {
                         font-size: px-to-rem(20);
                         text-align: left;
@@ -3486,9 +3487,11 @@ textarea {
                         .perk-service {
                             text-align: left;
                         }
+
                         .perk-fee {
                             text-align: right;
                         }
+
                         .perk-custom {
                             font-size: px-to-rem(18);
                             text-align: center;
@@ -3514,6 +3517,7 @@ textarea {
             li {
                 .description {
                     min-height: 100px;
+
                     p {
                         width: 80%;
                         text-align: center;
@@ -3846,10 +3850,12 @@ textarea {
         header {
             background-image: url('../assets/images/showcase/bgwhitepaper.jpg');
         }
+
         .showcase-title {
             text-align: center;
             line-height: 5rem;
         }
+
         .paper-container {
             margin-top: 4rem;
             margin-bottom: 4rem;
@@ -4037,7 +4043,6 @@ textarea {
 }
 
 
-
 .btn-inverted {
     font-size: 16px;
     line-height: 19px;
@@ -4049,6 +4054,47 @@ textarea {
 
     &:hover {
         color: #fff;
+    }
+}
+
+
+.survey {
+    $root: &;
+
+    &__header {
+        margin-bottom: 30px;
+    }
+
+    &__cta {
+        font-size: 14px;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 14px;
+    }
+}
+
+.survey-icon {
+    $root: &;
+
+    &__list {
+        list-style: none;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 11px;
+    }
+
+    &__btn {
+        cursor: pointer;
+
+        &:hover {
+            #{$root}__icon {
+                -ms-filter: drop-shadow(2px 4px 6px black);
+                filter: drop-shadow(2px 4px 6px black);
+            }
+        }
     }
 }
 

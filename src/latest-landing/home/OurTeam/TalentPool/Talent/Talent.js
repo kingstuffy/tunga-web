@@ -13,8 +13,13 @@ class Talent extends Component {
 
 
     render() {
-        const { talent } = this.props;
+        const { talent, query } = this.props;
         const profile = talent.profile || { skills: [] };
+
+        let url = `${Routing.devProfile.basePath}/${talent.id}`;
+        if (query) {
+            url = `${url}?query=${query}`;
+        }
 
         return (
             <div className="Talent"
@@ -37,7 +42,7 @@ class Talent extends Component {
                     </div>
                 </div>
                 <div className="Talent__cta">
-                    <Link target="_blank" to={`${Routing.devProfile.basePath}/${talent.id}`} className="Talent__cta-link">
+                    <Link target="_blank" to={url} className="Talent__cta-link">
                         View full profile <Icon className="text-white" name="arrow-right"/>
                     </Link>
                 </div>
