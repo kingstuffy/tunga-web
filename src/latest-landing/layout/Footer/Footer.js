@@ -273,7 +273,7 @@ class Footer extends Component {
                             <h4>EXPLORE</h4>
                             <ul>
                                 <li>
-                                    <NavLink to="/#case-studies">Case studies</NavLink>
+                                    <NavLink to="/#case-studies">Case Studies</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={Routing.ourStory.path}>Our Story</NavLink>
@@ -282,7 +282,7 @@ class Footer extends Component {
                                     <NavLink to={`${Routing.ourTeam.path}#talent-pool`}>Browse Talent</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={`${Routing.news.path}#news-article`}>Latest articles</NavLink>
+                                    <NavLink to={`${Routing.news.path}#news-article`}>Latest Articles</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={`${Routing.news.path}#vlogs`}>Vlogs</NavLink>
@@ -334,7 +334,7 @@ class Footer extends Component {
                                 <div className="Footer__bottom-links Footer__bottom-links--first">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <NavLink to="/privacy">Privacy policy</NavLink>
+                                            <NavLink to="/privacy">Privacy Policy</NavLink>
                                         </p>
                                     </div>
                                 </div>
@@ -348,7 +348,7 @@ class Footer extends Component {
                                 <div className="Footer__bottom-links Footer__bottom-links--last">
                                     <div className="bottom-line">
                                         <p className="text-xs-right">
-                                            <NavLink to="/code-of-conduct">Code of conduct</NavLink>
+                                            <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
                                         </p>
                                     </div>
                                 </div>

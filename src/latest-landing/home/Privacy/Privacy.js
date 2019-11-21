@@ -36,15 +36,13 @@ class Privacy extends Component {
     render() {
         return (
             <section className="Privacy">
-                <PageScroll pages={pages} forceJumpToTop={true}>
-                    <div id="Content" className="Privacy__content agreement-page">
-                        <div className="DevProfile__nav">
-                            <Nav/>
-                        </div>
-                        <PrivacyContent/>
+                <div id="Content" className="Privacy__content agreement-page">
+                    <div className="DevProfile__nav">
+                        <Nav/>
                     </div>
-                    <Footer/>
-                </PageScroll>
+                    <PrivacyContent/>
+                </div>
+                <Footer/>
             </section>
         );
     }
