@@ -14,6 +14,8 @@ import RadobankPicture from "../../assets/img/news/rabobank-picture.jpg";
 import RadobankLogo from "../../assets/img/news/rabobank-logo.jpg";
 import AdPicture from "../../assets/img/news/ad-picture.jpg";
 import AdLogo from "../../assets/img/news/ad-logo.png";
+import CioPicture from "../../assets/img/news/cio-picture.jpg";
+import CioLogo from "../../assets/img/news/cio-logo.png";
 
 import blogArticles from './content/blogs';
 
@@ -83,6 +85,13 @@ class News extends Component {
         this.state = {
             isNavOpen: false,
             articles: [
+                {
+                    title: 'Tunga taps African IT talent to meet growing demand for developers',
+                    summary: 'Plunging into the outsourcing market and facing much larger competition, impact sourcing startup Tunga has grown by determining the right skills, management techniques and tools best-suited for distributed developer teams, and this week has opened a second African office.',
+                    imgUrl: CioPicture,
+                    logo: CioLogo,
+                    url: 'https://www.cio.com/article/3441976/tunga-taps-african-it-talent-to-meet-growing-demand-for-developers.html',
+                },
                 {
                     title: 'Podium voor Afrikaans it-talent (Dutch)',
                     summary: 'In Afrika stikt het van het it-talent, maar banen zijn schaars. Tegelijkertijd heeft het westerse bedrijfsleven moeite met het vinden van goede softwareprogrammeurs. Online platform Tunga koppelt deze partijen en brengt zo de jeugdwerkloosheid in Afrika omlaag.',

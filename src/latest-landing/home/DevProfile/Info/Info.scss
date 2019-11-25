@@ -3,14 +3,32 @@
 .Info {
     $root: &;
     position: relative;
-    top: -67px;
+    top: -101px;
     z-index: 10;
     padding-right: 20px;
     text-align: center;
 
     @media (min-width: 992px) {
-        top: -90px;
+        top: -166px;
         text-align: left;
+    }
+
+    &__go-back {
+        margin-bottom: 34px;
+        color: #fff;
+
+        svg {
+            margin-right: 11px;
+        }
+
+        &-link {
+            vertical-align: middle;
+            color: #fff;
+        }
+
+        @media (min-width: 992px) {
+            margin-bottom: 54px;
+        }
     }
 
     &__img {

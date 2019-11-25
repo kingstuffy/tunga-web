@@ -79,7 +79,7 @@ class Nav extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink to={Routing.join.path} activeClassName="font-weight-bold text-black">
-                                        For developers
+                                        For Developers
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>

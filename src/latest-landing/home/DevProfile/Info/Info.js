@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import "./Info.scss";
 import { Button } from "../../../shared/Form/Form";
 import { openCalendlyWidget } from "../../../../components/utils/calendly";
+import Routing from "../../../constants/Routing";
+import { Link } from "react-router-dom";
 
 
 const ShortBio = (({ bio, onBioOpen }) => {
@@ -53,10 +55,24 @@ class Info extends Component {
     }
 
     render() {
-        const { talent } = this.props;
+        const { talent, query } = this.props;
+        let url = Routing.ourTeam.path;
+        if (query) {
+            url = `${url}?query=${query}`;
+        }
 
         return (
             <div className="Info">
+                <div className="Info__go-back">
+                    <Link to={url} className="Info__go-back-link">
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 15.0703L9.5 13.5703L4.92969 9L19 9L19 7L4.92969 7L9.5 2.42969L8 0.929687L0.929688 8L8 15.0703Z"
+                                fill="white"/>
+                        </svg>
+                        Back
+                    </Link>
+                </div>
                 {
                     talent.image
                     &&

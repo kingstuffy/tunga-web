@@ -36,15 +36,13 @@ class CodeOfConduct extends Component {
     render() {
         return (
             <section className="CodeOfConduct">
-                <PageScroll pages={pages} forceJumpToTop={true}>
-                    <div id="Content" className="CodeOfConduct__content agreement-page">
-                        <div className="DevProfile__nav">
-                            <Nav/>
-                        </div>
-                        <CodeOfConductContent/>
+                <div id="Content" className="CodeOfConduct__content agreement-page">
+                    <div className="DevProfile__nav">
+                        <Nav/>
                     </div>
-                    <Footer/>
-                </PageScroll>
+                    <CodeOfConductContent/>
+                </div>
+                <Footer/>
             </section>
         );
     }
