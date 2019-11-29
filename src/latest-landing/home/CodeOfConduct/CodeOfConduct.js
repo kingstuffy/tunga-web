@@ -33,6 +33,12 @@ class CodeOfConduct extends Component {
         this.state = {};
     }
 
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
+
     render() {
         return (
             <section className="CodeOfConduct">
