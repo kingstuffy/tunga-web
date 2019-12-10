@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./OurSolution.scss";
 import solVideo from "../../../assets/videos/our-story/BG-ourstory.mp4";
 
-// import  solVideoMobile from "../../../assets/videos/our-story/BG-ourstory-mobile.m4v";
+// import  solVideoMobile from "../../../assets/videos/our-story/BG-ourstory-mobile.mp4";
 
 class OurSolution extends Component {
     constructor(props) {
