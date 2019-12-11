@@ -20,14 +20,10 @@
         // border: 2px solid;
         border-radius: 100%;
         box-shadow: 0 4px 25px rgba(218, 52, 81, 0.05);
-        background-color: #fff;
         display: inline-block;
         padding: 10px 12px;
-
-        &--transparent {
-            border: 2px solid #ddd;
-            background-color: transparent;
-        }
+        border: 2px solid #ddd;
+        background-color: transparent;
 
         svg {
             line-height: 16px;
