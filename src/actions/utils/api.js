@@ -5,7 +5,7 @@ axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 axios.defaults.withCredentials = true;
 
-let BACKEND_PATH = __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : '/') : 'https://sandbox.tunga.io/');
+let BACKEND_PATH = 'https://sandbox.tunga.io/'; // __BACKEND_ROOT_URL__ || (__PRODUCTION__ ? (/butterflyworks\.org/ig.test(window.location.hostname) ? 'https://tunga.io/' : '/') : 'https://sandbox.tunga.io/');
 let API_PATH = 'api/';
 let SOCIAL_LOGIN_PATH = 'accounts/social/';
 
@@ -94,6 +94,7 @@ export const ENDPOINT_MIGRATE = getEndpointUrl('migrate/');
 export const ENDPOINT_NOTIFICATION_LOG = getEndpointUrl('notification-log/');
 export const ENDPOINT_LOG_SEARCH = getEndpointUrl('log/search/');
 export const ENDPOINT_VISITORS = getEndpointUrl('visitors/');
+export const ENDPOINT_DEVELOPER_RATING = getEndpointUrl('developer-rating/');
 
 export function flattenJson(jsonData, key) {
     let flattenedData = {};

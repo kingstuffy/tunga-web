@@ -115,6 +115,8 @@ class Activity extends React.Component {
             return Activity.activities[id];
         });
 
+        console.log(activities);
+
         return (
             <div>
                 <div className="hidden-xs">

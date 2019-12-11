@@ -2,11 +2,27 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 
-import Smiley_1 from '../../../../assets/images/icons/1_5_smiley.svg';
-import Smiley_2 from '../../../../assets/images/icons/2_5_smiley.svg';
-import Smiley_3 from '../../../../assets/images/icons/3_5_smiley.svg';
-import Smiley_4 from '../../../../assets/images/icons/4_5_smiley.svg';
-import Smiley_5 from '../../../../assets/images/icons/5_5_smiley.svg';
+import Smiley1 from './icons/Smiley1';
+import Smiley2 from './icons/Smiley2';
+import Smiley3 from './icons/Smiley3';
+import Smiley4 from './icons/Smiley4';
+import Smiley5 from './icons/Smiley5';
+
+
+const IconSvg = ({ rating, active }) => {
+    switch (rating) {
+        case 1:
+            return <Smiley1 active={active}/>;
+        case 2:
+            return <Smiley2 active={active}/>;
+        case 3:
+            return <Smiley3 active={active}/>;
+        case 4:
+            return <Smiley4 active={active}/>;
+        case 5:
+            return <Smiley5 active={active}/>;
+    }
+};
 
 
 export default class SurveyIcon extends React.Component {
@@ -16,26 +32,36 @@ export default class SurveyIcon extends React.Component {
             icons: [
                 {
                     rating: 5,
-                    img: Smiley_5,
                 },
                 {
                     rating: 4,
-                    img: Smiley_4,
                 },
                 {
                     rating: 3,
-                    img: Smiley_3,
                 },
                 {
                     rating: 2,
-                    img: Smiley_2,
                 },
                 {
                     rating: 1,
-                    img: Smiley_1,
                 },
             ]
         };
+        this.onIconClick = this.onIconClick.bind(this);
+    }
+
+
+    onIconClick(icon) {
+        const icons = this.state.icons.map((stateIcon) => {
+            const active = stateIcon === icon;
+            return {
+                ...stateIcon,
+                active,
+            };
+        });
+
+        this.setState({ icons });
+        this.props.onRating({ rating: icon.rating });
     }
 
 
@@ -49,8 +75,9 @@ export default class SurveyIcon extends React.Component {
                                 key={i}
                                 className="survey-icon__item"
                             >
-                                <a className="survey-icon__btn">
-                                    <img className="survey-icon__icon" src={icon.img}/>
+                                <a className={`survey-icon__btn survey-icon__btn--${icon.active ? 'active' : ''}`}
+                                   onClick={() => this.onIconClick(icon)}>
+                                    <IconSvg rating={icon.rating}/>
                                 </a>
                             </li>
                         ))

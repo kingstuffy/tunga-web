@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {composeFormData, ENDPOINT_PROJECTS} from './utils/api';
+import {composeFormData, ENDPOINT_PROJECTS, ENDPOINT_DEVELOPER_RATING} from './utils/api';
 
 export const CREATE_PROJECT_START = 'CREATE_PROJECT_START';
 export const CREATE_PROJECT_SUCCESS = 'CREATE_PROJECT_SUCCESS';
@@ -22,6 +22,10 @@ export const DELETE_PROJECT_FAILED = 'DELETE_PROJECT_FAILED';
 export const SEND_REMINDER_START = 'SEND_REMINDER_START';
 export const SEND_REMINDER_SUCCESS = 'SEND_REMINDER_SUCCESS';
 export const SEND_REMINDER_FAILED = 'SEND_REMINDER_FAILED';
+export const SUBMIT_DEVELOPER_RATING_START = 'SUBMIT_DEVELOPER_RATING_START';
+export const SUBMIT_DEVELOPER_RATING_SUCCESS = 'SUBMIT_DEVELOPER_RATING_SUCCESS';
+export const SUBMIT_DEVELOPER_RATING_FAILED = 'SUBMIT_DEVELOPER_RATING_FAILED';
+export const RESET_DEVELOPER_RATING = 'RESET_DEVELOPER_RATING';
 
 export function createProject(project, target) {
     return dispatch => {
@@ -338,5 +342,55 @@ export function sendReminderFailed(error, id, target) {
         error,
         id,
         target
+    };
+}
+
+export function submitDeveloperRating(event, target) {
+    return dispatch => {
+        dispatch(submitDeveloperRatingStart(event));
+
+        axios
+            .post(ENDPOINT_DEVELOPER_RATING, event)
+            .then(function(response) {
+                dispatch(submitDeveloperRatingSuccess(response.data, event));
+            })
+            .catch(function(error) {
+                dispatch(
+                    submitDeveloperRatingFailed(
+                        (error.response ? error.response.data : null), event, target
+                    ),
+                );
+            });
+    };
+}
+
+export function resetDeveloperRating() {
+    return dispatch => {
+        dispatch({
+            type: RESET_DEVELOPER_RATING,
+        });
+    };
+}
+
+
+export function submitDeveloperRatingStart(event) {
+    return {
+        type: SUBMIT_DEVELOPER_RATING_START,
+        event,
+    };
+}
+
+export function submitDeveloperRatingSuccess(event) {
+    return {
+        type: SUBMIT_DEVELOPER_RATING_SUCCESS,
+        event,
+    };
+}
+
+export function submitDeveloperRatingFailed(error, event) {
+    return {
+        type: SUBMIT_DEVELOPER_RATING_FAILED,
+        error,
+        event,
     };
 }

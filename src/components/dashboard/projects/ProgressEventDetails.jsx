@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import {Link, Switch, Route} from 'react-router-dom';
+import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import moment from "moment";
 
 import Linkify from '../../core/Linkify';
@@ -13,6 +13,7 @@ import {
     PROGRESS_EVENT_TYPE_CLIENT, PROGRESS_EVENT_TYPE_MILESTONE, PROGRESS_EVENT_TYPE_MILESTONE_INTERNAL,
     PROGRESS_EVENT_TYPE_PM
 } from "../../../actions/utils/api";
+import Survey from "./Survey";
 
 
 export default class ProgressEventDetails extends React.Component {
@@ -42,6 +43,11 @@ export default class ProgressEventDetails extends React.Component {
 
     render() {
         const {match, project, progress_event, ProgressEventActions, Report, errors} = this.props;
+        if (progress_event.type === 'developer_rating') {
+            return <Survey event={progress_event} project={project}/>
+        }
+
+
         const {progress_reports} = progress_event,
             myReport = this.getMyReport();
 

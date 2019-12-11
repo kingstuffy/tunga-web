@@ -260,6 +260,14 @@ function isSaving(state = {}, action) {
         case ProjectActions.SEND_REMINDER_FAILED:
             newState['remind'] = false;
             return {...state, ...newState};
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_START:
+            newState['developerRating'] = true;
+            return {...state, ...newState};
+        case ProjectActions.RESET_DEVELOPER_RATING:
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_SUCCESS:
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_FAILED:
+            newState['developerRating'] = false;
+            return {...state, ...newState};
         case LOCATION_CHANGE:
             return {};
         default:
@@ -317,6 +325,14 @@ function isSaved(state = {}, action) {
         case ProjectActions.SEND_REMINDER_START:
         case ProjectActions.SEND_REMINDER_FAILED:
             newState['remind'] = false;
+            return {...state, ...newState};
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_SUCCESS:
+            newState['developerRating'] = true;
+            return {...state, ...newState};
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_START:
+        case ProjectActions.RESET_DEVELOPER_RATING:
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_FAILED:
+            newState['developerRating'] = false;
             return {...state, ...newState};
         case LOCATION_CHANGE:
             return {};
@@ -475,6 +491,12 @@ function errors(state = {}, action) {
         case ProjectActions.SEND_REMINDER_START:
         case ProjectActions.SEND_REMINDER_SUCCESS:
             return {...state, remind: null};
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_FAILED:
+            return {...state, developerRating: action.error};
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_START:
+        case ProjectActions.RESET_DEVELOPER_RATING:
+        case ProjectActions.SUBMIT_DEVELOPER_RATING_SUCCESS:
+            return {...state, developerRating: null};
         case LOCATION_CHANGE:
             return {};
         default:
