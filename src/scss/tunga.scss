@@ -4097,5 +4097,13 @@ textarea {
         }
     }
 }
-
+.days-selection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+.select-days-btn-container{
+    display: inline-block;
+}
 @import "breakpoints";

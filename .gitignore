@@ -34,3 +34,6 @@ tmp
 .vscode
 .DS_Store
 .ansible/*.retry
+
+# prettierrc configurations for vs code
+.prettierrc
