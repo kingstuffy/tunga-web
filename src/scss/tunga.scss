@@ -4097,5 +4097,28 @@ textarea {
         }
     }
 }
-
+.days-selection{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 260px;
+}
+.select-days-btn-container{
+    display: inline-block;
+}
+.modal-main-containers{
+    width: 230px;
+}
+.modal-contents-container .modal-content{
+    width: 400px;
+}
+.selecet-days-modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 20px 15px 0 !important;
+}
+.select-days-choices-btn button{
+    width: 70px;
+}
 @import "breakpoints";
