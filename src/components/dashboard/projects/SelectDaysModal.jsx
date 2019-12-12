@@ -1,8 +1,9 @@
 import React from 'react';
 import ChoiceGroup from '../../core/ChoiceGroup';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 import Button from '../../core/Button';
+import IconButton from '../../core/IconButton';
 
 class SelectDaysModal extends React.Component {
     state = {
@@ -60,12 +61,21 @@ class SelectDaysModal extends React.Component {
             <div className="select-days-btn-container">
                 <Button onClick={this.handleModalToggle}>Select Days</Button>
                 <Modal
+                    className="modal-contents-container"
                     isOpen={modal}
                     toggle={this.handleModalToggle}
                     onClosed={this.handleSubmittingDaysSelection.bind(this, participation)}
                 >
-                    <ModalHeader toggle={this.handleModalToggle}>Select Days</ModalHeader>
-                    <ModalBody>
+                    <ModalHeader className="modal-main-containers" toggle={null}>
+                        Select Days
+                        <IconButton
+                            name="close"
+                            size="sm"
+                            className="close"
+                            onClick={this.handleModalToggle}
+                        />
+                    </ModalHeader>
+                    <ModalBody className="modal-main-containers">
                         {daysOfTheWeek.map((day, index) => {
                             let selectedDays = JSON.parse('[' + participation.update_days + ']');
                             let isSelectedDay = selectedDays.includes(index);
@@ -76,11 +86,17 @@ class SelectDaysModal extends React.Component {
                                         choices={[[true, 'on'], [false, 'off']]}
                                         selected={isSelectedDay}
                                         onChange={this.handleToggleDayUpdate.bind(this, day)}
+                                        className="select-days-choices-btn"
                                     />
                                 </div>
                             );
                         })}
                     </ModalBody>
+                    <div className="modal-main-containers selecet-days-modal-footer">
+                        <Button color="primary" onClick={this.handleModalToggle}>
+                            OK
+                        </Button>
+                    </div>
                 </Modal>
             </div>
         );
