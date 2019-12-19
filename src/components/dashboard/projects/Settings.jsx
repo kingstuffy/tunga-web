@@ -21,6 +21,7 @@ import {
     SLACK_SHARE_COMMENTS, SLACK_SHARE_DOCS, SLACK_SHARE_EVENTS, SLACK_SHARE_REPORTS
 } from "../../../actions/utils/api";
 import {openConfirm} from "../../core/utils/modals";
+import SelectDaysModal from './SelectDaysModal'
 
 export default class Settings extends React.Component {
     static defaultProps = {
@@ -167,9 +168,10 @@ export default class Settings extends React.Component {
         const {project, ProjectActions} = this.props;
         ProjectActions.updateProject(project.id, {title: this.state.title, description: this.state.description});
     };
-
+    
     render() {
-        const { project, section, isSaved, errors } = this.props;
+        const { project, section, isSaved, errors, ProjectActions } = this.props;
+        const projectProps = {project, ProjectActions};
 
         return (
             <div className="project-settings">
@@ -490,6 +492,8 @@ export default class Settings extends React.Component {
 
                                         <ChoiceGroup choices={[[true, 'on'], [false, 'off']]} selected={participation.updates_enabled}
                                                      onChange={this.onToggleUpdates.bind(this, participation)} disabled={!isAdminOrPMOrClient() || project.archived}/>
+
+                                        <SelectDaysModal {...projectProps} participation={participation}/>
                                     </div>
                                 )
                             })}
