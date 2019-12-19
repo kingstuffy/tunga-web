@@ -24,6 +24,7 @@ import {
 } from '../../../actions/utils/api';
 import {getUser, isClient, isDev, isPM} from "../../utils/auth";
 import {openConfirm} from "../../core/utils/modals";
+import SurveyIcon from "./common/SurveyIcon";
 
 export default class ProgressReportForm extends React.Component {
     static propTypes = {
@@ -617,16 +618,10 @@ export default class ProgressReportForm extends React.Component {
                                     the developers on this project, please give
                                     details? *
                                 </label>
-                                <TextArea
-                                    placeholder="Are you satisfied with the performance of the developers on this project, please give details?"
-                                    className="form-control"
-                                    onChange={this.onInputChange.bind(
-                                        this,
-                                        'team_appraisal',
-                                    )}
-                                    required>
-                                    {this.state.report.team_appraisal}
-                                </TextArea>
+                                <SurveyIcon
+                                    onRating={(rating) => {
+                                        this.onChangeValue('team_appraisal', rating.rating);
+                                    }}/>
                             </div>
                         </div>
                     ) : null}
