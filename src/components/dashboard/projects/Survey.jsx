@@ -64,7 +64,8 @@ class Survey extends React.Component {
                     id: this.props.event.id,
                 },
                 rating: this.state.ratings[memberId],
-                user: memberId
+                user: memberId,
+                created_by: this.props.auth.user.id,
             };
 
             this.props.submitDeveloperRating(payload);
@@ -88,6 +89,7 @@ class Survey extends React.Component {
 
     render() {
         const { project, projectStore, event } = this.props;
+        console.log(event);
         const isSaved = projectStore['isSaved']['developerRating'];
         const isSaving = projectStore['isSaving']['developerRating'];
 
@@ -155,7 +157,8 @@ class Survey extends React.Component {
 
 
 const mapStateToProps = store => ({
-    projectStore: store.app.Project
+    projectStore: store.app.Project,
+    auth: store.app.Auth
 });
 
 const mapDispatchToProps = dispatch => {
