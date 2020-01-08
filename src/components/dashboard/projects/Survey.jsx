@@ -89,7 +89,6 @@ class Survey extends React.Component {
 
     render() {
         const { project, projectStore, event } = this.props;
-        console.log(event);
         const isSaved = projectStore['isSaved']['developerRating'];
         const isSaving = projectStore['isSaving']['developerRating'];
 
