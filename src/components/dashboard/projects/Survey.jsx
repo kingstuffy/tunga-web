@@ -87,12 +87,18 @@ class Survey extends React.Component {
     }
 
 
+    getExistingRating(ratings) {
+        return ratings
+            .map(({ user, rating }) => ({ name: user.display_name, id: user.id, rating }))
+    }
+
+
     render() {
         const { project, projectStore, event } = this.props;
         const isSaved = projectStore['isSaved']['developerRating'];
         const isSaving = projectStore['isSaving']['developerRating'];
-
-        const developers = this.getDevelopers();
+        const hasRating = !!event.developer_ratings.length;
+        const developers = hasRating ? this.getExistingRating(event.developer_ratings) : this.getDevelopers();
 
         const types = {
             developer_rating: developers,
@@ -126,6 +132,7 @@ class Survey extends React.Component {
                                             How would you rate the collaboration with {member.name} for {project.title}?
                                         </div>
                                         <SurveyIcon
+                                            rating={member.rating}
                                             onRating={(rating) => {
                                                 this.onDeveloperRating({ rating, member })
                                             }}/>
@@ -138,11 +145,16 @@ class Survey extends React.Component {
                                     Please complete all ratings
                                 </div>
                             }
-                            <div className="survey__btn-wrapper">
-                                <Button disabled={isSaving} onClick={this.submitDeveloperRating}>
-                                    {isSaving ? 'Submitting ratings' : 'Submit Ratings'}
-                                </Button>
-                            </div>
+
+                            {
+                                !hasRating
+                                &&
+                                <div className="survey__btn-wrapper">
+                                    <Button disabled={isSaving} onClick={this.submitDeveloperRating}>
+                                        {isSaving ? 'Submitting ratings' : 'Submit Ratings'}
+                                    </Button>
+                                </div>
+                            }
                         </div>
                         :
                         <div className="text-success">

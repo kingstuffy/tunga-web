@@ -66,6 +66,8 @@ export default class SurveyIcon extends React.Component {
 
 
     render() {
+        const { rating } = this.props;
+
         return (
             <div className="survey-icon">
                 <ul className="survey-icon__list">
@@ -75,8 +77,8 @@ export default class SurveyIcon extends React.Component {
                                 key={i}
                                 className="survey-icon__item"
                             >
-                                <a className={`survey-icon__btn survey-icon__btn--${icon.active ? 'active' : ''}`}
-                                   onClick={() => this.onIconClick(icon)}>
+                                <a className={`survey-icon__btn survey-icon__btn--${icon.active || icon.rating === rating ? 'active' : ''}`}
+                                   onClick={() => !rating && this.onIconClick(icon)}>
                                     <IconSvg rating={icon.rating}/>
                                 </a>
                             </li>
