@@ -95,6 +95,7 @@ export const ENDPOINT_NOTIFICATION_LOG = getEndpointUrl('notification-log/');
 export const ENDPOINT_LOG_SEARCH = getEndpointUrl('log/search/');
 export const ENDPOINT_VISITORS = getEndpointUrl('visitors/');
 export const ENDPOINT_DEVELOPER_RATING = getEndpointUrl('developer-rating/');
+export const ENDPOINT_GENERAL_RATING = getEndpointUrl('progress-reports/');
 
 export function flattenJson(jsonData, key) {
     let flattenedData = {};

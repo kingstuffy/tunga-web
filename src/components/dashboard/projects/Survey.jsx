@@ -52,7 +52,10 @@ class Survey extends React.Component {
 
 
     submitDeveloperRating() {
-        if (Object.keys(this.state.ratings).length !== this.getDevelopers().length) {
+        if (
+            (this.props.project.category !== 'dedicated' && this.state.ratings.length === 1)
+            && Object.keys(this.state.ratings).length !== this.getDevelopers().length
+        ) {
             this.setState({ incompleteRatings: true });
             return;
         }
@@ -63,10 +66,18 @@ class Survey extends React.Component {
                 event: {
                     id: this.props.event.id,
                 },
-                rating: this.state.ratings[memberId],
-                user: memberId,
-                created_by: this.props.auth.user.id,
             };
+
+            if (this.props.project.category === 'dedicated') {
+                payload.rating = this.state.ratings[memberId];
+                payload.user = memberId;
+                payload.created_by = this.props.auth.user.id;
+            } else {
+                payload.rate_communication = this.state.ratings[memberId];
+                payload.user = {
+                    id: this.props.auth.user.id
+                };
+            }
 
             this.props.submitDeveloperRating(payload);
         });
@@ -109,6 +120,7 @@ class Survey extends React.Component {
             ]
         };
 
+        event.type = project.category === 'dedicated' ? types[event.type] : 'team';
         const members = types[event.type] || [];
 
         return (
