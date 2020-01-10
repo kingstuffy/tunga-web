@@ -120,7 +120,7 @@ class Survey extends React.Component {
             ]
         };
 
-        event.type = project.category === 'dedicated' ? types[event.type] : 'team';
+        event.type = project.category === 'dedicated' ? event.type : 'team';
         const members = types[event.type] || [];
 
         return (
