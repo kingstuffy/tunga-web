@@ -105,7 +105,6 @@ export default class ProjectManagement extends React.Component {
                                                     ['docs', <Docs {...projectProps}/>],
                                                     ['team', <Team {...projectProps}/>],
                                                     ['plan', <Plan {...projectProps}/>],
-                                                    ['survey', <Survey location={location} {...projectProps}/>],
                                                     ['pay', <PayContainer {...projectProps}/>],
                                                 ]:[])
                                             ].map(path => {

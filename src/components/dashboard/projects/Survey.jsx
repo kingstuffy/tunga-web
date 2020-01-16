@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import Button from "../../core/Button";
 import SurveyIcon from "./common/SurveyIcon";
-import { submitDeveloperRating, resetDeveloperRating } from "../../../actions/ProjectActions";
+import { submitDeveloperRating, resetDeveloperRating, retrieveProject } from "../../../actions/ProjectActions";
 import { connect } from "react-redux";
 
 
@@ -48,6 +48,7 @@ class Survey extends React.Component {
 
     componentWillUnmount() {
         this.props.resetDeveloperRating();
+        this.props.retrieveProject(this.props.project.id);
     }
 
 
@@ -98,9 +99,14 @@ class Survey extends React.Component {
     }
 
 
-    getExistingRating(ratings) {
+    getExistingRating(event) {
+        const ratings = event.developer_ratings.length ? event.developer_ratings : event.progress_reports;
         return ratings
-            .map(({ user, rating }) => ({ name: user.display_name, id: user.id, rating }))
+            .map(({ user, rate_communication, rating }) => ({
+                name: user.display_name,
+                id: user.id,
+                rating: rating || rate_communication
+            }))
     }
 
 
@@ -108,12 +114,12 @@ class Survey extends React.Component {
         const { project, projectStore, event } = this.props;
         const isSaved = projectStore['isSaved']['developerRating'];
         const isSaving = projectStore['isSaving']['developerRating'];
-        const hasRating = !!event.developer_ratings.length;
-        const developers = hasRating ? this.getExistingRating(event.developer_ratings) : this.getDevelopers();
+        const hasRating = event.developer_ratings.length || event.progress_reports.length;
+        const developers = hasRating ? this.getExistingRating(event) : this.getDevelopers();
 
         const types = {
             developer_rating: developers,
-            team: [
+            team: hasRating ? developers : [
                 {
                     name: 'Tunga'
                 }
@@ -188,6 +194,7 @@ const mapDispatchToProps = dispatch => {
     return {
         submitDeveloperRating: (event) => dispatch(submitDeveloperRating(event)),
         resetDeveloperRating: (event) => dispatch(resetDeveloperRating()),
+        retrieveProject: (id) => dispatch(retrieveProject(id)),
     };
 };
 

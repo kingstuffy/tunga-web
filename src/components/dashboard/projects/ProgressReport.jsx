@@ -367,7 +367,7 @@ export default class ProgressReport extends React.Component {
                                 Rate Communication:{' '}
                             </strong>
                             <span>
-                                {progress_report.rate_communication}/10
+                                {progress_report.rate_communication}/5
                             </span>
                         </p>
                     ) : null}
