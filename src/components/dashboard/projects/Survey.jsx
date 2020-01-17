@@ -140,7 +140,7 @@ class Survey extends React.Component {
                         Client survey
                     </div>
                     <div>
-                        Due date: {moment.utc(project.deadline).local().format('lll')}
+                        Due date: {moment.utc(project.due_at).local().format('lll')}
                     </div>
                 </div>
 
