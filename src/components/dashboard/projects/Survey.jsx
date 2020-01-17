@@ -5,6 +5,7 @@ import moment from 'moment';
 import Button from "../../core/Button";
 import SurveyIcon from "./common/SurveyIcon";
 import { submitDeveloperRating, resetDeveloperRating, retrieveProject } from "../../../actions/ProjectActions";
+import { retrieveProgressEvent } from "../../../actions/ProgressEventActions";
 import { connect } from "react-redux";
 
 
@@ -48,11 +49,13 @@ class Survey extends React.Component {
 
     componentWillUnmount() {
         this.props.resetDeveloperRating();
-        this.props.retrieveProject(this.props.project.id);
+        this.props.retrieveProgressEvent(this.props.event.id);
     }
 
 
-    submitDeveloperRating() {
+    submitDeveloperRating(e) {
+        e.preventDefault();
+
         if (
             (this.props.project.category !== 'dedicated' && this.state.ratings.length === 1)
             && Object.keys(this.state.ratings).length !== this.getDevelopers().length
@@ -194,7 +197,7 @@ const mapDispatchToProps = dispatch => {
     return {
         submitDeveloperRating: (event) => dispatch(submitDeveloperRating(event)),
         resetDeveloperRating: (event) => dispatch(resetDeveloperRating()),
-        retrieveProject: (id) => dispatch(retrieveProject(id)),
+        retrieveProgressEvent: (id) => dispatch(retrieveProgressEvent(id)),
     };
 };
 
