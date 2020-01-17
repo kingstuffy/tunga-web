@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { composeFormData, ENDPOINT_PROJECTS, ENDPOINT_DEVELOPER_RATING, ENDPOINT_GENERAL_RATING } from './utils/api';
+import { retrieveProgressEvent } from "./ProgressEventActions";
 
 export const CREATE_PROJECT_START = 'CREATE_PROJECT_START';
 export const CREATE_PROJECT_SUCCESS = 'CREATE_PROJECT_SUCCESS';
@@ -354,6 +355,7 @@ export function submitDeveloperRating(event, target) {
             .post(url, event)
             .then(function (response) {
                 dispatch(submitDeveloperRatingSuccess(response.data, event));
+                dispatch(retrieveProgressEvent(event.event.id));
             })
             .catch(function (error) {
                 dispatch(

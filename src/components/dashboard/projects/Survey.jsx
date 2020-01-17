@@ -49,7 +49,7 @@ class Survey extends React.Component {
 
     componentWillUnmount() {
         this.props.resetDeveloperRating();
-        this.props.retrieveProgressEvent(this.props.event.id);
+        // this.props.retrieveProgressEvent(this.props.event.id);
     }
 
 
@@ -129,6 +129,7 @@ class Survey extends React.Component {
             ]
         };
 
+        const showSubmission = !hasRating;
         event.type = project.category === 'dedicated' ? event.type : 'team';
         const members = types[event.type] || [];
 
@@ -142,6 +143,17 @@ class Survey extends React.Component {
                         Due date: {moment.utc(project.deadline).local().format('lll')}
                     </div>
                 </div>
+
+                {
+                    isSaving
+                    &&
+                    <div className="text-warning">
+                        <em>
+                            Submitting ratings
+                        </em>
+                    </div>
+                }
+
                 {
                     !isSaved
                         ?
@@ -168,7 +180,7 @@ class Survey extends React.Component {
                             }
 
                             {
-                                !hasRating
+                                showSubmission
                                 &&
                                 <div className="survey__btn-wrapper">
                                     <Button disabled={isSaving} onClick={this.submitDeveloperRating}>
