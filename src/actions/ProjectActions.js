@@ -348,7 +348,6 @@ export function sendReminderFailed(error, id, target) {
 export function submitDeveloperRating(event, target) {
     return dispatch => {
         const url = event.rate_communication ? ENDPOINT_GENERAL_RATING : ENDPOINT_DEVELOPER_RATING;
-        console.log(url);
         dispatch(submitDeveloperRatingStart(event));
 
         axios
